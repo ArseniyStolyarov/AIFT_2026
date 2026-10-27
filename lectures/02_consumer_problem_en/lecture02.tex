@@ -1,0 +1,579 @@
+% !TeX program = xelatex
+\ifdefined\HANDOUT
+\documentclass[handout,aspectratio=169,10pt]{beamer}
+\else
+\documentclass[aspectratio=169,10pt]{beamer}
+\fi
+\usepackage{nesbeamer}
+\setbeamercovered{invisible}
+\hypersetup{pdftitle={Microeconomics 2: The Consumer Problem},pdfauthor={Arseniy Stolyarov}}
+\begin{document}
+{\setbeamercolor{background canvas}{bg=white}
+\begin{frame}[plain]
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north east] at ([xshift=-11mm,yshift=-9mm]current page.north east)
+{\includegraphics[width=23mm]{assets/nes-english.pdf}};
+\end{tikzpicture}
+\vspace{9mm}
+{\color{NESblue}\Huge\bfseries Microeconomics\par}
+\vspace{3mm}
+{\color{NESgray}\large The consumer problem\par}
+\vspace{6mm}
+{\color{NESgray}\Large Arseniy Stolyarov\par}
+{\color{NESblue}\small PhD in Economics\\University of Wisconsin--Madison\par}
+\vspace{5mm}
+{\color{NESgray}\small Artificial Intelligence and Financial Technologies\par}
+{\color{NESblue}\small New Economic School · 2026/27\par}
+\end{frame}}
+
+\begin{frame}[label=roadmap]{From preferences to an actual choice}
+\uncover<1->{Last time: what people want, what they can afford, and how the two fit together.}\par
+\uncover<2->{Today: existence and uniqueness, Marshallian demand, the Lagrangian and Kuhn--Tucker conditions.}\par
+\uncover<3->{Then: indirect utility, the envelope theorem and Roy\textquoteright s identity.}\par
+\uncover<4->{A separate reserve section introduces expenditure minimisation and Hicksian demand for the next course block.}\par
+\end{frame}
+
+\begin{frame}[label=warmup]{The picture we already know}
+
+\begin{columns}[c]
+\column{.53\textwidth}
+\begin{tikzpicture}\begin{axis}[nes,width=7.2cm,height=5.1cm,xmax=9,ymax=9,xtick={0,4,8},ytick={0,4,8}]
+\addplot[draw=none,fill=NESlight!25] coordinates {(0,0) (0,8) (8,0)} \closedcycle;
+\addplot[NESblue] coordinates {(0,8) (8,0)};
+\uncover<2->{\addplot[NESblue,domain=1.78:9,samples=80] {16/x};}
+\uncover<3->{\addplot[only marks,mark=*,NESred] coordinates {(4,4)};}
+\end{axis}\end{tikzpicture}
+\column{.43\textwidth}
+\uncover<1->{$u(x)=\sqrt{x_1x_2}$, $p=(1,1)$, $m=8$.}
+\uncover<2->{\par Which affordable bundle is best?}
+\uncover<3->{\par $(4,4)$. Today we want a systematic method, not just a convincing picture.}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}[label=consumer-problem]{The consumer problem}
+\uncover<1->{Let $X=\R_+^L$, prices $p\in\R_{++}^L$ and wealth $m>0$.}\par
+\uncover<2->{\[B(p,m)=\{x\ge0:p\cdot x\le m\}.\]}\par
+\uncover<3->{\[\max_{x\in B(p,m)}u(x).\]}\par
+\uncover<4->{Preferences enter through $u$; prices and wealth enter through the feasible set.}\par
+\end{frame}
+
+\begin{frame}[label=modelling-assumptions]{What did we assume when we wrote that?}
+\uncover<1->{\key{Price-taking:} prices are given rather than negotiated.}\par
+\uncover<2->{\key{Linear prices:} every unit of a good has the same unit price.}\par
+\uncover<3->{\key{Divisibility:} quantities can vary continuously.}\par
+\uncover<4->{\key{A specified decision horizon:} if saving is possible, future consumption or saving must enter the model.}\par
+\uncover<5->{What changes for a subscription, a quantity discount or an indivisible purchase?}\par
+\end{frame}
+
+\begin{frame}[label=budget-geometry]{Two useful facts about the budget}
+\uncover<1->{\key{Currency invariance:} for every $t>0$, $B(tp,tm)=B(p,m)$.}\par
+\uncover<2->{\key{Nonemptiness:} the zero bundle is affordable.}\par
+\uncover<3->{\key{Compactness:} the budget is closed, and $0\le x_i\le m/p_i$ for every $i$.}\par
+\uncover<4->{Strictly positive prices give a finite upper bound on every quantity.}\par
+\end{frame}
+
+\begin{frame}[label=existence]{Does an optimum exist?}
+\uncover<1->{\key{Assumptions:} $u$ is continuous on $\R_+^L$, $p\gg0$ and $m>0$.}\par
+\uncover<2->{The budget is nonempty and compact.}\par
+\uncover<3->{By the extreme value theorem, a continuous function attains a maximum on it.}\par
+\uncover<4->{Existence does not yet imply uniqueness, an interior solution or differentiability of demand.}\par
+\end{frame}
+
+\begin{frame}[label=existence-warning]{Which assumption is doing the work?}
+\uncover<1->{Suppose $p_1=0$, $p_2=1$, $m=1$, and $u(x)=x_1$.}\par
+\uncover<2->{Every quantity of good 1 is affordable. Utility is unbounded above, so there is no maximiser.}\par
+\uncover<3->{Zero prices do not always destroy existence, but compactness is no longer guaranteed.}\par
+\uncover<4->{Can you give a case with multiple maximisers even though the budget is compact?}\par
+\end{frame}
+
+\begin{frame}[label=marshallian]{Marshallian demand is initially a correspondence}
+\uncover<1->{\[D(p,m)=\operatorname*{arg\,max}_{x\ge0,\,p\cdot x\le m}u(x).\]}\par
+\uncover<2->{$D(p,m)$ contains \key{all} optimal bundles. It may contain more than one.}\par
+\uncover<3->{When it is a singleton, write its unique element as $x(p,m)$: a demand function.}\par
+\uncover<4->{It is the earlier choice rule applied specifically to budget menus: $D(p,m)=C(B(p,m))$.}\par
+\end{frame}
+
+\begin{frame}[label=homogeneity]{Demand is homogeneous of degree zero}
+\uncover<1->{For every $t>0$, $D(tp,tm)=D(p,m)$.}\par
+\uncover<2->{The feasible set and utility ranking are unchanged, so the set of optimisers is unchanged.}\par
+\uncover<3->{\[p=(2,1),\ m=12\quad\text{versus}\quad p=(200,100),\ m=1200.\]}\par
+\uncover<4->{This is a change of currency units, not an increase in purchasing power.}\par
+\end{frame}
+
+\begin{frame}[label=walras]{Budget exhaustion: Walras’ law}
+\uncover<1->{If preferences are locally nonsatiated, every $x^*\in D(p,m)$ satisfies $p\cdot x^*=m$.}\par
+\uncover<2->{With budget slack, a sufficiently small neighbourhood of $x^*$ is still affordable.}\par
+\uncover<3->{LNS provides a strictly better feasible bundle in that neighbourhood: a contradiction.}\par
+\uncover<4->{Therefore an existing optimum spends the budget.\quad\navto{proof-walras}{Proof}}\par
+\end{frame}
+
+\begin{frame}[label=demand-convex]{Convex preferences: what happens to the chosen set?}
+\uncover<1->{Take $x,y\in D(p,m)$. The budget is convex, so $z_t=tx+(1-t)y$ is affordable.}\par
+\uncover<2->{Both $x$ and $y$ are at least as good as every other affordable bundle.}\par
+\uncover<3->{Convex preferences make $z_t$ at least as good as every such bundle too.}\par
+\uncover<4->{Thus $D(p,m)$ is a convex set. This still allows an entire line segment of solutions.}\par
+\end{frame}
+
+\begin{frame}[label=unique-demand]{Strict convexity: at most one optimum}
+\uncover<1->{Suppose distinct $x,y$ are both optimal.}\par
+\uncover<2->{Their average is affordable, and strict convexity makes it strictly better than either.}\par
+\uncover<3->{That contradicts optimality. Thus, with existence, demand is single-valued.}\par
+\uncover<4->{\navto{proof-unique}{Proof}\qquad Does strict convexity by itself prove existence?}\par
+\end{frame}
+
+\begin{frame}[label=indirect-utility]{Indirect utility: the optimal value}
+\uncover<1->{\[v(p,m)=\max_{x\ge0,\,p\cdot x\le m}u(x).\]}\par
+\uncover<2->{Demand tells us \key{which bundle}; indirect utility tells us \key{the attained value}.}\par
+\uncover<3->{Even if $D(p,m)$ contains several bundles, every one gives the same value $v(p,m)$.}\par
+\uncover<4->{It is a function of the environment, not of a chosen bundle.}\par
+\end{frame}
+
+\begin{frame}[label=v-properties]{How the optimal value changes}
+\uncover<1->{\key{Homogeneity:} $v(tp,tm)=v(p,m)$.}\par
+\uncover<2->{\key{Prices:} raising prices componentwise cannot increase $v$.}\par
+\uncover<3->{\key{Wealth:} under LNS, raising $m$ strictly increases $v$.}\par
+\uncover<4->{\key{Continuity:} continuous $u$ gives continuous $v$ on the maintained positive-price, positive-wealth domain.}\par
+\end{frame}
+
+\begin{frame}[label=v-quasiconvex]{A less obvious property: quasiconvexity}
+\uncover<1->{For $0\le t\le1$, set $(p^t,m^t)=t(p,m)+(1-t)(q,n)$.}\par
+\uncover<2->{\[v(p^t,m^t)\le\max\{v(p,m),v(q,n)\}.\]}\par
+\uncover<3->{If a bundle is unaffordable at both endpoints, it is unaffordable at their mixture too.}\par
+\uncover<4->{So the mixed budget cannot deliver utility above both endpoint values.\quad\navto{proof-v-quasiconvex}{Proof}}\par
+\end{frame}
+
+\begin{frame}[label=solve-roadmap]{Before differentiating, inspect the economics}
+\uncover<1->{\key{Substitutes:} compare utility gained per unit of spending; a corner may be optimal.}\par
+\uncover<2->{\key{Complements:} look for useful proportions; the optimum may be a kink.}\par
+\uncover<3->{\key{Smooth interior problem:} marginal conditions can identify a candidate.}\par
+\uncover<4->{Always check feasibility, boundary cases and a reason why the candidate is globally optimal.}\par
+\end{frame}
+
+\begin{frame}[label=marginal-trade]{Why compare marginal utility per unit of money?}
+\uncover<1->{Shift a small amount of spending $\varepsilon$ from good $j$ to good $i$.}\par
+\uncover<2->{\[\Delta x_i=\varepsilon/p_i,\qquad\Delta x_j=-\varepsilon/p_j.\]}\par
+\uncover<3->{The first-order utility change is $\varepsilon\bigl(u_i/p_i-u_j/p_j\bigr)$.}\par
+\uncover<4->{If both goods are consumed in a smooth optimum, these marginal returns must agree.}\par
+\end{frame}
+
+\begin{frame}[label=lagrangian]{The Lagrangian: one multiplier per inequality}
+\uncover<1->{Write the constraints as $m-p\cdot x\ge0$ and $x_i\ge0$.}\par
+\uncover<2->{\[\mathcal L(x,\lambda,\mu)=u(x)+\lambda(m-p\cdot x)+\sum_i\mu_i x_i.\]}\par
+\uncover<3->{The multipliers satisfy $\lambda\ge0$, $\mu_i\ge0$.}\par
+\uncover<4->{For the smooth argument, assume $u$ is differentiable on an open neighbourhood of the candidate.}\par
+\end{frame}
+
+\begin{frame}[label=stationarity]{Stationarity in quantities}
+\uncover<1->{At a smooth candidate,
+ \[u_i(x^*)-\lambda^*p_i+\mu_i^*=0\qquad\text{for each }i.\]}\par
+\uncover<2->{One common budget multiplier, but a separate multiplier for every nonnegativity bound.}\par
+\uncover<3->{Stationarity is only one group of conditions. We must also check signs, feasibility and slackness.}\par
+\end{frame}
+
+\begin{frame}[label=kkt]{The four Kuhn--Tucker groups}
+\uncover<1->{\key{Stationarity:} $u_i(x^*)-\lambda^*p_i+\mu_i^*=0$.}\par
+\uncover<2->{\key{Primal feasibility:} $p\cdot x^*\le m$, $x^*\ge0$.}\par
+\uncover<3->{\key{Dual feasibility:} $\lambda^*\ge0$, $\mu^*\ge0$.}\par
+\uncover<4->{\key{Complementary slackness:}
+ \[\lambda^*(m-p\cdot x^*)=0,\qquad\mu_i^*x_i^*=0.\]}\par
+\end{frame}
+
+\begin{frame}[label=slackness]{Complementary slackness: read the products}
+\uncover<1->{If the budget is slack, $m-p\cdot x^*>0$, then $\lambda^*=0$.}\par
+\uncover<2->{If $x_i^*>0$, then $\mu_i^*=0$.}\par
+\uncover<3->{If a multiplier is strictly positive, its constraint must bind.}\par
+\uncover<4->{Does a binding constraint always have a strictly positive multiplier?}\par
+\end{frame}
+
+\begin{frame}[label=interior]{For consumed goods: equal marginal returns}
+\uncover<1->{If $x_i^*>0$, slackness gives $\mu_i^*=0$, hence $u_i(x^*)=\lambda^*p_i$.}\par
+\uncover<2->{For two consumed goods with $u_j>0$,
+ \[\mathrm{MRS}_{ij}=\frac{u_i(x^*)}{u_j(x^*)}=\frac{p_i}{p_j}.\]}\par
+\uncover<3->{The subjective marginal exchange rate equals the market exchange rate.}\par
+\uncover<4->{This is an interior condition, not a universal rule for every optimum.}\par
+\end{frame}
+
+\begin{frame}[label=corners]{For a good at zero: an inequality}
+\uncover<1->{If $x_i^*=0$, stationarity and $\mu_i^*\ge0$ imply
+ \[u_i(x^*)\le\lambda^*p_i.\]}\par
+\uncover<2->{A consumed good has $u_i/p_i=\lambda$; an unconsumed good has $u_i/p_i\le\lambda$.}\par
+\uncover<3->{At a corner, the unavailable direction of selling a zero holding matters.}\par
+\uncover<4->{Why would a rule that sets every marginal return equal miss some solutions?}\par
+\end{frame}
+
+\begin{frame}[label=necessary-sufficient]{A candidate is not yet a solution}
+\uncover<1->{\key{Necessity:} a differentiable local optimum satisfies KKT under a constraint qualification.}\par
+\uncover<2->{Here $p\gg0$, $m>0$ make the active linear constraints regular, including at corners.\quad\navto{proof-cq}{Why?}}\par
+\uncover<3->{\key{Sufficiency:} if $u$ is differentiable and concave, a feasible KKT point is a global optimum.}\par
+\uncover<4->{Quasiconcavity alone does not make every stationary point optimal.\quad\navto{proof-kkt-sufficient}{Sufficiency proof}\quad\navto{proof-kkt-trap}{Counterexample}}\par
+\end{frame}
+
+\begin{frame}[label=saddle]{Why saddle points enter the problem}
+\uncover<1->{A saddle maximises the Lagrangian in $x$ and minimises it in the nonnegative multipliers:}\par
+\uncover<2->{\[\mathcal L(x,\lambda^*,\mu^*)\le\mathcal L(x^*,\lambda^*,\mu^*)\le\mathcal L(x^*,\lambda,\mu).\]}\par
+\uncover<3->{A global saddle gives a feasible optimum and complementary slackness.}\par
+\uncover<4->{Concavity links KKT to this global maximisation.\quad\navto{proof-saddle}{Details}}\par
+\end{frame}
+
+\begin{frame}[label=checkpoint]{Checkpoint}
+\uncover<1->{What established existence? What could establish uniqueness?}\par
+\uncover<2->{Which KKT condition handles a zero quantity?}\par
+\uncover<3->{When is a KKT solution sufficient for global optimality?}\par
+\uncover<4->{What can go wrong if we check only the interior first-order equations?}\par
+\end{frame}
+
+\begin{frame}[label=cd-interior]{Example 1: Cobb--Douglas}
+\uncover<1->{\[u(x)=x_1^{\alpha}x_2^{1-\alpha},\qquad0<\alpha<1.\]}\par
+\uncover<2->{A boundary bundle gives zero utility. A strictly positive affordable bundle gives positive utility.}\par
+\uncover<3->{Therefore every optimum is strictly positive. The nonnegativity multipliers are zero.}\par
+\uncover<4->{Now an interior method is justified; it was not assumed at the start.}\par
+\end{frame}
+
+\begin{frame}[label=cd-log]{Choose a convenient representation}
+\uncover<1->{Maximising $u$ is equivalent, at the positive optimum, to maximising
+ \[\widetilde u(x)=\alpha\log x_1+(1-\alpha)\log x_2.\]}\par
+\uncover<2->{\[\mathcal L=\alpha\log x_1+(1-\alpha)\log x_2+\lambda(m-p_1x_1-p_2x_2).\]}\par
+\uncover<3->{The log representation is concave on the positive domain.}\par
+\uncover<4->{The bundle does not change, but the numerical utility and multiplier generally do.}\par
+\end{frame}
+
+\begin{frame}[label=cd-solve]{Solve the interior conditions}
+\uncover<1->{\[\frac{\alpha}{x_1}=\lambda p_1,\qquad\frac{1-\alpha}{x_2}=\lambda p_2.\]}\par
+\uncover<2->{Thus $p_1x_1=\alpha/\lambda$ and $p_2x_2=(1-\alpha)/\lambda$.}\par
+\uncover<3->{Budget exhaustion gives $m=1/\lambda$, hence $\lambda=1/m$.}\par
+\uncover<4->{\[x_1(p,m)=\frac{\alpha m}{p_1},\qquad x_2(p,m)=\frac{(1-\alpha)m}{p_2}.\]}\par
+\end{frame}
+
+\begin{frame}[label=cd-shares]{Interpret the solution}
+\uncover<1->{\[\frac{p_1x_1}{m}=\alpha,\qquad\frac{p_2x_2}{m}=1-\alpha.\]}\par
+\uncover<2->{Expenditure shares are constant in this specification.}\par
+\uncover<3->{Demand is homogeneous of degree zero and exhausts the budget.}\par
+\uncover<4->{If $\alpha=1/2$, $p=(2,1)$ and $m=12$, demand is $(3,6)$.}\par
+\uncover<5->{Which of these predictions is a modelling restriction rather than an accounting identity?}\par
+\end{frame}
+
+\begin{frame}[label=cd-check]{A price counterfactual}
+\uncover<1->{Keep $\alpha=1/2$ and $m=12$. Raise $p_1$ from $2$ to $3$, holding $p_2=1$.}\par
+\uncover<2->{What are the new quantities? The spending shares? The attained raw utility?}\par
+\uncover<3->{Does an unchanged quantity of good 2 mean that its utility contribution is unchanged?}\par
+\end{frame}
+
+\begin{frame}[label=substitutes]{Example 2: perfect substitutes}
+\uncover<1->{\[u(x)=a x_1+b x_2,\qquad a,b>0.\]}\par
+\uncover<2->{Compare $a/p_1$ and $b/p_2$: utility gained per unit of spending.}\par
+\uncover<3->{If $a/p_1>b/p_2$, buy $(m/p_1,0)$. If the inequality reverses, buy $(0,m/p_2)$.}\par
+\uncover<4->{If the ratios are equal, every point on the budget line is optimal.}\par
+\end{frame}
+
+\begin{frame}[label=corner-check]{Verify a corner with the full KKT system}
+\uncover<1->{Let $u(x)=2x_1+x_2$, $p=(3,1)$ and $m=12$.}\par
+\uncover<2->{The spending returns are $2/3$ and $1$, so $x^*=(0,12)$.}\par
+\uncover<3->{Stationarity and slackness give $\lambda=1$, $\mu_1=1$, $\mu_2=0$.}\par
+\uncover<4->{Check: $2-3\lambda+\mu_1=0$, $1-\lambda+\mu_2=0$.}\par
+\uncover<5->{The zero quantity is optimal precisely because its marginal return is too low.}\par
+\end{frame}
+
+\begin{frame}[label=ties]{Equal returns: a whole set of demand}
+
+\begin{columns}[c]
+\column{.52\textwidth}
+\begin{tikzpicture}\begin{axis}[nes,width=7.1cm,height=5cm,xmax=7,ymax=13,xtick={0,3,6},ytick={0,6,12}]
+\addplot[NESblue] coordinates {(0,12) (6,0)};
+\uncover<2->{\addplot[NESred,line width=3pt] coordinates {(0,12) (6,0)};}
+\node[above right,font=\small] at (axis cs:1,10) {$2x_1+x_2=12$};
+\end{axis}\end{tikzpicture}
+\column{.44\textwidth}
+\uncover<1->{$u=2x_1+x_2$, $p=(2,1)$, $m=12$.}
+\uncover<2->{\par Every budget-line bundle gives utility $12$.}
+\uncover<3->{\par $D(p,m)$ is a segment, while $v(p,m)=12$ is a single number.}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}[label=complements]{Example 3: perfect complements}
+\uncover<1->{\[u(x)=\min\{x_1,x_2\}.\]}\par
+\uncover<2->{To reach utility $t$, both quantities must be at least $t$, costing at least $(p_1+p_2)t$.}\par
+\uncover<3->{\[x_1^*=x_2^*=\frac{m}{p_1+p_2}.\]}\par
+\uncover<4->{At $p=(2,1)$ and $m=12$, the optimum is $(4,4)$.}\par
+\uncover<5->{The optimum is a kink: the smooth stationarity formula does not apply there.}\par
+\end{frame}
+
+\begin{frame}[label=quasilinear]{Example 4: a boundary changes the regime}
+\uncover<1->{\[u(a,y)=a+4\sqrt y,\qquad a+y\le m,\quad a,y\ge0.\]}\par
+\uncover<2->{\[y^*=\min\{m,4\},\qquad a^*=m-y^*.\]}\par
+\uncover<3->{If $m>4$: $a^*>0$, $\lambda=1$, and extra wealth goes to $a$.}\par
+\uncover<4->{If $0<m<4$: $a^*=0$, $\lambda=2/\sqrt m>1$, $\mu_a=\lambda-1>0$.}\par
+\end{frame}
+
+\begin{frame}[label=solving-checklist]{A practical solution checklist}
+\uncover<1->{\key{1. Diagnose:} domain, continuity, corners, kinks, satiation.}\par
+\uncover<2->{\key{2. Establish:} existence, and uniqueness if justified.}\par
+\uncover<3->{\key{3. Solve:} geometry, a useful substitution or the relevant KKT cases.}\par
+\uncover<4->{\key{4. Verify:} feasibility, multiplier signs, slackness and global optimality.}\par
+\uncover<5->{\key{5. Interpret:} quantities, expenditure shares and reactions to parameters.}\par
+\end{frame}
+
+\begin{frame}[label=structural-counterfactual]{From a classroom solution to a structural model}
+\uncover<1->{Observed $p=(2,1)$, $m=12$, $x=(3,6)$ imply a spending share of $1/2$ on good 1.}\par
+\uncover<2->{\key{Within a Cobb--Douglas specification}, this suggests $\alpha=1/2$.}\par
+\uncover<3->{With the same preference parameter, $p_1=3$ predicts $x=(2,6)$.}\par
+\uncover<4->{Fitting one choice does not establish the functional form. Use more variation and test the restrictions.}\par
+\end{frame}
+
+\begin{frame}[label=v-cd]{Compute indirect utility in the same example}
+\uncover<1->{For the log representation, substitute the demands into $\widetilde u$:}\par
+\uncover<2->{\[v(p,m)=\alpha\log\frac{\alpha m}{p_1}+(1-\alpha)\log\frac{(1-\alpha)m}{p_2}.\]}\par
+\uncover<3->{\[v(p,m)=\log m-\alpha\log p_1-(1-\alpha)\log p_2+c_\alpha,\]}\par
+\uncover<4->{where $c_\alpha=\alpha\log\alpha+(1-\alpha)\log(1-\alpha)$.}\par
+\uncover<5->{\navto{proof-cd-general}{More than two goods}}\par
+\end{frame}
+
+\begin{frame}[label=v-kink]{A continuous value need not be differentiable}
+
+\begin{columns}[c]
+\column{.52\textwidth}
+\begin{tikzpicture}\begin{axis}[width=7.1cm,height=5cm,axis lines=left,xmin=.5,xmax=2,ymin=0,ymax=18,xlabel={$p_1$},ylabel={$v$},xtick={.5,1,2},ytick={0,8,16},tick label style={font=\scriptsize}]
+\addplot[NESblue,thick,domain=.5:1,samples=60] {8/x};
+\addplot[NESred,thick,domain=1:2] {8};
+\addplot[only marks,mark=*,NESgray] coordinates {(1,8)};
+\end{axis}\end{tikzpicture}
+\column{.44\textwidth}
+\uncover<1->{$u=x_1+x_2$, $p_2=1$, $m=8$.}
+\uncover<2->{\[v(p_1,1,8)=\frac{8}{\min\{p_1,1\}}.\]}
+\uncover<3->{\par At $p_1=1$, the consumer is indifferent along the budget line. The value has a kink.}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}[label=envelope-idea]{The envelope idea}
+\uncover<1->{When the environment changes, the chosen bundle changes too.}\par
+\uncover<2->{At a regular optimum, first-order adjustments of the choice do not add a separate first-order gain to the optimal value.}\par
+\uncover<3->{The envelope theorem reads the value effect from the parameter\textquoteright s direct entry in the Lagrangian.}\par
+\uncover<4->{We need appropriate regularity and a differentiable value; a kink is a warning.}\par
+\end{frame}
+
+\begin{frame}[label=envelope-formulas]{Differentiate the value, not the choice}
+\uncover<1->{At a regular optimum where the envelope formulas apply,
+ \[v_m(p,m)=\mathcal L_m=\lambda^*.\]}\par
+\uncover<2->{For a price,
+ \[v_{p_i}(p,m)=\mathcal L_{p_i}=-\lambda^*x_i^*.\]}\par
+\uncover<3->{The wealth effect is positive when $\lambda^*>0$; a higher price hurts in proportion to the quantity purchased.}\par
+\end{frame}
+
+\begin{frame}[label=shadow-price]{The budget multiplier has an interpretation}
+\uncover<1->{\[\lambda^*=v_m(p,m).\]}\par
+\uncover<2->{It is marginal utility from one extra unit of wealth: the value of relaxing the budget.}\par
+\uncover<3->{Its numerical size depends on the chosen utility scale.}\par
+\uncover<4->{A binding budget does not by itself imply $v_m>0$.\quad\navto{zero-shadow}{A counterexample}}\par
+\end{frame}
+
+\begin{frame}[label=roy]{Roy’s identity: recover demand from value}
+\uncover<1->{Under the maintained consumer assumptions, suppose $v$ is differentiable at $(p,m)$ and $v_m(p,m)>0$.}\par
+\uncover<2->{\[x_i(p,m)=-\frac{v_{p_i}(p,m)}{v_m(p,m)}.\]}\par
+\uncover<3->{Use $v_{p_i}=-\lambda x_i$ and $v_m=\lambda$; the multiplier cancels.}\par
+\uncover<4->{Under these conditions the optimal quantity vector is unique.\quad\navto{proof-roy}{Derivation}}\par
+\end{frame}
+
+\begin{frame}[label=roy-example]{Check Roy in the Cobb--Douglas example}
+\uncover<1->{\[v=\log m-\alpha\log p_1-(1-\alpha)\log p_2+c_\alpha.\]}\par
+\uncover<2->{\[v_m=1/m,\qquad v_{p_1}=-\alpha/p_1,\qquad v_{p_2}=-(1-\alpha)/p_2.\]}\par
+\uncover<3->{\[x_1=-\frac{-\alpha/p_1}{1/m}=\frac{\alpha m}{p_1}.\]}\par
+\uncover<4->{Likewise $x_2=(1-\alpha)m/p_2$. The demand agrees with the direct solution.}\par
+\end{frame}
+
+\begin{frame}[label=roy-scale]{Demand survives a change of utility scale}
+\uncover<1->{If $\widehat v=f(v)$ with $f^{\prime}(v)>0$, then
+ \[\widehat v_{p_i}=f^{\prime}(v)v_{p_i},\qquad\widehat v_m=f^{\prime}(v)v_m.\]}\par
+\uncover<2->{The common factor cancels from Roy\textquoteright s ratio.}\par
+\uncover<3->{The multiplier changes, but demand does not.}\par
+\uncover<4->{A strictly increasing transformation can have a zero derivative at a point; then the differentiable ratio may be unavailable.}\par
+\end{frame}
+
+\begin{frame}[label=exit]{Checkpoint}
+\uncover<1->{Which assumptions guarantee existence? Which give uniqueness?}\par
+\uncover<2->{Why can $D(p,m)$ be multivalued while $v(p,m)$ is single-valued?}\par
+\uncover<3->{What replaces equality of marginal returns for an unconsumed good?}\par
+\uncover<4->{What justifies treating a KKT candidate as globally optimal?}\par
+\uncover<5->{What two differentiability/positivity conditions are needed to use Roy\textquoteright s formula?}\par
+\end{frame}
+
+\begin{frame}[label=reading]{Read next, and keep the core route clear}
+\uncover<1->{\key{Varian:} \emph{Intermediate Microeconomics: A Modern Approach}, 9th edition (2014), Chapter 5 \emph{Choice} and Chapter 6 \emph{Demand}.}\par
+\uncover<2->{\key{Advanced:} Mas-Colell, Whinston and Green (1995), Chapter 3, section 3.D \emph{The Utility Maximization Problem}; the Mathematical Appendix on constrained optimisation.}\par
+\uncover<3->{The next course block develops expenditure minimisation, Hicksian demand and duality. Reserve slides follow.}\par
+\uncover<4->{Homework 1 is issued after lecture block 3, according to the updated course schedule.}\par
+\end{frame}
+
+\appendix
+
+\begin{frame}[label=preview-two-problems]{Next block: two ways to ask the consumer question}
+\uncover<1->{\key{Utility maximisation:} given $p,m$, how much utility can the consumer attain?}\par
+\uncover<2->{\key{Expenditure minimisation:} given $p,\bar u$, how little spending attains the target?}\par
+\uncover<3->{One fixes resources; the other fixes a level of the same preferences.}\par
+\end{frame}
+
+\begin{frame}[label=preview-emp]{Expenditure minimisation}
+\uncover<1->{\[e(p,\bar u)=\min_{x\ge0,\,u(x)\ge\bar u}p\cdot x.\]}\par
+\uncover<2->{\[H(p,\bar u)=\operatorname*{arg\,min}_{x\ge0,\,u(x)\ge\bar u}p\cdot x.\]}\par
+\uncover<3->{$e$ is the expenditure function; $H$ is the Hicksian demand correspondence.}\par
+\uncover<4->{Assume the target is attainable. A singleton is denoted $h(p,\bar u)$.}\par
+\end{frame}
+
+\begin{frame}[label=preview-existence]{Why an unbounded feasible set can still have a minimum}
+\uncover<1->{Assume $p\gg0$, continuous $u$, and pick a bundle $\widehat x$ with $u(\widehat x)\ge\bar u$.}\par
+\uncover<2->{Only consider target-feasible bundles with $p\cdot x\le p\cdot\widehat x$.}\par
+\uncover<3->{This set is nonempty, closed and bounded, hence compact.}\par
+\uncover<4->{A continuous cost attains a minimum there; excluded bundles are more expensive.\quad\navto{proof-emp}{Details}}\par
+\end{frame}
+
+\begin{frame}[label=preview-h-properties]{Hicksian demand: basic properties}
+\uncover<1->{\key{Price homogeneity:} $H(tp,\bar u)=H(p,\bar u)$ for $t>0$.}\par
+\uncover<2->{\key{No excess utility:} if $\bar u\ge u(0)$, every minimiser attains exactly $\bar u$.}\par
+\uncover<3->{Convex preferences give a convex minimiser set; strict convexity, with the maintained conditions, gives uniqueness.}\par
+\uncover<4->{No excess utility uses continuity and positive prices, not LNS.}\par
+\end{frame}
+
+\begin{frame}[label=preview-e-properties]{The expenditure function has a different curvature}
+\uncover<1->{\key{Homogeneity of degree one:} $e(tp,\bar u)=t e(p,\bar u)$.}\par
+\uncover<2->{It is nondecreasing in prices and, above $u(0)$ on attainable targets, strictly increasing in the target.}\par
+\uncover<3->{With continuous utility and LNS, expenditure is continuous on the positive-price, attainable-target domain.}\par
+\uncover<4->{\key{Concavity in prices:}
+ \[e(tp+(1-t)q,\bar u)\ge t e(p,\bar u)+(1-t)e(q,\bar u).\]}\par
+\uncover<5->{It is the infimum of linear cost functions.\quad\navto{proof-expenditure-properties}{Proofs}}\par
+\end{frame}
+
+\begin{frame}[label=preview-compensated]{Fixed wealth versus fixed utility}
+
+\begin{columns}[c]
+\column{.54\textwidth}
+\begin{tikzpicture}\begin{axis}[nes,width=7.5cm,height=5.2cm,xmax=9,ymax=12,xtick={0,2,4,8},ytick={0,4,8,12}]
+\addplot[NESblue] coordinates {(0,8) (8,0)};
+\uncover<2->{\addplot[NESred] coordinates {(0,8) (4,0)};}
+\uncover<3->{\addplot[NESgray,dashed] coordinates {(0,11.3137) (5.65685,0)};\addplot[NESblue,domain=1.34:9,samples=90] {16/x};}
+\addplot[only marks,mark=*,NESblue] coordinates {(4,4)};
+\uncover<2->{\addplot[only marks,mark=square*,NESred] coordinates {(2,4)};}
+\uncover<3->{\addplot[only marks,mark=triangle*,NESgray] coordinates {(2.82843,5.65685)};}
+\end{axis}\end{tikzpicture}
+\column{.41\textwidth}
+\uncover<1->{$u=\sqrt{x_1x_2}$; initially $p=(1,1)$, $m=8$, $x=(4,4)$.}
+\uncover<2->{\par Raise $p_1$ to $2$: Marshallian demand at the same wealth is $(2,4)$.}
+\uncover<3->{\par To keep utility $4$, spend $8\sqrt2$ and buy $(2\sqrt2,4\sqrt2)$.}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}[label=preview-duality]{Two identities to develop next time}
+\uncover<1->{Under continuous LNS preferences, positive prices and an attainable target $\bar u>u(0)$:}\par
+\uncover<2->{\[e\bigl(p,v(p,m)\bigr)=m,\qquad v\bigl(p,e(p,\bar u)\bigr)=\bar u.\]}\par
+\uncover<3->{For unique demands,
+ \[h\bigl(p,v(p,m)\bigr)=x(p,m).\]}\par
+\uncover<4->{These connect the two problems; they are not an assumption that the consumer literally solves both.}\par
+\end{frame}
+
+\begin{frame}[label=preview-money-metric]{A monetary compensation question}
+\uncover<1->{Let $u^0=v(p^0,m)$. How much extra wealth restores this utility after a price change to $p^1$?}\par
+\uncover<2->{\[\mathrm{CV}=e(p^1,u^0)-m.\]}\par
+\uncover<3->{In the diagram, $\mathrm{CV}=8\sqrt2-8\approx3.31$.}\par
+\uncover<4->{A money-metric change is useful, but summing it across people still involves welfare judgements.}\par
+\end{frame}
+
+\begin{frame}[label=proof-walras]{Proof: LNS and budget exhaustion}
+\uncover<1->{Suppose an optimum $x^*$ has slack $\delta=m-p\cdot x^*>0$.}\par
+\uncover<2->{If $\|y-x^*\|<\delta/\|p\|$, then
+ \[p\cdot y\le p\cdot x^*+\|p\|\|y-x^*\|<m.\]}\par
+\uncover<3->{LNS supplies a strictly better such $y$ in the consumption domain, contradicting optimality.}\par
+\vfill\navto{walras}{Back to budget exhaustion}
+\end{frame}
+
+\begin{frame}[label=proof-unique]{Proof: uniqueness from strict convexity}
+\uncover<1->{Suppose distinct $x,y\in D(p,m)$. Their midpoint $z$ is feasible because the budget is convex.}\par
+\uncover<2->{Optimality gives $x\sim y$. Strict convexity of preferences implies $z\succ x$.}\par
+\uncover<3->{This contradicts $x$ being optimal. There is at most one optimum; existence gives a unique one.}\par
+\vfill\navto{unique-demand}{Back to uniqueness}
+\end{frame}
+
+\begin{frame}[label=proof-v-quasiconvex]{Proof: indirect utility is quasiconvex}
+\uncover<1->{Write $(p^t,m^t)=t(p,m)+(1-t)(q,n)$ with $0<t<1$.}\par
+\uncover<2->{If $x$ violates both budgets, then $p\cdot x>m$ and $q\cdot x>n$, hence $p^t\cdot x>m^t$.}\par
+\uncover<3->{Thus every bundle affordable at the mixture is affordable at at least one endpoint.}\par
+\uncover<4->{Its utility cannot exceed $\max\{v(p,m),v(q,n)\}$. Maximise over the mixed budget.}\par
+\vfill\navto{v-quasiconvex}{Back to the property}
+\end{frame}
+
+\begin{frame}[label=proof-cq]{Why the constraint qualification holds here}
+\uncover<1->{Active nonnegativity constraints have gradients $e_i$ for the coordinates at zero.}\par
+\uncover<2->{If the budget is slack, these vectors are linearly independent.}\par
+\uncover<3->{If the budget binds, $m>0$ implies some $x_j>0$. The budget gradient $-p$ has a nonzero $j$ coordinate, unlike every active bound gradient.}\par
+\uncover<4->{The active gradients are therefore linearly independent. This includes corner optima.}\par
+\vfill\navto{necessary-sufficient}{Back to necessity and sufficiency}
+\end{frame}
+
+\begin{frame}[label=proof-kkt-sufficient]{Proof: why concavity makes KKT sufficient}
+\uncover<1->{For feasible $y$, concavity and differentiability imply
+ \[u(y)-u(x^*)\le\nabla u(x^*)\cdot(y-x^*).\]}\par
+\uncover<2->{Stationarity gives $\nabla u(x^*)=\lambda^*p-\mu^*$.}\par
+\uncover<3->{Budget feasibility and slackness give $\lambda^*p\cdot(y-x^*)\le0$. Bound feasibility and slackness give $-\mu^*\cdot(y-x^*)\le0$.}\par
+\uncover<4->{Thus $u(y)\le u(x^*)$ for every feasible $y$.\quad}\par
+\vfill\navto{necessary-sufficient}{Back}
+\end{frame}
+
+\begin{frame}[label=proof-saddle]{Proof: a global saddle is an optimum}
+\uncover<1->{Minimisation in multipliers forces feasibility: a violated inequality would let its multiplier send $\mathcal L$ to $-\infty$.}\par
+\uncover<2->{It also forces complementary slackness, hence $\mathcal L(x^*,\lambda^*,\mu^*)=u(x^*)$.}\par
+\uncover<3->{For every feasible $y$,
+ \[u(y)\le\mathcal L(y,\lambda^*,\mu^*)\le\mathcal L(x^*,\lambda^*,\mu^*)=u(x^*).\]}\par
+\uncover<4->{Thus $x^*$ is optimal.\quad}\par
+\vfill\navto{saddle}{Back to saddle points}
+\end{frame}
+
+\begin{frame}[label=proof-kkt-trap]{A KKT point that is not optimal}
+\uncover<1->{Let $u(x)=(x-1)^3$, $p=1$, $m=2$, $x\ge0$.}\par
+\uncover<2->{At $x=1$, take $\lambda=\mu=0$. Stationarity, feasibility and complementary slackness all hold.}\par
+\uncover<3->{But $u(2)=1>0=u(1)$. The KKT point is not optimal.}\par
+\uncover<4->{The function is strictly increasing and quasiconcave. That alone does not make stationarity sufficient.\quad}\par
+\vfill\navto{necessary-sufficient}{Back}
+\end{frame}
+
+\begin{frame}[label=zero-shadow]{A binding budget with zero marginal value}
+\uncover<1->{Use $u(x)=(x-1)^3$, but now $p=1$, $m=1$.}\par
+\uncover<2->{The unique optimum is $x^*=1$: utility is strictly increasing. The budget binds.}\par
+\uncover<3->{Yet $u^{\prime}(1)=0$, $\lambda=0$, and $v_m(1,1)=0$.}\par
+\uncover<4->{Roy\textquoteright s ratio becomes $0/0$ at that point, although demand $x=m/p$ is perfectly well-defined.}\par
+\vfill\navto{shadow-price}{Back to the multiplier}
+\end{frame}
+
+\begin{frame}[label=proof-cd-general]{Cobb--Douglas with any positive exponent sum}
+\uncover<1->{Let $u(x)=\prod_{i=1}^L x_i^{a_i}$ with $a_i>0$ and $A=\sum_i a_i$.}\par
+\uncover<2->{After proving interiority, maximise $\sum_i a_i\log x_i$. Stationarity gives $x_i=a_i/(\lambda p_i)$.}\par
+\uncover<3->{Budget exhaustion gives $\lambda=A/m$, hence
+ \[x_i(p,m)=\frac{a_i}{A}\frac{m}{p_i}.\]}\par
+\uncover<4->{No restriction $A\le1$ is needed for this preference solution.\quad}\par
+\vfill\navto{cd-solve}{Back}
+\end{frame}
+
+\begin{frame}[label=proof-roy]{Roy without differentiating demand}
+\uncover<1->{Let $x^*\in D(p,m)$. LNS gives $p\cdot x^*=m$.}\par
+\uncover<2->{At any nearby price vector $q$, the bundle $x^*$ is affordable with wealth $q\cdot x^*$. Thus $F(q)=v(q,q\cdot x^*)\ge u(x^*)=F(p)$.}\par
+\uncover<3->{If $v$ is differentiable, $F$ has a minimum at $p$:
+ \[0=F_{q_i}(p)=v_{p_i}(p,m)+v_m(p,m)x_i^*.\]}\par
+\uncover<4->{If $v_m>0$, every optimiser satisfies the same Roy formula, so demand is unique.\quad}\par
+\vfill\navto{roy}{Back}
+\end{frame}
+
+\begin{frame}[label=proof-emp]{Proof: expenditure minimisation has a solution}
+\uncover<1->{Choose an attainable target and a feasible $\widehat x$. Let
+ \[S=\{x\ge0:u(x)\ge\bar u\}\cap\{x:p\cdot x\le p\cdot\widehat x\}.\]}\par
+\uncover<2->{$S$ is nonempty and compact when $u$ is continuous and $p\gg0$.}\par
+\uncover<3->{Cost is continuous, so it has a minimum on $S$. Every omitted feasible bundle costs more than $\widehat x$, so this is a global minimum.}\par
+\vfill\navto{preview-existence}{Back to the preview}
+\end{frame}
+
+\begin{frame}[label=proof-expenditure-properties]{Proof: homogeneity and price concavity of expenditure}
+\uncover<1->{Scaling prices multiplies every feasible cost by the same positive number:
+ \[e(tp,\bar u)=t e(p,\bar u),\qquad H(tp,\bar u)=H(p,\bar u).\]}\par
+\uncover<2->{Let $x^t$ minimise cost at $p^t=tp+(1-t)q$. It is feasible for the target at either price vector.}\par
+\uncover<3->{\[e(p^t,\bar u)=t p\cdot x^t+(1-t)q\cdot x^t\ge t e(p,\bar u)+(1-t)e(q,\bar u).\]}\par
+\vfill\navto{preview-e-properties}{Back to expenditure properties}
+\end{frame}
+\end{document}

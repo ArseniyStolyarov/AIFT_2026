@@ -1,0 +1,77 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{nesbeamer}[2026/10/26 NES-inspired lecture theme]
+% An original Beamer theme based on the supplied NES 2022 brand guidelines.
+% Compile with XeLaTeX. Logos are original supplied assets, used unchanged.
+\RequirePackage{fontspec}
+\RequirePackage{polyglossia}
+\setdefaultlanguage{english}
+\IfFontExistsTF{Museo Sans}{\setsansfont{Museo Sans}\newfontfamily\cyrillicfontsf{Museo Sans}}{%
+  \IfFontExistsTF{Segoe UI}{\setsansfont{Segoe UI}\newfontfamily\cyrillicfontsf{Segoe UI}}{%
+    \setsansfont{DejaVu Sans}\newfontfamily\cyrillicfontsf{DejaVu Sans}}}
+\setmainfont{DejaVu Sans}
+\newfontfamily\cyrillicfont{DejaVu Sans}
+\RequirePackage{amsmath,amssymb,mathtools,booktabs}
+\RequirePackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
+\RequirePackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\definecolor{NESblue}{RGB}{5,67,114}
+\definecolor{NESred}{RGB}{163,22,70}
+\definecolor{NESgray}{RGB}{80,78,83}
+\definecolor{NESsky}{RGB}{95,191,237}
+\definecolor{NESlight}{RGB}{218,218,218}
+\definecolor{NESpale}{RGB}{244,247,250}
+\setbeamercolor{normal text}{fg=NESgray,bg=white}
+\setbeamercolor{structure}{fg=NESblue}
+\setbeamercolor{alerted text}{fg=NESred}
+\setbeamercolor{frametitle}{fg=NESblue,bg=white}
+\setbeamercolor{block title}{fg=NESblue,bg=white}
+\setbeamercolor{block body}{fg=NESgray,bg=white}
+\setbeamercolor{block title alerted}{fg=NESred,bg=white}
+\setbeamercolor{block body alerted}{fg=NESgray,bg=white}
+\setbeamerfont{frametitle}{size=\Large,series=\bfseries}
+\setbeamerfont{block title}{series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize item}{\small\raisebox{.2ex}{\color{NESred}\rule{.65ex}{.65ex}}}
+\setbeamertemplate{itemize subitem}{\color{NESblue}\textbullet}
+\setbeamertemplate{blocks}[default]
+\setbeamersize{text margin left=9mm,text margin right=9mm}
+\setlength{\parskip}{.2em}
+\setbeamertemplate{frametitle}{%
+  \vspace{3mm}\begin{minipage}[c]{.84\textwidth}
+  \raggedright\usebeamerfont{frametitle}\insertframetitle
+  \end{minipage}\hfill
+  \begin{minipage}[c]{.085\textwidth}\includegraphics[width=\linewidth]{assets/nes-english.pdf}\end{minipage}
+  \par\vspace{2mm}{\color{NESlight}\hrule height .35pt}\vspace{1mm}}
+\setbeamertemplate{footline}{%
+  \hspace{9mm}\begin{minipage}{.87\paperwidth}
+  \vspace{1mm}{\color{NESlight}\hrule height .3pt}\vspace{1.5mm}
+  \fontsize{6.5}{8}\selectfont\color{NESgray}AIFT · Microeconomics\hfill
+  Arseniy Stolyarov\hfill\insertframenumber\par\vspace{2mm}
+  \end{minipage}}
+\newcommand{\key}[1]{\textcolor{NESblue}{\textbf{#1}}}
+\newcommand{\question}[1]{\par\medskip{\color{NESred}#1}\par}
+\newcommand{\takeaway}[1]{\par\medskip\textbf{#1}\par}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\pref}{\succeq}
+\newcommand{\spref}{\succ}
+\newcommand{\ind}{\sim}
+\newcommand{\sectioncard}[3]{%
+  {\setbeamercolor{background canvas}{bg=white}
+  \begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+  \node[anchor=north east] at ([xshift=-12mm,yshift=-10mm]current page.north east)
+  {\includegraphics[width=19mm]{assets/nes-english.pdf}};
+  \end{tikzpicture}
+  \vspace{13mm}\textcolor{NESred}{\large #1}\par\vspace{4mm}
+  {\color{NESblue}\Huge\bfseries #2\par}\vspace{4mm}
+  {\color{NESblue}\large #3\par}
+  \end{frame}}}
+\pgfplotsset{nes/.style={width=7cm,height=5cm,axis lines=left,
+  xmin=0,ymin=0,xmax=6,ymax=6,xtick={0,2,4,6},ytick={0,2,4,6},
+  xlabel={$x_1$},ylabel={$x_2$},tick label style={font=\scriptsize},
+  label style={font=\small},every axis plot/.append style={line width=1.3pt},
+  clip=true}}
+
+% Plain text navigation; no filled button or banner.
+\newcommand{\navto}[2]{\hyperlink{#1}{\textcolor{NESred}{\footnotesize $\rightarrow$ #2}}}

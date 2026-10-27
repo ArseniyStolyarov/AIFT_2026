@@ -3,7 +3,7 @@
 Lecture 1, New Economic School, 27 October 2026.
 Arseniy Stolyarov.
 
-## Download the materials
+## Lecture 1 — downloads
 
 - [Everything: PDFs and LaTeX sources (ZIP)](lectures/01_preferences_en/lecture01-complete.zip?raw=true)
 - [Presentation with click-by-click reveals (PDF)](lectures/01_preferences_en/lecture01.pdf?raw=true)
@@ -24,3 +24,17 @@ cd lectures/01_preferences_en
 
 Requires XeLaTeX, Beamer, TikZ/pgfplots, fontspec, polyglossia and DejaVu fonts.
 No network access or credentials are required to compile the documents.
+
+
+## Lecture 2 — The Consumer Problem
+
+Utility maximisation, Marshallian demand, indirect utility, the Lagrangian,
+Kuhn–Tucker conditions, worked examples and Roy's identity. Includes a marked
+reserve section on Hicksian demand and expenditure minimisation.
+
+- [Everything: PDFs and LaTeX sources (ZIP)](lectures/02_consumer_problem_en/lecture02-complete.zip?raw=true)
+- [Presentation with reveals (PDF)](lectures/02_consumer_problem_en/lecture02.pdf?raw=true)
+- [Handout without animation (PDF)](lectures/02_consumer_problem_en/handout.pdf?raw=true)
+- [Instructor notes and answers (PDF)](lectures/02_consumer_problem_en/instructor-notes.pdf?raw=true)
+
+[Source directory and build instructions](lectures/02_consumer_problem_en/).
