@@ -1,0 +1,1038 @@
+% !TeX program = xelatex
+\ifdefined\HANDOUT
+\documentclass[handout,aspectratio=169,10pt]{beamer}
+\else
+\documentclass[aspectratio=169,10pt]{beamer}
+\fi
+\usepackage{nesbeamer}
+\beamerdefaultoverlayspecification{<+->}
+\setbeamercovered{invisible}
+\hypersetup{pdftitle={Microeconomics: Preferences, Choice and Utility},pdfauthor={Arseniy Stolyarov},pdfsubject={AIFT, New Economic School, 2026/27}}
+\begin{document}
+\input{title-slide.tex}
+\input{economic-map.tex}
+
+% Stable ID: why
+\begin{frame}[label=why]{Why do we need microeconomics?}
+\begin{enumerate}[<+->]
+\item \key{Describe the world with explicit, reproducible models.} State assumptions, derive mechanisms and test predictions. Build structural models for real-world data and policy counterfactuals.
+\item \key{Start from people and firms.} Build aggregate outcomes from their decisions. After the Lucas critique (1976), microfoundations became central to much of modern macroeconomics. Central banks and research institutes use these tools regularly.
+\item \key{Make and challenge economic arguments in court.} In US antitrust and damages cases, economists write expert reports, build counterfactuals and scrutinise one another's evidence.
+\end{enumerate}
+\uncover<4->{\navto{amazon-case}{An Amazon pricing case: mechanism, evidence, counterfactual}}
+\end{frame}
+
+% Stable ID: course-overview
+\begin{frame}[label=course-overview]{The course at a glance}
+\begin{itemize}[<+->]
+\item \key{7 lecture blocks} and \key{7 seminars}.
+\item \key{3 homeworks} with equally weighted assessed components: \key{20\%}.
+\item \key{1 project}: an economic-puzzle essay and a short presentation: \key{10\%}.
+\item \key{1 final exam}: \key{70\%}.
+\end{itemize}
+\uncover<5->{\large Final grade $=0.20\,HW+0.10\,Project+0.70\,Exam$.}
+\end{frame}
+
+% Stable ID: homework
+\begin{frame}[label=homework]{Each homework has two parts}
+\begin{enumerate}[<+->]
+\item \key{A mock exam.} Exam-level difficulty and length. Try it honestly in one \key{120-minute sitting}. The TA will mark it as a real exam so that you can assess your readiness. \alert{Errors in this part do not reduce your final course grade.}
+\item \key{An assessed problem set.} Problems will, on average, be harder than exam questions. This part is marked in the usual way.
+\end{enumerate}
+\uncover<3->{\key{Write homework solutions by hand, on paper.}}
+\uncover<4->{\par Discuss approaches, but submit your own reasoning. If you use generative AI, disclose the tool and its role and be ready to explain every step.}
+\end{frame}
+
+% Stable ID: project
+\begin{frame}[label=project]{The project: Why does this happen?}
+\begin{enumerate}[<+->]
+\item Find a concrete economic phenomenon that puzzles you.
+\item Say \key{who chooses}, what they want and what constrains them.
+\item Explain the observation using one main economic mechanism.
+\item Give an alternative explanation or a prediction that could distinguish mechanisms.
+\item Use evidence and cite your sources.
+\end{enumerate}
+\uncover<6->{\key{Deliverables:} a 600--900-word essay and a short presentation of the idea.}
+\uncover<7->{\par Topic after lecture 2; mechanism after lecture 4; final essay after lecture 6, before lecture 7. Presentations and discussion at seminar 7.}
+\end{frame}
+
+% Stable ID: exam
+\begin{frame}[label=exam]{The final exam}
+\begin{itemize}[<+->]
+\item \key{Two hours}, in person, written and individual.
+\item \key{True / false statements with explanations.}
+\item \key{Problems} requiring a clear line of reasoning.
+\item \key{One qualitative economic question.}
+\item Explanations and economic interpretation matter, not just the final answer.
+\end{itemize}
+\uncover<6->{The date, detailed format and permitted materials will be announced in advance.}
+\end{frame}
+
+% Stable ID: contact
+\begin{frame}[label=contact]{Office hours and questions}
+\begin{itemize}[<+->]
+\item \key{Office hours: by request.}
+\item Message me on \key{Telegram} to arrange a time or ask a question.
+\item Email: \href{mailto:astolyarov@nes.ru}{astolyarov@nes.ru}.
+\item Ask during class when a definition, assumption or argument is unclear.
+\end{itemize}
+\end{frame}
+
+% Stable ID: course-topics
+\begin{frame}[label=course-topics]{Seven lecture blocks: the topic map}
+\small
+\begin{tabular}{@{}cp{6.0cm}p{7.0cm}@{}}
+\toprule
+ & Lecture & Seminar / milestone\\\midrule
+\uncover<1->{1 & Preferences, choice, utility & Relations, indifference curves, budgets}\\[1mm]
+\uncover<2->{2 & Utility maximisation; Marshallian demand & Lagrangian, indirect utility, Roy}\\[1mm]
+\uncover<3->{3 & Duality, Slutsky, revealed preference & Hicksian demand, expenditure, WARP; HW 1}\\[1mm]
+\uncover<4->{4 & Choice under risk & Expected utility, risk aversion}\\[1mm]
+\uncover<5->{5 & The firm & Technology, profit, costs, duality; HW 2}\\[1mm]
+\uncover<6->{6 & Monotone comparative statics & Topkis, supermodularity}\\[1mm]
+\uncover<7->{7 & Intertemporal choice and finance & Saving, borrowing; project presentations; HW 3}\\
+\bottomrule
+\end{tabular}
+\end{frame}
+
+% Stable ID: amazon-case
+\begin{frame}[label=amazon-case]{Amazon and off-platform prices}
+\key{FTC and states v. Amazon (complaint filed in 2023).}
+\begin{itemize}[<+->]
+\item The complaint alleges that Amazon penalised sellers for offering lower prices on competing online stores.
+\item A proposed mechanism: sellers raise off-platform prices to avoid losing visibility or sales on Amazon.
+\end{itemize}
+\uncover<3->{\small\key{A hypothetical seller:} unit cost $\$60$; platform fees $\$20$ on Amazon and $\$10$ on eBay. Prices $\$100$ and $\$90$ give the same $\$20$ margin.}
+\uncover<4->{\par What happens if selling for $\$90$ elsewhere is penalised? Who gains and loses?}
+\uncover<5->{\par Could platform investment or free-riding concerns justify a restriction? What evidence would distinguish the explanations?}
+\uncover<6->{\par\scriptsize\href{https://www.ftc.gov/news-events/news/press-releases/2023/09/ftc-sues-amazon-illegally-maintaining-monopoly-power}{FTC: complaint and alleged anti-discounting practices}\hfill\navto{why}{Back to why microeconomics}}
+\end{frame}
+
+% Stable ID: today
+\begin{frame}[label=today]{Today: from primitives to useful assumptions}
+\begin{columns}[T]
+\column{.47\textwidth}
+\key{Part I: describing choice}
+\begin{itemize}[<+->]\item Preference relations
+\item Choice correspondences and WARP
+\item Utility representation
+\item Ordinal meaning and its limits\end{itemize}
+\column{.47\textwidth}
+\key{Part II: useful assumptions}
+\begin{itemize}[<+->]\item Continuity and indifference curves
+\item Monotonicity, LNS and convexity
+\item Separability
+\item Quasilinearity\end{itemize}
+\end{columns}
+\end{frame}
+
+% Stable ID: wants-and-can
+\begin{frame}[label=wants-and-can]{To model a choice, we need to know...}
+\begin{center}
+\uncover<1->{\LARGE What do people \key{want}?\par}
+\vspace{8mm}
+\uncover<2->{\LARGE What \key{can} they do?\par}
+\vspace{8mm}
+\uncover<3->{\large Start with what they want.\par}
+\end{center}
+\end{frame}
+
+% Stable ID: choice-set
+\begin{frame}[label=choice-set]{What is the primitive?}
+\key{The choice set $X$: fully specified alternatives.}
+\begin{itemize}[<+->]
+\item \key{Discrete:} $X=\{\text{basic},\text{standard},\text{pro}\}$.
+\item \key{Continuous:} $X=\mathbb R_+^L$, quantities of $L$ commodities.
+\item \key{Discrete--continuous:} tea with $m$ units of milk, or coffee with $m$ units of milk:
+\[
+X=\{\text{tea},\text{coffee}\}\times\mathbb R_+.
+\]
+\item Quality, terms, timing and relevant context belong in the definition of an alternative.
+\end{itemize}
+\end{frame}
+
+% Stable ID: weak-preference
+\begin{frame}[label=weak-preference]{One relation is enough to start}
+\uncover<1->{A weak preference relation is a subset $\succeq\,\subseteq X\times X$.}
+\uncover<2->{\[
+x\succeq y\quad\Longleftrightarrow\quad
+\text{``$x$ is at least as good as $y$.''}
+\]}
+\uncover<3->{It is a statement about a pair of alternatives, not a numerical score or an observed purchase.}
+\uncover<4->{Some introductory textbooks also introduce $\sim$ or $\succ$ separately. Do we need them as additional primitives?}
+\end{frame}
+
+% Stable ID: derive-indifference
+\begin{frame}[label=derive-indifference]{Can we define indifference using only $\succeq$?}
+\uncover<1->{We already know how to say ``$x$ is at least as good as $y$''.}
+\uncover<2->{How could we say ``$x$ and $y$ are equally good''?}
+\uncover<3->{\[
+\boxed{x\sim y\iff x\succeq y\ \text{and}\ y\succeq x.}
+\]}
+\uncover<4->{\par Both comparisons hold. This differs from incomparability, where neither comparison holds.}
+\end{frame}
+
+% Stable ID: derive-strict
+\begin{frame}[label=derive-strict]{Can we define strict preference using only $\succeq$?}
+\uncover<1->{What extra condition makes ``at least as good'' become ``strictly better''?}
+\uncover<2->{\[
+\boxed{x\succ y\iff x\succeq y\ \text{and not }y\succeq x.}
+\]}
+\uncover<3->{\par A second independent preference primitive is unnecessary.}
+\uncover<4->{\par Does ``not $x\succ y$'' imply ``$y\succ x$''?}
+\uncover<5->{\par No: $x\sim y$ is already a counterexample. Without completeness, incomparability is another.}
+\end{frame}
+
+% Stable ID: rationality
+\begin{frame}[label=rationality]{What does rationality mean in a model?}
+\uncover<1->{Economists love to assume \key{rational preferences}. What consistency would a model actually need?}
+\uncover<2->{\par\key{Completeness:} for every $x,y\in X$, $x\succeq y$ or $y\succeq x$, or both.}
+\uncover<3->{\par\key{Transitivity:} for every $x,y,z\in X$,
+\[
+x\succeq y,\ y\succeq z\quad\Longrightarrow\quad x\succeq z.
+\]}
+\uncover<4->{\par\key{Rational preferences = completeness + transitivity.}}
+\uncover<5->{\par This does not require selfishness, perfect information or easy computation.}
+\end{frame}
+
+% Stable ID: restaurants
+\begin{frame}[label=restaurants]{Same customer, two restaurant menus}
+\begin{columns}[T]
+\column{.47\textwidth}
+\uncover<1->{\key{Restaurant A}\par Steak\\Duck confit with potato gratin\\Cutlet with mashed potatoes}
+\uncover<2->{\par Choice: \key{steak}.}
+\column{.47\textwidth}
+\uncover<3->{\key{Restaurant B}\par Steak\\Duck confit with potato gratin\\Seven-course tasting menu\\(lobster ravioli, venison with truffle jus)}
+\uncover<4->{\par Choice: \key{duck confit}.}
+\end{columns}
+\uncover<5->{\par How could you explain the change? What would you need to hold fixed?}
+\uncover<6->{\par Suppose the shared dishes, prices and information are identical, and each observed choice is the \key{unique favourite}. Can one fixed ranking explain both?}
+\end{frame}
+
+% Stable ID: relations
+\begin{frame}[label=relations]{Your turn: three relations}
+\begin{enumerate}[<+->]
+\item On $\mathbb R_+^2$: $x\succeq y\iff x_1+x_2\ge y_1+y_2$.
+\item On $\mathbb R^3$: $x\succeq y$ iff $x_i\ge y_i$ in \key{at least two of the three coordinates}.
+\item On $\mathbb R_+^2$: $x\succeq y\iff x_1\ge y_1$ and $x_2\ge y_2$.
+\end{enumerate}
+\uncover<4->{\par Check completeness and transitivity. Give a counterexample when a property fails.}
+\uncover<5->{\par\small For relation 2, try $(3,2,1)$, $(2,1,3)$ and $(1,3,2)$.}
+\end{frame}
+
+
+% Stable ID: condorcet
+\begin{frame}[label=condorcet]{Condorcet's paradox: rational voters, cyclic majority}
+\uncover<1->{Each voter has a complete and transitive ranking. Compare alternatives by simple majority.}
+\begin{columns}[c]
+\column{.43\textwidth}
+\begin{tabular}{ll}
+\toprule Voter & Individual ranking\\\midrule
+1 & $a\succ_1 b\succ_1 c$\\[2mm]
+2 & $c\succ_2 a\succ_2 b$\\[2mm]
+3 & $b\succ_3 c\succ_3 a$\\\bottomrule
+\end{tabular}
+\column{.52\textwidth}
+\begin{tikzpicture}[>=Stealth,scale=1.1]
+\node[draw=NESblue,circle,minimum size=9mm,font=\large] (a) at (0,1.3) {$a$};
+\node[draw=NESblue,circle,minimum size=9mm,font=\large] (b) at (2.8,1.3) {$b$};
+\node[draw=NESblue,circle,minimum size=9mm,font=\large] (c) at (1.4,-.9) {$c$};
+\uncover<2->{\draw[->,thick,NESblue] (a) -- node[above] {$2:1$} (b);}
+\uncover<3->{\draw[->,thick,NESblue] (b) -- node[below right] {$2:1$} (c);}
+\uncover<4->{\draw[->,thick,NESred] (c) -- node[below left] {$2:1$} (a);}
+\end{tikzpicture}
+\end{columns}
+\uncover<5->{\par Individual rationality need not produce a transitive collective ranking. No alternative beats every other alternative by majority.}
+\end{frame}
+
+% Stable ID: observed-choice
+\begin{frame}[label=observed-choice]{We see choices, not the whole preference relation}
+\uncover<1->{A theory of preferences is useful, but we do not observe everybody's complete ranking. Usually we see choices from particular menus.}
+\uncover<2->{\[
+C(\{A,B,C\})=\{A\},\qquad C(\{B,C\})=\{B\}.
+\]}
+\uncover<3->{These choices are consistent with $A\succ B\succ C$: the menu changed, while preferences need not have changed.}
+\uncover<4->{\par What must we observe besides a purchase before inferring anything about preferences?}
+\end{frame}
+
+% Stable ID: choice-rule
+\begin{frame}[label=choice-rule]{Choice as the primitive}
+\uncover<+->{Let $\mathcal D=2^X\setminus\{\varnothing\}$ be the collection of all nonempty menus.}
+
+\uncover<+->{\begin{block}{Choice correspondence}
+\[
+C:\mathcal D\to 2^X,\qquad \varnothing\ne C(A)\subseteq A.
+\]
+$C(A)$ records \key{all selected best alternatives}, not just one realised purchase.
+\end{block}}
+
+\uncover<+->{A preference relation induces}
+
+\uncover<+->{\[
+C(A;\succeq)=\{x\in A:x\succeq y\text{ for every }y\in A\}.
+\]}
+
+\uncover<+->{\small A best element need not exist on an infinite menu. Nonemptiness is an additional requirement.}
+\end{frame}
+
+% Stable ID: warp
+\begin{frame}[label=warp]{Consistency across menus: WARP}
+\uncover<+->{\begin{block}{Weak Axiom of Revealed Preference}
+For any menus $A,B$ and any $x,y\in A\cap B$,
+\[
+\begin{gathered}
+x\in C(A),\quad y\in C(B)\\[2pt]
+\Rightarrow\quad x\in C(B),\quad y\in C(A).
+\end{gathered}
+\]
+\end{block}}
+
+\begin{itemize}
+\item Both alternatives must be available in both menus.
+\item One cannot be strictly beaten in one menu and selected over its rival in another.
+\item This formulation concerns the \key{whole correspondence}, including ties.
+\end{itemize}
+\end{frame}
+
+% Stable ID: warp-example
+\begin{frame}[label=warp-example]{A two-menu inconsistency}
+\uncover<+->{\begin{columns}[T]
+\column{.47\textwidth}\begin{block}{Menu $A=\{a,b,c\}$}
+\[
+C(A)=\{a\}.
+\]
+$a$ is selected; $b$ is available but not selected.
+\end{block}
+\column{.47\textwidth}\begin{block}{Menu $B=\{a,b,d\}$}
+\[
+C(B)=\{b\}.
+\]
+$b$ is selected; $a$ is available but not selected.
+\end{block}
+\end{columns}}
+
+\uncover<+->{\question{Can a single complete and transitive preference relation generate both choice sets?}}
+
+\end{frame}
+
+% Stable ID: equivalence
+\begin{frame}[label=equivalence]{Preferences and choice: an equivalence}
+\uncover<+->{\begin{block}{Finite-set theorem}
+Let $X$ be finite and $C$ be nonempty on \key{every} nonempty subset of $X$.
+
+Then $C$ satisfies WARP if and only if there exists a complete, transitive relation $\succeq$ such that
+\[
+C(A)=C(A;\succeq)\quad\text{for every nonempty }A\subseteq X.
+\]
+\end{block}}
+
+\begin{itemize}
+\item Preferences $\to$ choices: select every best alternative.
+\item Choices $\to$ preferences: infer $x\succeq y$ from $x\in C(\{x,y\})$.
+\end{itemize}
+
+\uncover<+->{\navto{proof-equivalence}{Proof, if time permits}\qquad\navto{proof-warp}{Preferences $\to$ WARP}}
+\end{frame}
+
+% Stable ID: choice-data
+\begin{frame}[label=choice-data]{What choice data do not automatically reveal}
+\begin{enumerate}
+\item We often observe one realised choice, not \key{all} best alternatives.
+\item We observe only a sample of menus, not every subset of $X$.
+\item A consistency test on that sample need not establish global rationalisability.
+\end{enumerate}
+
+\uncover<+->{\takeaway{Observations, tie-breaking assumptions and the menu domain jointly determine what can be inferred.}}
+
+\uncover<+->{\small If we only know that an observed choice is optimal, universal indifference can rationalise any such observations. Additional structure matters.}
+\end{frame}
+
+% Stable ID: utility
+\begin{frame}[label=utility]{Utility is a representation}
+\uncover<+->{\begin{block}{Definition}
+$u:X\to\mathbb R$ represents $\succeq$ if, for every $x,y\in X$,
+\[
+x\succeq y\quad\Longleftrightarrow\quad u(x)\ge u(y).
+\]
+\end{block}}
+
+\uncover<+->{Then}
+
+\uncover<+->{\[
+C(A;\succeq)=\arg\max_{x\in A}u(x).
+\]}
+
+\begin{itemize}
+\item The numbers reproduce the entire ranking, including indifference.
+\item Representation turns choice into an optimisation problem.
+\end{itemize}
+\end{frame}
+
+% Stable ID: finite-utility
+\begin{frame}[label=finite-utility]{Representation on a finite set}
+\uncover<+->{Complete and transitive preferences on a finite $X$ admit a utility representation.}
+
+\begin{enumerate}
+\item Partition alternatives into indifference classes.
+\item Order the classes from worst to best.
+\item Assign increasing numerical labels.
+\end{enumerate}
+
+\uncover<+->{\[
+\underbrace{\{C,D\}}_{u=0}\ \prec\
+\underbrace{\{B\}}_{u=1}\ \prec\
+\underbrace{\{A,E\}}_{u=2}.
+\]}
+
+\uncover<+->{\takeaway{The ranking matters. The gaps between the labels do not.}}
+\end{frame}
+
+% Stable ID: ordinal
+\begin{frame}[label=ordinal]{Ordinal, not a happiness meter}
+\uncover<+->{\begin{center}
+\begin{tabular}{lrr}
+\toprule Alternative & $u$ & $v$\\\midrule
+$A$ & 3 & 100\\
+$B$ & 2 & 7\\
+$C$ & 1 & $-20$\\\bottomrule
+\end{tabular}
+\end{center}}
+
+\uncover<+->{Both functions represent $A\succ B\succ C$.}
+\end{frame}
+
+% Stable ID: transformations
+\begin{frame}[label=transformations]{Increasing transformations preserve the ranking}
+\uncover<1->{If $f$ is strictly increasing on $u(X)$, then $v=f\circ u$ represents the same preferences:
+\[
+u(x)\ge u(y)\iff f(u(x))\ge f(u(y)).
+\]}
+\uncover<2->{\par Examples: $u+5$, $30u$, $e^u$. Squaring works on a nonnegative range, not in general.}
+\uncover<3->{\par Why is a \key{weakly} increasing transformation not enough?}
+\end{frame}
+
+% Stable ID: interpersonal
+\begin{frame}[label=interpersonal]{No interpersonal comparisons for free}
+\uncover<+->{Yaromir and Zoya both prefer $x$ to $y$.}
+
+\begin{itemize}
+\item We may rescale Yaromir's utility without changing any of his choices.
+\item We may independently rescale Zoya's utility without changing her choices.
+\item The sum $u_Y+u_Z$ can change its ranking of social outcomes after those rescalings.
+\end{itemize}
+
+\uncover<+->{\takeaway{An individual ordinal representation does not, by itself, supply interpersonal units or a social welfare criterion.}}
+\end{frame}
+
+% Stable ID: lexicographic
+\begin{frame}[label=lexicographic]{Does every ranking have a utility representation?}
+\uncover<+->{Can every complete and transitive preference relation be represented by a real-valued utility function?}
+
+\uncover<+->{On $X=[0,1]^2$, compare the first coordinate first, and the second only to break ties:}
+
+\uncover<+->{\[
+x\succeq_{\mathrm{lex}}y\iff
+[x_1>y_1]\ \text{or}\ [x_1=y_1\text{ and }x_2\ge y_2].
+\]}
+
+\begin{itemize}
+\item Complete and transitive.
+\item Any gain in coordinate 1 outweighs any loss in coordinate 2.
+\item No real-valued utility function represents this relation on $[0,1]^2$.
+\end{itemize}
+
+\uncover<+->{\small The non-representation proof uses uncountably many disjoint intervals; see the appendix.}
+\end{frame}
+
+% Stable ID: checkpoint
+\begin{frame}[label=checkpoint]{Checkpoint}
+\begin{enumerate}[<+->]
+\item Is indifference a violation of completeness?
+\item Can a utility representation generate intransitive preferences?
+\item Does a different realised purchase prove that preferences changed?
+\item What changes when we move from finite to infinite choice sets?
+\end{enumerate}
+\end{frame}
+
+% Stable ID: continuity
+\begin{frame}[label=continuity]{Continuity: comparisons survive limits}
+\uncover<+->{On $X\subseteq\mathbb R^L$, preferences are continuous if}
+
+\uncover<+->{\[
+\begin{gathered}
+x^n\to x,\quad y^n\to y,\quad x^n\succeq y^n\ \forall n\\[2pt]
+\Rightarrow\quad x\succeq y.
+\end{gathered}
+\]}
+
+\uncover<+->{\begin{block}{A useful representation theorem}
+On $\mathbb R_+^L$, complete, transitive and continuous preferences admit a \key{continuous} utility representation.
+\end{block}}
+
+\uncover<+->{\small Lexicographic counterexample: $(1/n,0)\succ_{\mathrm{lex}}(0,1)$ for all $n$, but $(0,0)\prec_{\mathrm{lex}}(0,1)$ in the limit.}
+\end{frame}
+
+% Stable ID: indifference-curves
+\begin{frame}[label=indifference-curves]{Indifference curves: equally good bundles}
+\uncover<1->{For a given bundle $\bar x$, its indifference set is
+\[
+I(\bar x)=\{x:x\sim\bar x\}=\{x:u(x)=u(\bar x)\}.
+\]}
+\uncover<2->{\begin{columns}[c]
+\column{.5\textwidth}
+\begin{tikzpicture}\begin{axis}[nes,width=6.5cm,height=4.1cm]
+\addplot[NESblue,domain=.17:6,samples=70] {1/x};
+\addplot[NESblue,domain=.67:6,samples=70] {4/x};
+\addplot[NESred,domain=1.5:6,samples=70] {9/x};
+\node[above right] at (axis cs:3,3) {$u=3$};
+\end{axis}\end{tikzpicture}
+\column{.46\textwidth}
+These are level sets for the example $u(x)=\sqrt{x_1x_2}$.
+\par Different utility labels can describe the same indifference curves.
+\end{columns}}
+\end{frame}
+
+% Stable ID: monotonicity
+\begin{frame}[label=monotonicity]{Monotonicity: fix the notation first}
+\uncover<+->{Write $x\ge y$ if $x_i\ge y_i$ for every $i$, and $x\gg y$ if $x_i>y_i$ for every $i$.}
+
+\uncover<+->{\begin{block}{Two useful conditions}
+\key{Monotonicity:}\quad $x\gg y\Rightarrow x\succ y$.\\[1mm]
+\key{Strong monotonicity:}\quad $x\ge y,\ x\ne y\Rightarrow x\succ y$.
+\end{block}
+\begin{itemize}
+\item More of \key{every} good versus more of \key{at least one} good, with no losses.
+\item Neither is part of the definition of rationality.
+\item The assumption is inappropriate for a bad unless we redefine the commodity.
+\end{itemize}}
+\end{frame}
+
+% Stable ID: weak-monotonicity
+\begin{frame}[label=weak-monotonicity]{More of some goods: why at least as good?}
+
+\uncover<1->{Assume continuous, monotone preferences: increasing \key{every} good makes a bundle strictly better. What if only \key{some} quantities increase?}
+\uncover<2->{\par Suppose $x\ge y$. Add a tiny amount of every good to $x$:
+\[
+x^\delta=x+\delta(1,\ldots,1),\qquad\delta>0.
+\]}
+\uncover<3->{\[
+x^\delta\gg y\quad\Rightarrow\quad x^\delta\succ y.
+\]}
+\uncover<4->{\par Let the extra amount vanish: $\delta\downarrow0$. Since $x^\delta\to x$, continuity gives \key{$x\succeq y$}.}
+\uncover<5->{\par Why only weakly better? With $u=\min\{x_1,x_2\}$, $(2,3)$ and $(2,2)$ are equally good. Strictness can disappear in a limit.}
+\end{frame}
+
+% Stable ID: diagonal
+\begin{frame}[label=diagonal]{A constructive picture: the diagonal bundle}
+\uncover<+->{\begin{columns}[c]
+\column{.51\textwidth}
+\begin{tikzpicture}
+\begin{axis}[nes,xmax=5,ymax=5]
+\addplot[NESgray,dashed] coordinates {(0,0) (5,5)};
+\addplot[NESblue,domain=.8:5,samples=80] {4/x};
+\addplot[only marks,mark=*,NESred] coordinates {(1,4) (2,2)};
+\node[above right] at (axis cs:1,4) {$x$};
+\node[above right] at (axis cs:2,2) {$\alpha e$};
+\end{axis}
+\end{tikzpicture}
+\column{.45\textwidth}
+Now add monotonicity to rationality and continuity. Each $x$ is indifferent to a unique diagonal bundle $\alpha e$, where $e=(1,\ldots,1)$.
+\[
+u(x)=\alpha\quad\text{if }x\sim\alpha e.
+\]
+A useful way to \key{construct} a utility scale.\par\navto{proof-continuity}{Proof under monotonicity}
+\end{columns}}
+\end{frame}
+
+% Stable ID: lns
+\begin{frame}[label=lns]{Local nonsatiation: a better bundle nearby}
+\uncover<+->{\key{Coffee and cake:} could there be a bundle where every sufficiently small change makes you no better off?}
+
+\uncover<+->{For every $x\in X$ and every $\varepsilon>0$, there is $y\in X$ such that}
+
+\uncover<+->{\[
+\|y-x\|<\varepsilon,\qquad y\succ x.
+\]}
+
+\begin{itemize}
+\item There is no local maximum of any representing utility function.
+\item On $\mathbb R_+^L$: strong monotonicity $\Rightarrow$ monotonicity $\Rightarrow$ LNS.
+\item The converse implications need not hold.
+\end{itemize}
+
+\uncover<+->{\begin{block}{Example}
+$u(x_1,x_2)=x_1$ is locally nonsatiated but not strongly monotone.
+\end{block}}
+\end{frame}
+
+% Stable ID: why-lns
+\begin{frame}[label=why-lns]{Two bliss points}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[nes,width=10.8cm,height=5.6cm,xmax=7,ymax=6,axis equal image,
+ xtick={0,2,5,7},ytick={0,2,4,6}]
+\foreach \r in {.45,.85,1.3}{
+ \addplot[NESblue,domain=0:360,samples=90] ({2+\r*cos(x)},{2+\r*sin(x)});
+ \addplot[NESblue,domain=0:360,samples=90] ({5+\r*cos(x)},{4+\r*sin(x)});
+}
+\addplot[only marks,mark=*,mark size=2.8pt,NESred] coordinates {(2,2) (5,4)};
+\node[above right,text=NESred] at (axis cs:2,2) {$a$};
+\node[above right,text=NESred] at (axis cs:5,4) {$b$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\uncover<2->{Can these preferences be rational and continuous? Locally nonsatiated? Convex?}
+\end{frame}
+
+% Stable ID: convex
+\begin{frame}[label=convex]{Convex preferences: upper contour sets}
+\uncover<+->{Assume $X$ is convex. Preferences are convex if}
+
+\uncover<+->{\[
+x\succeq z,\ y\succeq z\quad\Longrightarrow\quad
+\lambda x+(1-\lambda)y\succeq z
+\]}
+
+\uncover<+->{for every $\lambda\in[0,1]$.}
+
+\uncover<+->{\begin{block}{Equivalent geometry}
+Every upper contour set $U(z)=\{x\in X:x\succeq z\}$ is convex.
+\end{block}}
+
+\uncover<+->{\question{If two distinct bundles are equally good, how does convexity rank their average?}}
+\end{frame}
+
+% Stable ID: strict-convex
+\begin{frame}[label=strict-convex]{Strict convexity: when mixing strictly helps}
+\uncover<+->{For \key{distinct} $x,y$, with $x\succeq z$, $y\succeq z$, strict convexity requires}
+
+\uncover<+->{\[
+\lambda x+(1-\lambda)y\succ z\qquad(0<\lambda<1).
+\]}
+
+\begin{itemize}
+\item In particular, mixing distinct indifferent bundles strictly improves on them.
+\item Weak convexity allows indifference to the mixture.
+\item ``A taste for variety'' depends on how goods and periods are defined.
+\end{itemize}
+
+\uncover<+->{\question{Half a sushi dinner and half a steak dinner, or some sushi and some steak over a month: is the same assumption equally plausible?}}
+\end{frame}
+
+% Stable ID: quasiconcavity
+\begin{frame}[label=quasiconcavity]{Convex preferences do not require concave utility}
+\uncover<+->{Convex preferences are equivalent to \key{quasiconcavity} of a representing $u$:}
+
+\uncover<+->{\[
+u(\lambda x+(1-\lambda)y)\ge\min\{u(x),u(y)\}.
+\]}
+
+\begin{itemize}
+\item Concavity is sufficient, but stronger than needed.
+\item Increasing transformations preserve quasiconcavity, not concavity.
+\end{itemize}
+
+\uncover<+->{\begin{block}{Same preferences, different curvature}
+$u(x)=x_1+x_2$ is concave. $v(x)=e^{x_1+x_2}$ is not concave. They represent the same convex preferences.
+\end{block}}
+\end{frame}
+
+% Stable ID: substitutes
+\begin{frame}[label=substitutes]{Perfect substitutes: a straight-line ranking}
+\uncover<+->{\begin{columns}[c]
+\column{.51\textwidth}
+\begin{tikzpicture}\begin{axis}[nes]
+\addplot[NESblue,domain=0:2] {2-x};
+\addplot[NESblue,domain=0:4] {4-x};
+\addplot[NESred,domain=0:6] {6-x};
+\addplot[only marks,mark=*,NESred] coordinates {(4,0) (0,4) (2,2)};
+\end{axis}\end{tikzpicture}
+\column{.45\textwidth}
+\[
+u(x)=x_1+x_2.
+\]
+\begin{itemize}\item Strongly monotone
+\item Convex, not strictly convex
+\item $(4,0)\sim(0,4)\sim(2,2)$\end{itemize}
+One unit of either good contributes the same amount to the ranking.
+\end{columns}}
+\end{frame}
+
+% Stable ID: complements
+\begin{frame}[label=complements]{Perfect complements: useful in fixed proportions}
+\uncover<+->{\begin{columns}[c]
+\column{.51\textwidth}
+\begin{tikzpicture}\begin{axis}[nes]
+\addplot[NESblue] coordinates {(1,6) (1,1) (6,1)};
+\addplot[NESblue] coordinates {(2,6) (2,2) (6,2)};
+\addplot[NESred] coordinates {(4,6) (4,4) (6,4)};
+\addplot[NESgray,dashed] coordinates {(0,0) (6,6)};
+\end{axis}\end{tikzpicture}
+\column{.45\textwidth}
+\[
+u(x)=\min\{x_1,x_2\}.
+\]
+\begin{itemize}\item Monotone, not strongly monotone
+\item Locally nonsatiated
+\item Convex, not strictly convex\end{itemize}
+\[
+(2,2)\sim(5,2).
+\]
+\end{columns}}
+\end{frame}
+
+% Stable ID: cobb-douglas
+\begin{frame}[label=cobb-douglas]{Cobb--Douglas: mixing can help}
+\uncover<+->{\begin{columns}[c]
+\column{.51\textwidth}
+\begin{tikzpicture}\begin{axis}[nes]
+\addplot[NESblue,domain=.17:6,samples=80] {1/x};
+\addplot[NESblue,domain=.67:6,samples=80] {4/x};
+\addplot[NESred,domain=1.5:6,samples=80] {9/x};
+\addplot[NESgray,dashed] coordinates {(1,4) (4,1)};
+\addplot[only marks,mark=*,NESred] coordinates {(1,4) (4,1) (2.5,2.5)};
+\end{axis}\end{tikzpicture}
+\column{.45\textwidth}
+\[
+u(x)=\sqrt{x_1x_2}.
+\]
+$u(1,4)=u(4,1)=2$, but
+\[
+u(2.5,2.5)=2.5.
+\]
+On $\mathbb R_{++}^2$: strongly monotone and strictly convex preferences.
+
+\small On $\mathbb R_+^2$, axis bundles have zero utility; the strict claims fail at the boundary.
+\end{columns}}
+\end{frame}
+
+% Stable ID: separability
+\begin{frame}[label=separability]{Separability: a ranking inside a larger bundle}
+\uncover<+->{Let $X=Y\times Z$. Think of $Y$ as food and $Z$ as housing and transport.}
+
+\uncover<+->{\begin{block}{Preferences over $Y$ do not depend on $Z$}
+For all $y,y'\in Y$ and $z,z'\in Z$,
+\[
+(y,z)\succeq(y',z)\quad\Longleftrightarrow\quad
+(y,z')\succeq(y',z').
+\]
+\end{block}}
+
+\begin{itemize}
+\item Your ranking of two food bundles does not depend on which car you have.
+\item Your \key{food budget} can still depend on car spending.
+\item The condition is not symmetric between $Y$ and $Z$.
+\end{itemize}
+\end{frame}
+
+% Stable ID: separable-aggregator
+\begin{frame}[label=separable-aggregator]{Separability: summarise a group of goods}
+
+\uncover<1->{Let $y=(y_1,y_2)$ be a food bundle and $z$ everything else. Suppose the ranking of food bundles does not depend on $z$.}
+\uncover<2->{\par Summarise the food bundle by one number $v(y)$, then combine it with $z$:
+\[
+u(y,z)=U(v(y),z).
+\]}
+\uncover<3->{\par For each fixed $z$, $U$ must increase strictly with the food index: a better food bundle must still be better.}
+\uncover<4->{\par\key{Example:}
+\[
+v(y)=\sqrt{y_1y_2},\qquad U(v,z)=v+\log(1+z).
+\]
+$(1,4)$ has food index $2$; $(1,1)$ has food index $1$.}
+\uncover<5->{\par At \key{any fixed $z$}, the first food bundle ranks higher. This does not fix the food budget.\quad\navto{proof-separability}{Formal construction}}
+\end{frame}
+
+% Stable ID: quasilinearity
+\begin{frame}[label=quasilinearity]{Quasilinearity: a numeraire plus a valuation}
+\uncover<+->{\[
+u(a,y)=a+v(y),\qquad a\ge0.
+\]}
+
+\begin{itemize}
+\item $a$ is money left over, or another \key{numeraire} good.
+\item $v(y)$ measures the valuation of $y$ in numeraire units.
+\item Adding the same feasible amount $t$ to both numeraire holdings preserves their ranking.
+\end{itemize}
+
+\uncover<+->{\[
+(a,y)\succeq(a',y')\iff(a+t,y)\succeq(a'+t,y').
+\]}
+
+\uncover<+->{\takeaway{A convenient assumption with economic content: money compensation is independent of the starting numeraire level.}}
+\end{frame}
+
+% Stable ID: quasilinear-income
+\begin{frame}[label=quasilinear-income]{No income effects: mind the boundary}
+
+\begin{columns}[T]
+\column{.55\textwidth}
+\uncover<1->{Let $u(a,y)=a+4\sqrt y$, with both prices equal to $1$ and $a+y\le m$.}
+\uncover<2->{\par Substitute the exhausted budget:
+\[
+\max_{0\le y\le m}\ m-y+4\sqrt y.
+\]
+The unconstrained best level is $y=4$.}
+\column{.4\textwidth}
+\uncover<3->{\begin{tabular}{crr}\toprule Income $m$ & $y^*$ & $a^*$\\\midrule
+8 & 4 & 4\\12 & 4 & 8\\2 & 2 & 0\\\bottomrule\end{tabular}}
+\end{columns}
+\uncover<4->{\par Thus $y^*=\min\{m,4\}$. Demand for $y$ is income-independent when the numeraire constraint is slack; income matters when that constraint binds.}
+
+\end{frame}
+
+% Stable ID: budget
+\begin{frame}[label=budget]{What can they do? The budget set}
+\uncover<1->{For $p_1,p_2>0$ and income $m>0$,
+\[
+B(p,m)=\{x\in\mathbb R_+^2:p_1x_1+p_2x_2\le m\}.
+\]}
+\uncover<2->{\par The budget line is $x_2=m/p_2-(p_1/p_2)x_1$. Its intercepts are $m/p_1$ and $m/p_2$; its slope is $-p_1/p_2$.}
+\uncover<3->{\par Higher income at fixed prices: a parallel outward shift.}
+\uncover<4->{\par A higher $p_1$ at fixed $p_2,m$: a rotation inwards around the vertical intercept.}
+\uncover<5->{\par Preferences describe wants; the budget describes possibilities. Next lecture: solve the consumer's optimisation problem.}
+\end{frame}
+
+% Stable ID: budget-geometry
+\begin{frame}[label=budget-geometry]{Budget geometry: income versus a price change}
+\begin{columns}[c]
+\column{.49\textwidth}
+\key{Higher income, fixed prices}
+\begin{tikzpicture}\begin{axis}[nes,width=6.2cm,height=4.6cm,xmax=9,ymax=9,xtick={0,4,8},ytick={0,4,8}]
+\addplot[NESblue] coordinates {(0,4) (4,0)};
+\uncover<2->{\addplot[NESred] coordinates {(0,8) (8,0)};}
+\end{axis}\end{tikzpicture}
+\column{.49\textwidth}
+\key{Higher $p_1$, fixed $p_2,m$}
+\begin{tikzpicture}\begin{axis}[nes,width=6.2cm,height=4.6cm,xmax=7,ymax=7,xtick={0,4,6},ytick={0,6}]
+\addplot[NESblue] coordinates {(0,6) (6,0)};
+\uncover<3->{\addplot[NESred] coordinates {(0,6) (4,0)};}
+\end{axis}\end{tikzpicture}
+\end{columns}
+\uncover<4->{The feasible set expands in the first case and shrinks in the second. Neither change is itself a change in preferences.}
+\end{frame}
+
+
+% Stable ID: full-consumer-picture
+\begin{frame}[label=full-consumer-picture]{Wants and possibilities in one picture}
+\begin{columns}[c]
+\column{.54\textwidth}
+\begin{tikzpicture}\begin{axis}[nes,width=7.5cm,height=5.3cm,xmax=9,ymax=9,
+ xtick={0,4,8},ytick={0,4,8}]
+\addplot[draw=none,fill=NESlight!25] coordinates {(0,0) (0,8) (8,0)} \closedcycle;
+\addplot[NESblue,thick] coordinates {(0,8) (8,0)};
+\uncover<2->{
+ \addplot[NESblue,domain=.45:9,samples=100] {4/x};
+ \addplot[NESblue,domain=1.78:9,samples=100] {16/x};
+ \addplot[NESgray,dashed,domain=4:9,samples=100] {36/x};
+ \node[above right,font=\small] at (axis cs:1,4) {$u=2$};
+ \node[above right,font=\small] at (axis cs:6,2.67) {$u=4$};
+ \node[above right,font=\small] at (axis cs:6,6) {$u=6$};
+}
+\uncover<3->{
+ \addplot[only marks,mark=*,mark size=2.5pt,NESred] coordinates {(4,4)};
+ \node[above right,text=NESred,font=\small] at (axis cs:4,4) {$(4,4)$};
+}
+\end{axis}\end{tikzpicture}
+\column{.42\textwidth}
+\uncover<1->{\key{Possibilities:}\par $p_1=p_2=1$, $m=8$.\par $x_1+x_2\le8$.}
+\uncover<2->{\par\key{Wants:}\par $u(x)=\sqrt{x_1x_2}$.}
+\uncover<3->{\par The best affordable bundle is $(4,4)$, with utility $4$.}
+\uncover<4->{\par Why is $u=6$ unattainable? Why settle for $u=2$?}
+\end{columns}
+\end{frame}
+
+% Stable ID: exit-ticket
+\begin{frame}[label=exit-ticket]{Exit ticket}
+\begin{enumerate}
+\item Why can a strictly increasing transformation change concavity but not preferences?
+\item Give rational preferences that are not strongly monotone.
+\item Does convexity imply that every mixture is strictly better?
+\item Does separability imply that spending on $Y$ is independent of income?
+\item What is the boundary caveat for quasilinear demand?
+\end{enumerate}
+
+\uncover<+->{Use a definition, example or short argument for each answer.}
+\end{frame}
+
+% Stable ID: reading
+\begin{frame}[label=reading]{What to keep, and what to read}
+
+\uncover<1->{\key{Main reading}\par Hal R. Varian, \emph{Intermediate Microeconomics: A Modern Approach}, \key{9th edition} (2014).}
+\begin{itemize}[<+(1)->]
+\item Chapter 2: \emph{Budget Constraint}.
+\item Chapter 3: \emph{Preferences}.
+\item Chapter 4: \emph{Utility}.
+\end{itemize}
+\uncover<5->{\par\key{Optional advanced reading}\par Mas-Colell, Whinston and Green, \emph{Microeconomic Theory} (1995).}
+\uncover<6->{\par Chapter 1: \emph{Preference and Choice}; Chapter 3: \emph{Classical Demand Theory}, sections 3.B--3.C on preferences and utility.}
+\end{frame}
+
+\appendix
+
+\begin{frame}[label=proof-warp]{Appendix: why rational preferences imply WARP}
+\uncover<+->{Suppose $x,y\in A\cap B$, $x\in C(A)$ and $y\in C(B)$.}
+
+\begin{enumerate}
+\item Because $y\in A$, optimality of $x$ gives $x\succeq y$.
+\item Because $x\in B$, optimality of $y$ gives $y\succeq x$.
+\item For every $z\in B$, $y\succeq z$; transitivity gives $x\succeq z$.
+\item Therefore $x\in C(B)$. The symmetric argument gives $y\in C(A)$.
+\end{enumerate}
+
+\uncover<+->{\takeaway{The argument uses transitivity and the full best-alternative interpretation of $C$. Finite menus ensure nonemptiness separately.}}
+\vfill\navto{equivalence}{Back to the lecture}
+\end{frame}
+
+\begin{frame}[label=proof-equivalence]{Appendix: reconstructing the relation from choice}
+\small
+\uncover<+->{Define $x\succeq y$ iff $x\in C(\{x,y\})$.}
+
+\begin{itemize}
+\item \key{Completeness:} pair menus have nonempty chosen sets.
+\item \key{Transitivity:} let $x\succeq y\succeq z$ and choose $w\in C(\{x,y,z\})$. WARP with the relevant pair menus first brings $y$ or $x$ into the triple, and then brings $x$ into it. WARP with $\{x,z\}$ gives $x\succeq z$.
+\item \key{Representation of choice:} if $x\in C(A)$, WARP with each $\{x,y\}$ yields $x\succeq y$. Conversely, if $x$ beats every $y\in A$, choose $y\in C(A)$ and use WARP with $\{x,y\}$ to obtain $x\in C(A)$.
+\end{itemize}
+
+\uncover<+->{\small Domain: all nonempty subsets of a finite $X$. Repeated alternatives in a triple give trivial cases.}
+\vfill\navto{equivalence}{Back to the lecture}
+\end{frame}
+
+\begin{frame}[label=proof-limited-data]{Appendix: limited data can hide a cycle}
+\uncover<+->{Suppose only pair menus are observed:}
+
+\uncover<+->{\[
+C(\{s,p\})=\{s\},\qquad C(\{p,r\})=\{p\},\qquad C(\{s,r\})=\{r\}.
+\]}
+
+\begin{itemize}
+\item Different observed menus share only one alternative.
+\item WARP has no nontrivial two-alternative comparison across these menus.
+\item Yet the singleton chosen sets require $s\succ p\succ r\succ s$.
+\item No complete, transitive preference relation generates these full chosen sets.
+\end{itemize}
+
+\uncover<+->{\takeaway{Passing WARP on an arbitrary observed domain does not imply rationalisability on the full domain.}}
+\vfill\navto{choice-data}{Back to the lecture}
+\end{frame}
+
+\begin{frame}[label=proof-lexicographic]{Appendix: why lexicographic utility does not exist}
+\uncover<+->{Suppose a real-valued $u$ represents lexicographic preferences on $[0,1]^2$.}
+
+\begin{enumerate}
+\item For each $t\in[0,1]$, $u(t,1)>u(t,0)$.
+\item Thus $I_t=(u(t,0),u(t,1))$ is a nonempty open interval.
+\item If $s>t$, then $u(s,0)>u(t,1)$, so $I_s$ and $I_t$ are disjoint.
+\item Each $I_t$ contains a rational number; distinct intervals contain distinct selected rationals.
+\end{enumerate}
+
+\uncover<+->{There cannot be an injection from uncountably many $t\in[0,1]$ into the countable rationals. Contradiction.}
+\vfill\navto{lexicographic}{Back to the lecture}
+\end{frame}
+
+\begin{frame}[label=proof-continuity]{Appendix: construction under monotonicity}
+\small
+\uncover<+->{Assume rationality, continuity and monotonicity on $\mathbb R_+^L$; let $e=(1,\ldots,1)$.}
+
+\begin{enumerate}
+\item Continuity and monotonicity imply $x\ge y\Rightarrow x\succeq y$.
+\item On $[0,M]$, $M=\max_i x_i$, the sets $\{a:ae\succeq x\}$ and $\{a:x\succeq ae\}$ are nonempty, closed and cover the interval. Connectedness makes them intersect.
+\item If $a>b$, $ae\succ be$; hence the indifferent coefficient is unique. Set $u(x)=a$.
+\item Transitivity and diagonal monotonicity give $x\succeq y\iff u(x)\ge u(y)$.
+\item If $x^n\to x$, the coefficients $u(x^n)$ are bounded. Every convergent subsequence has limit $u(x)$ by continuity and uniqueness. Therefore $u(x^n)\to u(x)$.
+\end{enumerate}
+\vfill\navto{diagonal}{Back to the lecture}
+\end{frame}
+
+\begin{frame}[label=proof-separability]{Appendix: separability in one construction}
+\small
+\uncover<+->{Fix $z_0$ and let $v(y)=u(y,z_0)$. For $t\in v(Y)$, pick $\hat y(t)$ with $v(\hat y(t))=t$, and define}
+
+\uncover<+->{\[
+U(t,z)=u(\hat y(t),z).
+\]}
+
+\begin{itemize}
+\item If two representatives have the same $t$, they are indifferent at $z_0$; independence makes them indifferent at every $z$. So $U$ is well-defined.
+\item Since $\hat y(v(y))$ and $y$ are indifferent at every $z$,
+\[
+U(v(y),z)=u(y,z).
+\]
+\item If $t>t'$, strict preference at $z_0$ carries to every $z$, so $U(t,z)>U(t',z)$.
+\end{itemize}
+
+\uncover<+->{\small The constructed aggregator has domain $v(Y)\times Z$.}
+\vfill\navto{separable-aggregator}{Back to the lecture}
+\end{frame}
+
+\begin{frame}[label=proof-quasilinearity]{Appendix: primitives behind quasilinearity}
+\footnotesize
+\uncover<+->{On $\mathbb R_+\times Y$, assume rationality, a worst $\bar y$, and:}
+
+\begin{enumerate}
+\item $(a,\bar y)\succeq(a',\bar y)\iff a\ge a'$.
+\item For every $y$, there exists $t\ge0$ with $(0,y)\sim(t,\bar y)$.
+\item Adding the same feasible amount to both numeraire holdings preserves comparisons in both directions.
+\end{enumerate}
+
+\uncover<+->{Define $v(y)$ by $(0,y)\sim(v(y),\bar y)$. Translation invariance gives}
+
+\uncover<+->{\[
+(a,y)\sim(a+v(y),\bar y).
+\]}
+
+\uncover<+->{Transitivity and condition 1 then imply}
+
+\uncover<+->{\[
+(a,y)\succeq(a',y')\iff a+v(y)\ge a'+v(y').
+\]}
+
+\uncover<+->{So $u(a,y)=a+v(y)$ represents preferences.}
+\vfill\navto{quasilinearity}{Back to the lecture}
+
+\end{frame}
+
+\begin{frame}[label=proof-budget]{Appendix: LNS and budget exhaustion}
+\small
+\uncover<+->{Suppose $p\gg0$, $x^*$ is optimal and preferences are locally nonsatiated.}
+
+\uncover<+->{If $p\cdot x^*<m$, let $\delta=m-p\cdot x^*>0$.}
+
+\uncover<+->{Whenever $y\in X$ satisfies $\|y-x^*\|<\delta/\|p\|$,}
+
+\uncover<+->{\[
+p\cdot y\le p\cdot x^*+\|p\|\|y-x^*\|<m.
+\]}
+
+\uncover<+->{LNS gives a strictly better $y$ within this neighbourhood. It is feasible, contradicting optimality.}
+
+\uncover<+->{\takeaway{LNS implies budget exhaustion at an existing optimum; it does not establish existence.}}
+\vfill\navto{why-lns}{Back to the lecture}
+\end{frame}
+
+\begin{frame}[label=proof-risk]{Appendix: increasing transformations and risk}
+\uncover<+->{Compare $A=2$ for sure with $B=0$ or $3$, each with probability $1/2$.}
+
+\uncover<+->{\[
+\mathbb E[A]=2>1.5=\mathbb E[B].
+\]}
+
+\uncover<+->{After the strictly increasing transformation $f(t)=e^t$,}
+
+\uncover<+->{\[
+\mathbb E[e^A]=e^2\approx7.39<\frac{1+e^3}{2}\approx10.54=\mathbb E[e^B].
+\]}
+
+\uncover<+->{\takeaway{The ranking of individual outcomes is unchanged, but the ranking of lotteries by expected transformed numbers changes. Ordinal deterministic utility and expected utility require different care.}}
+\vfill\navto{transformations}{Back to the lecture}
+\end{frame}
+
+\begin{frame}[label=exercise-solutions]{Appendix: answers to the relation exercise}
+\begin{enumerate}
+\item Sum of coordinates: complete and transitive, by the ordering of real numbers.
+\item At least two of three coordinates: complete, but not transitive. Let $a=(3,2,1)$, $b=(2,1,3)$, $c=(1,3,2)$. Then $a\succ b$, $b\succ c$, $c\succ a$.
+\item Componentwise comparison: transitive, but incomplete. $(2,1)$ and $(1,2)$ are incomparable.
+\end{enumerate}
+\vfill\navto{relations}{Back to the exercise}
+\end{frame}
+\end{document}

@@ -1,0 +1,51 @@
+\begin{frame}[label=economics-map]{Economics is bigger than this course}
+\centering
+\begin{tikzpicture}[x=1cm,y=.96cm,
+ card/.style={draw=NESlight,fill=white,rounded corners=2pt},
+ head/.style={anchor=north west,text=NESblue,font=\fontsize{7.2}{9}\selectfont\bfseries,inner sep=0pt,text width=3.05cm,align=left},
+ txt/.style={anchor=north west,text=NESgray,font=\fontsize{6.1}{8}\selectfont,inner sep=0pt,text width=3.05cm,align=left}]
+\node[anchor=west,font=\fontsize{8}{10}\selectfont,text=NESblue] at (0,6.05)
+ {One shared question, different lenses: \textbf{what shapes wages?}};
+\draw[card] (0.00,3.05) rectangle +(3.35,2.75);
+\node[head] at (0.12,5.65) {CLASSICAL};
+\node[txt] at (0.12,5.20) {Value and distribution\\Land rent; wages and profits\\Surplus and accumulation};
+\node[txt,text=NESblue] at (0.12,3.58) {Pay: shares of total output.};
+\draw[card] (3.55,3.05) rectangle +(3.35,2.75);
+\node[head] at (3.67,5.65) {MARXIAN};
+\node[txt] at (3.67,5.20) {Labour and surplus value\\Exploitation; accumulation\\Class and ownership};
+\node[txt,text=NESblue] at (3.67,3.58) {Pay: class and bargaining.};
+\draw[card] (7.10,3.05) rectangle +(3.35,2.75);
+\node[head] at (7.22,5.65) {NEOCLASSICAL};
+\node[txt] at (7.22,5.20) {Consumer and firm\\Risk; intertemporal choice\\Topkis: monotone statics};
+\node[txt] at (7.22,4.10) {General equilibrium\\Games and information};
+\node[txt,text=NESblue] at (7.22,3.58) {Pay: productivity and scarcity.};
+\draw[card] (10.65,3.05) rectangle +(3.35,2.75);
+\node[head] at (10.77,5.65) {AUSTRIAN};
+\node[txt] at (10.77,5.20) {Market process\\Dispersed knowledge\\Entrepreneurship};
+\node[txt,text=NESblue] at (10.77,3.58) {Pay: discovery and coordination.};
+\draw[card] (0.00,0.00) rectangle +(3.35,2.75);
+\node[head] at (0.12,2.60) {KEYNESIAN};
+\node[txt] at (0.12,2.15) {Effective demand\\Post-Keynesian uncertainty\\Financial instability};
+\node[txt,text=NESblue] at (0.12,0.53) {Pay: demand and employment.};
+\draw[card] (3.55,0.00) rectangle +(3.35,2.75);
+\node[head] at (3.67,2.60) {INSTITUTIONAL};
+\node[txt] at (3.67,2.15) {Rules and organisations\\Property rights\\Transaction costs};
+\node[txt,text=NESblue] at (3.67,0.53) {Pay: institutions and bargaining.};
+\draw[card] (7.10,0.00) rectangle +(3.35,2.75);
+\node[head] at (7.22,2.60) {BEHAVIOURAL};
+\node[txt] at (7.22,2.15) {Bounded rationality\\Prospect theory\\Social preferences};
+\node[txt,text=NESblue] at (7.22,0.53) {Pay: norms and reference points.};
+\draw[card] (10.65,0.00) rectangle +(3.35,2.75);
+\node[head] at (10.77,2.60) {EVOLUTIONARY};
+\node[txt] at (10.77,2.15) {Routines and selection\\Innovation\\Path dependence};
+\node[txt,text=NESblue] at (10.77,0.53) {Pay: changing technologies.};
+
+\visible<2->{
+ \draw[NESred,line width=1.6pt,rounded corners=3pt] (7.16,4.22) rectangle (10.37,5.32);
+ \node[anchor=south east,fill=NESred,text=white,rounded corners=1pt,
+ inner sep=.2mm,font=\fontsize{4.4}{5.2}\selectfont\bfseries] at (10.37,4.22) {THIS COURSE};
+}
+\pgfresetboundingbox
+\path[use as bounding box] (0,-.12) rectangle (14,6.28);
+\end{tikzpicture}
+\end{frame}

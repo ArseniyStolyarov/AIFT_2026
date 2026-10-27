@@ -1,0 +1,202 @@
+% !TeX program = xelatex
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=23mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{DejaVu Sans}
+\usepackage{xcolor,hyperref,enumitem}
+\definecolor{NESblue}{RGB}{5,67,114}
+\hypersetup{colorlinks=true,urlcolor=NESblue}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{3em}
+\setlength{\parskip}{5pt}
+\title{Microeconomics 1\\Instructor notes}
+\author{Arseniy Stolyarov}
+\date{27 October 2026}
+\begin{document}\maketitle
+
+\section*{Pacing and scope}
+The course overview remains logical slide 4. Slides reveal ideas in semantic steps; use the handout PDF to review final states without clicking through overlays. The Amazon case is a linked discussion detour from slide 3 and is also in the normal sequence after the course topic map.
+
+Allow roughly 25--35 minutes for introductions, administration and the case, 45--55 minutes for preferences and choice, and the remaining time for utility and its properties. This is a pacing menu, not a requirement to show every extension. Core material must include relations, rationality, representation, indifference curves and budget sets. The diagonal proof, the WARP proof, separability and quasilinearity can be shortened or skipped if discussion is productive. The source handouts are the adaptation basis; assigned reading is the textbook.
+
+\section*{Sources and the case}
+Adapted from the supplied Lecture 8: Consumers! (printed pp.119--132) and Lecture 9: Properties of Preferences (pp.133--148). Their provenance is retained here and in SOURCE\_NOTES.md, not on the student agenda or reading slide.
+
+The Amazon example uses the allegations in the FTC's 2023 complaint, not a supposed Amazon-versus-eBay judgment. The official FTC link is included. An attempted live retrieval from this environment was denied by the outbound proxy (HTTP 403), so no current case-status verification is claimed. All numerical fees in the example are hypothetical.
+
+\section*{Opening slides}
+1. Microeconomics: title, instructor, degree. 2. Economics map: eight selected traditions, no bottom note. Feminist and ecological economics are removed at the instructor's request; their removal is not a claim that those fields do not exist.
+
+\section*{Slide-by-slide notes}
+
+\subsection*{3. Why do we need microeconomics?}
+The Lucas critique concerns the policy dependence of reduced-form behavioural relationships. Say that much modern macro uses microfoundations, not that all macro after 1976 literally became micro. Legal reports are expert evidence, not necessarily academic journal articles. The Amazon case is a separate discussion slide, linked here and also placed after the course introduction.
+
+\subsection*{4. The course at a glance}
+Keep this as logical slide 4. Weights follow the syllabus: homework 20\%, essay/project 10\%, final exam 70\%. The short presentation is the lecturer's updated instruction; do not invent a separate presentation weight. Components in the formula are normalised to the same scale.
+
+\subsection*{5. Each homework has two parts}
+The formative mock is deliberately honest: the TA should not inflate the score to avoid disappointing students. Errors there carry no final-grade deduction. Do not invent bonuses, completion rules or a division of the 20\% beyond the lecturer's instructions. The ordinary assessed part supplies the normal homework assessment. Handwriting applies to homework solutions. AI disclosure follows the existing syllabus.
+
+\subsection*{6. The project: Why does this happen?}
+The project is an explanation of an observation, not a glossary entry. For example, explain a subscription tariff by a mechanism and identify a prediction, rather than just naming price discrimination. Essay length and milestones are retained from the syllabus. No unannounced presentation duration or new grading split is invented.
+
+\subsection*{7. The final exam}
+This matches the syllabus. Do not announce an open-book policy or a device policy that has not been specified. The mock part of each homework is meant to make the length and difficulty familiar.
+
+\subsection*{8. Office hours and questions}
+No Telegram handle is supplied, so none is invented. Use the programme's existing contact channel. The email comes from the provided syllabus.
+
+\subsection*{9. Seven lecture blocks: the topic map}
+The three homework releases now move one lecture block later: HW 1 after lecture 3, HW 2 after lecture 5, HW 3 after lecture 7. This is the lecturer's latest revision and supersedes the original 2/4/6 schedule. Project milestones are unchanged. No new submission deadline is invented.
+
+\subsection*{10. Amazon and off-platform prices}
+This is FTC and state plaintiffs versus Amazon, not Amazon suing eBay. eBay is a hypothetical rival platform in the illustration. The 2023 complaint alleges anti-discounting penalties; the slide does not describe a finding of liability or assert a current case status. The numerical fees and prices are invented for teaching, not observations about actual Amazon/eBay fee schedules. Possible mechanism: a seller on both platforms keeps off-platform prices high to avoid an Amazon penalty, weakening cross-platform competition. Possible defence to examine, not assume: platform investments or free-riding. Ask about prominence, fees, consumer search, multihoming, demand, prices, selection and a counterfactual. The official FTC URL is supplied, but an attempted live retrieval from this machine was blocked by its outbound proxy (HTTP 403); no successful current-source verification is claimed.
+
+\subsection*{11. Today: from primitives to useful assumptions}
+Source-handout references are removed from the student-facing agenda. The provenance remains in SOURCE\_NOTES.md and the instructor companion. Treat separability, the aggregator argument and the quasilinear numerical problem as extension material if the opening discussion runs long.
+
+\subsection*{12. To model a choice, we need to know...}
+Pause after each line. Preferences describe wants; feasible sets describe possibilities. Do not equate stated wants with observed preferences without specifying the alternative and context.
+
+\subsection*{13. What is the primitive?}
+The milk example combines a discrete product choice with a continuous quantity. If drink volume places an upper bound on milk, replace the nonnegative line by an appropriate interval. The displayed domain is a simplified illustration, not a claim that milk is unbounded in an actual cup.
+
+\subsection*{14. One relation is enough to start}
+Use the preference symbol succeq, not the numerical greater-than-or-equal symbol, to distinguish an abstract relation from its later utility representation. Everything else can be derived from this one weak relation.
+
+\subsection*{15. Can we define indifference using only $\succeq$?}
+Let the room propose the definition before revealing it. Completeness has not yet been assumed, so incomparability remains possible. Indifference is not the absence of a comparison.
+
+\subsection*{16. Can we define strict preference using only $\succeq$?}
+Ask students for the two directions explicitly. Keep indifference and strict preference on separate slides, as requested, so each is an actual discovery question.
+
+\subsection*{17. What does rationality mean in a model?}
+The prompt comes first, then reveal completeness and transitivity one at a time. Completeness implies reflexivity by taking x=y. The restaurant example follows immediately, but its direct lesson is cross-menu consistency, not a stand-alone proof of intransitivity.
+
+\subsection*{18. Same customer, two restaurant menus}
+Allow discussion before imposing the final assumptions. A compromise effect is natural: steak is the middle option in the first menu and the special is the middle option in the second. Quality, price, beliefs, the restaurant itself and tie-breaking can also differ in real data. With identical shared alternatives and unique favourites, the first menu implies steak strictly above special, the second the reverse; that violates a fixed-ranking/WARP account. Two observed purchases alone do not establish a three-alternative transitivity violation, and indifference with changing tie-breaking can explain both purchases if uniqueness is not known.
+
+\subsection*{19. Your turn: three relations}
+(1) Complete and transitive. (2) Complete: among three coordinate comparisons, at least two weakly favour one direction. Not transitive: a=(3,2,1) beats b=(2,1,3), b beats c=(1,3,2), and c beats a. (3) Transitive but incomplete: (2,1) and (1,2) are incomparable. This replaces the explicit cycle with a less obvious majority-comparison rule.
+
+\subsection*{20. Condorcet's paradox}
+Each voter has a strict, complete, transitive ranking: a>b>c, c>a>b, b>c>a. Voters 1 and 2 support a over b; voters 1 and 3 support b over c; voters 2 and 3 support c over a. The majority relation cycles. This is exactly the coordinate-majority logic of the preceding exercise, interpreted as three voters. A Condorcet winner would beat every other alternative by majority; none exists here. If time permits, compare sequential voting agendas: the final winner changes with the order of pairwise votes. This is not a claim that individual voters are intransitive or that every majority vote cycles.
+
+\subsection*{21. We see choices, not the whole preference relation}
+Answer: the feasible menu, attributes, prices, context and what the data actually record about ties. The displayed ranking is one consistent explanation, not an identified full ranking from these two choices. There is no Discuss label on the slide.
+
+\subsection*{22. Choice as the primitive}
+For the equivalence theorem we will restrict X to be finite and observe all nonempty menus. This avoids hiding an existence assumption for infinite sets. Give u(x)=x on (0,1) as a no-maximum example if needed.
+
+\subsection*{23. Consistency across menus: WARP}
+Read the quantifiers slowly. This is the correspondence version used in the supplied Lecture 8, p.122. It is not merely the statement that choices should never change. Do not apply the full-domain theorem to arbitrary finite samples of budgets.
+
+\subsection*{24. A two-menu inconsistency}
+No. The first full chosen set implies a is strictly preferred to b; the second implies the reverse. The conclusion uses knowledge that the other alternative is not in the chosen set. Merely seeing two realised purchases does not imply that.
+
+\subsection*{25. Preferences and choice: an equivalence}
+This theorem is an exact finite-domain version of the equivalence in Lecture 8. Pair and triple menus identify a rational ranking when consistency holds on that domain; nonemptiness on all menus is crucial. Keep the proof optional.
+
+\subsection*{26. What choice data do not automatically reveal}
+Use the pairwise rock-paper-scissors example in the appendix if time permits. Be precise: universal indifference rationalises selected elements as optimal, but does not reproduce a claimed singleton correspondence. This distinction is central for empirical work and recommendation logs.
+
+\subsection*{27. Utility is a representation}
+Both directions of the equivalence are needed. If the argmax is empty, the induced chosen set is empty too. A utility representation alone does not prove that a maximiser exists.
+
+\subsection*{28. Representation on a finite set}
+A constructive argument is enough here; no induction is needed in the live lecture. Transitivity makes indifference an equivalence relation and orders the classes. On an infinite X, completeness and transitivity alone are insufficient.
+
+\subsection*{29. Ordinal, not a happiness meter}
+No to both questions. The numerical gaps are not meaningful in ordinal choice theory. Distinguish this from the extra structure in expected utility, which will be introduced in the risk block.
+
+\subsection*{30. Increasing transformations preserve the ranking}
+Weakly increasing means nondecreasing and allows flat parts. Representation must preserve strict comparisons and ties in both directions. A constant is the simplest counterexample; max{t,0} on a range containing negative values is a less degenerate one.
+
+\subsection*{31. No interpersonal comparisons for free}
+This is the point of Lecture 9, pp.134-135. Avoid saying welfare analysis is impossible: it requires additional normative or interpersonal assumptions. Numbers alone do not supply them.
+
+\subsection*{32. Does every ranking have a utility representation?}
+Use a priority rule such as safety first, convenience second, as an intuition, without claiming this is a universally realistic model. The countability proof belongs in the appendix. A finite lexicographic list does have a numerical representation.
+
+\subsection*{33. Checkpoint}
+The old question about u squared has been removed. Answers: no; no; no; on an infinite domain, rationality alone no longer guarantees a real-valued utility representation, and a best element may fail to exist. Distinguish no representation (lexicographic order) from a representation without an attained maximum (u(x)=x on (0,1)). The break need not occur at this exact slide after the expanded introduction.
+
+\subsection*{34. Continuity: comparisons survive limits}
+Start Part II by recalling the lexicographic example. The theorem is stated on the standard commodity domain, avoiding unnecessary general topological conditions. The existence of an arbitrary, possibly discontinuous, utility function does not imply continuous preferences.
+
+\subsection*{35. Indifference curves: equally good bundles}
+Insert immediately after the continuity theorem, as requested. Defining a level set requires a utility representation but not monotonicity. A downward-sloping Cobb-Douglas illustration is an example, not a property claimed for all preferences. Three-dimensional or discrete alternatives need not produce literal curves.
+
+\subsection*{36. Monotonicity: fix the notation first}
+The Russian draft used a different naming convention; this version deliberately follows Lectures 8-9. Emphasise the inequalities, not terminology. More noise or pollution need not be better. On the full nonnegative orthant, strong monotonicity implies monotonicity and monotonicity implies local nonsatiation.
+
+\subsection*{37. More of some goods: why at least as good?}
+Start with the all-coordinates definition of monotonicity. If x is merely componentwise at least y, add delta to every coordinate of x; the perturbed bundle strictly beats y. Let delta go to zero and use continuity to retain a weak comparison. Strictness can be lost: min(x1,x2) assigns the same utility to (2,3) and (2,2). The extra quantity is temporary, not an assumption that the actual consumption bundle changes.
+
+\subsection*{38. A constructive picture: the diagonal bundle}
+\textbf{Extension if time permits.} Here monotonicity means that increasing every coordinate strictly improves the bundle, together with continuity. Completeness and continuity yield existence of a diagonal equivalent; strict ranking along the diagonal gives uniqueness. The graph is a Cobb-Douglas illustration, not a proof for all preferences. Full proof outline is in the appendix. This slide now follows the definition of monotonicity. The general representation theorem does not require it; this constructive proof does.
+
+\subsection*{39. Local nonsatiation: a better bundle nearby}
+Increase x1 by a sufficiently small amount. Ask why increasing only x2 does nothing. For a stronger non-converse, u=x1-x2 is locally nonsatiated on R\_+\textasciicircum{}2 but not monotone in the all-coordinates sense. LNS excludes universal indifference.
+
+\subsection*{40. Two bliss points}
+The drawing is a genuine example generated by u(x)=-min\{distance(x,a) squared, distance(x,b) squared\}, with a=(2,2) and b=(5,4). The two peaks have equal utility zero. The drawn circles correspond to equal negative levels, at radii .45, .85 and 1.3; those circles do not overlap. Preferences are complete, transitive and continuous, but fail local nonsatiation at both peaks. They are not convex: the midpoint of the two equally best peaks is worse than either. The slide intentionally contains the picture and a question, not the answer. LNS still implies budget exhaustion when an optimum exists; the formal proof remains in the appendix.
+
+\subsection*{41. Convex preferences: upper contour sets}
+The average is weakly better. This is a statement about a deterministic mixture of quantities, not a lottery. The definition is invariant to strictly increasing transformations of utility.
+
+\subsection*{42. Strict convexity: when mixing strictly helps}
+The distinctness condition is essential and is missing from one terse statement in the supplied notes. Also avoid equating strict quasiconcavity with every upper set being strictly convex in the ambient space: boundary and domain issues matter. Use the defining inequality.
+
+\subsection*{43. Convex preferences do not require concave utility}
+Differentiate v along a straight line to see positive second derivative if desired. Do not claim that strict quasiconcavity alone makes every zero gradient a maximum; for example x cubed is strictly increasing with a stationary inflection at zero. This corrects an overly broad FOC remark in the source.
+
+\subsection*{44. Perfect substitutes: a straight-line ranking}
+Use interchangeable units of the same resource as an example. It is a model of substitution, not a universal claim that different brands are physically identical. This slide is an added illustration rather than a copied figure from the PDFs.
+
+\subsection*{45. Perfect complements: useful in fixed proportions}
+To establish LNS, slightly increase both coordinates. To refute strict convexity, average (2,2) and (5,2): the minimum remains 2. The kink will later be an example where a tangency condition is unavailable.
+
+\subsection*{46. Cobb--Douglas: mixing can help}
+The positive-domain caveat is important. For example (1,0) and (2,0) and their average all have zero utility on the boundary. A picture of smooth positive contours should not hide the domain.
+
+\subsection*{47. Separability: a ranking inside a larger bundle}
+\textbf{Extension if time permits.} Separate preference comparisons from budget effects. The definition compares equal z on both sides within a comparison, then changes the common z. It does not compare (y,z) to (y-prime,z-prime) directly. Use the steak and wine example to illustrate asymmetry.
+
+\subsection*{48. Separability: summarise a group of goods}
+The food vector is replaced by a single food-ranking index v(y). The aggregator U combines that index with the rest of consumption. Strict increase in its first argument ensures that a better food ranking remains better at every fixed z. The displayed additive example is one illustration; separability in general does not require additive utility or an income-independent food budget. The formal construction remains available through the appendix link.
+
+\subsection*{49. Quasilinearity: a numeraire plus a valuation}
+\textbf{Extension if time permits.} This follows Lecture 9, pp.147-148. The assumptions supporting an additive numeraire representation are collected in the appendix. Do not treat the cardinal scale as unique: it is a particular useful representation of the ranking.
+
+\subsection*{50. No income effects: mind the boundary}
+\textbf{Extension if time permits.} Optional numerical illustration if calculus is comfortable. The derivative is -1+2/sqrt(y), zero at 4, and the objective is concave. Thus y-star=min\{m,4\}. Do not claim quasilinearity removes every income effect at every budget.
+
+\subsection*{51. What can they do? The budget set}
+This restores the complete basic budget geometry planned for first-week seminar preparation. In the first lecture it is a bridge, not a derivation of Marshallian demand or a Lagrangian solution. See the new budget drawing slide next.
+
+\subsection*{52. Budget geometry: income versus a price change}
+The original line appears first. Click once for the income shift, once more for the price rotation, then for the interpretation. No inference that every good is normal or that a specific demand response follows without additional analysis.
+
+\subsection*{53. Wants and possibilities in one picture}
+The budget is x1+x2<=8 and utility is sqrt(x1*x2). The product is at most 16 on this budget, attained at (4,4), so utility is at most 4. The u=6 curve is unattainable, while u=2 is attainable but not optimal. Reveal the budget, curves, optimum, then the questions. This is a geometric preview, not the next lecture's systematic optimisation machinery.
+
+\subsection*{54. Exit ticket}
+Answers: concavity depends on numerical gaps but preferences depend on order; min\{x1,x2\} is rational but not strongly monotone; no, only weak improvement and relative to appropriate comparisons; no; numeraire nonnegativity can bind and restore income dependence.
+
+\subsection*{55. What to keep, and what to read}
+Assign the concrete ninth edition of Varian (2014): chapters 2 Budget Constraint, 3 Preferences and 4 Utility. The optional advanced reference is Mas-Colell, Whinston and Green (1995), chapter 1 Preference and Choice and chapter 3 Classical Demand Theory, sections 3.B-3.C. These section selections avoid assigning the whole of duality prematurely.
+
+\section*{Appendix navigation}
+The equivalence theorem links to the reconstruction proof and the preferences-to-WARP proof. Both proof slides link back to the theorem. Other proof slides also have return links.
+
+\section*{Answers to the exit ticket}
+\begin{enumerate}
+\item Preferences depend on order; concavity depends on cardinal gaps. For example, x1+x2 and exp(x1+x2) represent the same preferences but differ in concavity.
+\item min(x1,x2) is rational but not strongly monotone: (2,2) and (5,2) are indifferent.
+\item No. Convexity gives weak improvement over a common benchmark; strict convexity is a stronger property.
+\item No. Separability concerns the within-group ranking, not income independence or the total food budget.
+\item If the numeraire nonnegativity constraint binds, demand for the other good can depend on income. In the example, y*=min(m,4).
+\end{enumerate}
+\end{document}
