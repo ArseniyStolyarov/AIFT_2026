@@ -112,3 +112,9 @@ Classical Demand Theory, sections 3.B–3.C.
 
 The combined diagram uses sqrt(x1*x2) with unit prices and income 8. The product
 is at most 16 under x1+x2<=8, so (4,4) attains the largest affordable utility 4.
+
+Curvature revision: linear utility and its exponential are both convex, so
+these two examples alone do not disprove existence of convex representations.
+The preferred midpoint of two indifferent Cobb–Douglas bundles rules out every
+convex representation. Quasiconcavity is the ordinal equivalent of convex
+preferences. Concavity is sufficient but stronger than necessary.

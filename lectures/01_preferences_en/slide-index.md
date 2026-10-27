@@ -38,32 +38,31 @@
 | 34 | Continuity: comparisons survive limits | 164–168 |
 | 35 | Indifference curves: equally good bundles | 169–171 |
 | 36 | Monotonicity: fix the notation first | 172–177 |
-| 37 | More of some goods: why at least as good? | 178–182 |
-| 38 | A constructive picture: the diagonal bundle | 183–186 |
-| 39 | Local nonsatiation: a better bundle nearby | 187–194 |
-| 40 | Two bliss points | 195–196 |
-| 41 | Convex preferences: upper contour sets | 197–202 |
-| 42 | Strict convexity: when mixing strictly helps | 203–208 |
-| 43 | Convex preferences do not require concave utility | 209–214 |
-| 44 | Perfect substitutes: a straight-line ranking | 215–221 |
-| 45 | Perfect complements: useful in fixed proportions | 222–228 |
-| 46 | Cobb--Douglas: mixing can help | 229–232 |
-| 47 | Separability: a ranking inside a larger bundle | 233–238 |
-| 48 | Separability: summarise a group of goods | 239–243 |
-| 49 | Quasilinearity: a numeraire plus a valuation | 244–249 |
-| 50 | No income effects: mind the boundary | 250–253 |
-| 51 | What can they do? The budget set | 254–258 |
-| 52 | Budget geometry: income versus a price change | 259–262 |
-| 53 | Wants and possibilities in one picture | 263–266 |
-| 54 | Exit ticket | 267–272 |
-| 55 | What to keep, and what to read | 273–278 |
-| 56 | Appendix: why rational preferences imply WARP | 279–284 |
-| 57 | Appendix: reconstructing the relation from choice | 285–289 |
-| 58 | Appendix: limited data can hide a cycle | 290–296 |
-| 59 | Appendix: why lexicographic utility does not exist | 297–302 |
-| 60 | Appendix: construction under monotonicity | 303–308 |
-| 61 | Appendix: separability in one construction | 309–314 |
-| 62 | Appendix: primitives behind quasilinearity | 315–323 |
-| 63 | Appendix: LNS and budget exhaustion | 324–329 |
-| 64 | Appendix: increasing transformations and risk | 330–334 |
-| 65 | Appendix: answers to the relation exercise | 335–337 |
+| 37 | A constructive picture: the diagonal bundle | 178–181 |
+| 38 | Local nonsatiation: a better bundle nearby | 182–189 |
+| 39 | Two bliss points | 190–191 |
+| 40 | Convex preferences: mixing bundles | 192–196 |
+| 41 | Convex functions and convex preferences | 197–201 |
+| 42 | Convex preferences and quasiconcavity | 202–205 |
+| 43 | Perfect substitutes: a straight-line ranking | 206–212 |
+| 44 | Perfect complements: useful in fixed proportions | 213–219 |
+| 45 | Cobb--Douglas: mixing can help | 220–223 |
+| 46 | Separability: a ranking inside a larger bundle | 224–229 |
+| 47 | Separability: summarise a group of goods | 230–234 |
+| 48 | Quasilinearity: a numeraire plus a valuation | 235–240 |
+| 49 | No income effects: mind the boundary | 241–244 |
+| 50 | What can they do? The budget set | 245–249 |
+| 51 | Budget geometry: income versus a price change | 250–253 |
+| 52 | Wants and possibilities in one picture | 254–257 |
+| 53 | Exit ticket | 258–263 |
+| 54 | What to keep, and what to read | 264–269 |
+| 55 | Appendix: why rational preferences imply WARP | 270–275 |
+| 56 | Appendix: reconstructing the relation from choice | 276–280 |
+| 57 | Appendix: limited data can hide a cycle | 281–287 |
+| 58 | Appendix: why lexicographic utility does not exist | 288–293 |
+| 59 | Appendix: construction under monotonicity | 294–299 |
+| 60 | Appendix: separability in one construction | 300–305 |
+| 61 | Appendix: primitives behind quasilinearity | 306–314 |
+| 62 | Appendix: LNS and budget exhaustion | 315–320 |
+| 63 | Appendix: increasing transformations and risk | 321–325 |
+| 64 | Appendix: answers to the relation exercise | 326–328 |

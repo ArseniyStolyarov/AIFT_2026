@@ -12,7 +12,7 @@ Arseniy Stolyarov.
 - [Instructor notes (PDF)](lectures/01_preferences_en/instructor-notes.pdf?raw=true)
 
 The presentation is in English. The full speaker manuscript is in Russian for
-preparation. Condorcet's paradox is slide 20. There are 55 main slides and 10
+preparation. Condorcet's paradox is slide 20. There are 54 main slides and 10
 appendix slides; the presentation PDF contains multiple reveal states per slide.
 
 ## Rebuild

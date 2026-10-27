@@ -507,21 +507,6 @@ These are level sets for the example $u(x)=\sqrt{x_1x_2}$.
 \end{itemize}}
 \end{frame}
 
-% Stable ID: weak-monotonicity
-\begin{frame}[label=weak-monotonicity]{More of some goods: why at least as good?}
-
-\uncover<1->{Assume continuous, monotone preferences: increasing \key{every} good makes a bundle strictly better. What if only \key{some} quantities increase?}
-\uncover<2->{\par Suppose $x\ge y$. Add a tiny amount of every good to $x$:
-\[
-x^\delta=x+\delta(1,\ldots,1),\qquad\delta>0.
-\]}
-\uncover<3->{\[
-x^\delta\gg y\quad\Rightarrow\quad x^\delta\succ y.
-\]}
-\uncover<4->{\par Let the extra amount vanish: $\delta\downarrow0$. Since $x^\delta\to x$, continuity gives \key{$x\succeq y$}.}
-\uncover<5->{\par Why only weakly better? With $u=\min\{x_1,x_2\}$, $(2,3)$ and $(2,2)$ are equally good. Strictness can disappear in a limit.}
-\end{frame}
-
 % Stable ID: diagonal
 \begin{frame}[label=diagonal]{A constructive picture: the diagonal bundle}
 \uncover<+->{\begin{columns}[c]
@@ -586,56 +571,47 @@ $u(x_1,x_2)=x_1$ is locally nonsatiated but not strongly monotone.
 \end{frame}
 
 % Stable ID: convex
-\begin{frame}[label=convex]{Convex preferences: upper contour sets}
-\uncover<+->{Assume $X$ is convex. Preferences are convex if}
-
-\uncover<+->{\[
-x\succeq z,\ y\succeq z\quad\Longrightarrow\quad
-\lambda x+(1-\lambda)y\succeq z
+\begin{frame}[label=convex]{Convex preferences: mixing bundles}
+\uncover<1->{Assume $X$ is convex. Preferences are \key{convex} if, for every $\lambda\in[0,1]$,
+\[
+x\succeq z,\ y\succeq z\quad\Rightarrow\quad
+\lambda x+(1-\lambda)y\succeq z.
 \]}
-
-\uncover<+->{for every $\lambda\in[0,1]$.}
-
-\uncover<+->{\begin{block}{Equivalent geometry}
-Every upper contour set $U(z)=\{x\in X:x\succeq z\}$ is convex.
-\end{block}}
-
-\uncover<+->{\question{If two distinct bundles are equally good, how does convexity rank their average?}}
+\uncover<2->{\par Equivalently, every upper contour set $\{x:x\succeq z\}$ is convex.}
+\uncover<3->{\par Preferences are \key{strictly convex} if, for distinct $x,y$ and $0<\lambda<1$, the conclusion is strict: $\lambda x+(1-\lambda)y\succ z$.}
+\uncover<4->{\par In particular, mixing two distinct indifferent bundles is weakly better under convexity and strictly better under strict convexity.}
+\uncover<5->{\par This is a mixture of quantities, not a lottery over the two bundles.}
 \end{frame}
 
 % Stable ID: strict-convex
-\begin{frame}[label=strict-convex]{Strict convexity: when mixing strictly helps}
-\uncover<+->{For \key{distinct} $x,y$, with $x\succeq z$, $y\succeq z$, strict convexity requires}
-
-\uncover<+->{\[
-\lambda x+(1-\lambda)y\succ z\qquad(0<\lambda<1).
+\begin{frame}[label=strict-convex]{Convex functions and convex preferences}
+\uncover<1->{On a convex domain, $u$ is a \key{convex function} if
+\[
+u(\lambda x+(1-\lambda)y)\le\lambda u(x)+(1-\lambda)u(y),
+\qquad\lambda\in[0,1].
 \]}
-
-\begin{itemize}
-\item In particular, mixing distinct indifferent bundles strictly improves on them.
-\item Weak convexity allows indifference to the mixture.
-\item ``A taste for variety'' depends on how goods and periods are defined.
-\end{itemize}
-
-\uncover<+->{\question{Half a sushi dinner and half a steak dinner, or some sushi and some steak over a month: is the same assumption equally plausible?}}
+\uncover<2->{\par Do convex preferences imply a convex utility function? Must a representing utility be convex?}
+\uncover<3->{\par\key{First example:} $u(x)=x_1+x_2$. It is affine: both convex and concave. The preferences are convex.}
+\uncover<4->{\par\key{Increasing transformation:} $v(x)=e^{x_1+x_2}$. It represents the same preferences; it is convex but not concave.}
+\uncover<5->{\par These two examples do not establish the general claim. Which property of utility actually captures convex preferences?}
 \end{frame}
 
 % Stable ID: quasiconcavity
-\begin{frame}[label=quasiconcavity]{Convex preferences do not require concave utility}
-\uncover<+->{Convex preferences are equivalent to \key{quasiconcavity} of a representing $u$:}
-
-\uncover<+->{\[
+\begin{frame}[label=quasiconcavity]{Convex preferences and quasiconcavity}
+\uncover<1->{A convex representation need not exist. For $u(x)=\sqrt{x_1x_2}$,
+\[
+a=(1,4)\sim b=(4,1),\qquad m=\tfrac12(a+b)=(2.5,2.5)\succ a.
+\]}
+\uncover<2->{\par Any convex representation $g$ would require
+\[
+g(m)\le\tfrac12g(a)+\tfrac12g(b)=g(a),
+\]
+contradicting $m\succ a$.}
+\uncover<3->{\par The right property is \key{quasiconcavity}:
+\[
 u(\lambda x+(1-\lambda)y)\ge\min\{u(x),u(y)\}.
 \]}
-
-\begin{itemize}
-\item Concavity is sufficient, but stronger than needed.
-\item Increasing transformations preserve quasiconcavity, not concavity.
-\end{itemize}
-
-\uncover<+->{\begin{block}{Same preferences, different curvature}
-$u(x)=x_1+x_2$ is concave. $v(x)=e^{x_1+x_2}$ is not concave. They represent the same convex preferences.
-\end{block}}
+\uncover<4->{\par Convex preferences $\Longleftrightarrow$ quasiconcavity of a representing utility. This property survives strictly increasing transformations.}
 \end{frame}
 
 % Stable ID: substitutes

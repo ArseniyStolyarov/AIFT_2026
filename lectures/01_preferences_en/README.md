@@ -13,9 +13,9 @@ Updated for the instructor's 27 October 2026 revisions.
 - `review-answers-ru.md`: Russian answers to the instructor's content questions.
 - `slide-index.md`: current slide titles and presentation-PDF page ranges.
 
-There are **55 main logical slides and 10 optional appendix slides**. The
+There are **54 main logical slides and 10 optional appendix slides**. The
 presentation PDF has more pages because each reveal is a PDF page; the handout
-has 65 pages. This is an ordinary PDF presentation, with no JavaScript dependency.
+has 64 pages. This is an ordinary PDF presentation, with no JavaScript dependency.
 Advance once to reveal the next idea. Internal text links jump to proofs and back.
 
 Course overview is logical slide 4. Homework, project, exam, office hours and the
@@ -91,6 +91,13 @@ The latest Russian explanations are in `explanations-36-47-ru.md`.
 ## Full speaker text
 
 `lecture01-speaker-script.pdf` is the full Russian preparation manuscript for all
-55 main slides and 10 appendix slides, including explanations, questions, answers
+54 main slides and 10 appendix slides, including explanations, questions, answers
 and seven figures. Its source is `lecture01-speaker-script.tex`; `build.sh` now
 builds it too. Condorcet is slide 20. Use the current slide index after insertion.
+
+## Curvature revision
+
+The old slide 37 is removed. The old slides 42–43 are now slides 41–42:
+convex-function definition, a question about convex preferences, linear and
+exponential examples, a midpoint counterexample and quasiconcavity. Strict
+convexity of preferences is retained on slide 40. The manuscript is updated.
