@@ -1,0 +1,182 @@
+\ifdefined\seminarhandout
+\documentclass[aspectratio=169,10pt,handout]{beamer}
+\else
+\documentclass[aspectratio=169,10pt]{beamer}
+\fi
+\usepackage{nesbeamer}
+\title{Seminar 1: Preferences and utility}
+\author{Arseniy Stolyarov}
+\begin{document}
+\begin{frame}{Seminar 1 · Preferences and utility}
+\key{Microeconomics}\par\bigskip
+Arseniy Stolyarov\\PhD in Economics, University of Wisconsin--Madison\par\bigskip
+Relations, contours, representations and counterexamples.
+\end{frame}
+\begin{frame}{The route}
+\begin{enumerate}
+\item Classify relations before writing utility.
+\item Defend a true claim; break a false one.
+\item Separate utility curvature from preference geometry.
+\item Distinguish one purchase from the full choice set.
+\item Put assumptions back into theorems.
+\end{enumerate}
+\end{frame}
+\begin{frame}{What counts as an answer?}
+\question{``False, because the preferences are strange'' is not a counterexample.}
+\uncover<2->{\begin{itemize}
+\item State the domain and the relation or function.
+\item Name the bundles, sequence or menu.
+\item Check the hypothesis.
+\item Exhibit the precise failed inequality or implication.
+\end{itemize}}
+
+\end{frame}
+\begin{frame}{1A · Coordinatewise comparison}
+On $X=\R_+^2$,
+\[x\pref_A y\iff x_1\ge y_1\ \text{and}\ x_2\ge y_2.\]
+\question{Complete? Transitive? Continuous?}
+\uncover<2->{Incomplete: $(1,0)$ and $(0,1)$.\par
+Transitive: chain the two coordinate inequalities.\par
+Continuous: two weak inequalities survive limits.}
+
+\end{frame}
+\begin{frame}{1B · Replace AND by OR}
+\[x\pref_B y\iff x_1\ge y_1\ \text{or}\ x_2\ge y_2.\]
+\question{Complete? Transitive? Continuous?}
+\uncover<2->{Complete: failing both inequalities makes the reverse comparison true.\par
+Intransitive: $x=(1,0)$, $y=(0,2)$, $z=(2,1)$ satisfy $x\pref_B y\pref_B z$ but $x\not\pref_B z$.\par
+Continuous: its graph is a finite union of closed sets.}
+
+\end{frame}
+\begin{frame}{1C · A tiny tie-breaker?}
+Compare $x_1+x_2$ first; when totals tie, compare $x_1$.
+\question{Can $x_1+x_2+\varepsilon x_1$, for some fixed $\varepsilon>0$, represent this ranking?}
+\uncover<2->{No. Take $a=(0,1+\delta)$, $b=(1,0)$ and $0<\delta<\varepsilon$.\par
+The primary total ranks $a$ higher; the weighted sum ranks $b$ higher.\par
+The relation is complete and transitive, but discontinuous.}
+
+\end{frame}
+\begin{frame}{1C · Find the broken limit}
+\question{Find $x^n\pref_C y^n$ whose limits reverse the comparison.}
+\uncover<2->{\[
+x^n=(0,1+1/n),\qquad y^n=(1,0).
+\]
+Every $x^n$ has the larger total. At the limit, totals tie and $(1,0)$ wins the tie-breaker.}
+
+\end{frame}
+\begin{frame}{2 · True or false?}
+\begin{enumerate}
+\item Incomparability means indifference.
+\item Utility representation implies rationality.
+\item Discontinuous utility implies discontinuous preferences.
+\end{enumerate}
+\uncover<2->{\begin{enumerate}
+\item False: neither comparison versus both comparisons.
+\item True: inherit completeness and transitivity from $\ge$.
+\item False: $x_1+\mathbf1\{x_1\ge1\}$ represents the same continuous ranking as $x_1$.
+\end{enumerate}}
+
+\end{frame}
+\begin{frame}{2 · Three more claims}
+\begin{enumerate}
+\item Convex utility implies convex preferences.
+\item Increasing transformations preserve convex preferences, but need not preserve concavity of utility.
+\item LNS implies utility is unbounded above.
+\end{enumerate}
+\uncover<2->{\begin{enumerate}
+\item False: $u=x_1^2+x_2^2$; mix $(2,0)$ and $(0,2)$.
+\item True: same rankings and upper contour sets.
+\item False: $u=1-e^{-(x_1+x_2)}$ is bounded and LNS.
+\end{enumerate}}
+
+\end{frame}
+\begin{frame}{3 · A kink is not a pathology}
+\[u(x)=\min\{2x_1,x_2\},\qquad X=\R_+^2.\]
+\question{Draw the indifference set and the upper contour set through $(1,2)$.}
+\uncover<2->{\begin{columns}
+\column{.52\textwidth}
+\begin{tikzpicture}\begin{axis}[nes,width=6.1cm,height=3.8cm,xmax=4,ymax=5,xtick={0,1,2,3,4},ytick={0,2,4}]
+\addplot[draw=none,fill=NESlight,fill opacity=.35] coordinates {(1,2)(4,2)(4,5)(1,5)}\closedcycle;
+\addplot[NESblue] coordinates {(1,5)(1,2)(4,2)};
+\addplot[only marks,NESred] coordinates {(1,2)};
+\end{axis}\end{tikzpicture}
+\column{.44\textwidth}
+$u=2$: two rays.\par
+$u\ge2$: $x_1\ge1$ and $x_2\ge2$.
+\end{columns}}
+
+\end{frame}
+\begin{frame}{3 · Classify the preferences}
+\question{Rational? Continuous? Convex? Strictly convex? Monotone? Strongly monotone? LNS?}
+\uncover<2->{Rational, continuous and convex.\par
+Not strictly convex: $(1,3)\sim(1,4)$ and their midpoint.\par
+Monotone and LNS: increase both goods slightly.\par
+Not strongly monotone: $(1,2)\sim(2,2)$.}
+
+\end{frame}
+\begin{frame}{3 · Transform the index}
+\[v=e^u,\qquad w=\mathbf1\{u\ge2\}.\]
+\question{Same preferences? Concave utility?}
+\uncover<2->{$u$ is concave: the minimum of these two linear functions is concave.\par
+$v$ preserves preferences but is not concave: along $(t,2t)$ it equals $e^{2t}$.\par
+$w$ loses strict comparisons, e.g. between $(1,2)$ and $(2,4)$. It is not another representation.}
+
+\end{frame}
+\begin{frame}{4 · A choice changes when the menu expands}
+Selected $a$ from $\{a,b\}$; selected $b$ from $\{a,b,c\}$.
+\question{Does this refute a fixed rational ranking?}
+\uncover<2->{Not if each record is only one selected maximiser.\par
+$a\sim b\succ c$ permits both selections.\par
+We need to know whether unselected alternatives were also best.}
+
+\end{frame}
+\begin{frame}{4 · Now these are full best-alternative sets}
+\[C(\{a,b\})=\{a\},\qquad C(\{a,b,c\})=\{b\}.\]
+\question{Can a rational ranking generate these correspondences?}
+\uncover<2->{No. The pair implies $a\succ b$, whereas the triple implies $b\succ a$.\par
+The interpretation of the data changes the conclusion.}
+
+\end{frame}
+\begin{frame}{5 · An optimum cannot leave slack under LNS}
+\[B=\{x\ge0:p\cdot x\le m\},\qquad p\gg0,\ m>0.\]
+Assume a best bundle $x^*$ exists.
+\question{Prove budget exhaustion without differentiating.}
+\uncover<2->{If $s=m-p\cdot x^*>0$, choose $\delta=s/(2\|p\|)$.\par
+Every consumption bundle within distance $\delta$ remains affordable.\par
+LNS gives a strictly better nearby bundle: contradiction.}
+
+\end{frame}
+\begin{frame}{5 · Does the converse hold?}
+\[u=-[(x_1-2)^2+(x_2-2)^2],\quad p=(1,1),\quad m=1.\]
+\question{Every optimum exhausts this budget. Does that prove LNS?}
+\uncover<2->{No. Below this budget line, slightly increasing either good improves utility.\par
+But LNS fails at $(2,2)$, the global bliss point.\par
+A statement about one budget cannot establish a global property.}
+
+\end{frame}
+\begin{frame}{5 · A failed counterexample is useful}
+On $x_1+x_2\le1$, lexicographically maximise $x_1$, then minimise $x_2$.
+\question{Does this show that LNS need not give existence?}
+\uncover<2->{No: $(1,0)$ is a maximiser.\par
+A valid repair uses $X=[0,1]$, $r(x)=x$ for $x<1$, $r(1)=-1$.\par
+It is LNS but has no maximum, despite compactness. Continuity fails.}
+
+\end{frame}
+\begin{frame}{6 · Reserve: discretise lexicographic preferences}
+\[X_N=\{0,1/N,\ldots,1\}^2,\qquad U_N=Mx_1+x_2.\]
+\question{Which $M$ works? Why does the same trick fail on the square?}
+\uncover<2->{$M>N$: the smallest primary gain outweighs the largest secondary loss.\par
+On $[0,1]^2$, primary gains can be arbitrarily small.\par
+In fact no real-valued representation exists there: use disjoint utility intervals and countability of the rationals.}
+
+\end{frame}
+\begin{frame}{What to carry into the homework}
+\begin{itemize}
+\item Quantifiers and domains are part of every claim.
+\item A representation is ordinal; a curvature property need not be.
+\item Convex preferences mean convex \emph{upper} contour sets.
+\item Keep full best sets separate from selected purchases.
+\item Existence, uniqueness and budget exhaustion need different assumptions.
+\end{itemize}
+\end{frame}
+\end{document}

@@ -1,0 +1,47 @@
+\heading{Homework 1 · Part B}{Assessed problem set · 100 points}
+Write your solutions by hand on paper. This is the assessed part of Homework 1; Part A's diagnostic score does not enter it. The three assessed homework scores are equally weighted within the homework component (20\% of the course grade). Submit according to the TA's instructions; no deadline is set by this draft.
+
+You may use lecture results, but state their assumptions and explain why they apply. Cite outside sources and disclose AI use, including its purpose; you must be able to explain all submitted work. A numerical experiment can suggest an answer but does not replace a proof. Results must hold on the entire stated domain, including boundaries.
+\conventions
+\task{B1. A parameter that changes the geometry}{30 points}
+On $X=\R_+^2$, let
+\[
+ u_\alpha(x)=\min\{x_1,2x_2\}+\alpha\max\{x_1,2x_2\},\qquad \alpha\ge0.
+\]
+\begin{enumerate}[label=(\alph*)]
+\item For which parameters are the represented preferences rational, continuous, monotone, strongly monotone and LNS? Prove the classifications. \hfill [8]
+\item Determine exactly when preferences are convex and when they are strictly convex. Give a midpoint counterexample whenever convexity fails and a separate witness against strict convexity. \hfill [8]
+\item Determine exactly when $u_\alpha$ is concave and when it is convex as a \emph{function}. Do not confuse either property with the preceding question. \hfill [6]
+\item For $0\le\alpha<1$, can any convex function represent the same preferences? For $\alpha=1$, give both a convex and a nonconvex representation of the same preferences. Explain the ordinal principle behind your answer. \hfill [8]
+\end{enumerate}
+\clearpage
+\task{B2. The smallest difference can dominate everything}{25 points}
+On $X=[0,1]^2$, compare bundles lexicographically: more of good 1 wins, regardless of good 2; if good 1 is equal, more of good 2 wins.
+\begin{enumerate}[label=(\alph*)]
+\item Prove completeness, transitivity, strong monotonicity and convexity. Are the preferences strictly convex? \hfill [7]
+\item Show a precise sequence violating continuity. \hfill [4]
+\item Prove that \emph{no} real-valued utility represents these preferences. Hint: for each $t\in[0,1]$, examine the interval between the proposed utilities of $(t,0)$ and $(t,1)$; use rational numbers. \hfill [8]
+\item Restrict the domain to $X_N=\{0,1/N,\ldots,1\}^2$. Construct a linear representation, identify an exact sufficient bound on its weight, and explain why its existence does not contradict part (c). \hfill [6]
+\end{enumerate}
+\task{B3. Full choice data, not just one purchase}{15 points}
+On $X=\{a,b,c\}$, the \emph{full sets of best alternatives} are
+\[
+ C(\{a,b\})=\{a,b\},\quad C(\{b,c\})=\{b\},\quad C(\{a,c\})=\{a\},\quad C(X)=\{a,b\}.
+\]
+Singletons choose their single element. These are all nonempty menus.
+\begin{enumerate}[label=(\alph*)]
+\item Recover a rational weak ranking generating these data, and prove that it is the only ranking consistent with them. \hfill [5]
+\item Change only $C(X)$ to $\{a\}$. Can any rational ranking generate all the modified full correspondences? Locate a WARP violation or give a direct contradiction. \hfill [6]
+\item If instead the researcher observes only one selected item from each menu, explain why seeing $a$ rather than $b$ from $X$ does not by itself refute the original ranking. \hfill [4]
+\end{enumerate}
+\clearpage
+\task{B4. Which assumptions rescue the theorem?}{30 points}
+\begin{enumerate}[label=(\alph*)]
+\item A student claims: ``Continuous, rational preferences are convex iff they admit a concave utility representation.'' Refute the ``only if'' direction using $X=\R_+$ and the utility
+\[
+ u(x)=\begin{cases}x,&0\le x\le1,\\1,&1\le x\le2,\\x-1,&x\ge2.\end{cases}
+\]
+Prove continuity and convexity of the preferences, then show that no concave representation can have the required flat interval followed by strict improvement. You may use the defining concavity inequality, but not an unproved differentiability assumption. \hfill [12]
+\item Under rational preferences on a convex feasible set, does strict convexity of preferences guarantee an optimum exists? Give a counterexample with a \emph{compact} feasible set. Hint: use a one-dimensional lexicographic-style ranking that places $[0,1)$ above the endpoint 1. Define the relation fully and verify strict convexity. Which standard existence hypothesis fails? \hfill [10]
+\item Prove that a nonempty compact convex feasible set and continuous, rational, strictly convex preferences on $\R_+^L$ have exactly one best bundle. State where you use each assumption and why concavity of a chosen utility is unnecessary. \hfill [8]
+\end{enumerate}

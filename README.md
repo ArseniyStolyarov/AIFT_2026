@@ -38,3 +38,13 @@ reserve section on Hicksian demand and expenditure minimisation.
 - [Instructor notes and answers (PDF)](lectures/02_consumer_problem_en/instructor-notes.pdf?raw=true)
 
 [Source directory and build instructions](lectures/02_consumer_problem_en/).
+
+## Seminar and Homework 1 — Preferences and utility
+
+- [Seminar worksheet](practice/01_preferences_en/seminar-worksheet.pdf?raw=true)
+- [Seminar slides with answer reveals](practice/01_preferences_en/seminar01.pdf?raw=true)
+- [Homework: formative mock + assessed problems](practice/01_preferences_en/homework01.pdf?raw=true)
+- [Student PDF bundle](practice/01_preferences_en/preferences01-student.zip?raw=true)
+- [Instructor bundle with solutions (password-protected)](practice/01_preferences_en/preferences01-instructor.zip?raw=true)
+
+[Format, scope and build instructions](practice/01_preferences_en/).
