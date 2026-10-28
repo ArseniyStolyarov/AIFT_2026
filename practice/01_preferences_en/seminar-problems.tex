@@ -1,53 +1,72 @@
-\heading{Seminar 1}{Preferences and utility · Problem sheet}
-Give a short justification for each answer. For a false claim, specify a counterexample. Unless stated otherwise, quantities are nonnegative and topology is relative to the stated domain. No Lagrangian methods are needed.
-
-\task{1. Separability}{Opening questions}
-Write a bundle as $(y,z)$, where $y=(t,c)$ denotes tea and coffee and $z$ is another good.
-\begin{enumerate}[label=(\alph*)]
-\item What does it mean that preferences over $y$ are separable from $z$? State the condition using comparisons of $(y,z)$ and $(y',z)$ at different fixed values of $z$.
-\item For $u(t,c,z)=\sqrt{tc}+\log(1+z)$, find an index $v(t,c)$ and an aggregator $U(v,z)$. Does separability require utility to be additively separable?
-\item For $w(t,c,z)=t+zc$, compare $y=(2,0)$ and $y'=(0,2)$ at $z=1/2$ and at $z=2$. Is the food group separable from $z$?
-\item Does a stable ranking within the food group imply a fixed food budget?
-\end{enumerate}
-\task{2. Quasilinearity}{Opening questions}
-Let $a>0$, $b>0$. Consider $u=a+\sqrt b$, $v=e^{a+\sqrt b}$ and $w=a^2+b$.
-\begin{enumerate}[label=(\alph*)]
-\item Define a utility function quasilinear in $a$. Which of these \emph{given functions} have that form?
-\item Which rankings in this list admit a representation quasilinear in $a$? For $w$, compare $(a,b)=(1,4)$ and $(2,1)$, then add 1 to the $a$ coordinate of both bundles.
-\item For $u$, how does an indifference curve change when its utility label rises by 1? Is ``no income effect on $b$'' valid at every income if $a\ge0$ is imposed?
-\end{enumerate}
-\task{3. A tolerance rule}{}
-On $\R_+^2$, let $x\pref y$ iff $x_1+x_2\ge y_1+y_2-1$. Is the relation complete? Is it transitive? Can a utility function represent it?
-\task{4. AND versus OR}{}
-Compare $x\pref_A y\iff (x_1\ge y_1\ \text{and}\ x_2\ge y_2)$ with $x\pref_B y\iff (x_1\ge y_1\ \text{or}\ x_2\ge y_2)$. Which are complete? Which are transitive?
-\task{5. Indifference from a primitive relation}{}
-Define $\sim$ and $\succ$ using only $\pref$. If two bundles are incomparable, are they indifferent? For rational preferences, prove that $x\sim y$ and $y\sim z$ imply $x\sim z$.
-\task{6. Rational people, cyclic majority}{}
-Three voters rank $a\succ b\succ c$, $c\succ a\succ b$ and $b\succ c\succ a$. Compute the pairwise majority ranking. Is there a contradiction with individual rationality?
-\task{7. A broken limit}{}
-Lexicographic preferences on $[0,1]^2$ first compare good 1, then good 2. Are they continuous? Give a sequence of weak comparisons whose limiting comparison fails.
-\task{8. Draw the right set}{}
-For $u(x)=\min\{2x_1,x_2\}$, draw the indifference set through $(1,2)$ and its weak upper contour set. Are preferences convex? Strictly convex?
-\task{9. Change the labels}{}
-For $u=x_1+x_2$, which of $e^u$, $-e^{-u}$ and $\min\{u,1\}$ represent the same preferences? Can the same preferences have a convex and a nonconvex utility representation?
-\task{10. A good that does not matter}{}
-On $\R_+^2$, let $u=x_1$. Are preferences continuous, monotone, strongly monotone and locally nonsatiated? Here monotonicity means that increasing \emph{every} good strictly improves the bundle.
-\task{11. A consumer who has enough}{}
-For $u=-[(x_1-2)^2+(x_2-1)^2]$, are preferences convex? Strictly convex? Locally nonsatiated? Name the bundle that settles the last question.
-\task{12. A purchase is not a full ranking}{}
-A consumer selects $a$ from $\{a,b\}$ and $b$ from $\{a,b,c\}$. Can these be selections from one fixed rational ranking? Would your answer change if the records were the \emph{full} sets of best alternatives, respectively $\{a\}$ and $\{b\}$?
+\heading{Seminar 1}{Preferences and utility}
+\section*{Before the exercises}
+These two topics were left for the seminar. The teaching assistant introduces the definitions and examples below before moving to the problem sheet.
+\subsection*{Separate drawers, one wardrobe: separability}
+Write a bundle as $(y,z)$, with $y=(r,s)$ describing a computer's processing power and storage, and $z\ge0$ the quality of the workspace. The computer group is \emph{separable} from the workspace if, for every $y,y',z,z'$,
+\[
+ (y,z)\pref(y',z)\quad\Longleftrightarrow\quad(y,z')\pref(y',z').
+\]
+The ranking of two computers stays the same when the common workspace changes. One way to model this is $u(y,z)=U(v(y),z)$, with $U$ strictly increasing in the group index $v$. For example,
+\[
+ v(r,s)=\log(1+r)+2\log(1+s),\qquad U(v,z)=(1+v)(1+z).
+\]
+This representation is not additively separable. Separability does not fix the amount spent on the computer: it fixes a within-group ranking.
+\subsection*{The same price tag in every wallet: quasilinearity}
+Let $a\ge0$ be money left after other purchases and $q\in[0,3]$ a concert experience. A utility function quasilinear in $a$ has the form
+\[
+ u(a,q)=a+h(q),\qquad\text{for example }h(q)=6q-q^2.
+\]
+Adding the same feasible amount to both wallets preserves their comparison:
+\[
+ (a,q)\pref(a',q')\quad\Longleftrightarrow\quad
+ (a+t,q)\pref(a'+t,q').
+\]
+Compensation between two concert experiences does not depend on starting wealth. A transformed index such as $e^{a+h(q)}$ need not itself have the displayed linear form, although its preferences admit a quasilinear representation. With $a\ge0$, low-income corners can still create income effects.
 
 \clearpage
-\task{13. One larger problem: food and everything else}{}
-A consumer has preferences represented by
+\section*{Exercises}
+Give a short justification for each answer. Specify the domain and bundles in a counterexample. Quantities are nonnegative unless stated otherwise. All continuity and neighbourhood claims use the stated domain's relative Euclidean topology.
+\task{1. Five stars, rounded down}{}
+A platform assigns $u(x)=\lfloor x_1\rfloor+\lfloor x_2\rfloor$ on $\R_+^2$, where $\lfloor t\rfloor$ is the greatest integer not exceeding $t$. Are the represented preferences rational? Are they continuous? For the latter, construct a sequence of comparisons, rather than merely pointing to a discontinuous formula.
+\task{2. The brighter of two spotlights}{}
+For $u(x)=\max\{x_1,x_2\}$, sketch the indifference set at utility 2 and its weak upper contour set. Are preferences convex, monotone, strongly monotone and locally nonsatiated? Monotonicity here means that increasing \emph{every} good strictly improves the bundle.
+\task{3. A plan for rain and shine}{}
+A holiday bundle $x=(h,b,m)\in\R_+^3$ includes hotel quality, beach access and museum access. Its scores are $S(x)=h+2b$ in sunshine and $R(x)=h+3m$ in rain. Define $x\pref y$ iff $S(x)\ge S(y)$ \emph{and} $R(x)\ge R(y)$. Is the relation complete? Transitive? Continuous? Can one real-valued utility represent it? Distinguish ``neither plan is worse in every scenario'' from indifference.
+\task{4. An extra drop spoils the deal}{}
+Let $u(x)=x_1-\mathbf1\{x_2>0\}$, with $\mathbf1$ equal to 1 when its condition holds and 0 otherwise. Is the consumer locally nonsatiated? Are preferences continuous at the boundary $x_2=0$? Can local nonsatiation coexist with a discontinuity?
+\task{5. A ceiling you can never touch}{}
+On $\R_+^2$, $u(x)=\arctan(x_1+x_2)$. Is utility bounded above? Is there a best bundle on the entire domain? Are preferences locally nonsatiated? What does this say about inferring satiation from a numerical utility bound?
+\task{6. Keep the seesaw level}{}
+Let $u(x)=-|x_1-x_2|$. Describe all weak upper contour sets. Are preferences convex? Strictly convex? Find \emph{all} bundles at which local nonsatiation fails.
+\task{7. The shop skips the small sizes}{}
+A product is available only in sizes $X=\{0\}\cup[1,\infty)$, and $x\pref y$ iff $x\ge y$. Are preferences continuous and strongly monotone on this domain? Are they locally nonsatiated at 0? Does this contradict any implication stated in the lecture on $\R_+^L$?
+\clearpage
+\task{8. A wristband beats the whole queue}{}
+A festival ticket is $(d,q)\in\{0,1\}\times[0,1]$: $d$ indicates VIP status and $q$ seat quality. Every VIP ticket beats every regular ticket; within a class, higher $q$ wins. Construct a continuous real-valued utility representation. Can you still do so if $q\in\R_+$ is unbounded? Explain why the square-domain lexicographic impossibility result does not decide this problem.
+\task{9. Two batteries, both fully charged}{}
+For $u(x)=\min\{x_1,1\}+\min\{x_2,1\}$, draw the indifference set at utility 1. Are preferences convex? Find all bundles at which local nonsatiation fails. Is the failure confined to one bliss point?
+\task{10. The interview panel's missing shortlist}{}
+An employer reports the \emph{full} sets of best candidates:
 \[
- u(a,t,c)=a+4(tc)^{1/4},\qquad (a,t,c)\in\R_+^3.
+ C(\{a,b\})=\{a,b\},\qquad C(\{b,c\})=\{b,c\},\qquad C(\{a,c\})=\{a\}.
 \]
-All three prices are 1 and the budget is $a+t+c\le m$, where $m>0$.
+Can one rational ranking generate these reports? If the reports instead list only candidates actually invited, could an uninvited candidate still be tied for best? Give one ranking compatible with that weaker reading of all three reports.
+\clearpage
+\task{11. Two knobs, one wallet}{}
+A podcaster chooses microphone quality $r$, lighting quality $s$ and money left for everything else $a$. Define the studio index and overall utility by
+\[
+ v(r,s)=\sqrt{1+r}+\sqrt{1+s}-2,\qquad
+ u(a,r,s)=a+6v(r,s).
+\]
+All quantities are nonnegative; all prices are 1; the budget is $a+r+s\le m$, where $m>0$.
 \begin{enumerate}[label=(\alph*)]
-\item Write $u=U(v(t,c),a)$ using $v(t,c)=\sqrt{tc}$. Is the food group separable? Is utility quasilinear in $a$?
-\item Draw a food indifference curve for $v=1$. For a fixed food index $v\ge0$, show that the cheapest way to obtain it has $t=c=v$ and costs $2v$. You may use $t+c\ge2\sqrt{tc}$; explain when equality holds.
-\item Explain why any optimum exhausts the budget and buys the food index in a cheapest way. Reduce the problem to choosing $v\in[0,m/2]$.
-\item Find the optimal $(a,t,c)$ for $m=1$, $m=2$ and $m=6$, then for general $m>0$. You may complete a square after setting $s=\sqrt v$.
-\item Does separability fix total food spending? Does quasilinearity eliminate income effects at low incomes? Explain both answers using the solution.
+\item Is the studio group separable from $a$? Is the utility quasilinear in $a$? Explain the economic meaning of each property here.
+\item Show that any exact index $v\ge0$ is cheapest to achieve with equal upgrades
+\[
+ r=s=v+\frac{v^2}{4},\qquad\text{at cost }c(v)=2v+\frac{v^2}{2}.
+\]
+Hint: set $R=\sqrt{1+r}$, $S=\sqrt{1+s}$ and use $R^2+S^2\ge(R+S)^2/2$. Include $v=0$.
+\item Explain why an optimum exhausts the budget and uses the cheapest studio bundle for its index. Reduce the problem to choosing $v$ and state its feasible interval.
+\item Find the optimal $(a,r,s)$ at $m=6$, $m=16$ and $m=30$, then for general $m>0$. No Lagrangian is needed: complete a square in the reduced objective.
+\item As income rises, when do the studio upgrades stop changing? Does this mean separability fixes studio spending at every income? Locate the income range in which the nonnegativity of $a$ matters.
 \end{enumerate}

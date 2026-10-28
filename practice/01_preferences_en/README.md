@@ -25,11 +25,16 @@ separate solution guide in the instructor archive. No slide deck is needed.
 
 ## Format and timing
 
-The seminar opens with separability and quasilinearity (exercises 1–2), followed
-by ten short exercises (3–12) and one larger integrated problem (13). The larger
-problem combines a food-group index, cheapest attainment and a quasilinear
-allocation with a low-income corner. The instructor guide suggests a 90-minute
-route with a choice of short exercises; the full sheet is a task bank.
+The seminar opens with two unnumbered teaching sections on separability and
+quasilinearity, which were left for the TA. They introduce definitions and new
+worked examples rather than assigning students untaught topics as exercises.
+Ten short exercises follow, then “Two knobs, one wallet”: a studio-upgrade problem
+with a nonlinear group index and a quasilinear leftover-money good. The guide
+suggests a 90-minute route using a selection of the short tasks.
+
+The sheet was checked against the complete Lecture 1 source, including its
+appendix. Direct repetitions were replaced; see [comparison notes](SEMINAR_REVIEW.md).
+The homework is unchanged.
 
 Part A is a topical mock of the exam format: 120 minutes, true/false with
 justification, problems and one qualitative question. It covers Lecture 1, not
