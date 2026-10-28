@@ -42,7 +42,6 @@ reserve section on Hicksian demand and expenditure minimisation.
 ## Seminar and Homework 1 — Preferences and utility
 
 - [Seminar worksheet](practice/01_preferences_en/seminar-worksheet.pdf?raw=true)
-- [Seminar slides with answer reveals](practice/01_preferences_en/seminar01.pdf?raw=true)
 - [Homework: formative mock + assessed problems](practice/01_preferences_en/homework01.pdf?raw=true)
 - [Student PDF bundle](practice/01_preferences_en/preferences01-student.zip?raw=true)
 - [Instructor bundle with solutions (password-protected)](practice/01_preferences_en/preferences01-instructor.zip?raw=true)

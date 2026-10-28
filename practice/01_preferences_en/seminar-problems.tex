@@ -1,44 +1,53 @@
-\heading{Seminar 1}{Preferences, utility and counterexamples}
-This worksheet accompanies Lecture 1. No demand calculus is needed. Give definitions before calculations, and justify every answer. For a false universal claim, one fully specified counterexample is enough. The final exercise is reserve material.
-\conventions
-\task{1. Relations before utility}{Core · 15 minutes}
-On $X=\R_+^2$, classify each relation as complete or incomplete, transitive or intransitive, continuous or discontinuous. Prove every positive claim; give a numerical witness for every failure.
+\heading{Seminar 1}{Preferences and utility · Problem sheet}
+Give a short justification for each answer. For a false claim, specify a counterexample. Unless stated otherwise, quantities are nonnegative and topology is relative to the stated domain. No Lagrangian methods are needed.
+
+\task{1. Separability}{Opening questions}
+Write a bundle as $(y,z)$, where $y=(t,c)$ denotes tea and coffee and $z$ is another good.
 \begin{enumerate}[label=(\alph*)]
-\item $x\pref_A y$ iff $x_1\ge y_1$ and $x_2\ge y_2$.
-\item $x\pref_B y$ iff $x_1\ge y_1$ or $x_2\ge y_2$.
-\item $x\pref_C y$ iff $x_1+x_2>y_1+y_2$, or both sums are equal and $x_1\ge y_1$.
+\item What does it mean that preferences over $y$ are separable from $z$? State the condition using comparisons of $(y,z)$ and $(y',z)$ at different fixed values of $z$.
+\item For $u(t,c,z)=\sqrt{tc}+\log(1+z)$, find an index $v(t,c)$ and an aggregator $U(v,z)$. Does separability require utility to be additively separable?
+\item For $w(t,c,z)=t+zc$, compare $y=(2,0)$ and $y'=(0,2)$ at $z=1/2$ and at $z=2$. Is the food group separable from $z$?
+\item Does a stable ranking within the food group imply a fixed food budget?
 \end{enumerate}
-Is relation C just an ordinary linear utility with a sufficiently small positive weight added to good 1?
-\task{2. True or false?}{Core · 15 minutes}
+\task{2. Quasilinearity}{Opening questions}
+Let $a>0$, $b>0$. Consider $u=a+\sqrt b$, $v=e^{a+\sqrt b}$ and $w=a^2+b$.
 \begin{enumerate}[label=(\alph*)]
-\item If two bundles are incomparable, the consumer is indifferent between them.
-\item If a relation is represented by a real-valued function, it must be rational.
-\item If a representing utility is discontinuous, the preferences must be discontinuous.
-\item A convex utility function represents convex preferences.
-\item Strictly increasing transformations preserve convexity of preferences, but need not preserve concavity of utility.
-\item LNS implies that utility is unbounded above.
+\item Define a utility function quasilinear in $a$. Which of these \emph{given functions} have that form?
+\item Which rankings in this list admit a representation quasilinear in $a$? For $w$, compare $(a,b)=(1,4)$ and $(2,1)$, then add 1 to the $a$ coordinate of both bundles.
+\item For $u$, how does an indifference curve change when its utility label rises by 1? Is ``no income effect on $b$'' valid at every income if $a\ge0$ is imposed?
 \end{enumerate}
-\task{3. A kink, a transformation and a curve}{Core · 20 minutes}
-Let $X=\R_+^2$, $u(x)=\min\{2x_1,x_2\}$ and $v(x)=e^{u(x)}$.
+\task{3. A tolerance rule}{}
+On $\R_+^2$, let $x\pref y$ iff $x_1+x_2\ge y_1+y_2-1$. Is the relation complete? Is it transitive? Can a utility function represent it?
+\task{4. AND versus OR}{}
+Compare $x\pref_A y\iff (x_1\ge y_1\ \text{and}\ x_2\ge y_2)$ with $x\pref_B y\iff (x_1\ge y_1\ \text{or}\ x_2\ge y_2)$. Which are complete? Which are transitive?
+\task{5. Indifference from a primitive relation}{}
+Define $\sim$ and $\succ$ using only $\pref$. If two bundles are incomparable, are they indifferent? For rational preferences, prove that $x\sim y$ and $y\sim z$ imply $x\sim z$.
+\task{6. Rational people, cyclic majority}{}
+Three voters rank $a\succ b\succ c$, $c\succ a\succ b$ and $b\succ c\succ a$. Compute the pairwise majority ranking. Is there a contradiction with individual rationality?
+\task{7. A broken limit}{}
+Lexicographic preferences on $[0,1]^2$ first compare good 1, then good 2. Are they continuous? Give a sequence of weak comparisons whose limiting comparison fails.
+\task{8. Draw the right set}{}
+For $u(x)=\min\{2x_1,x_2\}$, draw the indifference set through $(1,2)$ and its weak upper contour set. Are preferences convex? Strictly convex?
+\task{9. Change the labels}{}
+For $u=x_1+x_2$, which of $e^u$, $-e^{-u}$ and $\min\{u,1\}$ represent the same preferences? Can the same preferences have a convex and a nonconvex utility representation?
+\task{10. A good that does not matter}{}
+On $\R_+^2$, let $u=x_1$. Are preferences continuous, monotone, strongly monotone and locally nonsatiated? Here monotonicity means that increasing \emph{every} good strictly improves the bundle.
+\task{11. A consumer who has enough}{}
+For $u=-[(x_1-2)^2+(x_2-1)^2]$, are preferences convex? Strictly convex? Locally nonsatiated? Name the bundle that settles the last question.
+\task{12. A purchase is not a full ranking}{}
+A consumer selects $a$ from $\{a,b\}$ and $b$ from $\{a,b,c\}$. Can these be selections from one fixed rational ranking? Would your answer change if the records were the \emph{full} sets of best alternatives, respectively $\{a\}$ and $\{b\}$?
+
+\clearpage
+\task{13. One larger problem: food and everything else}{}
+A consumer has preferences represented by
+\[
+ u(a,t,c)=a+4(tc)^{1/4},\qquad (a,t,c)\in\R_+^3.
+\]
+All three prices are 1 and the budget is $a+t+c\le m$, where $m>0$.
 \begin{enumerate}[label=(\alph*)]
-\item Draw the indifference set through $(1,2)$ and its weak upper contour set. Include the corner and both rays.
-\item Are the preferences rational, continuous, convex, strictly convex, monotone, strongly monotone, locally nonsatiated?
-\item Prove that $u$ is concave. Is $v$ concave? Does your answer change the shape of the preferences?
-\item Is $w(x)=\mathbf 1\{u(x)\ge2\}$ another representation of the same preferences?
+\item Write $u=U(v(t,c),a)$ using $v(t,c)=\sqrt{tc}$. Is the food group separable? Is utility quasilinear in $a$?
+\item Draw a food indifference curve for $v=1$. For a fixed food index $v\ge0$, show that the cheapest way to obtain it has $t=c=v$ and costs $2v$. You may use $t+c\ge2\sqrt{tc}$; explain when equality holds.
+\item Explain why any optimum exhausts the budget and buys the food index in a cheapest way. Reduce the problem to choosing $v\in[0,m/2]$.
+\item Find the optimal $(a,t,c)$ for $m=1$, $m=2$ and $m=6$, then for general $m>0$. You may complete a square after setting $s=\sqrt v$.
+\item Does separability fix total food spending? Does quasilinearity eliminate income effects at low incomes? Explain both answers using the solution.
 \end{enumerate}
-\task{4. What exactly did we observe?}{Core · 15 minutes}
-A consumer has a fixed weak ranking over $\{a,b,c\}$. In one observation they select $a$ from $\{a,b\}$; in another they select $b$ from $\{a,b,c\}$.
-\begin{enumerate}[label=(\alph*)]
-\item If each observation records only one selected maximiser, do these observations refute rational preferences? Construct a ranking if they do not.
-\item Now the records are the \emph{full} best-alternative sets: $C(\{a,b\})=\{a\}$ and $C(\{a,b,c\})=\{b\}$. Can a rational ranking generate them? State the contradiction.
-\item Which additional observation or recording convention would distinguish these interpretations?
-\end{enumerate}
-\task{5. Why does the budget line matter?}{Core · 15 minutes}
-Let $B=\{x\in\R_+^2:p\cdot x\le m\}$, $p\gg0$, $m>0$.
-\begin{enumerate}[label=(\alph*)]
-\item Assuming a best bundle $x^*$ exists and preferences are LNS, prove $p\cdot x^*=m$ without derivatives.
-\item Does budget exhaustion at every best bundle imply LNS? Try $u(x)=-[(x_1-2)^2+(x_2-2)^2]$ and $p=(1,1)$, $m=1$. Here ``every'' refers to every optimum for this one budget.
-\item Does LNS alone guarantee that a best bundle exists? Try a lexicographic ranking that first maximises $x_1$ and, conditional on a tie, minimises $x_2$, on $B$ with $p=(1,1)$, $m=1$. Does \emph{this} example actually fail existence? If not, repair the example using $X=[0,1]$.
-\end{enumerate}
-\task{6. Can a finite grid repair lexicographic utility?}{Reserve · 10 minutes}
-On $X_N=\{0,1/N,\ldots,1\}^2$, lexicographic preferences first compare $x_1$, then $x_2$. Find $M$ for which $u_N(x)=Mx_1+x_2$ represents them. Can the same finite $M$ work on all of $[0,1]^2$? Can \emph{any} real-valued utility represent lexicographic preferences on the square?

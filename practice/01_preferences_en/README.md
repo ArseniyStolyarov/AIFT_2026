@@ -2,7 +2,7 @@
 
 English materials in the established NES course style. Based on Lecture 1:
 relations, rationality, utility representation, continuity, convexity,
-monotonicity, local nonsatiation, choice correspondences and budget geometry.
+monotonicity, local nonsatiation, separability, quasilinearity and choice data.
 No Lagrangian, KKT or demand calculus is required.
 
 ## Student files
@@ -15,20 +15,21 @@ No Lagrangian, KKT or demand calculus is required.
 
 ## Teaching files
 
-- [Seminar presentation: click-by-click answers](seminar01.pdf?raw=true)
-- [Seminar handout: all answers visible](seminar-handout.pdf?raw=true)
 - [Password-protected instructor bundle](preferences01-instructor.zip?raw=true)
 
 The instructor archive contains all PDFs and editable LaTeX, including complete
 solutions and marking guidance. The password is delivered privately in the
 course-preparation chat, not committed to this public repository. Use an AES-ZIP
-compatible extractor, such as 7-Zip or Keka. The public presentation reveals
-**seminar** answers, not homework answers. Do not send it as the pre-class worksheet.
+compatible extractor, such as 7-Zip or Keka. The seminar is an ordinary problem sheet for the teaching assistant, with a
+separate solution guide in the instructor archive. No slide deck is needed.
 
 ## Format and timing
 
-The seminar has a 90-minute core route and a reserve exercise. Its 19 logical
-slides have separate question and answer states (35 PDF pages).
+The seminar opens with separability and quasilinearity (exercises 1–2), followed
+by ten short exercises (3–12) and one larger integrated problem (13). The larger
+problem combines a food-group index, cheapest attainment and a quasilinear
+allocation with a low-income corner. The instructor guide suggests a 90-minute
+route with a choice of short exercises; the full sheet is a task bank.
 
 Part A is a topical mock of the exam format: 120 minutes, true/false with
 justification, problems and one qualitative question. It covers Lecture 1, not
@@ -51,9 +52,9 @@ topical set with subsequent material before release.
 ./build.sh
 ```
 
-Requires XeLaTeX, Beamer, TikZ/pgfplots, fontspec, polyglossia and DejaVu fonts.
+Requires XeLaTeX, fontspec and DejaVu fonts.
 No network or credentials are required. Public checkouts build student documents
-and seminar slides; instructor solution sources are inside the protected archive.
+only; instructor solution sources are inside the protected archive.
 After extracting it into this directory, the same command also builds solutions.
 All problem wording is in `seminar-problems.tex`, `homework-mock-body.tex`, and
 `homework-assessed-body.tex`. Update the archives separately after editing.
