@@ -15,6 +15,8 @@ No Lagrangian, KKT or demand calculus is required.
 
 ## Teaching files
 
+- [Complete seminar folder: PDFs, LaTeX and build script (ZIP, no password)](seminar01-complete.zip?raw=true)
+
 - [Seminar solutions — separate PDF](seminar-solutions.pdf?raw=true)
 - [Seminar solutions — LaTeX](seminar-solutions.tex)
 
