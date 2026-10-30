@@ -1,0 +1,54 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{nesarticle}
+\begin{document}
+\heading{Seminar 1 · Instructor guide}{Two opening topics and the problem sheet}
+\paragraph{Route.} Introduce separability and quasilinearity before assigning exercises: they were not covered live in the lecture. Allow about 15--20 minutes for the two explanations, 40--45 minutes for a selection of short tasks, and 25 minutes for ``Two knobs, one wallet.'' Exercises form a bank rather than a requirement to finish every proof in 90 minutes. The student sheet does not label any exercise by length. Homework is unchanged.
+\paragraph{Opening topics.} Explain independence of the within-computer ranking from a common workspace, not independence of the spending decision. In the example $v\ge0$ and $z\ge0$, so $U(v,z)=(1+v)(1+z)$ is strictly increasing in $v$. A product aggregator suffices: additive separability of the displayed function is not necessary. Its logarithm is an alternative additive representation, which reinforces the distinction between a formula and a ranking.
+
+For quasilinearity, the concert example has $u=a+6q-q^2$, $q\in[0,3]$. The compensation for moving from $q$ to $q'$ is $h(q')-h(q)$, independent of the original wallet whenever the compensation is feasible. Do not state that a consumer with arbitrarily little money can finance any compensation. Distinguish a quasilinear displayed function from preferences admitting a quasilinear representation. The final exercise illustrates the low-income corner with a new index and quadratic cost of index attainment.
+\task{1. Five stars, rounded down}{}
+Rational by representation. Discontinuous preferences: for $n\ge2$, let $x^n=(1-1/n,1-1/n)$ and $y^n=(0,0)$. All scores are 0, so $y^n\pref x^n$. But $x^n\to(1,1)$, with score 2, whereas $y=(0,0)$ has score 0: $y\not\pref x$. This proves a failure of the closed weak-preference graph. The formula's discontinuity alone would not prove the ordinal claim.
+\task{2. The brighter of two spotlights}{}
+At utility 2, the indifference set is $\{(2,t):0\le t\le2\}\cup\{(t,2):0\le t\le2\}$. The upper contour set is $\{x_1\ge2\}\cup\{x_2\ge2\}$ inside the orthant. It is not convex: $(2,0)$ and $(0,2)$ have utility 2, their midpoint utility 1. Increasing both coordinates strictly raises the maximum, so preferences are monotone and LNS. Strong monotonicity fails: $(2,0)\sim(2,1)$. This uses max, not the lecture's min/complement example.
+\task{3. A plan for rain and shine}{}
+Incomplete: $x=(0,1,0)$ has scores $(2,0)$, while $y=(0,0,1)$ has scores $(0,3)$; neither dominates the other. Transitive because each of the two score inequalities is transitive. Continuous because the graph is the intersection of two closed half-spaces in the pair $(x,y)$. No real utility represents an incomplete relation. Incomparability means the two plans have opposing scenario rankings; indifference would require equality of both scores. The phrase ``neither is worse in every scenario'' does not establish either weak comparison under this rule.
+\task{4. An extra drop spoils the deal}{}
+LNS everywhere: increase $x_1$ by an arbitrarily small positive amount, holding $x_2$ fixed. Discontinuous at the boundary: $x^n=(0,1/n)$ gives utility $-1$, while $y^n=(1/2,1)$ gives $-1/2$, so $y^n\pref x^n$. At the limit $x=(0,0)$ gives 0 while $y=(1/2,1)$ still gives $-1/2$, reversing the comparison. LNS and continuity are distinct assumptions.
+\task{5. A ceiling you can never touch}{}
+$u<\pi/2$, so it is bounded. No finite bundle attains the bound, and increasing either coordinate improves every bundle. Thus there is no best bundle on the unbounded whole domain, and LNS holds everywhere. An upper bound on a particular representation is not satiation; satiation concerns attained local or global best bundles. Numerical bounds may change under increasing transformations.
+\task{6. Keep the seesaw level}{}
+For reference $z$, put $d=|z_1-z_2|$. The upper contour set is $\{x\ge0:|x_1-x_2|\le d\}$, the intersection of the orthant with a closed strip, hence convex. Strict convexity fails: $(0,0)$ and $(1,1)$ are indifferent, as is their midpoint. Every diagonal bundle $x_1=x_2$ is globally best and violates LNS. At an off-diagonal bundle, increase the smaller coordinate by a sufficiently small positive amount; this improves utility within any desired neighbourhood. Thus the diagonal is exactly the failure set.
+\task{7. The shop skips the small sizes}{}
+The graph of the usual order is closed in $X\times X$, so preferences are continuous in the relative topology. They are strongly monotone on this one-dimensional ordered domain. But 0 is isolated: a relative neighbourhood of radius less than 1 contains only 0, so LNS fails there. At every $x\ge1$, a slightly larger size gives a nearby improvement. There is no contradiction with the lecture's monotonicity-implies-LNS result on $\R_+^L$: that domain permits arbitrarily small coordinate increases; this domain does not at 0.
+\task{8. A wristband beats the whole queue}{}
+On $\{0,1\}\times[0,1]$, use $U(d,q)=2d+q$. Its regular-ticket range is $[0,1]$ and VIP range $[2,3]$. On $\{0,1\}\times\R_+$, use $U(d,q)=2d+q/(1+q)$, with ranges $[0,1)$ and $[2,3)$. Both are continuous on their relative domains and strictly increasing in quality inside each class. There are only two primary classes, so their utility ranges can be separated. The square example has uncountably many primary levels, each requiring its own nonempty interval; that obstruction is absent. An unbounded secondary attribute does not by itself preclude a representation.
+\task{9. Two batteries, both fully charged}{}
+The level-1 indifference set consists of the line segment $x_1+x_2=1$, $0\le x_i\le1$, together with the rays $(t,0)$ and $(0,t)$ for $t\ge1$. Each truncated coordinate function is concave, hence their sum is concave and preferences are convex. Every bundle in $[1,\infty)^2$ attains the global maximum 2 and violates LNS. At any other bundle, at least one coordinate is below 1, and slightly increasing it gives a strict improvement. Thus the failure set is an entire quadrant, not a single bliss point.
+\task{10. The interview panel's missing shortlist}{}
+Full pair choices force $a\sim b$ and $b\sim c$, hence $a\sim c$ by transitivity, contradicting the full last report $\{a\}$, which forces $a\succ c$. Under the weaker invitation-only interpretation, all three reports are compatible with $a\sim b\sim c$; the employer can invite a subset of the tied best candidates. No stable tie-breaking or invitation rule has been assumed. The inference changes because exclusion from the invitation list no longer establishes suboptimality.
+\task{11. Two knobs, one wallet}{}
+(a) The same studio index orders $(r,s)$ regardless of $a$, since $U(v,a)=a+6v$ increases strictly with $v$. The studio group is separable. Utility is quasilinear in leftover money: a common change in $a$ preserves comparisons. Neither property alone assigns a fixed budget to equipment.
+
+(b) Write $R=\sqrt{1+r}\ge1$ and $S=\sqrt{1+s}\ge1$. A target $v$ requires $R+S=v+2$. Then
+\[
+ r+s=R^2+S^2-2\ge\frac{(v+2)^2}{2}-2=2v+\frac{v^2}{2}.
+\]
+Equality holds iff $R=S=1+v/2$, hence $r=s=v+v^2/4$. This is feasible for every $v\ge0$, including zero. It is the unique cheapest exact attainment. For an at-least target, the same solution is cheapest because $c(v)$ is strictly increasing on $[0,\infty)$.
+
+(c) Slack can buy more $a$, so an optimum exhausts the budget. Any expensive implementation of an index can be replaced by the cheapest one, with savings spent on $a$, strictly improving utility. Thus $a=m-c(v)$, and
+\[
+ 0\le v\le\sqrt{4+2m}-2,\qquad
+ \max_v\left\{m+4v-\frac{v^2}{2}\right\}.
+\]
+The inverse bound follows by solving $c(v)\le m$, not by assuming an interior allocation.
+
+(d) The objective equals $m+8-\tfrac12(v-4)^2$. Therefore
+\[
+ v^*=\min\{4,\sqrt{4+2m}-2\},\qquad
+ r^*=s^*=\min\{8,m/2\},\qquad a^*=\max\{m-16,0\}.
+\]
+At $m=6$: $(a,r,s)=(0,3,3)$; at $m=16$: $(0,8,8)$; at $m=30$: $(14,8,8)$. The best index and its cheapest implementation are unique. The square completion avoids derivatives altogether.
+
+(e) Below income 16, the zero lower bound on $a$ binds and each upgrade rises by half the additional income. Above 16, both upgrades stay at 8 and additional income goes to $a$. Studio spending is $\min\{m,16\}$, not fixed at all incomes. At 16 the allocation rule changes regime. Quasilinearity gives the familiar income independence only once the linear good is not constrained at zero.
+
+\end{document}

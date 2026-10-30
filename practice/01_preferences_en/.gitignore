@@ -4,3 +4,6 @@
 /*.zip
 !/preferences01-student.zip
 !/preferences01-instructor.zip
+
+!/seminar-solutions.tex
+!/seminar-solutions.pdf

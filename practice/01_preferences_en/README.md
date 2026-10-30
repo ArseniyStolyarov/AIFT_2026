@@ -15,13 +15,17 @@ No Lagrangian, KKT or demand calculus is required.
 
 ## Teaching files
 
+- [Seminar solutions — separate PDF](seminar-solutions.pdf?raw=true)
+- [Seminar solutions — LaTeX](seminar-solutions.tex)
+
 - [Password-protected instructor bundle](preferences01-instructor.zip?raw=true)
 
 The instructor archive contains all PDFs and editable LaTeX, including complete
 solutions and marking guidance. The password is delivered privately in the
 course-preparation chat, not committed to this public repository. Use an AES-ZIP
 compatible extractor, such as 7-Zip or Keka. The seminar is an ordinary problem sheet for the teaching assistant, with a
-separate solution guide in the instructor archive. No slide deck is needed.
+separate solution guide available as an individual PDF and in the instructor archive.
+No slide deck is needed. Homework solutions remain in the protected archive.
 
 ## Format and timing
 
