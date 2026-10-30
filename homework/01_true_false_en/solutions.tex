@@ -1,0 +1,93 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{nesarticle}
+\begin{document}
+\heading{Homework 1 · True/false solutions}{Instructor key · Lectures 1 and 2}
+\paragraph{Status.} These are the ten selected true/false questions for the exam-style part of Homework 1. This file does not set the final examination's point allocation or replace the other questions in the mock. The previously published full homework draft has not been silently revised. Question 6 is intentionally a short warm-up in the second block. All counterexamples and theorem hypotheses below have been checked.
+\paragraph{Answer key.} 1 F; 2 T; 3 T; 4 F; 5 F; 6 T; 7 F; 8 F; 9 F; 10 T.
+\task{1. There is always a winner}{False}
+The relation is complete: for distinct $x,y$, some coordinate differs, and the bundle with the larger value in that coordinate is weakly preferred under the rule. Both comparisons can hold.
+
+It is not transitive. Let $x=(1,0)$, $y=(0,1)$ and $z=(2,0)$. Then $x\pref y$ because $x_1>y_1$, and $y\pref z$ because $y_2>z_2$. But $x\ne z$, $x_1<z_1$ and $x_2=z_2$, so $x\not\pref z$. Thus the relation is not rational. A strict cycle is not required: a failure of weak transitivity suffices.
+\task{2. A jump in the score}{True}
+Set $s(x)=x_1+x_2$ and $f(t)=t+\mathbf1\{t\ge1\}$. This $f$ is strictly increasing on $[0,\infty)$: within each piece it has slope 1, and crossing 1 adds a positive jump. Consequently
+\[
+ u(x)\ge u(y)\quad\Longleftrightarrow\quad s(x)\ge s(y).
+\]
+The continuous function $s$ represents the same preferences. More explicitly, if $x^n\pref y^n$ and the bundles converge, $s(x^n)\ge s(y^n)$ passes to $s(x)\ge s(y)$, hence $x\pref y$. The displayed index is discontinuous, but its represented preferences are continuous.
+\task{3. Mixing without a concave index}{True}
+On the strictly positive domain, $u>0$, so its logarithm is a valid strictly increasing transformation:
+\[
+ g(x)=\log u(x)=2\log x_1+2\log x_2.
+\]
+Its Hessian is diagonal with entries $-2/x_i^2<0$, hence $g$ is strictly concave on the convex domain $\R_{++}^2$. If distinct $x,y\pref z$ and $0<\theta<1$, then
+\[
+ g(\theta x+(1-\theta)y)>\theta g(x)+(1-\theta)g(y)\ge g(z).
+\]
+Thus preferences are strictly convex. The original index need not be concave; strict concavity of this alternative representation is sufficient. The domain is essential: on $\R_+^2$, distinct bundles on one axis have utility zero, as does their midpoint, violating strict convexity of preferences.
+\clearpage
+\task{4. Somewhere better means everywhere higher}{False}
+Use $u(x)=x_1-x_2$ on $\R_+^2$. Representation gives rationality; continuity follows from the linear index. Every upper contour set is the intersection of the orthant with a half-space $x_1-x_2\ge k$, hence convex. At every bundle, an arbitrarily small increase in $x_1$ is feasible in the consumption domain and strictly improves utility, establishing LNS.
+
+But $(1,2)\gg(0,0)$ and $u(1,2)=-1<0=u(0,0)$. LNS requires a better bundle in every neighbourhood, not improvement from every coordinatewise increase. A bad is allowed: monotonicity was not assumed.
+\task{5. A hilltop or just a landing?}{False}
+Take $u(x)=\max\{0,x_1-1\}$ and $x^*=(1/2,1/2)$. This function is continuous. Within Euclidean distance $1/4$ of $x^*$, $x_1<1$, hence $u(x)=0=u(x^*)$. Therefore $x^*$ is a local maximiser under the explicitly non-strict definition. It is also a local minimiser; a plateau can have both properties. Yet $u(2,1/2)=1>u(x^*)$, so it is not a global maximiser.
+
+To check convex preferences, for each reference bundle $z$,
+\[
+ \{x\in\R_+^2:u(x)\ge u(z)\}=
+ \begin{cases}
+ \R_+^2,&z_1\le1,\\
+ \{x\in\R_+^2:x_1\ge z_1\},&z_1>1.
+ \end{cases}
+\]
+Both sets are convex. Thus the example meets every hypothesis. Quasiconcavity permits a flat region followed by improvement; concavity would make every local maximiser global. No LNS assumption was made in this question.
+\task{6. A different currency, the same shopping basket}{True}
+For any $t>0$, $tp\cdot x\le tm$ iff $p\cdot x\le m$, so $B(tp,tm)=B(p,m)$. The same objective on the same feasible set has the same full argmax set. Uniqueness and differentiability are unnecessary. Equality even holds if both argmax sets are empty; the question does not infer existence merely from a notation. Scaling prices alone, or income alone, is a different experiment.
+\task{7. Strict curvature, a unique choice}{False}
+Let $u(x)=x_1^2+x_2^2$, $p=(1,1)$ and $m=1$. The Hessian is $2I$, so the function is strictly convex and continuous. On the budget,
+\[
+ x_1^2+x_2^2\le(x_1+x_2)^2\le1.
+\]
+Equality holds at both $(1,0)$ and $(0,1)$, giving two distinct optimal bundles. Strict convexity of preferences is the ordinal sufficient condition for at most one optimum on a convex feasible set. It must not be confused with strict convexity of the function being maximised. Continuity and compactness do provide existence here.
+\clearpage
+\task{8. All boxes ticked}{False}
+Let $u(x)=(2x_1+x_2-3)^3$, $p=(1,1)$ and $m=2$. The cube is strictly increasing on the entire real line, so preferences coincide with those represented by $2x_1+x_2$. They are convex and strongly monotone. The displayed function is a polynomial, hence continuously differentiable.
+
+At $x^*=(1,1)$, $u(x^*)=0$ and
+\[
+ \nabla u(x)=3(2x_1+x_2-3)^2(2,1),\qquad \nabla u(x^*)=(0,0).
+\]
+Choose $\lambda=\mu_1=\mu_2=0$. Stationarity $u_i-\lambda p_i+\mu_i=0$, primal feasibility, dual feasibility and complementary slackness all hold; the budget even binds. Nevertheless $(2,0)$ is affordable and has utility 1, so $x^*$ is not optimal.
+
+A strictly increasing transformation can have zero derivative at a point. Quasiconcavity/convex preferences alone do not make every KKT point globally optimal. Concavity of the differentiable index gives a standard sufficient condition; it is absent here.
+\task{9. Left on the shelf}{False}
+For $p=(1,1)$, $m=1$, use
+\[
+ u(x)=2\log(1+x_1)+\log(1+x_2).
+\]
+Partial derivatives are positive, and the Hessian is diagonal with strictly negative entries, so this utility is strongly increasing and strictly concave. At $x^*=(1,0)$,
+\[
+ u_1(x^*)=\frac{2}{2}=1,\qquad u_2(x^*)=\frac{1}{1}=1.
+\]
+The KKT conditions hold with $\lambda=1$, $\mu_1=\mu_2=0$. Concavity makes them sufficient; strict concavity gives uniqueness. Equivalently, the supporting-plane inequality gives $u(x)\le u(x^*)+\nabla u(x^*)\cdot(x-x^*)\le u(x^*)$ for every affordable $x$.
+
+At a corner with good 1 consumed, stationarity gives $u_1/p_1=\lambda$ and $u_2/p_2=\lambda-\mu_2/p_2\le\lambda$. Equality is possible even though $x_2=0$. Binding nonnegativity does not imply a strictly positive bound multiplier.
+\clearpage
+\task{10. Can a smooth value hide several choices?}{True}
+Continuity on the nonempty compact budget set gives an optimum; positive prices are essential for compactness here. LNS implies $p\cdot x^*=m$ for every optimum: with slack, a sufficiently small neighbourhood stays affordable and contains a strictly preferred bundle.
+
+Fix \emph{any} optimiser $x^*$. For a price vector $q$ sufficiently close to $p$, define
+\[
+ F(q)=v(q,q\cdot x^*).
+\]
+Prices and the new wealth are positive nearby since $p\gg0$ and $p\cdot x^*=m>0$. The fixed bundle $x^*$ is feasible at $(q,q\cdot x^*)$, so $F(q)\ge u(x^*)$. At $q=p$, budget exhaustion gives $F(p)=v(p,m)=u(x^*)$. Thus $F$ has a local minimum at $p$. Differentiability and the chain rule imply
+\[
+ 0=F_{q_i}(p)=v_{p_i}(p,m)+v_m(p,m)x_i^*.
+\]
+Because $v_m>0$,
+\[
+ x_i^*=-\frac{v_{p_i}(p,m)}{v_m(p,m)}.
+\]
+Every optimiser must have these same coordinates, proving uniqueness. The proof does not assume a differentiable demand function or uniqueness in advance. Merely invoking a version of Roy's identity that already assumes uniqueness would be circular; the fixed-bundle argument avoids that problem.
+
+\end{document}

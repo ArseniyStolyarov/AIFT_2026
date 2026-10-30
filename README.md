@@ -47,3 +47,12 @@ reserve section on Hicksian demand and expenditure minimisation.
 - [Instructor bundle with solutions (password-protected)](practice/01_preferences_en/preferences01-instructor.zip?raw=true)
 
 [Format, scope and build instructions](practice/01_preferences_en/).
+
+## Homework 1 — selected true/false questions, Lectures 1–2
+
+- [Ten questions — student PDF](homework/01_true_false_en/true-false.pdf?raw=true)
+- [Instructor solutions](homework/01_true_false_en/solutions.pdf?raw=true)
+- [Complete LaTeX and PDF folder](homework/01_true_false_en/true-false-complete.zip?raw=true)
+
+This is the newly selected true/false section; the other mock and assessed tasks
+will be developed separately.
