@@ -1,0 +1,117 @@
+\section*{Part B · Training solutions}
+\subsection*{B1. A preference checklist · 15 points}
+For all three functions, representation gives completeness and transitivity. Each index is continuous, so weak comparisons survive limits.
+\begin{center}\small\begin{tabular}{lccc}
+Property & $u_1$ & $u_2$ & $u_3$\\\hline
+Complete, transitive, continuous & Yes & Yes & Yes\\
+Convex preferences & Yes & Yes & Yes\\
+Strictly convex preferences & No & No & Yes\\
+Strongly monotone & Yes & No & No\\
+LNS everywhere on $X$ & Yes & Yes & No
+\end{tabular}\end{center}
+$u_1$ has half-space upper contours. Distinct indifferent bundles such as $(1,0)$ and $(0,2)$ remain indifferent when mixed, so strict convexity fails. Its positive coefficients imply strong monotonicity and LNS.
+
+$u_2$ has rectangular upper contours. It is not strictly convex: $(2,1)$ and $(3,1)$, and their midpoint, all have utility 2. The same pair refutes strong monotonicity. Increasing both coordinates slightly strictly raises utility, establishing LNS at every bundle.
+
+$u_3$ is strictly concave, hence represents strictly convex preferences: for distinct bundles the utility of an interior mixture is strictly above the corresponding utility average. Strong monotonicity fails since $(2,3)\gg(1,2)$ but has lower utility. LNS fails at the global bliss point $(1,2)$, so it is not a property holding everywhere (off that point, a small move toward it improves utility).
+
+The requested plots through $(2,2)$ have levels 6, 2 and $-1$:
+\begin{itemize}
+\item $u_1=6$: segment $2x_1+x_2=6$ between $(0,6)$ and $(3,0)$; upper contour $2x_1+x_2\ge6$ in the orthant.
+\item $u_2=2$: rays $x_1=2,x_2\ge1$ and $x_2=1,x_1\ge2$; upper contour $[2,\infty)\times[1,\infty)$.
+\item $u_3=-1$: circle $(x_1-1)^2+(x_2-2)^2=1$, centred at $(1,2)$, tangent to $x_1=0$; upper contour is its closed disk.
+\end{itemize}
+Suggested subpart weights: (a) 3, (b) 8, (c) 4.
+\subsection*{B2. Representations and group indices · 10 points}
+(a) $3u-7$ is strictly increasing in $u$, and $u^2$ is strictly increasing on its attained range $[0,\infty)$, so both represent the same preferences. The truncated index does not: $(2,0)$ and $(3,0)$ have original utilities 2 and 3 but both truncate to 2.
+
+(b) Level 2: line from $(0,1)$ to $(2,0)$. Level 4: line from $(0,2)$ to $(4,0)$. Under $3u-7$ they receive labels $-1$ and 5; under $u^2$ they receive labels 4 and 16.
+
+(c) Use $v(t,c)=\sqrt{tc}$, $U(v,z)=(1+v)(1+z)$. Since $z\ge0$, $U$ is strictly increasing in $v$. At a common $z$, comparison reduces to comparing $v$, independently of that $z$. Separability does not specify a fixed group expenditure. Suggested weights: 4, 3, 3.
+\clearpage
+\subsection*{B3. Budget geometry · 10 points}
+(a) $B=\{x\ge0:2x_1+3x_2\le18\}$; line $x_2=6-(2/3)x_1$, intercepts $(9,0),(0,6)$, slope $-2/3$.
+
+(b) Costs are respectively 18, 21 and 15. The first and third are affordable; only the first exhausts the budget.
+
+(c) With income 36 and the original prices, intercepts become $(18,0),(0,12)$ with unchanged slope. With $p_1=4$ at original income, intercepts are $(9/2,0),(0,6)$ and slope $-4/3$: an inward rotation around the vertical intercept.
+
+(d) Scaling both prices and income by 2 leaves the original inequality unchanged after division by 2. If an optimum has slack $s=m-p\cdot x^*>0$, a ball of radius $s/(2\|p\|)$ around it stays affordable within the consumption domain. LNS supplies a better nearby bundle, contradicting optimality. This proof assumes an optimum exists. Suggested weights: 2, 2, 3, 3.
+\clearpage
+\subsection*{B4. Cobb--Douglas, one step at a time · 20 points}
+(a) Original $u$ is continuous on the nonempty compact budget, so existence follows. Every axis bundle has utility zero; a strictly positive affordable bundle has positive utility. Thus every optimum has both quantities positive, and only then may the logarithm be used.
+
+(b) $g=(1/3)\log x_1+(2/3)\log x_2$. For the interior optimum,
+\[
+ \mathcal L=g+\lambda_g(m-p_1x_1-p_2x_2),\qquad
+ \frac1{3x_1}=\lambda_gp_1,\quad
+ \frac2{3x_2}=\lambda_gp_2,\quad p\cdot x=m.
+\]
+(c) Summing expenditure equations gives $\lambda_g=1/m$ and
+\[
+ x_1^*=\frac{m}{3p_1},\qquad x_2^*=\frac{2m}{3p_2}.
+\]
+Shares are $1/3$ and $2/3$, and total expenditure is $m$. The log objective is strictly concave on the positive orthant, so the stationary solution is globally optimal among positive feasible bundles and unique; original boundary bundles are inferior by (a).
+
+(d) Demand is $(2,8)$. At prices $(6,3)$ and income 36 it is still $(2,8)$.
+
+(e) For the log index,
+\[
+ V_g=\tfrac13\log\frac{m}{3p_1}+\tfrac23\log\frac{2m}{3p_2},\qquad
+ (V_g)_m=\frac1m,\quad (V_g)_{p_1}=-\frac1{3p_1},\quad (V_g)_{p_2}=-\frac2{3p_2}.
+\]
+Roy gives the demands above. (f) With $U^*=u(x^*)=e^{V_g}$, the original multiplier is $\lambda_u=U^*/m$, whereas $\lambda_g=1/m$. The log transformation divides marginal utilities and the multiplier by $U^*$; it preserves the ranking and chosen bundle. Suggested weights: 3, 4, 4, 2, 4, 3.
+\subsection*{B5. Practising corners with Kuhn--Tucker · 20 points}
+(a) Let $\mathcal L=u+\lambda(m-x_1-x_2)+\mu_1x_1+\mu_2x_2$. Stationarity is
+\[
+ \frac2{1+x_1}-\lambda+\mu_1=0,\qquad
+ \frac1{1+x_2}-\lambda+\mu_2=0.
+\]
+Include $x_i\ge0$, $m-x_1-x_2\ge0$, $\lambda,\mu_i\ge0$ and $\lambda(m-x_1-x_2)=\mu_1x_1=\mu_2x_2=0$.
+
+(b) With both goods positive, $\mu_1=\mu_2=0$, the budget binds, and
+\[
+ x_1=\frac{1+2m}{3},\qquad x_2=\frac{m-1}{3},\qquad\lambda=\frac3{m+2}.
+\]
+This is strictly interior iff $m>1$.
+
+(c) With $x_2=0$ and budget exhausted, $x_1=m>0$, $\mu_1=0$, $\lambda=2/(1+m)$ and $\mu_2=\lambda-1=(1-m)/(1+m)$. Dual feasibility holds iff $m\le1$.
+
+(d) The first regime $0<m\le1$ chooses $(m,0)$; for $m>1$, use the interior formula. Both agree at $m=1$. Concavity makes KKT sufficient, and strict concavity of the original utility in both quantities gives uniqueness.
+
+(e) The table is
+\[
+ \begin{array}{c|ccccc}
+ m&x_1&x_2&\lambda&\mu_1&\mu_2\\\hline
+ 1/2&1/2&0&4/3&0&1/3\\
+ 1&1&0&1&0&0\\
+ 4&3&1&1/2&0&0
+ \end{array}
+\]
+At $m=1$ the zero-consumption constraint binds with zero multiplier. Suggested weights: 4, 4, 4, 4, 4.
+\clearpage
+\subsection*{B6. A kink without derivatives · 10 points}
+(a) Attaining at least $k$ requires $x_1\ge k$ and $x_2\ge k/2$. Positive prices make the unique cheapest bundle $(k,k/2)$, with cost $(p_1+p_2/2)k$.
+
+(b) The largest affordable target and demands are
+\[
+ k^*=\frac{2m}{2p_1+p_2},\quad
+ x_1^*=\frac{2m}{2p_1+p_2},\quad x_2^*=\frac{m}{2p_1+p_2}.
+\]
+The cheapest implementation of the highest target costs exactly $m$. Any extra quantity would exceed the budget, so no other bundle attains that target affordably: uniqueness follows.
+
+(c) At $(p_1,p_2,m)=(1,2,12)$, the bundle is $(6,3)$ and indirect utility is 6. (d) The index has a kink at $x_1=2x_2$, including the optimum. A differentiable MRS tangency calculation is inapplicable; the two target inequalities give the exact fixed proportions and cost. Suggested weights: 3, 3, 2, 2.
+\subsection*{B7. Quasilinearity and the income boundary · 15 points}
+(a) $a$ enters linearly with coefficient 1, so common feasible translations in $a$ preserve comparisons. The index is strictly increasing in $a$, implying exhaustion. Reduce to $\max_{0\le q\le m}\{m-q+5\log(1+q)\}$.
+
+(b) The derivative is $-1+5/(1+q)$, with a zero at $q=4$; the second derivative is strictly negative. Thus $q^*=\min\{m,4\}$ and $a^*=\max\{m-4,0\}$.
+
+(c) At $m=2$: $(a,q)=(0,2)$; at $m=6$: $(2,4)$. The graph of $q^*(m)$ follows the 45-degree line up to $m=4$ and is horizontal at 4 thereafter. The no-borrowing boundary on $a$ binds at low incomes.
+
+(d) Indirect utility is
+\[
+ V(m)=\begin{cases}5\log(1+m),&0<m\le4,\\m-4+5\log5,&m>4.\end{cases}
+\]
+Both values equal $5\log5$ at 4. The left derivative is $5/(1+m)$, reaching 1 at 4; the right derivative is 1. Thus the value function is continuously differentiable across the regime change, although quantity demand has a kink.
+
+(e) $\lambda=5/(1+m)$ for $m\le4$ and $\lambda=1$ for $m>4$. The nonnegativity multiplier is $\mu_a=\lambda-1$, while $\mu_q=0$ since $q^*>0$ at positive incomes. Below 4, extra income buys more tutoring/service quantity $q$; above 4 it buys only $a$. Suggested weights: 3, 3, 3, 3, 3.

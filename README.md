@@ -3,6 +3,18 @@
 Lecture 1, New Economic School, 27 October 2026.
 Arseniy Stolyarov.
 
+## Current Homework 1 — complete assignment
+
+- [Student PDF: Parts A and B](homework/01_complete_en/homework01.pdf?raw=true)
+- [Part A: 120-minute formative mock](homework/01_complete_en/part-a-mock.pdf?raw=true)
+- [Part B: training problem set](homework/01_complete_en/part-b-training.pdf?raw=true)
+- [Complete instructor solutions](homework/01_complete_en/instructor-solutions.pdf?raw=true)
+- [Entire folder: LaTeX, PDFs and build script](homework/01_complete_en/homework01-complete.zip?raw=true)
+
+The complete assignment covers Lectures 1–2. Earlier section drafts below are
+retained for history. Only the ordinary Part B score enters the homework grade;
+Part A is diagnostic. The source archive contains answers.
+
 ## Lecture 1 — downloads
 
 - [Everything: PDFs and LaTeX sources (ZIP)](lectures/01_preferences_en/lecture01-complete.zip?raw=true)
@@ -54,8 +66,7 @@ reserve section on Hicksian demand and expenditure minimisation.
 - [Instructor solutions](homework/01_true_false_en/solutions.pdf?raw=true)
 - [Complete LaTeX and PDF folder](homework/01_true_false_en/true-false-complete.zip?raw=true)
 
-This is the newly selected true/false section; the other mock and assessed tasks
-will be developed separately.
+These are the earlier section drafts. The complete current homework is linked above.
 
 ### Two problems — Lectures 1–2
 

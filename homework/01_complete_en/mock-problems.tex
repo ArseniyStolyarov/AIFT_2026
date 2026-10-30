@@ -1,0 +1,33 @@
+\section*{A2. Two tickets, one weekend · 20 points}
+Mira and Anton are planning a cultural trip. A programme contains $x_1$ hours of live music and $x_2$ hours of exhibitions. Their satisfaction scores are
+\[
+ s_M(x)=2x_1+x_2,\qquad s_A(x)=x_1+3x_2.
+\]
+Their friend organising the trip wants neither traveller to be left behind: she ranks programmes by the \emph{lower} of the two scores. Her preferences on $X=\R_+^2$ are therefore represented by
+\[
+ u(x)=\min\{s_M(x),s_A(x)\}.
+\]
+\begin{enumerate}[label=(\alph*)]
+\item Rank the programmes $(3,0)$, $(0,3)$ and $(1,1)$. Are the organiser's preferences complete, transitive and continuous? Explain.
+\item Draw the indifference set at utility level 6 and its weak upper contour set. Label the intercepts and the point where the indifference set changes slope. Explain what happens to the identity of the less satisfied traveller at this point.
+\item Are the organiser's preferences convex? Strictly convex? Strongly monotone? Locally nonsatiated? Justify each answer.
+\item The booking platform replaces $u$ with $v=u^2$ when displaying programme scores. Does this preserve the organiser's preferences? Is $v$ concave as a function?
+\item Could \emph{any convex utility function} represent the organiser's preferences? Prove your answer.
+\end{enumerate}
+\clearpage
+\section*{A3. One more lesson, one less coffee · 30 points}
+A student is preparing for an examination and can purchase $q$ hours of individual tutoring at a price $p>0$ per hour. Let $a$ denote money left for all other purchases. The first lessons help a great deal, but each additional hour is less valuable. The student's preferences are represented by
+\[
+ u(a,q)=a+6\log(1+q),\qquad (a,q)\in\R_+^2.
+\]
+The student has income $m>0$ and cannot borrow. The price of the other-purchases good $a$ is 1, so the budget is
+\[
+ a+pq\le m.
+\]
+\begin{enumerate}[label=(\alph*)]
+\item Does an optimal bundle exist? Must it exhaust the budget? Is it unique? Justify your answers.
+\item Write the Lagrangian and all Kuhn--Tucker conditions, including the nonnegativity constraints.
+\item Derive demand for both goods for every $p>0$ and $m>0$. Identify the parameter regions in which the student buys no tutoring, spends everything on tutoring, or consumes both goods. Include the boundaries between these regions.
+\item Let $p=2$. Find the optimal bundle and the budget multiplier at incomes $m=2$ and $m=8$. Explain why additional income changes tutoring hours in one case but not the other.
+\item In the region where both goods are consumed, derive indirect utility $v(p,m)$. Recover tutoring demand using Roy's identity. Explain the economic meaning of $v_m$.
+\end{enumerate}

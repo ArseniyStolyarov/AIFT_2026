@@ -1,0 +1,64 @@
+Rational preferences are complete and transitive. Continuity means that weak comparisons survive limits. Convex preferences have convex upper contour sets. Strong monotonicity means $x\ge y$, $x\ne y\Rightarrow x\succ y$; $x\gg y$ means every coordinate is strictly larger. Neighbourhoods are relative to the stated domain.
+\section*{A1. True or false · Lecture 1}
+\task{1. There is always a winner}{}
+On $X=\R_+^2$, define
+\[
+ x\pref y\quad\Longleftrightarrow\quad
+ x=y\ \text{or}\ x_1>y_1\ \text{or}\ x_2>y_2.
+\]
+These preferences are rational.
+\task{2. A jump in the score}{}
+On $X=\R_+^2$, preferences are represented by
+\[
+ u(x)=x_1+x_2+\mathbf1\{x_1+x_2\ge1\},
+\]
+where $\mathbf1$ is the indicator function. These preferences are continuous.
+\task{3. Mixing without a concave index}{}
+On $X=\R_{++}^2$, preferences are represented by
+\[
+ u(x)=x_1^2x_2^2.
+\]
+These preferences are strictly convex.
+\task{4. Somewhere better means everywhere higher}{}
+On $X=\R_+^2$, rational, continuous, convex and locally nonsatiated preferences must satisfy
+\[
+ x\gg y\quad\Rightarrow\quad x\succ y.
+\]
+\task{5. A hilltop or just a landing?}{}
+Let $X=\R_+^2$. A continuous utility function $u$ represents convex preferences. If $x^*$ is a local maximiser of $u$, then it is also a global maximiser.
+
+Here, a local maximiser means that $u(x^*)\ge u(x)$ for every feasible $x$ in some neighbourhood of $x^*$; the inequality need not be strict.
+\clearpage
+\section*{A1. True or false · Lecture 2}
+For questions 6--10, $X=\R_+^2$, $p\gg0$, $m>0$, and
+\[
+ B(p,m)=\{x\in X:p\cdot x\le m\},\qquad
+ D(p,m)=\arg\max_{x\in B(p,m)}u(x).
+\]
+The Kuhn--Tucker convention is
+\[
+ \mathcal L=u(x)+\lambda(m-p\cdot x)+\mu_1x_1+\mu_2x_2,
+ \qquad\lambda,\mu_1,\mu_2\ge0.
+\]
+\task{6. A different currency, the same shopping basket}{}
+For every $t>0$,
+\[
+ D(tp,tm)=D(p,m),
+\]
+even when the consumer has several optimal bundles.
+\task{7. Strict curvature, a unique choice}{}
+If a continuous utility function $u$ is strictly convex, then the consumer has a unique optimal bundle on every budget set.
+\task{8. All boxes ticked}{}
+Suppose a continuously differentiable utility function represents convex, strongly monotone preferences. Every feasible bundle satisfying the Kuhn--Tucker conditions is a global solution to the consumer's problem.
+\task{9. Left on the shelf}{}
+Suppose $u$ is differentiable, strictly concave and strongly increasing. If the unique optimal bundle satisfies $x_1^*>0$ and $x_2^*=0$, then
+\[
+ \frac{u_2(x^*)}{p_2}<\frac{u_1(x^*)}{p_1},
+\]
+where $u_i$ denotes the partial derivative with respect to good $i$.
+\task{10. Can a smooth value hide several choices?}{}
+Suppose $u$ is continuous and preferences are locally nonsatiated. Let
+\[
+ v(p,m)=\max_{x\in B(p,m)}u(x).
+\]
+If $v$ is differentiable at $(p,m)$ and $v_m(p,m)>0$, then the optimal consumption bundle at $(p,m)$ is unique.

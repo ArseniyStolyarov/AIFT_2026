@@ -1,0 +1,72 @@
+\heading{Homework 1 · Part B}{Training problem set · Lectures 1 and 2}
+This is the regular assessed homework part, organised as a step-by-step training set. Work at your own pace, use the lecture notes and practise the calculations. Write the submitted solution by hand on paper. There is no time limit for this part.
+
+The assessed total is 100 points, independent of the diagnostic Part A score. The three assessed homeworks are equally weighted within the 20\% homework component of the course grade. Cite external sources and disclose any AI assistance; you must be able to explain all submitted work. Submission dates and procedures are announced by the TA.
+
+Show the intermediate steps requested below. In every optimisation problem, distinguish existence, uniqueness and the calculation of a candidate. Unless stated otherwise, quantities are divisible and nonnegative, prices are strictly positive, and income is positive.
+\section*{B1. A preference checklist · 15 points}
+On $X=\R_+^2$, consider
+\[
+ u_1=2x_1+x_2,\quad
+ u_2=\min\{x_1,2x_2\},\quad
+ u_3=-(x_1-1)^2-(x_2-2)^2.
+\]
+\begin{enumerate}[label=(\alph*)]
+\item Make a table stating whether each represented relation is complete, transitive and continuous. Explain the common argument behind your answers.
+\item Add columns for convexity of preferences, strict convexity of preferences, strong monotonicity and local nonsatiation. Give one short argument or counterexample for each classification.
+\item Draw the indifference sets through $(2,2)$ for all three utilities. Label the utility levels, and shade the corresponding weak upper contour sets.
+\end{enumerate}
+\section*{B2. Representations and group indices · 10 points}
+Let $u(x)=x_1+2x_2$ on $\R_+^2$.
+\begin{enumerate}[label=(\alph*)]
+\item Which of $3u-7$, $u^2$ and $\min\{u,2\}$ represent the same preferences? Explain using the range of $u$; give two bundles witnessing any failed representation.
+\item Draw the indifference sets $u=2$ and $u=4$. Relabel them under the first two transformations without changing the curves.
+\item Now consider $F(t,c,z)=(1+\sqrt{tc})(1+z)$, with $t,c,z\ge0$. Write $F=U(v(t,c),z)$ with $U$ strictly increasing in $v$. Explain why the ranking of two $(t,c)$ bundles at a common $z$ does not change when that common $z$ changes. Does this determine a fixed spending budget for the group?
+\end{enumerate}
+\clearpage
+\section*{B3. Budget geometry · 10 points}
+Prices are $p=(2,3)$ and income is $m=18$.
+\begin{enumerate}[label=(\alph*)]
+\item Write the budget set and budget line. Find both intercepts and the slope, with $x_1$ on the horizontal axis.
+\item Check whether $(3,4)$, $(6,3)$ and $(0,5)$ are affordable, and identify which affordable bundles exhaust the budget.
+\item In separate diagrams, show what happens when income rises to 36 at unchanged prices, and when $p_1$ rises to 4 at unchanged income 18 and $p_2=3$.
+\item Compare the original budget with prices $(4,6)$ and income 36. Then explain why LNS implies budget exhaustion at an existing optimum.
+\end{enumerate}
+\clearpage
+\section*{B4. Cobb--Douglas, one step at a time · 20 points}
+Let $u(x)=x_1^{1/3}x_2^{2/3}$ on $\R_+^2$, with $p_1,p_2,m>0$.
+\begin{enumerate}[label=(\alph*)]
+\item Establish existence of an optimum using the original utility. Show that every optimum has $x_1,x_2>0$ before taking logarithms.
+\item On the positive domain, replace the objective by $g=\log u$. Write its Lagrangian and the first-order conditions for an interior solution with an exhausted budget.
+\item Derive demand for both goods. Verify the budget and both expenditure shares. Explain why this is the unique optimum.
+\item Calculate the bundle at $p=(2,1)$, $m=12$. Multiply both prices and income by 3 and check the result.
+\item Derive indirect utility $V_g(p,m)$ for the log objective and use Roy's identity to recover both demands.
+\item Find the budget multiplier for maximising $g$, then for maximising the original $u$. Explain why the bundles agree although the multipliers differ.
+\end{enumerate}
+\section*{B5. Practising corners with Kuhn--Tucker · 20 points}
+Let $u(x)=2\log(1+x_1)+\log(1+x_2)$, $p=(1,1)$, $m>0$.
+\begin{enumerate}[label=(\alph*)]
+\item Write the full KKT system with nonnegative multipliers for $m-x_1-x_2$, $x_1$ and $x_2$.
+\item First assume both goods are positive. Solve the stationarity equations and budget equation. For which incomes is this candidate strictly positive?
+\item Next set $x_2=0$, exhaust the budget and calculate all multipliers. For which incomes does dual feasibility hold?
+\item Combine the cases into a demand formula valid for every $m>0$, including the transition income. Verify global optimality and uniqueness.
+\item Fill a table of $(x_1^*,x_2^*,\lambda,\mu_1,\mu_2)$ for $m=1/2$, $m=1$ and $m=4$. Does $x_2^*=0$ always imply $\mu_2>0$?
+\end{enumerate}
+\clearpage
+\section*{B6. A kink without derivatives · 10 points}
+Let $u(x)=\min\{x_1,2x_2\}$, with $p_1,p_2,m>0$.
+\begin{enumerate}[label=(\alph*)]
+\item For a target utility $k\ge0$, write the two inequalities required to attain at least $k$. Find the cheapest bundle attaining it and its cost.
+\item Use this cost to find the highest affordable $k$ and derive both Marshallian demands. Explain why the chosen bundle is unique.
+\item Find demand and indirect utility at $p=(1,2)$, $m=12$.
+\item Why is an ordinary differentiable tangency condition inappropriate at the optimum? Explain how the fixed-proportion argument replaces it.
+\end{enumerate}
+\section*{B7. Quasilinearity and the income boundary · 15 points}
+Let $u(a,q)=a+5\log(1+q)$, with $a,q\ge0$, both prices equal to 1, and budget $a+q\le m$, $m>0$.
+\begin{enumerate}[label=(\alph*)]
+\item Explain why utility is quasilinear in $a$ and why the budget is exhausted. Substitute $a=m-q$ and state the feasible interval for $q$.
+\item Differentiate the reduced objective and find its unconstrained maximiser. Impose $0\le q\le m$ to obtain demand at all incomes.
+\item Calculate the bundle at $m=2$ and $m=6$. Draw a diagram of $q^*(m)$ and explain the change of regime.
+\item Derive the indirect utility as a piecewise function of $m$. Check that its value and its first derivative match at the transition.
+\item Find the budget multiplier in each regime. Explain when extra income buys more $q$ and when it buys only more $a$.
+\end{enumerate}
