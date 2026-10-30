@@ -56,3 +56,9 @@ reserve section on Hicksian demand and expenditure minimisation.
 
 This is the newly selected true/false section; the other mock and assessed tasks
 will be developed separately.
+
+### Two problems — Lectures 1–2
+
+- [Problems with stories](homework/01_true_false_en/problems.pdf?raw=true)
+- [Solutions](homework/01_true_false_en/problem-solutions.pdf?raw=true)
+- [Full folder: ten true/false questions and two problems, PDF and LaTeX](homework/01_true_false_en/homework-sections-complete.zip?raw=true)

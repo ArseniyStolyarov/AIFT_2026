@@ -22,3 +22,15 @@ allocation has been assigned. The earlier published homework draft is unchanged.
 Question 6 is deliberately easy. Question 5 explicitly uses a non-strict local
 maximum. Question 3 has a strictly positive domain. The proof of question 10
 establishes uniqueness without assuming it inside Roy's identity.
+
+## Two problems with stories
+
+- [Student problems PDF](problems.pdf?raw=true)
+- [Problem solutions PDF](problem-solutions.pdf?raw=true)
+- [Complete homework-section folder](homework-sections-complete.zip?raw=true)
+
+The original two problems are retained: a lower-score rule for two travellers,
+and a quasilinear tutoring choice with corner solutions, KKT and Roy.
+Edit `problem-questions.tex`; main file `problems.tex`. The solutions are in
+`problem-solutions.tex`. This is still a work in progress: the qualitative
+question and assessed Part B have not been selected for this revised set.
