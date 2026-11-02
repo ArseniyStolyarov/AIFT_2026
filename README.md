@@ -5,6 +5,8 @@ Arseniy Stolyarov.
 
 ## Current Homework 1 — complete assignment
 
+**Deadline: 14 November 2026.**
+
 - [Student PDF: Parts A and B](homework/01_complete_en/homework01.pdf?raw=true)
 - [Part A: 120-minute formative mock](homework/01_complete_en/part-a-mock.pdf?raw=true)
 - [Part B: training problem set](homework/01_complete_en/part-b-training.pdf?raw=true)

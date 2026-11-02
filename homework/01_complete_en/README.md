@@ -1,6 +1,7 @@
 # Homework 1 — Preferences and consumer choice
 
-Complete working edition for Lectures 1 and 2, in English and the course NES style.
+Publication edition for Lectures 1 and 2, in English and the course NES style.
+Deadline: **14 November 2026**.
 
 - [Full student assignment](homework01.pdf?raw=true)
 - [Part A: timed mock](part-a-mock.pdf?raw=true)
@@ -33,7 +34,7 @@ do not affect the 100-point Part B score. Their solutions are included at the
 end of the same instructor key; there is no separate optional handout.
 The existing assessment arrangement is preserved: B is the ordinary assessed
 homework, while A is the formative mock. Three assessed homeworks contribute
-equally to the course's 20% homework component. No deadline is assigned here.
+equally to the course's 20% homework component. The deadline is **14 November 2026**.
 
 ## Edit and build
 
