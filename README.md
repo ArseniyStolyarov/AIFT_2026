@@ -12,8 +12,10 @@ Arseniy Stolyarov.
 - [Entire folder: LaTeX, PDFs and build script](homework/01_complete_en/homework01-complete.zip?raw=true)
 
 The complete assignment covers Lectures 1–2. Earlier section drafts below are
-retained for history. Only the ordinary Part B score enters the homework grade;
-Part A is diagnostic. The source archive contains answers.
+retained for history. Part B now requires only three exercises (30/35/35 points).
+Four additional exercises follow in the same student PDF for optional self-study,
+without submission or grading. Only the ordinary Part B score enters the homework
+grade; Part A is diagnostic. The source archive contains answers.
 
 ## Lecture 1 — downloads
 

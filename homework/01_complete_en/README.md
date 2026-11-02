@@ -8,7 +8,7 @@ Complete working edition for Lectures 1 and 2, in English and the course NES sty
 - [Instructor key](instructor-solutions.pdf?raw=true)
 - [Complete source folder](homework01-complete.zip?raw=true)
 
-- `homework01.pdf`: complete student assignment, Parts A and B.
+- `homework01.pdf`: Parts A and B, followed by additional optional practice.
 - `part-a-mock.pdf`: only the formative 120-minute mock (100 diagnostic points).
 - `part-b-training.pdf`: only the ordinary assessed, training-oriented set (100 points).
 - `instructor-solutions.pdf`: complete key and suggested marking scheme.
@@ -22,7 +22,15 @@ each). These cases are not presented as verified news about real people.
 Part A is diagnostic; its errors do not lower the final grade. It is a dense
 120-minute exercise, as discussed during preparation.
 
-Part B is a more routine instructional set with seven scaffolded exercises.
+Part B contains three compulsory exercises: a preference checklist (30 points),
+Cobb–Douglas (35) and corner solutions with KKT (35). Only one indifference
+diagram is required in the checklist.
+
+The other four blocks — representations/separability, budget geometry, perfect
+complements and quasilinearity — appear at the end of the **same student PDF** as
+additional optional practice. They have no points or submission requirement and
+do not affect the 100-point Part B score. Their solutions are included at the
+end of the same instructor key; there is no separate optional handout.
 The existing assessment arrangement is preserved: B is the ordinary assessed
 homework, while A is the formative mock. Three assessed homeworks contribute
 equally to the course's 20% homework component. No deadline is assigned here.
@@ -30,7 +38,8 @@ equally to the course's 20% homework component. No deadline is assigned here.
 ## Edit and build
 
 Edit `mock-true-false.tex`, `mock-problems.tex`, `mock-short-answers.tex` and
-`training-body.tex`. Solutions are in `key-*.tex`. Run `bash build.sh` with
+`training-body.tex`. Optional material is in `optional-body.tex`. Solutions are
+in `key-*.tex`. Run `bash build.sh` with
 XeLaTeX and DejaVu Sans installed. No network is needed for compilation.
 For Overleaf, upload the entire folder (keeping `assets/`), select XeLaTeX,
 and choose `homework01.tex` or `instructor-solutions.tex` as the main file.

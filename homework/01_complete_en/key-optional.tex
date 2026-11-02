@@ -1,0 +1,42 @@
+\heading{Additional practice · Solutions}{Self-study only · No points or submission}
+\subsection*{O1. Representations and group indices}
+(a) $3u-7$ is strictly increasing in $u$, and $u^2$ is strictly increasing on its attained range $[0,\infty)$, so both represent the same preferences. The truncated index does not: $(2,0)$ and $(3,0)$ have original utilities 2 and 3 but both truncate to 2.
+
+(b) Level 2: line from $(0,1)$ to $(2,0)$. Level 4: line from $(0,2)$ to $(4,0)$. Under $3u-7$ they receive labels $-1$ and 5; under $u^2$ they receive labels 4 and 16.
+
+(c) Use $v(t,c)=\sqrt{tc}$, $U(v,z)=(1+v)(1+z)$. Since $z\ge0$, $U$ is strictly increasing in $v$. At a common $z$, comparison reduces to comparing $v$, independently of that $z$. Separability does not specify a fixed group expenditure. 
+\subsection*{O2. Budget geometry}
+(a) $B=\{x\ge0:2x_1+3x_2\le18\}$; line $x_2=6-(2/3)x_1$, intercepts $(9,0),(0,6)$, slope $-2/3$.
+
+(b) Costs are respectively 18, 21 and 15. The first and third are affordable; only the first exhausts the budget.
+
+(c) With income 36 and the original prices, intercepts become $(18,0),(0,12)$ with unchanged slope. With $p_1=4$ at original income, intercepts are $(9/2,0),(0,6)$ and slope $-4/3$: an inward rotation around the vertical intercept.
+
+(d) Scaling both prices and income by 2 leaves the original inequality unchanged after division by 2. If an optimum has slack $s=m-p\cdot x^*>0$, a ball of radius $s/(2\|p\|)$ around it stays affordable within the consumption domain. LNS supplies a better nearby bundle, contradicting optimality. This proof assumes an optimum exists. 
+
+\clearpage
+\subsection*{O3. A kink without derivatives}
+(a) Attaining at least $k$ requires $x_1\ge k$ and $x_2\ge k/2$. Positive prices make the unique cheapest bundle $(k,k/2)$, with cost $(p_1+p_2/2)k$.
+
+(b) The largest affordable target and demands are
+\[
+ k^*=\frac{2m}{2p_1+p_2},\quad
+ x_1^*=\frac{2m}{2p_1+p_2},\quad x_2^*=\frac{m}{2p_1+p_2}.
+\]
+The cheapest implementation of the highest target costs exactly $m$. Any extra quantity would exceed the budget, so no other bundle attains that target affordably: uniqueness follows.
+
+(c) At $(p_1,p_2,m)=(1,2,12)$, the bundle is $(6,3)$ and indirect utility is 6. (d) The index has a kink at $x_1=2x_2$, including the optimum. A differentiable MRS tangency calculation is inapplicable; the two target inequalities give the exact fixed proportions and cost. 
+\subsection*{O4. Quasilinearity and the income boundary}
+(a) $a$ enters linearly with coefficient 1, so common feasible translations in $a$ preserve comparisons. The index is strictly increasing in $a$, implying exhaustion. Reduce to $\max_{0\le q\le m}\{m-q+5\log(1+q)\}$.
+
+(b) The derivative is $-1+5/(1+q)$, with a zero at $q=4$; the second derivative is strictly negative. Thus $q^*=\min\{m,4\}$ and $a^*=\max\{m-4,0\}$.
+
+(c) At $m=2$: $(a,q)=(0,2)$; at $m=6$: $(2,4)$. The graph of $q^*(m)$ follows the 45-degree line up to $m=4$ and is horizontal at 4 thereafter. The no-borrowing boundary on $a$ binds at low incomes.
+
+(d) Indirect utility is
+\[
+ V(m)=\begin{cases}5\log(1+m),&0<m\le4,\\m-4+5\log5,&m>4.\end{cases}
+\]
+Both values equal $5\log5$ at 4. The left derivative is $5/(1+m)$, reaching 1 at 4; the right derivative is 1. Thus the value function is continuously differentiable across the regime change, although quantity demand has a kink.
+
+(e) $\lambda=5/(1+m)$ for $m\le4$ and $\lambda=1$ for $m>4$. The nonnegativity multiplier is $\mu_a=\lambda-1$, while $\mu_q=0$ since $q^*>0$ at positive incomes. Below 4, extra income buys more tutoring/service quantity $q$; above 4 it buys only $a$. 
