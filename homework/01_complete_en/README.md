@@ -20,6 +20,8 @@ Deadline: **14 November 2026**.
 Part A contains the ten approved true/false statements, the trip and tutoring
 problems, and two hypothetical trend-based short answers (maximum three sentences
 each). These cases are not presented as verified news about real people.
+Part A has 50 points for the ten true/false claims (5 each), 15 and 25 for
+the two problems, and 10 for the two short answers, totalling 100.
 Part A is diagnostic; its errors do not lower the final grade. It is a dense
 120-minute exercise, as discussed during preparation.
 
