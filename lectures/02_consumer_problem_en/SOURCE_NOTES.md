@@ -43,6 +43,13 @@ adaptation inputs, not substituted for the textbook assignment.
 - Quasiconcavity alone is not a global first-order sufficiency theorem. A shifted
   cubic supplies a stationary KKT nonmaximum. Concavity supplies the sufficient
   condition used here; global saddle inequalities are kept distinct.
+- The live pre-KKT route now includes the short proofs in the main sequence,
+  including continuity of v via a fixed compact expenditure-share simplex.
+- The saddle prelude precedes KKT and relaxes only the budget: ell(x,lambda)
+  keeps x in the nonnegative orthant. The global saddle-to-optimum implication
+  is proved directly. Max–inf encoding does not justify interchanging the
+  optimisation order. Under concavity the full KKT system verifies the same
+  budget-only saddle; no utility is evaluated at negative quantities.
 - A binding budget can have zero multiplier, even with strictly increasing
   preferences. This is distinct from Roy's strictly positive v_m assumption.
 - Roy's optional direct proof uses the supporting budget q*x*, so it neither

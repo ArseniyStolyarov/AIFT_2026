@@ -13,8 +13,10 @@ Prepared from the supplied **Lecture 10** and **Lecture 11** handouts.
 - `lecture02-complete.zip`: all PDFs and a self-contained LaTeX source archive.
 - `slide-index.md`: logical slide numbers, types and presentation page ranges.
 
-There are **49 core slides**, **8 reserve slides introducing duality**, and
-**12 optional mathematical proof/counterexample slides**: 69 logical slides total.
+There are **63 core slides**, **8 reserve slides introducing duality**, and
+**9 optional mathematical proof/counterexample slides**: 80 logical slides total.
+The first **32 slides** contain the live opening and its proofs, ending with
+“To the board: derive Kuhn–Tucker.” The KKT summary is slide 36.
 The core follows syllabus block 2. The tail of source Lecture 11 on expenditure
 minimisation is marked as a preview of block 3, rather than required live coverage.
 
@@ -37,11 +39,22 @@ are needed. Output PDFs are copied here; auxiliary files and logs stay in `build
 
 English text, NES colours and English logo, plain headings without shaded banners.
 Questions have no generic Discuss label or timed exercise instructions. Semantic
-steps appear successively. Proof links have visible return links. The presentation
+steps appear successively. All short pre-KKT proofs are in the main sequence:
+budget compactness, existence, demand homogeneity, budget exhaustion, convexity
+and uniqueness, indirect-value monotonicity/homogeneity/continuity and
+quasiconvexity. Continuity uses a fixed expenditure-share simplex and uniform
+continuity. Proof links have visible return links. The presentation
 uses ordinary PDF pages for overlays, with no JavaScript requirement.
 
-No source-course HW5/HW6 notices were imported. In this course HW1 is released
-after block 3, matching the lecturer's updated 3/5/7 schedule.
+The saddle introduction comes **before KKT**. It uses the budget-only
+Lagrangian ell(x,lambda) on x>=0, lambda>=0. The slides prove that a global
+saddle implies feasibility, complementary slackness and optimality. They do
+not exchange max and inf or assert a nonconcave saddle-existence theorem.
+The later full Lagrangian adds quantity-bound multipliers for the KKT system;
+a concave-KKT-to-budget-saddle proof is in the appendix.
+
+No source-course HW5/HW6 notices were imported. The current Homework 1 covers
+Lectures 1–2 and is due on 14 November 2026.
 
 ## Conventions and mathematical checks
 
