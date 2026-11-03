@@ -59,7 +59,7 @@ adaptation inputs, not substituted for the textbook assignment.
   and p.165 reversed zero-bound statement are corrected in this route.
 - A binding budget can have zero multiplier, even with strictly increasing
   preferences. This is distinct from Roy's strictly positive v_m assumption.
-- Roy's optional direct proof uses the supporting budget q*x*, so it neither
+- Roy's main-sequence direct proof uses the supporting budget q*x*, so it neither
   assumes differentiable demand nor assumes uniqueness to prove uniqueness.
 - Expenditure targets must be attainable. No excess utility is stated only for
   targets at least u(0). The preview's duality identities use targets above the
@@ -78,8 +78,19 @@ adaptation inputs, not substituted for the textbook assignment.
 - Substitutes: 2*x1+x2 at prices (3,1), wealth 12 -> (0,12), lambda=1,
   mu=(1,0). At prices (2,1), the entire budget line is optimal.
 - Complements: min(x1,x2) -> equal quantities m/(p1+p2).
-- Quasilinearity: a+4*sqrt(y), unit prices -> y=min(m,4), with distinct boundary
-  and positive-numeraire multiplier regimes.
+- Quasilinearity: a+4*log(1+q), budget a+r*q<=m. Demand is
+  q=min(m/r,max(4/r-1,0)), a=m-r*q. At unit prices m=2 -> (0,2),
+  m=8 -> (5,3). No tutoring, all-income and interior regimes are checked,
+  including the price/income boundaries and Roy derivatives.
+- General constrained envelope theorem: C1 data and a C1 branch of optimal
+  decisions and KKT multipliers are explicit sufficient assumptions. Equality
+  constraints have free multipliers. The proof accounts for all multiplier
+  derivatives; nonnegativity of a smooth zero multiplier makes its derivative
+  zero at an interior parameter. This regularity version is not asserted at
+  every regime change. Roy's independent direct proof has weaker requirements.
+- Roy examples now include Cobb–Douglas, both strict-return substitute corners
+  and the tie failure, all three linear-plus-log regimes, and smooth indirect
+  utility for nonsmooth perfect complements.
 - Compensated Cobb–Douglas: raise first price from 1 to 2, initial wealth 8 and
   raw utility 4 -> compensated quantities (2*sqrt(2),4*sqrt(2)), expenditure
   8*sqrt(2), compensation approximately 3.31.

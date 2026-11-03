@@ -13,16 +13,21 @@ Prepared from the supplied **Lecture 10** and **Lecture 11** handouts.
 - `lecture02-complete.zip`: all PDFs and a self-contained LaTeX source archive.
 - `slide-index.md`: logical slide numbers, types and presentation page ranges.
 
-There are **75 core slides**, **8 reserve slides introducing duality**, and
-**9 optional mathematical proof/counterexample slides**: 92 logical slides total.
+There are **89 core slides**, **8 reserve slides introducing duality**, and
+**8 optional mathematical proof/counterexample slides**: 105 logical slides total.
 
 The revised sequence is:
 
 1. Slides **1–11**: budget sets, existence and Marshallian demand homogeneity.
 2. Slides **12–25**: Lagrangian and saddle prelude, followed by KKT conditions.
 3. Slides **26–38**: the two complete KKT theorems and their proofs.
-4. From slide **39**: Walras' law, demand/indirect-value properties, then worked
-   examples, envelopes and Roy (slide **71**).
+4. Slides **39–45**: Walras' law, convexity/uniqueness and solution strategy.
+5. Slides **46–60**: solve Cobb–Douglas, substitutes, linear-plus-log utility
+   and complements together, with questions followed by reveals.
+6. Slides **61–70**: introduce indirect utility and discuss/prove its properties.
+7. Slides **71–78**: general constrained envelope theorem, proof and application.
+8. Slides **79–87**: prove Roy and recover demands in all four model families.
+
 
 There is no “at the board” slide or student-facing staging instruction.
 The first two budget propositions each reveal their own proof after the claim.
@@ -53,7 +58,8 @@ English text, NES colours and English logo, plain headings without shaded banner
 Questions have no generic Discuss label or timed exercise instructions. Semantic
 steps appear successively. Claims and their short proofs are revealed in order.
 Budget results come first; Walras' law, convexity/uniqueness and indirect-value
-proofs follow the KKT block. The value-continuity proof uses a fixed compact
+proofs follow the KKT block; the indirect-value section follows the four direct
+optimisation examples. The value-continuity proof uses a fixed compact
 expenditure-share simplex. Proof links have visible return links. The
 presentation uses ordinary PDF pages for overlays, without JavaScript.
 
@@ -73,10 +79,18 @@ m denotes wealth. D and H are demand correspondences; x and h denote vectors whe
 unique. v is indirect utility, e the expenditure function. The main KKT setup has
 strictly positive prices and wealth. Existence, necessity and global sufficiency
 are distinguished. Log utility is used only after interiority is established.
-Roy requires differentiable v and a strictly positive wealth derivative.
+The envelope theorem is a general constrained smooth-branch version with
+inequality and equality constraints. Its assumptions are C1 data and a C1
+selection of optimal choices and KKT multipliers on an open parameter
+neighbourhood. Its proof keeps all chain-rule terms before eliminating them.
+Roy has a separate fixed-bundle proof: continuous utility, LNS, differentiable
+v and a strictly positive wealth derivative suffice; direct utility and demand
+need not be differentiable.
 
-Worked examples include Cobb–Douglas, substitutes (corners and ties), complements
-(a kink) and quasilinearity (a binding numeraire). Numerical budget checks, KKT
+Worked examples include Cobb–Douglas, substitutes (corners and ties),
+linear-plus-log utility a+4 log(1+q) (three price/income regimes), and complements
+(a kink). All four are revisited after Roy. The quasilinear unit-price target
+is q=3; the old square-root example has been replaced. Numerical budget checks, KKT
 residuals, candidate optimality on budget grids, envelope/Roy derivatives and the
 compensated example were independently checked during preparation.
 

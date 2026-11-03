@@ -46,7 +46,9 @@ No network access or credentials are required to compile the documents.
 
 Opening budget propositions and proofs reveal by click (slides 1–11), followed
 by saddle points and KKT with both complete proofs (26–38). Walras and the other
-demand tools follow from slide 39; examples, envelopes and Roy come afterwards.
+demand tools follow from slide 39. Solve four models first, then introduce
+indirect utility (61), prove the general constrained envelope theorem (72–76),
+and prove/apply Roy across the four models (79–87).
 
 Utility maximisation, Marshallian demand, indirect utility, the Lagrangian,
 Kuhn–Tucker conditions, worked examples and Roy's identity. Includes a marked

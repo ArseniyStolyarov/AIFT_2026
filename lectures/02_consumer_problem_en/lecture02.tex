@@ -31,7 +31,7 @@
 \setlength{\itemsep}{.85em}
 \item<1-> Budget sets, existence and Marshallian demand.
 \item<2-> The Lagrangian, saddle points and Kuhn--Tucker conditions, with two proofs.
-\item<3-> Use the structure: budget exhaustion, demand properties, worked examples, envelopes and Roy’s identity.
+\item<3-> Budget exhaustion and worked examples; then indirect utility, the envelope theorem and Roy’s identity.
 \end{itemize}
 \end{frame}
 
@@ -356,6 +356,139 @@
 \vfill\navto{unique-demand}{Back to uniqueness}
 \end{frame}
 
+\begin{frame}[label=solve-roadmap]{Before differentiating, inspect the economics}
+\uncover<1->{\key{Substitutes:} compare utility gained per unit of spending; a corner may be optimal.}\par
+\uncover<2->{\key{Complements:} look for useful proportions; the optimum may be a kink.}\par
+\uncover<3->{\key{Smooth interior problem:} marginal conditions can identify a candidate.}\par
+\uncover<4->{Always check feasibility, boundary cases and a reason why the candidate is globally optimal.}\par
+\end{frame}
+
+\begin{frame}[label=checkpoint]{Checkpoint}
+\uncover<1->{What established existence? What could establish uniqueness?}\par
+\uncover<2->{Which KKT condition handles a zero quantity?}\par
+\uncover<3->{When is a KKT solution sufficient for global optimality?}\par
+\uncover<4->{What can go wrong if we check only the interior first-order equations?}\par
+\end{frame}
+
+\begin{frame}[label=cd-interior]{Example 1: Cobb--Douglas}
+\uncover<1->{\[u(x)=x_1^{\alpha}x_2^{1-\alpha},\qquad0<\alpha<1.\]}\par
+\uncover<2->{\question{Could an optimum lie on an axis? Which representation would make the calculation easier?}}\par
+\uncover<3->{An axis bundle gives zero utility; a strictly positive affordable bundle gives positive utility.}\par
+\uncover<4->{Every optimum is therefore positive. We may now take logs and use an interior method.}\par
+\end{frame}
+
+\begin{frame}[label=cd-log]{Choose a convenient representation}
+\uncover<1->{Maximising $u$ is equivalent, at the positive optimum, to maximising
+ \[\widetilde u(x)=\alpha\log x_1+(1-\alpha)\log x_2.\]}\par
+\uncover<2->{\[\mathcal L=\alpha\log x_1+(1-\alpha)\log x_2+\lambda(m-p_1x_1-p_2x_2).\]}\par
+\uncover<3->{The log representation is concave on the positive domain.}\par
+\uncover<4->{The bundle does not change, but the numerical utility and multiplier generally do.}\par
+\end{frame}
+
+\begin{frame}[label=cd-solve]{Solve the interior conditions}
+\uncover<1->{\[\frac{\alpha}{x_1}=\lambda p_1,\qquad\frac{1-\alpha}{x_2}=\lambda p_2.\]}\par
+\uncover<2->{Thus $p_1x_1=\alpha/\lambda$ and $p_2x_2=(1-\alpha)/\lambda$.}\par
+\uncover<3->{Budget exhaustion gives $m=1/\lambda$, hence $\lambda=1/m$.}\par
+\uncover<4->{\[x_1(p,m)=\frac{\alpha m}{p_1},\qquad x_2(p,m)=\frac{(1-\alpha)m}{p_2}.\]}\par
+\end{frame}
+
+\begin{frame}[label=cd-shares]{Interpret the solution}
+\uncover<1->{\[\frac{p_1x_1}{m}=\alpha,\qquad\frac{p_2x_2}{m}=1-\alpha.\]}\par
+\uncover<2->{Expenditure shares are constant in this specification.}\par
+\uncover<3->{Demand is homogeneous of degree zero and exhausts the budget.}\par
+\uncover<4->{If $\alpha=1/2$, $p=(2,1)$ and $m=12$, demand is $(3,6)$.}\par
+\uncover<5->{Which of these predictions is a modelling restriction rather than an accounting identity?}\par
+\end{frame}
+
+\begin{frame}[label=cd-check]{A price counterfactual}
+\uncover<1->{Keep $\alpha=1/2$ and $m=12$. Raise $p_1$ from $2$ to $3$, holding $p_2=1$.}\par
+\uncover<2->{What are the new quantities? The spending shares? The attained raw utility?}\par
+\uncover<3->{Does an unchanged quantity of good 2 mean that its utility contribution is unchanged?}\par
+\end{frame}
+
+\begin{frame}[label=substitutes]{Example 2: perfect substitutes}
+\uncover<1->{\[u(x)=a x_1+b x_2,\qquad a,b>0.\]}\par
+\uncover<2->{\question{Where would you spend the next unit of money? Can the optimum be nonunique?}}\par
+\uncover<3->{Compare $a/p_1$ and $b/p_2$. Buy $(m/p_1,0)$ if the first is larger; buy $(0,m/p_2)$ if the second is larger.}\par
+\uncover<4->{If the ratios are equal, every budget-line bundle is optimal.}\par
+\end{frame}
+
+\begin{frame}[label=corner-check]{Verify a corner with the full KKT system}
+\uncover<1->{Let $u(x)=2x_1+x_2$, $p=(3,1)$ and $m=12$.}\par
+\uncover<2->{The spending returns are $2/3$ and $1$, so $x^*=(0,12)$.}\par
+\uncover<3->{Stationarity and slackness give $\lambda=1$, $\mu_1=1$, $\mu_2=0$.}\par
+\uncover<4->{Check: $2-3\lambda+\mu_1=0$, $1-\lambda+\mu_2=0$.}\par
+\uncover<5->{The zero quantity is optimal precisely because its marginal return is too low.}\par
+\end{frame}
+
+\begin{frame}[label=ties]{Equal returns: a whole set of demand}
+
+\begin{columns}[c]
+\column{.52\textwidth}
+\begin{tikzpicture}\begin{axis}[nes,width=7.1cm,height=5cm,xmax=7,ymax=13,xtick={0,3,6},ytick={0,6,12}]
+\addplot[NESblue] coordinates {(0,12) (6,0)};
+\uncover<2->{\addplot[NESred,line width=3pt] coordinates {(0,12) (6,0)};}
+\node[above right,font=\small] at (axis cs:1,10) {$2x_1+x_2=12$};
+\end{axis}\end{tikzpicture}
+\column{.44\textwidth}
+\uncover<1->{$u=2x_1+x_2$, $p=(2,1)$, $m=12$.}
+\uncover<2->{\par Every budget-line bundle gives utility $12$.}
+\uncover<3->{\par $D(p,m)$ is a segment. Every optimal bundle gives utility $12$.}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}[label=quasilinear]{Example 3: lessons and money left over}
+\uncover<1->{\[u(a,q)=a+4\log(1+q),\qquad a+rq\le m,\quad a,q\ge0.\]}\par
+\uncover<2->{The price of $a$ is 1; the lesson price is $r>0$; wealth is $m>0$.}\par
+\uncover<3->{\question{Must both goods be consumed? How could we reduce this to one variable?}}\par
+\uncover<4->{Budget exhaustion gives $a=m-rq$ and $0\le q\le m/r$.}\par
+\end{frame}
+
+\begin{frame}[label=quasilinear-solve]{Solve first, then respect the quantity bounds}
+\uncover<1->{\[\max_{0\le q\le m/r}\;m-rq+4\log(1+q).\]}\par
+\uncover<2->{The derivative $-r+4/(1+q)$ is strictly decreasing.}\par
+\uncover<3->{The stationary quantity is $4/r-1$. Impose both bounds:}\par
+\uncover<4->{\[q^*=\min\left\{\frac mr,\max\left\{\frac4r-1,0\right\}\right\},\quad a^*=m-rq^*.\]}\par
+\end{frame}
+
+\begin{frame}[label=quasilinear-regimes]{Three regimes, one decision problem}
+\uncover<1->{If $r\ge4$: no tutoring, $q^*=0$, $a^*=m$.}\par
+\uncover<2->{If $0<r<4$ and $m\le4-r$: the no-borrowing bound binds, $q^*=m/r$, $a^*=0$.}\par
+\uncover<3->{If $0<r<4$ and $m>4-r$: both goods are consumed, $q^*=4/r-1$, $a^*=m-4+r$.}\par
+\uncover<4->{At $r=1$: income 2 gives $(a,q)=(0,2)$; income 8 gives $(5,3)$.}\par
+\uncover<5->{At $m=4-r$, both formulas agree; a binding bound may have zero multiplier.}\par
+\end{frame}
+
+\begin{frame}[label=complements]{Example 4: perfect complements}
+\uncover<1->{\[u(x)=\min\{x_1,x_2\}.\]}\par
+\uncover<2->{\question{Would you pay for a useless surplus of one good? Can we differentiate at the candidate?}}\par
+\uncover<3->{Utility $t$ requires both quantities at least $t$. The cheapest attainment is $(t,t)$, costing $(p_1+p_2)t$.}\par
+\uncover<4->{The highest affordable target is $t=m/(p_1+p_2)$.}\par
+\end{frame}
+
+\begin{frame}[label=complements-solve]{A fixed-proportion solution}
+\uncover<1->{\[x_1^*=x_2^*=\frac{m}{p_1+p_2}.\]}\par
+\uncover<2->{The cheapest implementation of the highest target costs the entire budget. Any surplus would cost extra, so the optimum is unique.}\par
+\uncover<3->{At $p=(2,1)$ and $m=12$, demand is $(4,4)$.}\par
+\uncover<4->{The optimum is a kink: the target-cost argument replaces a smooth tangency calculation.}\par
+\end{frame}
+
+\begin{frame}[label=solving-checklist]{A practical solution checklist}
+\uncover<1->{\key{1. Diagnose:} domain, continuity, corners, kinks, satiation.}\par
+\uncover<2->{\key{2. Establish:} existence, and uniqueness if justified.}\par
+\uncover<3->{\key{3. Solve:} geometry, a useful substitution or the relevant KKT cases.}\par
+\uncover<4->{\key{4. Verify:} feasibility, multiplier signs, slackness and global optimality.}\par
+\uncover<5->{\key{5. Interpret:} quantities, expenditure shares and reactions to parameters.}\par
+\end{frame}
+
+\begin{frame}[label=structural-counterfactual]{From a classroom solution to a structural model}
+\uncover<1->{Observed $p=(2,1)$, $m=12$, $x=(3,6)$ imply a spending share of $1/2$ on good 1.}\par
+\uncover<2->{\key{Within a Cobb--Douglas specification}, this suggests $\alpha=1/2$.}\par
+\uncover<3->{With the same preference parameter, $p_1=3$ predicts $x=(2,6)$.}\par
+\uncover<4->{Fitting one choice does not establish the functional form. Use more variation and test the restrictions.}\par
+\end{frame}
+
 \begin{frame}[label=indirect-utility]{Indirect utility: the optimal value}
 \uncover<1->{\[v(p,m)=\max_{x\ge0,\,p\cdot x\le m}u(x).\]}\par
 \uncover<2->{Demand tells us \key{which bundle}; indirect utility tells us \key{the attained value}.}\par
@@ -418,118 +551,6 @@
 \vfill\navto{v-quasiconvex}{Back to the property}
 \end{frame}
 
-\begin{frame}[label=solve-roadmap]{Before differentiating, inspect the economics}
-\uncover<1->{\key{Substitutes:} compare utility gained per unit of spending; a corner may be optimal.}\par
-\uncover<2->{\key{Complements:} look for useful proportions; the optimum may be a kink.}\par
-\uncover<3->{\key{Smooth interior problem:} marginal conditions can identify a candidate.}\par
-\uncover<4->{Always check feasibility, boundary cases and a reason why the candidate is globally optimal.}\par
-\end{frame}
-
-\begin{frame}[label=checkpoint]{Checkpoint}
-\uncover<1->{What established existence? What could establish uniqueness?}\par
-\uncover<2->{Which KKT condition handles a zero quantity?}\par
-\uncover<3->{When is a KKT solution sufficient for global optimality?}\par
-\uncover<4->{What can go wrong if we check only the interior first-order equations?}\par
-\end{frame}
-
-\begin{frame}[label=cd-interior]{Example 1: Cobb--Douglas}
-\uncover<1->{\[u(x)=x_1^{\alpha}x_2^{1-\alpha},\qquad0<\alpha<1.\]}\par
-\uncover<2->{A boundary bundle gives zero utility. A strictly positive affordable bundle gives positive utility.}\par
-\uncover<3->{Therefore every optimum is strictly positive. The nonnegativity multipliers are zero.}\par
-\uncover<4->{Now an interior method is justified; it was not assumed at the start.}\par
-\end{frame}
-
-\begin{frame}[label=cd-log]{Choose a convenient representation}
-\uncover<1->{Maximising $u$ is equivalent, at the positive optimum, to maximising
- \[\widetilde u(x)=\alpha\log x_1+(1-\alpha)\log x_2.\]}\par
-\uncover<2->{\[\mathcal L=\alpha\log x_1+(1-\alpha)\log x_2+\lambda(m-p_1x_1-p_2x_2).\]}\par
-\uncover<3->{The log representation is concave on the positive domain.}\par
-\uncover<4->{The bundle does not change, but the numerical utility and multiplier generally do.}\par
-\end{frame}
-
-\begin{frame}[label=cd-solve]{Solve the interior conditions}
-\uncover<1->{\[\frac{\alpha}{x_1}=\lambda p_1,\qquad\frac{1-\alpha}{x_2}=\lambda p_2.\]}\par
-\uncover<2->{Thus $p_1x_1=\alpha/\lambda$ and $p_2x_2=(1-\alpha)/\lambda$.}\par
-\uncover<3->{Budget exhaustion gives $m=1/\lambda$, hence $\lambda=1/m$.}\par
-\uncover<4->{\[x_1(p,m)=\frac{\alpha m}{p_1},\qquad x_2(p,m)=\frac{(1-\alpha)m}{p_2}.\]}\par
-\end{frame}
-
-\begin{frame}[label=cd-shares]{Interpret the solution}
-\uncover<1->{\[\frac{p_1x_1}{m}=\alpha,\qquad\frac{p_2x_2}{m}=1-\alpha.\]}\par
-\uncover<2->{Expenditure shares are constant in this specification.}\par
-\uncover<3->{Demand is homogeneous of degree zero and exhausts the budget.}\par
-\uncover<4->{If $\alpha=1/2$, $p=(2,1)$ and $m=12$, demand is $(3,6)$.}\par
-\uncover<5->{Which of these predictions is a modelling restriction rather than an accounting identity?}\par
-\end{frame}
-
-\begin{frame}[label=cd-check]{A price counterfactual}
-\uncover<1->{Keep $\alpha=1/2$ and $m=12$. Raise $p_1$ from $2$ to $3$, holding $p_2=1$.}\par
-\uncover<2->{What are the new quantities? The spending shares? The attained raw utility?}\par
-\uncover<3->{Does an unchanged quantity of good 2 mean that its utility contribution is unchanged?}\par
-\end{frame}
-
-\begin{frame}[label=substitutes]{Example 2: perfect substitutes}
-\uncover<1->{\[u(x)=a x_1+b x_2,\qquad a,b>0.\]}\par
-\uncover<2->{Compare $a/p_1$ and $b/p_2$: utility gained per unit of spending.}\par
-\uncover<3->{If $a/p_1>b/p_2$, buy $(m/p_1,0)$. If the inequality reverses, buy $(0,m/p_2)$.}\par
-\uncover<4->{If the ratios are equal, every point on the budget line is optimal.}\par
-\end{frame}
-
-\begin{frame}[label=corner-check]{Verify a corner with the full KKT system}
-\uncover<1->{Let $u(x)=2x_1+x_2$, $p=(3,1)$ and $m=12$.}\par
-\uncover<2->{The spending returns are $2/3$ and $1$, so $x^*=(0,12)$.}\par
-\uncover<3->{Stationarity and slackness give $\lambda=1$, $\mu_1=1$, $\mu_2=0$.}\par
-\uncover<4->{Check: $2-3\lambda+\mu_1=0$, $1-\lambda+\mu_2=0$.}\par
-\uncover<5->{The zero quantity is optimal precisely because its marginal return is too low.}\par
-\end{frame}
-
-\begin{frame}[label=ties]{Equal returns: a whole set of demand}
-
-\begin{columns}[c]
-\column{.52\textwidth}
-\begin{tikzpicture}\begin{axis}[nes,width=7.1cm,height=5cm,xmax=7,ymax=13,xtick={0,3,6},ytick={0,6,12}]
-\addplot[NESblue] coordinates {(0,12) (6,0)};
-\uncover<2->{\addplot[NESred,line width=3pt] coordinates {(0,12) (6,0)};}
-\node[above right,font=\small] at (axis cs:1,10) {$2x_1+x_2=12$};
-\end{axis}\end{tikzpicture}
-\column{.44\textwidth}
-\uncover<1->{$u=2x_1+x_2$, $p=(2,1)$, $m=12$.}
-\uncover<2->{\par Every budget-line bundle gives utility $12$.}
-\uncover<3->{\par $D(p,m)$ is a segment, while $v(p,m)=12$ is a single number.}
-\end{columns}
-
-\end{frame}
-
-\begin{frame}[label=complements]{Example 3: perfect complements}
-\uncover<1->{\[u(x)=\min\{x_1,x_2\}.\]}\par
-\uncover<2->{To reach utility $t$, both quantities must be at least $t$, costing at least $(p_1+p_2)t$.}\par
-\uncover<3->{\[x_1^*=x_2^*=\frac{m}{p_1+p_2}.\]}\par
-\uncover<4->{At $p=(2,1)$ and $m=12$, the optimum is $(4,4)$.}\par
-\uncover<5->{The optimum is a kink: the smooth stationarity formula does not apply there.}\par
-\end{frame}
-
-\begin{frame}[label=quasilinear]{Example 4: a boundary changes the regime}
-\uncover<1->{\[u(a,y)=a+4\sqrt y,\qquad a+y\le m,\quad a,y\ge0.\]}\par
-\uncover<2->{\[y^*=\min\{m,4\},\qquad a^*=m-y^*.\]}\par
-\uncover<3->{If $m>4$: $a^*>0$, $\lambda=1$, and extra wealth goes to $a$.}\par
-\uncover<4->{If $0<m<4$: $a^*=0$, $\lambda=2/\sqrt m>1$, $\mu_a=\lambda-1>0$.}\par
-\end{frame}
-
-\begin{frame}[label=solving-checklist]{A practical solution checklist}
-\uncover<1->{\key{1. Diagnose:} domain, continuity, corners, kinks, satiation.}\par
-\uncover<2->{\key{2. Establish:} existence, and uniqueness if justified.}\par
-\uncover<3->{\key{3. Solve:} geometry, a useful substitution or the relevant KKT cases.}\par
-\uncover<4->{\key{4. Verify:} feasibility, multiplier signs, slackness and global optimality.}\par
-\uncover<5->{\key{5. Interpret:} quantities, expenditure shares and reactions to parameters.}\par
-\end{frame}
-
-\begin{frame}[label=structural-counterfactual]{From a classroom solution to a structural model}
-\uncover<1->{Observed $p=(2,1)$, $m=12$, $x=(3,6)$ imply a spending share of $1/2$ on good 1.}\par
-\uncover<2->{\key{Within a Cobb--Douglas specification}, this suggests $\alpha=1/2$.}\par
-\uncover<3->{With the same preference parameter, $p_1=3$ predicts $x=(2,6)$.}\par
-\uncover<4->{Fitting one choice does not establish the functional form. Use more variation and test the restrictions.}\par
-\end{frame}
-
 \begin{frame}[label=v-cd]{Compute indirect utility in the same example}
 \uncover<1->{For the log representation, substitute the demands into $\widetilde u$:}\par
 \uncover<2->{\[v(p,m)=\alpha\log\frac{\alpha m}{p_1}+(1-\alpha)\log\frac{(1-\alpha)m}{p_2}.\]}\par
@@ -555,19 +576,52 @@
 
 \end{frame}
 
-\begin{frame}[label=envelope-idea]{The envelope idea}
-\uncover<1->{When the environment changes, the chosen bundle changes too.}\par
-\uncover<2->{At a regular optimum, first-order adjustments of the choice do not add a separate first-order gain to the optimal value.}\par
-\uncover<3->{The envelope theorem reads the value effect from the parameter\textquoteright s direct entry in the Lagrangian.}\par
-\uncover<4->{We need appropriate regularity and a differentiable value; a kink is a warning.}\par
+\begin{frame}[label=envelope-idea]{The envelope question}
+\uncover<1->{We know the optimal bundle and the attained value $v(p,m)$.}\par
+\uncover<2->{If a parameter changes, the optimal choice usually changes too.}\par
+\uncover<3->{\question{Can we find the first-order value change without differentiating the optimal choice?}}\par
+\uncover<4->{First a theorem for a general constrained problem; then its consumer application.}\par
 \end{frame}
 
-\begin{frame}[label=envelope-formulas]{Differentiate the value, not the choice}
-\uncover<1->{At a regular optimum where the envelope formulas apply,
- \[v_m(p,m)=\mathcal L_m=\lambda^*.\]}\par
-\uncover<2->{For a price,
- \[v_{p_i}(p,m)=\mathcal L_{p_i}=-\lambda^*x_i^*.\]}\par
-\uncover<3->{The wealth effect is positive when $\lambda^*>0$; a higher price hurts in proportion to the quantity purchased.}\par
+\begin{frame}[label=envelope-general-problem]{A general parameterised optimisation problem}
+\uncover<1->{\[V(\theta)=\max_x f(x,\theta)\quad\text{subject to}\quad g_j(x,\theta)\ge0,\quad h_k(x,\theta)=0.\]}\par
+\uncover<2->{The parameter varies in an open set; objective and constraints are continuously differentiable.}\par
+\uncover<3->{The ambient decision domain is open; all quantity bounds are included among the constraints.}\par
+\uncover<4->{Use $\lambda_j\ge0$ for inequalities and unrestricted $\nu_k$ for equalities.}\par
+\end{frame}
+
+\begin{frame}[label=envelope-general-lagrangian]{The general Lagrangian}
+\uncover<1->{\[\mathcal L=f(x,\theta)+\sum_j\lambda_jg_j(x,\theta)+\sum_k\nu_kh_k(x,\theta).\]}\par
+\uncover<2->{At an optimum: $\mathcal L_x=0$, $g_j\ge0$, $h_k=0$, $\lambda_j\ge0$ and $\lambda_jg_j=0$.}\par
+\uncover<3->{Assume a continuously differentiable selection of optimal choices and KKT multipliers exists near the parameter under consideration.}\par
+\uncover<4->{This is a sufficient smooth-branch regularity assumption, to be checked in an application.}\par
+\end{frame}
+
+\begin{frame}[label=envelope-theorem]{Envelope theorem: a constrained smooth version}
+\uncover<1->{Under the preceding smooth-branch assumptions,}\par
+\uncover<2->{\[\frac{\partial V}{\partial\theta_\ell}=\frac{\partial\mathcal L}{\partial\theta_\ell}(x^*,\lambda^*,\nu^*;\theta).\]}\par
+\uncover<3->{On the right, hold decisions and multipliers fixed when taking the partial derivative.}\par
+\uncover<4->{Thus $V_{\theta_\ell}=f_{\theta_\ell}+\sum_j\lambda_j^*(g_j)_{\theta_\ell}+\sum_k\nu_k^*(h_k)_{\theta_\ell}$, evaluated at the optimum.}\par
+\end{frame}
+
+\begin{frame}[label=envelope-proof-chain]{Proof: differentiate along an optimal branch}
+\uncover<1->{Feasibility and slackness give $V(\theta)=\mathcal L(x^*(\theta),\lambda^*(\theta),\nu^*(\theta);\theta)$.}\par
+\uncover<2->{Fix one coordinate $t$ of $\theta$. The chain rule gives}\par
+\uncover<3->{\[\frac{dV}{dt}=\mathcal L_t+\mathcal L_x x_t^*+\sum_jg_j(\lambda_j^*)_t+\sum_kh_k(\nu_k^*)_t.\]}\par
+\uncover<4->{Stationarity kills the $\mathcal L_x$ term; equality feasibility kills the $h_k$ terms.}\par
+\end{frame}
+
+\begin{frame}[label=envelope-proof-slackness]{Proof: why multiplier derivatives disappear}
+\uncover<1->{For each inequality, examine $g_j(\lambda_j^*)_t$.}\par
+\uncover<2->{If $\lambda_j^*>0$, complementary slackness gives $g_j=0$.}\par
+\uncover<3->{If $\lambda_j^*=0$, its differentiable nonnegative branch has a local minimum at zero, so $(\lambda_j^*)_t=0$.}\par
+\uncover<4->{Every extra term is zero. Hence\[\frac{dV}{dt}=\mathcal L_t.\]}\par
+\end{frame}
+
+\begin{frame}[label=envelope-formulas]{Apply the theorem to the consumer}
+\uncover<1->{Here $f=u(x)$ and the parameter-dependent constraint is $m-p\cdot x\ge0$. Quantity bounds do not depend on prices or wealth.}\par
+\uncover<2->{Where the envelope assumptions hold,\[v_m=\mathcal L_m=\lambda^*,\qquad v_{p_i}=\mathcal L_{p_i}=-\lambda^*x_i^*.\]}\par
+\uncover<3->{Wealth relaxes the budget; a higher price tightens it in proportion to the quantity purchased.}\par
 \end{frame}
 
 \begin{frame}[label=shadow-price]{The budget multiplier has an interpretation}
@@ -578,10 +632,19 @@
 \end{frame}
 
 \begin{frame}[label=roy]{Roy’s identity: recover demand from value}
-\uncover<1->{Under the maintained consumer assumptions, suppose $v$ is differentiable at $(p,m)$ and $v_m(p,m)>0$.}\par
-\uncover<2->{\[x_i(p,m)=-\frac{v_{p_i}(p,m)}{v_m(p,m)}.\]}\par
-\uncover<3->{Use $v_{p_i}=-\lambda x_i$ and $v_m=\lambda$; the multiplier cancels.}\par
-\uncover<4->{Under these conditions the optimal quantity vector is unique.\quad\navto{proof-roy}{Derivation}}\par
+\uncover<1->{Assume continuous utility, LNS, $p\gg0$, $m>0$, differentiable $v$ and $v_m>0$.}\par
+\uncover<2->{Every optimiser satisfies\[x_i^*=-\frac{v_{p_i}(p,m)}{v_m(p,m)}.\]}\par
+\uncover<3->{At a smooth regular optimum, the envelope formulas give the ratio by cancelling $\lambda^*$.}\par
+\uncover<4->{The next proof needs no differentiable demand or differentiable direct utility.}\par
+\end{frame}
+
+\begin{frame}[label=proof-roy]{Roy without differentiating demand}
+\uncover<1->{Let $x^*\in D(p,m)$. LNS gives $p\cdot x^*=m$.}\par
+\uncover<2->{At any nearby price vector $q$, the bundle $x^*$ is affordable with wealth $q\cdot x^*$. Thus $F(q)=v(q,q\cdot x^*)\ge u(x^*)=F(p)$.}\par
+\uncover<3->{If $v$ is differentiable, $F$ has a minimum at $p$:
+ \[0=F_{q_i}(p)=v_{p_i}(p,m)+v_m(p,m)x_i^*.\]}\par
+\uncover<4->{If $v_m>0$, every optimiser satisfies the same Roy formula, so demand is unique.\quad}\par
+\vfill\navto{roy}{Back}
 \end{frame}
 
 \begin{frame}[label=roy-example]{Check Roy in the Cobb--Douglas example}
@@ -589,6 +652,44 @@
 \uncover<2->{\[v_m=1/m,\qquad v_{p_1}=-\alpha/p_1,\qquad v_{p_2}=-(1-\alpha)/p_2.\]}\par
 \uncover<3->{\[x_1=-\frac{-\alpha/p_1}{1/m}=\frac{\alpha m}{p_1}.\]}\par
 \uncover<4->{Likewise $x_2=(1-\alpha)m/p_2$. The demand agrees with the direct solution.}\par
+\end{frame}
+
+\begin{frame}[label=roy-subs-value]{Roy example 2: substitutes and a corner}
+\uncover<1->{For $u=ax_1+bx_2$,\[v(p,m)=m\max\left\{\frac a{p_1},\frac b{p_2}\right\}.\]}\par
+\uncover<2->{\question{Differentiate in a region where good 1 gives the strictly larger spending return.}}\par
+\uncover<3->{If $a/p_1>b/p_2$, then $v=am/p_1$, $v_m=a/p_1$, $v_{p_1}=-am/p_1^2$ and $v_{p_2}=0$.}\par
+\uncover<4->{Roy gives $x_1=m/p_1$, $x_2=0$.}\par
+\end{frame}
+
+\begin{frame}[label=roy-subs-tie]{The other corner and the tie}
+\uncover<1->{If $a/p_1<b/p_2$, the calculation gives $x_1=0$, $x_2=m/p_2$.}\par
+\uncover<2->{For $u=2x_1+x_2$, $p=(3,1)$, $m=12$, Roy recovers $(0,12)$.}\par
+\uncover<3->{If the returns are equal, the value has a price kink: the active formulas have different price gradients.}\par
+\uncover<4->{At the tie Roy’s differentiability assumption fails; demand is a whole segment.}\par
+\end{frame}
+
+\begin{frame}[label=roy-quasilinear-value]{Roy example 3: the logarithmic model}
+\uncover<1->{Return to $u=a+4\log(1+q)$ and $a+rq\le m$. Substitute the demands:}\par
+\uncover<2->{\[v(r,m)=\begin{cases}m,&r\ge4,\\4\log(1+m/r),&0<r<4,\ m\le4-r,\\m-4+r+4\log(4/r),&0<r<4,\ m>4-r.\end{cases}\]}\par
+\uncover<3->{\question{Can the same derivative ratio recover all three demand regimes?}}\par
+\end{frame}
+
+\begin{frame}[label=roy-quasilinear-ratio]{One ratio, three regimes}
+\uncover<1->{Compute $q^*=-v_r/v_m$ in each region.}\par
+\begin{center}\renewcommand{\arraystretch}{1.8}\begin{tabular}{lccc}
+\toprule Regime & $v_m$ & $v_r$ & $-v_r/v_m$\\\midrule
+\uncover<2->{No tutoring}&\uncover<2->{$1$}&\uncover<2->{$0$}&\uncover<2->{$0$}\\
+\uncover<3->{All wealth on $q$}&\uncover<3->{$\frac4{r+m}$}&\uncover<3->{$-\frac{4m}{r(r+m)}$}&\uncover<3->{$\frac mr$}\\
+\uncover<4->{Both goods}&\uncover<4->{$1$}&\uncover<4->{$1-\frac4r$}&\uncover<4->{$\frac4r-1$}\\\bottomrule
+\end{tabular}\end{center}
+\uncover<5->{Recover $a^*=m-rq^*$. At $m=4-r$ and at $r=4$, adjacent values and first derivatives agree.}\par
+\end{frame}
+
+\begin{frame}[label=roy-complements]{Roy example 4: a kink in direct utility}
+\uncover<1->{For $u=\min\{x_1,x_2\}$,\[v(p,m)=\frac{m}{p_1+p_2}.\]}\par
+\uncover<2->{$v_m=1/(p_1+p_2)$ and $v_{p_i}=-m/(p_1+p_2)^2$.}\par
+\uncover<3->{\[x_i=-\frac{v_{p_i}}{v_m}=\frac{m}{p_1+p_2}\qquad(i=1,2).\]}\par
+\uncover<4->{Direct utility has a kink, but indirect utility is differentiable. The direct proof of Roy still applies.}\par
 \end{frame}
 
 \begin{frame}[label=roy-scale]{Demand survives a change of utility scale}
@@ -735,15 +836,6 @@
  \[x_i(p,m)=\frac{a_i}{A}\frac{m}{p_i}.\]}\par
 \uncover<4->{No restriction $A\le1$ is needed for this preference solution.\quad}\par
 \vfill\navto{cd-solve}{Back}
-\end{frame}
-
-\begin{frame}[label=proof-roy]{Roy without differentiating demand}
-\uncover<1->{Let $x^*\in D(p,m)$. LNS gives $p\cdot x^*=m$.}\par
-\uncover<2->{At any nearby price vector $q$, the bundle $x^*$ is affordable with wealth $q\cdot x^*$. Thus $F(q)=v(q,q\cdot x^*)\ge u(x^*)=F(p)$.}\par
-\uncover<3->{If $v$ is differentiable, $F$ has a minimum at $p$:
- \[0=F_{q_i}(p)=v_{p_i}(p,m)+v_m(p,m)x_i^*.\]}\par
-\uncover<4->{If $v_m>0$, every optimiser satisfies the same Roy formula, so demand is unique.\quad}\par
-\vfill\navto{roy}{Back}
 \end{frame}
 
 \begin{frame}[label=proof-emp]{Proof: expenditure minimisation has a solution}

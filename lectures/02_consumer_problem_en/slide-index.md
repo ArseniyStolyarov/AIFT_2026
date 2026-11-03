@@ -1,8 +1,8 @@
 # Lecture 2 slide index
 
-Core: 1–75. Lecture 3 reserve: 76–83. Optional proofs: 84–92.
+Core: 1–89. Lecture 3 reserve: 90–97. Optional proof appendix: 98–105.
 
-Opening: 1–11. KKT summary: 21. Complete KKT theorems/proofs: 26–38. Walras and demand tools: from 39. Roy: 71. Presentation: 370 physical pages.
+KKT proofs: 26–38. Walras: 39. Direct examples: 46–58. Indirect utility: 61. General envelope theorem: 72–76. Roy and applications: 79–87. Presentation: 422 reveal pages.
 
 | Logical / handout slide | Section | Topic | Presentation PDF pages |
 |---:|---|---|---:|
@@ -49,52 +49,65 @@ Opening: 1–11. KKT summary: 21. Complete KKT theorems/proofs: 26–38. Walras 
 | 41 | core | Proof: convex preferences give a convex demand set | 161–165 |
 | 42 | core | Strict convexity: at most one optimum | 166–169 |
 | 43 | core | Proof: uniqueness from strict convexity | 170–172 |
-| 44 | core | Indirect utility: the optimal value | 173–176 |
-| 45 | core | Indirect utility: the properties to prove | 177–180 |
-| 46 | core | Proof: currency units and higher prices | 181–184 |
-| 47 | core | Proof: more wealth and local nonsatiation | 185–189 |
-| 48 | core | Continuity: put every budget on the same simplex | 190–193 |
-| 49 | core | Proof: the optimal value is continuous | 194–198 |
-| 50 | core | A less obvious property: quasiconvexity | 199–202 |
-| 51 | core | Proof: indirect utility is quasiconvex | 203–206 |
-| 52 | core | Before differentiating, inspect the economics | 207–210 |
-| 53 | core | Checkpoint | 211–214 |
-| 54 | core | Example 1: Cobb--Douglas | 215–218 |
-| 55 | core | Choose a convenient representation | 219–222 |
-| 56 | core | Solve the interior conditions | 223–226 |
-| 57 | core | Interpret the solution | 227–231 |
-| 58 | core | A price counterfactual | 232–234 |
-| 59 | core | Example 2: perfect substitutes | 235–238 |
-| 60 | core | Verify a corner with the full KKT system | 239–243 |
-| 61 | core | Equal returns: a whole set of demand | 244–246 |
-| 62 | core | Example 3: perfect complements | 247–251 |
-| 63 | core | Example 4: a boundary changes the regime | 252–255 |
-| 64 | core | A practical solution checklist | 256–260 |
-| 65 | core | From a classroom solution to a structural model | 261–264 |
-| 66 | core | Compute indirect utility in the same example | 265–269 |
-| 67 | core | A continuous value need not be differentiable | 270–272 |
-| 68 | core | The envelope idea | 273–276 |
-| 69 | core | Differentiate the value, not the choice | 277–279 |
-| 70 | core | The budget multiplier has an interpretation | 280–283 |
-| 71 | core | Roy’s identity: recover demand from value | 284–287 |
-| 72 | core | Check Roy in the Cobb--Douglas example | 288–291 |
-| 73 | core | Demand survives a change of utility scale | 292–295 |
-| 74 | core | Checkpoint | 296–300 |
-| 75 | core | Read next, and keep the core route clear | 301–304 |
-| 76 | preview | Next block: two ways to ask the consumer question | 305–307 |
-| 77 | preview | Expenditure minimisation | 308–311 |
-| 78 | preview | Why an unbounded feasible set can still have a minimum | 312–315 |
-| 79 | preview | Hicksian demand: basic properties | 316–319 |
-| 80 | preview | The expenditure function has a different curvature | 320–324 |
-| 81 | preview | Fixed wealth versus fixed utility | 325–327 |
-| 82 | preview | Two identities to develop next time | 328–331 |
-| 83 | preview | A monetary compensation question | 332–335 |
-| 84 | proof | Why the constraint qualification holds here | 336–339 |
-| 85 | proof | Proof: why concavity makes KKT sufficient | 340–343 |
-| 86 | proof | Proof: concave KKT gives the budget saddle | 344–348 |
-| 87 | proof | A KKT point that is not optimal | 349–352 |
-| 88 | proof | A binding budget with zero marginal value | 353–356 |
-| 89 | proof | Cobb--Douglas with any positive exponent sum | 357–360 |
-| 90 | proof | Roy without differentiating demand | 361–364 |
-| 91 | proof | Proof: expenditure minimisation has a solution | 365–367 |
-| 92 | proof | Proof: homogeneity and price concavity of expenditure | 368–370 |
+| 44 | core | Before differentiating, inspect the economics | 173–176 |
+| 45 | core | Checkpoint | 177–180 |
+| 46 | core | Example 1: Cobb--Douglas | 181–184 |
+| 47 | core | Choose a convenient representation | 185–188 |
+| 48 | core | Solve the interior conditions | 189–192 |
+| 49 | core | Interpret the solution | 193–197 |
+| 50 | core | A price counterfactual | 198–200 |
+| 51 | core | Example 2: perfect substitutes | 201–204 |
+| 52 | core | Verify a corner with the full KKT system | 205–209 |
+| 53 | core | Equal returns: a whole set of demand | 210–212 |
+| 54 | core | Example 3: lessons and money left over | 213–216 |
+| 55 | core | Solve first, then respect the quantity bounds | 217–220 |
+| 56 | core | Three regimes, one decision problem | 221–225 |
+| 57 | core | Example 4: perfect complements | 226–229 |
+| 58 | core | A fixed-proportion solution | 230–233 |
+| 59 | core | A practical solution checklist | 234–238 |
+| 60 | core | From a classroom solution to a structural model | 239–242 |
+| 61 | core | Indirect utility: the optimal value | 243–246 |
+| 62 | core | Indirect utility: the properties to prove | 247–250 |
+| 63 | core | Proof: currency units and higher prices | 251–254 |
+| 64 | core | Proof: more wealth and local nonsatiation | 255–259 |
+| 65 | core | Continuity: put every budget on the same simplex | 260–263 |
+| 66 | core | Proof: the optimal value is continuous | 264–268 |
+| 67 | core | A less obvious property: quasiconvexity | 269–272 |
+| 68 | core | Proof: indirect utility is quasiconvex | 273–276 |
+| 69 | core | Compute indirect utility in the same example | 277–281 |
+| 70 | core | A continuous value need not be differentiable | 282–284 |
+| 71 | core | The envelope question | 285–288 |
+| 72 | core | A general parameterised optimisation problem | 289–292 |
+| 73 | core | The general Lagrangian | 293–296 |
+| 74 | core | Envelope theorem: a constrained smooth version | 297–300 |
+| 75 | core | Proof: differentiate along an optimal branch | 301–304 |
+| 76 | core | Proof: why multiplier derivatives disappear | 305–308 |
+| 77 | core | Apply the theorem to the consumer | 309–311 |
+| 78 | core | The budget multiplier has an interpretation | 312–315 |
+| 79 | core | Roy’s identity: recover demand from value | 316–319 |
+| 80 | core | Roy without differentiating demand | 320–323 |
+| 81 | core | Check Roy in the Cobb--Douglas example | 324–327 |
+| 82 | core | Roy example 2: substitutes and a corner | 328–331 |
+| 83 | core | The other corner and the tie | 332–335 |
+| 84 | core | Roy example 3: the logarithmic model | 336–338 |
+| 85 | core | One ratio, three regimes | 339–343 |
+| 86 | core | Roy example 4: a kink in direct utility | 344–347 |
+| 87 | core | Demand survives a change of utility scale | 348–351 |
+| 88 | core | Checkpoint | 352–356 |
+| 89 | core | Read next, and keep the core route clear | 357–360 |
+| 90 | preview | Next block: two ways to ask the consumer question | 361–363 |
+| 91 | preview | Expenditure minimisation | 364–367 |
+| 92 | preview | Why an unbounded feasible set can still have a minimum | 368–371 |
+| 93 | preview | Hicksian demand: basic properties | 372–375 |
+| 94 | preview | The expenditure function has a different curvature | 376–380 |
+| 95 | preview | Fixed wealth versus fixed utility | 381–383 |
+| 96 | preview | Two identities to develop next time | 384–387 |
+| 97 | preview | A monetary compensation question | 388–391 |
+| 98 | proof | Why the constraint qualification holds here | 392–395 |
+| 99 | proof | Proof: why concavity makes KKT sufficient | 396–399 |
+| 100 | proof | Proof: concave KKT gives the budget saddle | 400–404 |
+| 101 | proof | A KKT point that is not optimal | 405–408 |
+| 102 | proof | A binding budget with zero marginal value | 409–412 |
+| 103 | proof | Cobb--Douglas with any positive exponent sum | 413–416 |
+| 104 | proof | Proof: expenditure minimisation has a solution | 417–419 |
+| 105 | proof | Proof: homogeneity and price concavity of expenditure | 420–422 |
