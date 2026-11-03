@@ -50,6 +50,11 @@ adaptation inputs, not substituted for the textbook assignment.
   is proved directly. Max–inf encoding does not justify interchanging the
   optimisation order. Under concavity the full KKT system verifies the same
   budget-only saddle; no utility is evaluated at negative quantities.
+- Source Lecture 11 p.171's two KKT theorems now have complete main-sequence
+  proofs: necessity by constructing the multipliers (including zero consumption),
+  and concave sufficiency via the Lagrangian supporting-plane inequality,
+  feasibility and complementary slackness. The source p.164 price/index errors
+  and p.165 reversed zero-bound statement are corrected in this route.
 - A binding budget can have zero multiplier, even with strictly increasing
   preferences. This is distinct from Roy's strictly positive v_m assumption.
 - Roy's optional direct proof uses the supporting budget q*x*, so it neither

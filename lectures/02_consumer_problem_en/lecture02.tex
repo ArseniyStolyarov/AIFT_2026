@@ -277,6 +277,14 @@
 \uncover<4->{For the smooth argument, assume $u$ is differentiable on an open neighbourhood of the candidate.}\par
 \end{frame}
 
+
+
+
+
+
+
+
+
 \begin{frame}[label=stationarity]{Stationarity in quantities}
 \uncover<1->{At a smooth candidate,
  \[u_i(x^*)-\lambda^*p_i+\mu_i^*=0\qquad\text{for each }i.\]}\par
@@ -321,6 +329,103 @@
 \uncover<3->{\key{Sufficiency:} if $u$ is differentiable and concave, a feasible KKT point is a global optimum.}\par
 \uncover<4->{Quasiconcavity alone does not make every stationary point optimal.\quad\navto{proof-kkt-sufficient}{Sufficiency proof}\quad\navto{proof-kkt-trap}{Counterexample}}\par
 \end{frame}
+
+\begin{frame}[label=theorem-kkt-necessary]{Theorem 1: KKT is necessary}
+\uncover<1->{Let $p\gg0$, $m>0$, and let $u$ be continuously differentiable on an open neighbourhood of the budget set.}\par
+\uncover<2->{If $x^*$ is a local solution of the consumer problem, then there exist $\lambda^*\ge0$, $\mu^*\ge0$ satisfying all four KKT groups.}\par
+\uncover<3->{This includes corner optima and does not require concavity.}\par
+\uncover<4->{We prove this directly: construct the multipliers, prove their signs, then verify complementary slackness.}\par
+\end{frame}
+
+\begin{frame}[label=build-lambda]{Construct the budget multiplier from an optimum}
+\uncover<1->{Take a nonzero optimum $x^*$; write $u_i=\partial u/\partial x_i$. Choose $j$ with $x_j^*>0$.}\par
+\uncover<2->{Define \[\lambda^*:=\frac{u_j(x^*)}{p_j}.\]}\par
+\uncover<3->{Feasible spending transfers between two consumed goods show that $u_i(x^*)/p_i=\lambda^*$ whenever $x_i^*>0$.}\par
+\uncover<4->{Also $\lambda^*\ge0$: otherwise $u_j(x^*)<0$, and consuming slightly less of good $j$ would be affordable and strictly improve utility.}\par
+\end{frame}
+
+\begin{frame}[label=proof-lambda-common]{Proof 1: consumed goods have one common return}
+\uncover<1->{If $x_i^*>0$ and $x_j^*>0$, a small spending transfer is possible in either direction.}\par
+\uncover<2->{If $u_i(x^*)/p_i>u_j(x^*)/p_j$, transfer $\varepsilon$ of spending from $j$ to $i$.}\par
+\uncover<3->{The utility derivative is $u_i/p_i-u_j/p_j>0$: a feasible local improvement, contradicting optimality.}\par
+\uncover<4->{The reverse strict inequality is ruled out by the reverse transfer. Thus $u_i(x^*)/p_i=u_j(x^*)/p_j=\lambda^*$.}\par
+\end{frame}
+
+\begin{frame}[label=build-mu]{Construct the quantity-bound multipliers}
+\uncover<1->{For each good, define\[\mu_i^*:=\begin{cases}0,&x_i^*>0,\\\lambda^*p_i-u_i(x^*),&x_i^*=0.\end{cases}\]}\par
+\uncover<2->{This definition makes stationarity hold: \[u_i(x^*)-\lambda^*p_i+\mu_i^*=0.\]}\par
+\uncover<3->{It also gives $\mu_i^*x_i^*=0$.}\par
+\uncover<4->{The remaining question: why are these constructed $\mu_i^*$ nonnegative? We have not assumed their sign.}\par
+\end{frame}
+
+\begin{frame}[label=mu-sign-algebra]{If a constructed multiplier were negative}
+\uncover<1->{Only $x_i^*=0$ needs checking: for a consumed good we already set $\mu_i^*=0$.}\par
+\uncover<2->{Suppose $\mu_i^*<0$. By its definition,\[\lambda^*p_i-u_i(x^*)<0\quad\Rightarrow\quad\lambda^*<\frac{u_i(x^*)}{p_i}.\]}\par
+\uncover<3->{For the consumed good $j$, $\lambda^*=u_j(x^*)/p_j$. Therefore\[\frac{u_i(x^*)}{p_i}>\frac{u_j(x^*)}{p_j}.\]}\par
+\uncover<4->{The unconsumed good would give more marginal utility per unit of spending.}\par
+\end{frame}
+
+\begin{frame}[label=mu-sign-trade]{Proof: a negative multiplier permits a better purchase}
+\uncover<1->{Shift spending $\varepsilon$ from consumed good $j$ to unconsumed good $i$:}\par
+\uncover<2->{\[x_i(\varepsilon)=\frac{\varepsilon}{p_i},\qquad x_j(\varepsilon)=x_j^*-\frac{\varepsilon}{p_j}.\]}\par
+\uncover<3->{Keep other quantities fixed. For $0<\varepsilon<p_jx_j^*$, quantities remain nonnegative and total spending is unchanged.}\par
+\uncover<4->{\[\left.\frac{d}{d\varepsilon}u(x(\varepsilon))\right|_{0+}=\frac{u_i(x^*)}{p_i}-\frac{u_j(x^*)}{p_j}=-\frac{\mu_i^*}{p_i}>0.\]}\par
+\uncover<5->{A sufficiently small transfer strictly improves utility: contradiction. Thus $\mu_i^*\ge0$, with equality allowed.}\par
+\end{frame}
+
+\begin{frame}[label=proof-constructed-slackness]{Proof 1: finish with complementary slackness}
+\uncover<1->{If $p\cdot x^*=m$, then $\lambda^*(m-p\cdot x^*)=0$.}\par
+\uncover<2->{If the budget is slack and $x_j^*>0$, both a small increase and a small decrease in $x_j$ are feasible.}\par
+\uncover<3->{Local optimality forces $u_j(x^*)=0$, hence $\lambda^*=u_j(x^*)/p_j=0$. The budget product is again zero.}\par
+\uncover<4->{For every $i$, the construction gives $\mu_i^*x_i^*=0$: either the quantity or its multiplier is zero.}\par
+\uncover<5->{Feasibility came from $x^*$; stationarity, multiplier signs and slackness have now all been proved.}\par
+\end{frame}
+
+\begin{frame}[label=proof-zero-bundle]{Proof 1: the zero-bundle case}
+\uncover<1->{If $x^*=0$, we cannot select a consumed good to define $\lambda^*$.}\par
+\uncover<2->{Because $m>0$ and $p\gg0$, a sufficiently small increase in any one good is affordable.}\par
+\uncover<3->{Local optimality gives $u_i(0)\le0$ for every $i$.}\par
+\uncover<4->{Choose $\lambda^*=0$ and $\mu_i^*=-u_i(0)\ge0$. Stationarity and both complementary-slackness products hold.}\par
+\uncover<5->{This completes the necessity proof, including all corners and the zero bundle.}\par
+\end{frame}
+
+\begin{frame}[label=theorem-kkt-sufficient]{Theorem 2: concave KKT is sufficient}
+\uncover<1->{Let $u$ be concave on $\R_+^L$ and differentiable on a neighbourhood of a candidate $x^*$.}\par
+\uncover<2->{If $(x^*,\lambda^*,\mu^*)$ satisfies all four KKT groups, then $x^*$ is a global solution of the consumer problem.}\par
+\uncover<3->{We will first maximise the Lagrangian at fixed multipliers, then use feasibility and complementary slackness.}\par
+\uncover<4->{The global argument uses concavity of the chosen index, not merely convexity of preferences.}\par
+\end{frame}
+
+\begin{frame}[label=lagrangian-concavity]{Fix the multipliers and look only at quantities}
+\uncover<1->{Define $f(x)=\mathcal L(x,\lambda^*,\mu^*)$, holding the multipliers fixed.}\par
+\uncover<2->{\[f(x)=u(x)+\lambda^*m-\lambda^*p\cdot x+\mu^*\cdot x.\]}\par
+\uncover<3->{If $u$ is concave, then $f$ is concave: the added terms are affine in $x$.}\par
+\uncover<4->{The constructed stationarity conditions give $\nabla f(x^*)=0$. Why is that a global maximum?}\par
+\end{frame}
+
+\begin{frame}[label=stationary-concave]{Proof: a stationary point of a concave function}
+\uncover<1->{A differentiable concave function lies below its tangent plane. For every $y$ in its convex domain,}\par
+\uncover<2->{\[f(y)\le f(x^*)+\nabla f(x^*)\cdot(y-x^*).\]}\par
+\uncover<3->{With $\nabla f(x^*)=0$, this becomes \[f(y)\le f(x^*).\]}\par
+\uncover<4->{Thus $x^*$ globally maximises $\mathcal L(\cdot,\lambda^*,\mu^*)$ on that domain. Uniqueness is not asserted.}\par
+\end{frame}
+
+\begin{frame}[label=concave-tangent-picture]{A horizontal tangent above the whole graph}
+\uncover<1->{\begin{columns}[c]\column{.57\textwidth}\begin{tikzpicture}\begin{axis}[width=7.1cm,height=4.6cm,axis lines=left,xmin=0,xmax=4.5,ymin=-4.5,ymax=1,xtick={0,2,4},ytick={-4,-2,0},xlabel={$x$},ylabel={$f(x)$},tick label style={font=\scriptsize},label style={font=\small}]\addplot[NESblue,thick,domain=0:4,samples=80] {-(x-2)^2};\only<2->{\addplot[NESred,dashed,domain=0:4] {0};\addplot[NESred,only marks,mark=*] coordinates {(2,0)};}\end{axis}\end{tikzpicture}\column{.39\textwidth}$f(x)=-(x-2)^2$.\par The derivative is zero at $x=2$.\uncover<2->{\par The horizontal tangent is an upper bound on the entire graph.}\uncover<3->{\par Zero gradient means a flat tangent, not a constant function nearby.}\end{columns}}\par
+\end{frame}
+
+\begin{frame}[label=proof-kkt-global-chain]{Proof 2: return from the Lagrangian to utility}
+\uncover<1->{For any feasible $y$, nonnegative multipliers give\[u(y)\le\mathcal L(y,\lambda^*,\mu^*).\]}\par
+\uncover<2->{Concavity and stationarity have shown\[\mathcal L(y,\lambda^*,\mu^*)\le\mathcal L(x^*,\lambda^*,\mu^*).\]}\par
+\uncover<3->{Complementary slackness gives $\mathcal L(x^*,\lambda^*,\mu^*)=u(x^*)$. Thus $u(y)\le u(x^*)$ for every feasible $y$.}\par
+\uncover<4->{The same slackness and feasibility minimise $\mathcal L(x^*,\lambda,\mu)$ over nonnegative multipliers: the saddle interpretation is recovered.}\par
+\end{frame}
+
+
+
+
+
+
 
 
 

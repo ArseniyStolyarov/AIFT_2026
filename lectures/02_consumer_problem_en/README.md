@@ -13,10 +13,14 @@ Prepared from the supplied **Lecture 10** and **Lecture 11** handouts.
 - `lecture02-complete.zip`: all PDFs and a self-contained LaTeX source archive.
 - `slide-index.md`: logical slide numbers, types and presentation page ranges.
 
-There are **63 core slides**, **8 reserve slides introducing duality**, and
-**9 optional mathematical proof/counterexample slides**: 80 logical slides total.
+There are **76 core slides**, **8 reserve slides introducing duality**, and
+**9 optional mathematical proof/counterexample slides**: 93 logical slides total.
 The first **32 slides** contain the live opening and its proofs, ending with
 “To the board: derive Kuhn–Tucker.” The KKT summary is slide 36.
+The two complete KKT theorems and their proofs occupy **slides 41–53**:
+necessity (including corners and the zero bundle), then concave sufficiency.
+The proof includes multiplier construction, sign checks, all complementary
+slackness conditions and the supporting-plane argument with a tangent diagram.
 The core follows syllabus block 2. The tail of source Lecture 11 on expenditure
 minimisation is marked as a preview of block 3, rather than required live coverage.
 
