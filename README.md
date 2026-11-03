@@ -44,15 +44,12 @@ No network access or credentials are required to compile the documents.
 
 ## Lecture 2 — The Consumer Problem
 
-Opening budget propositions and proofs reveal by click (slides 1–11), followed
-by saddle points and KKT with both complete proofs (26–38). Walras and the other
-demand tools follow from slide 39. Solve four models first, then introduce
-indirect utility (61), prove the general constrained envelope theorem (72–76),
-and prove/apply Roy across the four models (79–87).
+Condensed to **59 main slides plus 5 reserve slides**. The first 11 slides are
+unchanged. Two saddle theorems and proofs precede a one-slide KKT recap;
+Cobb–Douglas, Walras, other optimisation examples and demand properties follow.
+Indirect utility is introduced at slide 40, the envelope theorem at 49, and
+Roy at 53. Five reserve slides introduce expenditure minimisation.
 
-Utility maximisation, Marshallian demand, indirect utility, the Lagrangian,
-Kuhn–Tucker conditions, worked examples and Roy's identity. Includes a marked
-reserve section on Hicksian demand and expenditure minimisation.
 
 - [Everything: PDFs and LaTeX sources (ZIP)](lectures/02_consumer_problem_en/lecture02-complete.zip?raw=true)
 - [Presentation with reveals (PDF)](lectures/02_consumer_problem_en/lecture02.pdf?raw=true)

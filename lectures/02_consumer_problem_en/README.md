@@ -3,99 +3,65 @@
 Arseniy Stolyarov, PhD in Economics, University of Wisconsin–Madison.
 Artificial Intelligence and Financial Technologies, New Economic School, 2026/27.
 
-Prepared from the supplied **Lecture 10** and **Lecture 11** handouts.
+## Downloads
 
-## Documents
+- [Presentation with reveals](lecture02.pdf?raw=true)
+- [Handout: one final state per slide](handout.pdf?raw=true)
+- [Instructor notes](instructor-notes.pdf?raw=true)
+- [All PDFs and editable LaTeX](lecture02-complete.zip?raw=true)
+- [Slide index](slide-index.md)
 
-- `lecture02.pdf`: presentation with click-by-click reveals.
-- `handout.pdf`: all final reveal states, one page per logical slide.
-- `instructor-notes.pdf`: assumptions, explanations, worked answers and proof notes.
-- `lecture02-complete.zip`: all PDFs and a self-contained LaTeX source archive.
-- `slide-index.md`: logical slide numbers, types and presentation page ranges.
+The condensed deck has **59 main slides and 5 reserve slides**: 64 logical
+slides, 261 presentation pages with click-by-click reveals. The first eleven
+slides are unchanged, including their appearance.
 
-There are **89 core slides**, **8 reserve slides introducing duality**, and
-**8 optional mathematical proof/counterexample slides**: 105 logical slides total.
+## Live sequence
 
-The revised sequence is:
+- **1–11:** budgets, existence, Marshallian demand and homogeneity.
+- **12–13:** one Lagrangian-intuition slide and one saddle-definition slide.
+- **14–17:** saddle implies consumer optimum, with a four-part proof plan.
+- **18–26:** an optimum yields a saddle under concavity and differentiability;
+  multiplier construction, signs, stationarity, slackness, both saddle inequalities
+  and the zero-bundle case are all proved.
+- **27:** the four KKT conditions as a single recap.
+- **28–37:** Cobb–Douglas, then Walras' law, substitutes and a numerical corner,
+  linear-plus-log utility with income/price corners, and complements.
+- **38–39:** convex preferences give convex demand; strict convexity gives uniqueness.
+- **40–46:** define indirect utility, compute values for all four models and
+  discuss its properties and possible kinks.
+- **47–52:** the general constrained smooth-branch envelope theorem and proof;
+  derivatives in income and prices.
+- **53–58:** Roy's identity, its direct proof and model applications.
+- **59:** reading and next steps.
+- **60–64:** a small expenditure-minimisation reserve for the next lecture.
 
-1. Slides **1–11**: budget sets, existence and Marshallian demand homogeneity.
-2. Slides **12–25**: Lagrangian and saddle prelude, followed by KKT conditions.
-3. Slides **26–38**: the two complete KKT theorems and their proofs.
-4. Slides **39–45**: Walras' law, convexity/uniqueness and solution strategy.
-5. Slides **46–60**: solve Cobb–Douglas, substitutes, linear-plus-log utility
-   and complements together, with questions followed by reveals.
-6. Slides **61–70**: introduce indirect utility and discuss/prove its properties.
-7. Slides **71–78**: general constrained envelope theorem, proof and application.
-8. Slides **79–87**: prove Roy and recover demands in all four model families.
+There is no long leftover proof appendix and no student-facing staging label.
+English text, the supplied NES logo, course colours, generous spacing and
+question-before-answer reveals are retained.
 
+## Mathematical qualifications
 
-There is no “at the board” slide or student-facing staging instruction.
-The first two budget propositions each reveal their own proof after the claim.
-The title explicitly says Lecture 2; the warm-up graph shows utility levels
-2, 4 and 6. Body line/paragraph spacing is increased throughout, with spaced
-bullet lists for parallel points.
-The core follows syllabus block 2. The tail of source Lecture 11 on expenditure
-minimisation is marked as a preview of block 3, rather than required live coverage.
+For the saddle theorems use the full Lagrangian
+`L=u+lambda*(m-p*x)+mu*x`, with nonnegative multipliers. Its quantity domain is
+an open convex set U where u is defined; feasibility additionally requires
+nonnegative quantities and the budget. The forward theorem needs no smoothness
+or concavity; the converse assumes differentiability and concavity on U.
+Log Cobb–Douglas is used only after the original product index rules out axes.
 
-Topics: budget sets, existence, Marshallian demand, homogeneity, Walras' law,
-convexity and uniqueness, indirect utility, KKT and complementary slackness,
-interior and corner solutions, worked examples, envelopes, shadow values and Roy.
-The reserve introduces Hicksian demand, expenditure properties and compensation.
+The general envelope version assumes C1 data and a C1 selection of optimal
+quantities and KKT multipliers near an interior parameter. All chain-rule terms
+are shown before they vanish. Roy has a separate fixed-bundle proof and does
+not require a smooth direct utility or differentiable demand. The quasilinear
+example is `a+4*log(1+q)` with budget `a+r*q<=m`; at unit prices its target is q=3.
+
+Homework 1 covers Lectures 1–2 and is due on 14 November 2026. Source-course
+homework announcements were not imported. Inputs were the supplied Lectures 10
+and 11; source qualifications are in `SOURCE_NOTES.md`.
 
 ## Build
 
-```bash
-./build.sh
-```
-
-Requirements: XeLaTeX, Beamer, fontspec, polyglossia, TikZ/pgfplots, DejaVu Sans.
-The script compiles presentation, handout and notes twice. No network or secrets
-are needed. Output PDFs are copied here; auxiliary files and logs stay in `build/`.
-
-## Presentation choices
-
-English text, NES colours and English logo, plain headings without shaded banners.
-Questions have no generic Discuss label or timed exercise instructions. Semantic
-steps appear successively. Claims and their short proofs are revealed in order.
-Budget results come first; Walras' law, convexity/uniqueness and indirect-value
-proofs follow the KKT block; the indirect-value section follows the four direct
-optimisation examples. The value-continuity proof uses a fixed compact
-expenditure-share simplex. Proof links have visible return links. The
-presentation uses ordinary PDF pages for overlays, without JavaScript.
-
-The saddle introduction comes **before KKT**. It uses the budget-only
-Lagrangian ell(x,lambda) on x>=0, lambda>=0. The slides prove that a global
-saddle implies feasibility, complementary slackness and optimality. They do
-not exchange max and inf or assert a nonconcave saddle-existence theorem.
-The later full Lagrangian adds quantity-bound multipliers for the KKT system;
-a concave-KKT-to-budget-saddle proof is in the appendix.
-
-No source-course HW5/HW6 notices were imported. The current Homework 1 covers
-Lectures 1–2 and is due on 14 November 2026.
-
-## Conventions and mathematical checks
-
-m denotes wealth. D and H are demand correspondences; x and h denote vectors when
-unique. v is indirect utility, e the expenditure function. The main KKT setup has
-strictly positive prices and wealth. Existence, necessity and global sufficiency
-are distinguished. Log utility is used only after interiority is established.
-The envelope theorem is a general constrained smooth-branch version with
-inequality and equality constraints. Its assumptions are C1 data and a C1
-selection of optimal choices and KKT multipliers on an open parameter
-neighbourhood. Its proof keeps all chain-rule terms before eliminating them.
-Roy has a separate fixed-bundle proof: continuous utility, LNS, differentiable
-v and a strictly positive wealth derivative suffice; direct utility and demand
-need not be differentiable.
-
-Worked examples include Cobb–Douglas, substitutes (corners and ties),
-linear-plus-log utility a+4 log(1+q) (three price/income regimes), and complements
-(a kink). All four are revisited after Roy. The quasilinear unit-price target
-is q=3; the old square-root example has been replaced. Numerical budget checks, KKT
-residuals, candidate optimality on budget grids, envelope/Roy derivatives and the
-compensated example were independently checked during preparation.
-
-See `SOURCE_NOTES.md` for source scope and corrections. The original NES-inspired
-theme is reused from lecture 1. Museo Sans and Segoe UI are preferred if installed;
-the tested build uses DejaVu Sans. No licensed fonts are bundled.
-
-Optional reproducible numerical checks: `python3 verify-examples.py` (standard library only).
+Run `bash build.sh` with XeLaTeX, Beamer, TikZ/pgfplots, fontspec, polyglossia and
+DejaVu Sans installed. No network or credentials are needed. Three PDFs are
+compiled twice; temporary output stays in `build/`. The complete ZIP contains a
+self-contained source ZIP, PDFs, notes and index. Optional independent numerical
+checks: `python3 verify-examples.py` (standard library only).

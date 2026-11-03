@@ -10,14 +10,14 @@
 \author{Arseniy Stolyarov}\date{Updated 3 November 2026}
 \newcommand{\R}{\mathbb R}
 \begin{document}\maketitle
-\section*{Live route for Lecture 2}
-Retain the approved opening and both KKT proofs. After KKT, establish Walras' law and convexity/uniqueness, then solve four models together: Cobb--Douglas, substitutes, linear plus logarithm, and complements. Only after the examples introduce indirect utility and its properties. State and prove a general constrained smooth-branch envelope theorem; apply it to prices and income. Then prove Roy using the fixed-bundle argument and recover demand for all four model families. Duality and Slutsky remain Lecture 3 reserve material.
+\section*{Condensed live route}
+The first eleven slides are unchanged. Next come exactly one Lagrangian-intuition slide, one saddle-definition slide, the forward saddle theorem with four proof obligations and its proof, then the converse saddle theorem with a four-part plan and constructive proof. A single KKT recap follows. Work through Cobb--Douglas, then Walras, substitutes, corner solutions in the linear-plus-log model and complements. Brief demand-convexity and uniqueness propositions precede indirect utility. Compute values, discuss their properties, state/prove the general envelope theorem, differentiate in wealth and prices, then prove and apply Roy. Only five reserve slides introduce expenditure minimisation.
 
-\section*{Envelope regularity and Roy}
-The general envelope theorem assumes C1 problem data and a C1 branch of optimal choices and KKT multipliers on an open parameter neighbourhood. Keep all chain-rule terms before using stationarity, feasibility, complementary slackness and nonnegativity of differentiable multiplier branches. This is a sufficient smooth version. Roy has a separate direct proof requiring continuous LNS utility, existence, differentiable indirect value and a positive wealth derivative; it does not require a smooth direct index or differentiable demand.
+\section*{Domain and theorem qualifications}
+The full Lagrangian is $\mathcal L=u+\lambda(m-p\cdot x)+\mu\cdot x$. In the saddle block its quantity domain is an open convex U where u is defined; the feasible set is $U\cap\{x\ge0:p\cdot x\le m\}$. The forward implication needs neither smoothness nor concavity. The converse uses differentiability and concavity on U, positive prices and wealth. At a nonzero optimum construct multipliers from consumed-good returns; verify their signs, stationarity, all slackness products and both global saddle inequalities. Treat a zero optimum separately. Log Cobb--Douglas is used only after the raw continuous product index excludes axes, so U can then be the positive orthant. Never assume an undefined negative-quantity extension.
 
-\section*{Conventions and sources}
-Use $p\gg0$, $m>0$, $D$ for demand sets, $x$ for a unique vector and $v$ for the value. The quasilinear example is now $u=a+4\log(1+q)$ with $a+rq\le m$, so the unit-price target is q=3. The old square-root example has been replaced. Saddle-domain qualifications and corrected source p.164 price/index typos are retained. Inputs are the supplied Lectures 10--11. Homework 1 is due 14 November 2026.
+\section*{Envelope and Roy}
+The retained general envelope result uses C1 data and a C1 branch of optimal decisions and KKT multipliers on an open parameter neighbourhood. All choice and multiplier derivative terms are shown before stationarity, feasibility and slackness eliminate them. Roy has a separate fixed-bundle proof requiring continuous LNS utility, differentiable indirect value and positive wealth derivative, without differentiable direct utility or demand. This matters for complements and regime boundaries. The quasilinear example is a+4 log(1+q), not the earlier square-root model. Homework 1 is due 14 November 2026.
 
 \section*{Slide-by-slide notes}
 \subsection*{1. Microeconomics: Lecture 2 — The consumer problem}
@@ -53,286 +53,165 @@ Uppercase D is the correspondence and lowercase x the unique vector. This avoids
 \subsection*{11. Proof: demand is homogeneous of degree zero}
 The result is equality of correspondences, so no uniqueness assumption is necessary. A structural demand model should respect this restriction when all prices and nominal wealth are rescaled together.
 
-\subsection*{12. Let a multiplier enforce the budget}
-Use a separate symbol ell for the budget-only Lagrangian. Its x-domain remains the nonnegative orthant, so utility is never silently evaluated at negative consumption. The full L with mu appears later for the first-order system.
+\subsection*{12. Why introduce a Lagrangian?}
+Use the FULL Lagrangian from the source, with a budget multiplier and one multiplier per quantity bound. For the two saddle theorems let the decision variable range over an open convex domain U where u is defined; feasibility additionally imposes x>=0 and p*x<=m. The theorems compare feasible bundles in U. Never evaluate a log or a fractional power at undefined negative quantities.
 
-\subsection*{13. Why minimise in the multiplier?}
-The inner expression is an infimum, since infeasible bundles send the value to minus infinity. It is an exact extended-real encoding of the budget, not a minimax interchange theorem.
+\subsection*{13. What is a saddle point?}
+The inequalities are global on U in quantities and on the nonnegative multiplier orthant. Maximise in x at fixed multipliers, minimise in multipliers at fixed x. No max--min interchange is being assumed.
 
-\subsection*{14. A global saddle point}
-This is now BEFORE KKT. Domain: x in the orthant, lambda nonnegative. The two inequality directions correspond to maximisation in quantities and minimisation in the budget multiplier. No claim that every arbitrary nonconcave optimum admits a saddle is being made.
+\subsection*{14. Theorem 1: a saddle gives a consumer optimum}
+This is the forward saddle theorem, not the KKT necessity theorem. The four proof obligations are primal feasibility, all complementary-slackness products, equality of saddle and utility values, and dominance over every feasible bundle in the utility domain. No concavity or differentiability is needed for this direction.
 
-\subsection*{15. Proof: the saddle enforces feasibility and slackness}
-Feasibility of quantities is imposed by the saddle domain, not derived by varying missing bound multipliers. Budget feasibility and its complementary slackness follow directly from minimisation over lambda.
+\subsection*{15. Proof 1: feasibility}
+If either a budget slack or quantity slack were negative, increasing its nonnegative multiplier arbitrarily would contradict minimisation at the saddle. Both feasibility constraints must be derived because x is varied in U rather than restricted to the orthant in this full-L formulation.
 
-\subsection*{16. Proof: a global saddle gives an optimal bundle}
-The three-inequality chain proves global optimality directly. Concavity is unnecessary for this direction; it matters when trying to establish the global maximisation inequality from local derivative conditions.
+\subsection*{16. Proof 1: slackness and equality of values}
+At a feasible x, every slack is nonnegative. A positive multiplier on a strictly positive slack cannot minimise L: lowering it to zero strictly lowers the value. This proves each product vanishes and hence L(x*)=u(x*).
 
-\subsection*{17. How could we find or verify a saddle?}
-Bridge to the board. Under concavity, KKT will verify the budget-only saddle; the appendix contains the short supporting-plane proof. Do not present arbitrary stationarity or a minimax interchange as sufficient.
+\subsection*{17. Proof 1: compare with any affordable bundle}
+The three-inequality chain completes the four-part proof. The first comparison uses feasible y and nonnegative multipliers, the second the global saddle, the equality complementary slackness.
 
-\subsection*{18. Why compare marginal utility per unit of money?}
-The feasible direction requires enough of good j to reduce it; this motivates why equality applies to consumed goods, while goods at zero require an inequality. The derivative calculation is local, not yet a global optimality proof.
+\subsection*{18. Theorem 2: an optimum yields a saddle}
+This is the converse saddle theorem. Assume a differentiable concave u on an open convex ambient domain U. A consumer optimum is taken over the feasible bundles in U. The proof constructs nonnegative multipliers, verifies stationarity and slackness, then uses concavity for global maximisation in x and feasibility for minimisation over multipliers.
 
-\subsection*{19. The Lagrangian: one multiplier per inequality}
-The plus signs match the maximisation convention with constraints written as nonnegative. Do not mix with the minimisation convention. A log utility is not defined at zero: for that example establish an interior optimum first and work on the positive domain.
+\subsection*{19. Proof 2: construct the multipliers}
+The construction first assumes a nonzero optimum and selects one positive quantity. Define lambda by its marginal return and mu by zero on consumed goods or lambda*p\_i-u\_i on zero goods. Do not assume the desired signs: those are proved next. The separate zero-bundle case is retained.
 
-\subsection*{20. Stationarity in quantities}
-The notation u\_i is partial derivative with respect to x\_i. Because quantity bounds are represented explicitly, a corner does not mean deleting stationarity: its bound multiplier enters the equation.
+\subsection*{20. Proof 2: a common nonnegative spending return}
+A negative marginal return at a consumed quantity permits a utility-improving decrease. Different returns at two consumed goods permit an improving budget-neutral transfer. These arguments use differentiability and local feasible directions, not concavity.
 
-\subsection*{21. The four Kuhn--Tucker groups}
-For p strictly positive and m>0, the active linear constraints satisfy the necessary constraint qualification. Differentiability on a neighbourhood is required for this form. Necessity does not require concavity; global sufficiency does require additional structure.
-
-\subsection*{22. Complementary slackness: read the products}
-No. A binding constraint may have zero multiplier. In particular, a budget can bind at a point where marginal value is zero. Appendix zero-shadow-value gives an explicit continuous LNS example. For substitutes at equal returns, an active zero-consumption bound may also have zero multiplier.
-
-\subsection*{23. For consumed goods: equal marginal returns}
-Define MRS as u\_i/u\_j only where the denominator is positive and the indifference curve is differentiable. If all relevant marginal utilities vanish, division is invalid. Corners and kinks are handled differently.
-
-\subsection*{24. For a good at zero: an inequality}
-It would force purchases of goods with too low a marginal return or generate negative quantities. The inequality is meaningful with positive prices. It is a necessary marginal condition, and under concavity part of a globally sufficient system.
-
-\subsection*{25. A candidate is not yet a solution}
-The source has an interior-looking theorem followed by a broader constraint-qualification footnote. We state the smooth necessary result at corners too, with the qualification explained in the appendix. Concavity is a sufficient condition for KKT sufficiency, not a necessary property of preferences.
-
-\subsection*{26. Theorem 1: KKT is necessary}
-This is the first explicit theorem on source Lecture 11 p.171, strengthened to include corners. The direct constructive proof supplies regularity for this particular linear budget; concavity is not used. We assume smoothness on a neighbourhood so gradients at the bounds make sense. Necessity holds even for a local optimum.
-
-\subsection*{27. Construct the budget multiplier from an optimum}
-This is the construction in source Lecture 10 pp.162--164, corrected. Work at a nonzero optimum. Equal marginal returns for consumed goods follow from the preceding feasible-trade argument; nonnegativity follows by slightly reducing a consumed good. For the excluded zero-bundle case: if $x^*=0$ is optimal and $m>0$, a small increase in each coordinate is affordable, hence $u_i(0)\le0$. Set $\lambda^*=0$ and $\mu_i^*=-u_i(0)\ge0$; stationarity and complementary slackness hold. No concavity is needed for the sign argument.
-
-\subsection*{28. Proof 1: consumed goods have one common return}
-For a pair of positive quantities, either sign of a sufficiently small spending transfer is feasible and preserves cost. If normalised marginal utilities differ, the transfer toward the larger one has positive directional derivative, contradicting even local optimality. This completes the multiplier-independence argument invoked on the construction slide.
-
-\subsection*{29. Construct the quantity-bound multipliers}
-The equality $\mu_i^*=\lambda^*p_i-u_i(x^*)$ is the definition chosen to make stationarity true, not an implication that assumes dual feasibility. For consumed goods set mu to zero; the common-return result makes stationarity hold there too. The next two slides prove the missing sign.
-
-\subsection*{30. If a constructed multiplier were negative}
+\subsection*{21. Proof 2: why a negative bound multiplier fails}
 This is plain algebra and division by $p_i>0$. In the source p.164 the left normalised derivative is mistyped: the consumed-good term must be $u_j/p_j$, not $u_i/p_j$. The same page later omits the price denominator when writing lambda for a consumed good. Both formulas here are corrected.
 
-\subsection*{31. Proof: a profitable spending transfer}
+\subsection*{22. Proof 2: the profitable spending transfer}
 The spending transfer is one-sided because the unconsumed good can be increased and the positive holding of j can be reduced. Positive directional derivative implies a strict improvement for all sufficiently small positive epsilon by differentiability; the finite utility change is not asserted to equal its linear approximation. This proves only $\mu_i\ge0$, not strict positivity, including at a zero quantity.
 
-\subsection*{32. Proof 1: finish with complementary slackness}
+\subsection*{23. Proof 2: stationarity and complementary slackness}
 This is the missing end of the source p.164 proof, completed on pp.165 and 169. Under budget slack a consumed coordinate can move in both directions, so its derivative is zero and lambda=0. Bound products are zero by construction, not by assuming the conclusion. The source p.165 has a reversed statement about which quantities make mu zero; the correct rule is positive quantity implies zero multiplier.
 
-\subsection*{33. Proof 1: the zero-bundle case}
+\subsection*{24. Proof 2: maximise in quantities}
+For fixed multipliers, f=L is concave on U and its constructed gradient is zero. The supporting-plane inequality proves a GLOBAL maximum on U. This does not assert uniqueness or a flat function near x*. It is exactly the source p.164 reasoning, with the domain made explicit.
+
+\subsection*{25. Proof 2: if the optimal bundle is zero}
 This gives the separate source p.162 footnote in the main proof. Small positive coordinate increases are affordable since m>0. Their derivatives cannot be positive at a local optimum. Zero budget multiplier and minus the utility gradient supply all KKT conditions.
 
-\subsection*{34. Theorem 2: concave KKT is sufficient}
-This is the second theorem on source Lecture 11 p.171. Concavity of u on the nonnegative orthant and differentiability near the candidate are sufficient. The source footnote gives a weakening using quasiconcavity PLUS a strict gradient implication. We use the simpler concavity theorem here. Quasiconcavity alone does not suffice, as the existing counterexample shows.
+\subsection*{26. Proof 2: minimise in multipliers and finish}
+At x* feasible slacks are nonnegative; their products with the constructed multipliers vanish. Hence L at the constructed multipliers equals u(x*), and all nonnegative multipliers give at least this value. This is the other saddle inequality. Combine it with the quantity-maximisation result. Both nonzero and zero optimum cases are covered.
 
-\subsection*{35. Fix the multipliers and look only at quantities}
-Fix the multipliers before discussing curvature in quantities. Affine terms preserve concavity, and constructed stationarity makes the gradient zero. Evaluate on a convex domain where u is defined and concave, for example the consumption orthant with a differentiable extension near the candidate. Do not silently extend log utility to negative quantities. The original source assertion for all real vectors needs a utility domain supporting it.
+\subsection*{27. The four Kuhn--Tucker groups}
+The four KKT groups summarise the construction rather than introduce another pair of theorems and proofs. The sign convention is maximisation with constraints written nonnegative. Without concavity a stationary KKT candidate need not be globally optimal.
 
-\subsection*{36. Proof: a stationary point of a concave function}
-The supporting-hyperplane inequality proves a global maximum, not just a local one. Concavity plus zero gradient is sufficient; strict concavity is needed only as a sufficient condition for uniqueness. A stationary point of a generic nonconcave function need not be optimal. The statement concerns the Lagrangian at fixed multipliers; feasibility and complementary slackness are still needed to connect it to consumer optimality.
+\subsection*{28. Example 1: Cobb--Douglas}
+The original product index is continuous on the compact nonnegative budget. A boundary bundle gives zero while a positive affordable bundle gives positive utility. After excluding all axes, restrict the numerical problem to the open domain U=R++ and take logs. No smooth extension of the fractional-power index across the axes is assumed.
 
-\subsection*{37. A horizontal tangent above the whole graph}
-The first reveal shows the function, the second its tangent and candidate, and the third explains the word flat in the source. This is a one-dimensional illustration of the supporting-plane argument; the preceding slide is the multidimensional proof.
-
-\subsection*{38. Proof 2: return from the Lagrangian to utility}
-The three inequalities prove consumer optimality from KKT without omitting feasibility or slackness. For the saddle interpretation we take the quantity domain to be the nonnegative orthant, where u is defined and concave. Full-L saddle minimisation follows from nonnegative slacks and zero products; no claim for negative quantities outside the domain is made.
-
-\subsection*{39. Budget exhaustion: Walras’ law}
-This is the consumer budget-exhaustion property often called Walras law. It is not a proof of existence. Saving is not ruled out if it is one of the goods. See the first lecture for satiation counterexamples.
-
-\subsection*{40. Proof: LNS and budget exhaustion}
-The strict radius handles feasibility cleanly. Only an existing optimum is being considered. This proof is shared conceptually with lecture 1.
-
-\subsection*{41. Proof: convex preferences give a convex demand set}
-This is an ordinal result using convex preferences, not concavity of the particular utility representation. It does not establish nonemptiness; the existence assumptions are maintained.
-
-\subsection*{42. Strict convexity: at most one optimum}
-Answer to the last question: no. Strict convexity provides at most one optimiser on a convex feasible set. Continuity plus compactness supplied existence separately. Do not confuse strictly convex preferences with a strictly convex utility function.
-
-\subsection*{43. Proof: uniqueness from strict convexity}
-No strict concavity of the chosen utility representation is required. For Cobb-Douglas on the closed orthant, establish positive optima before invoking strict properties on the positive orthant.
-
-\subsection*{44. Before differentiating, inspect the economics}
-The source handouts emphasise not using the Lagrangian as a cookbook. Keep the method appropriate to the functional form. A nondifferentiable kink is not fixed by pretending that a derivative exists.
-
-\subsection*{45. Checkpoint}
-Answers: continuity on nonempty compact budget; strict convex preferences plus existence; nonnegative bound multipliers and slackness; concavity is a sufficient condition; a corner, infeasibility, a stationary nonmaximum or a nondifferentiable kink can be missed. No timed exercise label is used.
-
-\subsection*{46. Example 1: Cobb--Douglas}
-Ask students about boundary and interior candidates before revealing the positivity argument; logs are used only after ruling out boundary optima.
-
-\subsection*{47. Choose a convenient representation}
+\subsection*{29. Choose a convenient representation}
 The log transform preserves the positive-domain ranking. Do not apply the compactness theorem directly to the open positive budget; the previous raw-utility argument already supplied existence and excluded zero coordinates.
 
-\subsection*{48. Solve the interior conditions}
-Concavity of the log objective and feasibility establish sufficiency. Positivity is satisfied because alpha, 1-alpha, prices and wealth are positive. The first-order equations are not being used alone without an optimality justification.
+\subsection*{30. Solve the Cobb--Douglas conditions}
+These multipliers refer to the LOG representation. The first-order equations imply lambda>0, so complementary slackness gives an exhausted budget before the later general Walras proposition. The original product utility has a different multiplier but the same demanded bundle.
 
-\subsection*{49. Interpret the solution}
-Constant expenditure shares and their invariance to prices/wealth are restrictions specific to Cobb-Douglas. Exhaustion here follows from preferences, while homogeneity follows from the budget construction. Do not present Cobb-Douglas shares as a fact about all consumers.
+\subsection*{31. Walras’ law: an optimum exhausts the budget}
+This generalises budget exhaustion beyond the differentiable and concave cases. Only LNS and existence of an optimum are used. The epsilon ball is restricted to the consumption domain.
 
-\subsection*{50. A price counterfactual}
-New x=(2,6), spending remains (6,6). Raw utility goes from sqrt(18) to sqrt(12). There is no meaningful additive utility contribution for each good in the multiplicative raw representation. The question is for students; the slide does not reveal the answers.
-
-\subsection*{51. Example 2: perfect substitutes}
+\subsection*{32. Example 2: perfect substitutes}
 Ask about spending returns and multiplicity before revealing the three regimes.
 
-\subsection*{52. Verify a corner with the full KKT system}
+\subsection*{33. Verify a corner with the full KKT system}
 All KKT groups hold, and the objective is affine/concave, so they certify global optimality. At the corner the subjective ratio 2 is not equal to the price ratio 3, and it should not be.
 
-\subsection*{53. Equal returns: a whole set of demand}
-Indirect utility is not yet introduced: describe the segment of optimal bundles and their common utility value without v notation.
-
-\subsection*{54. Example 3: lessons and money left over}
+\subsection*{34. Example 3: lessons and money left over}
 The new model is linear plus a shifted logarithm: $u=a+4\log(1+q)$, $a+rq\le m$. Price a is normalised to one. The shift allows zero consumption and makes direct utility smooth there.
 
-\subsection*{55. Solve first, then respect the quantity bounds}
+\subsection*{35. Solve first, then respect the quantity bounds}
 The reduced objective is strictly concave; clip its stationary point to the feasible interval. This proves uniqueness even though the original index is affine in a. Unit-price target is q=3, replacing the old square-root example with target 4.
 
-\subsection*{56. Three regimes, one decision problem}
+\subsection*{36. Three regimes, one decision problem}
 At r>=4: lambda=1, mu\_q=r-4. At r<4 and m<=4-r: lambda=4/(r+m), mu\_a=lambda-1, mu\_q=0. In the interior lambda=1 and both bound multipliers vanish. At m=4-r the formulas coincide. At r=1, m=2 gives (0,2), m=8 gives (5,3).
 
-\subsection*{57. Example 4: perfect complements}
+\subsection*{37. Perfect complements: solve at the kink}
 Seek a useful-proportions or target-cost argument first. Smooth tangency at the kink is invalid. This is a direct utility-maximisation example, not the later full Hicksian programme.
 
-\subsection*{58. A fixed-proportion solution}
-The cheapest implementation of the highest attainable target exhausts wealth; any extra quantity would exceed it. Positive prices give uniqueness.
+\subsection*{38. Proof: convex preferences give a convex demand set}
+This is an ordinal result using convex preferences, not concavity of the particular utility representation. It does not establish nonemptiness; the existence assumptions are maintained.
 
-\subsection*{59. A practical solution checklist}
-This is the main procedural summary for exercises. A formula with a negative quantity is not an acceptable answer to the nonnegative consumer problem. A smooth method is not a reason to discard nonsmooth optima.
+\subsection*{39. Strictly convex preferences: uniqueness}
+Strict convexity of preferences gives at most one optimum on a convex budget. Pair with the earlier existence theorem for uniqueness. Do not confuse this ordinal condition with strict convexity of u.
 
-\subsection*{60. From a classroom solution to a structural model}
-This connects to the lecturer's requested motivation about real structural models. Identification of alpha is conditional on the maintained Cobb-Douglas model and complete measurement of the modelled budget. It is not an unconditional causal inference from one purchase.
-
-\subsection*{61. Indirect utility: the optimal value}
+\subsection*{40. Indirect utility: the optimal value}
 v is a function even if Marshallian demand is a correspondence. It is ordinally scaled: changing the representation u changes v by the corresponding increasing transform.
 
-\subsection*{62. Indirect utility: the properties to prove}
+\subsection*{41. Compute the value: Cobb--Douglas}
+Keep log and raw cardinal scales distinct. With product exponent sum one, raw indirect utility is exp(log indirect utility). The Roy ratio is invariant under the exponential transformation.
+
+\subsection*{42. Compute the value: substitutes and complements}
+Compute the value for both substitutes and complements directly from quantities before using any envelope or Roy theorem. The max formula includes the equal-return tie.
+
+\subsection*{43. Compute the value: the logarithmic model}
+This is now the initial computation of the value for the a+4 log(1+q) model. Its two regime boundaries agree in value and first derivatives. Roy will be applied later using this previously computed value.
+
+\subsection*{44. Indirect utility: the properties to prove}
 The price statement is weak, not necessarily strict for a single price. LNS gives strict increase in wealth, but a derivative can still be zero at a point. Continuity follows from the maximum theorem; it is not differentiability.
 
-\subsection*{63. Proof: currency units and higher prices}
-Budget inclusions are the whole argument. Hold the numerical representation u fixed. The price comparison is weak, and the vector inequality means all prices weakly increase.
-
-\subsection*{64. Proof: more wealth and local nonsatiation}
-Use the same epsilon-ball argument as budget exhaustion, now spending the new slack to obtain a strictly better bundle. LNS supplies strictness. This does not assert a strictly positive derivative everywhere.
-
-\subsection*{65. Continuity: put every budget on the same simplex}
-The expenditure-share simplex is a common compact set for every positive budget. Do not require exhaustion: the sum is at most one, not exactly one. No monotonicity, LNS or uniqueness is needed.
-
-\subsection*{66. Proof: the optimal value is continuous}
-The maximum difference is bounded by the uniform difference of the objectives. Uniform continuity follows on a compact positive parameter neighbourhood times the simplex. Finite early sequence terms are irrelevant. This gives a complete short maximum-theorem argument in this particular budget problem.
-
-\subsection*{67. A less obvious property: quasiconvexity}
+\subsection*{45. A less obvious property: quasiconvexity}
 This is joint quasiconvexity in prices and wealth, distinct from quasiconcavity of direct utility in consumption. The source proof has priming typos; the same candidate bundle x must be used at both endpoint budgets.
 
-\subsection*{68. Proof: indirect utility is quasiconvex}
-The identical bundle x must occur in both endpoint inequalities. The proof does not require convex preferences, concavity or LNS, only well-defined optimal values on the relevant budgets.
-
-\subsection*{69. Compute indirect utility in the same example}
-This v is the value of log utility, not the raw Cobb-Douglas value. Never combine its derivatives with the raw multiplier without accounting for the change of scale. The raw value is exp(v).
-
-\subsection*{70. A continuous value need not be differentiable}
+\subsection*{46. A continuous value need not be differentiable}
 Left derivative at p1=1 is -8, right derivative is zero. v is continuous but not differentiable. This example motivates the differentiability hypothesis in Roy's identity. It is not a failure of existence.
 
-\subsection*{71. The envelope question}
-Present the envelope idea before derivative formulas. Do not mechanically differentiate a chosen x(p,m) and forget the binding constraints. The direct Lagrangian envelope includes the multiplier adjustment required by feasibility.
-
-\subsection*{72. A general parameterised optimisation problem}
+\subsection*{47. A general parameterised optimisation problem}
 All data are C1 on an open ambient decision/parameter domain. Quantity bounds are explicit inequalities. Parameters can enter the objective and every constraint. Equality multipliers have no sign restriction.
 
-\subsection*{73. The general Lagrangian}
+\subsection*{48. The general Lagrangian}
 A precise sufficient version assumes a C1 selection of optimal decisions and KKT multipliers on an open parameter neighbourhood. These assumptions need verification; they are not consequences merely of value differentiability. This is a smooth-branch theorem, not a claim covering every corner or kink.
 
-\subsection*{74. Envelope theorem: a constrained smooth version}
+\subsection*{49. Envelope theorem: a constrained smooth version}
 The general theorem is componentwise in a vector parameter. On the right, differentiate in the parameter holding quantities and multipliers fixed, and then evaluate at the optimum.
 
-\subsection*{75. Proof: differentiate along an optimal branch}
+\subsection*{50. Proof: differentiate along an optimal branch}
 Identify V with L along the whole optimal branch using feasibility and complementary slackness. Keep the choice and multiplier derivative terms when differentiating; the next slide justifies their disappearance.
 
-\subsection*{76. Proof: why multiplier derivatives disappear}
+\subsection*{51. Proof: why multiplier derivatives disappear}
 For a positive inequality multiplier, its slack is zero. A zero multiplier on a differentiable nonnegative branch at an interior parameter has derivative zero. Either way g\_j times lambda\_j prime is zero. Equality slacks and quantity-stationarity terms vanish separately.
 
-\subsection*{77. Apply the theorem to the consumer}
-Apply the general theorem only in regular smooth regions. In the consumer problem parameters enter the budget only. A binding budget alone need not imply a positive multiplier.
+\subsection*{52. Income and price derivatives of indirect utility}
+Hold quantities and multipliers fixed for the partial Lagrangian derivatives, then evaluate at the optimum. Prices and wealth enter only the budget constraint. The numerical lambda depends on utility scale.
 
-\subsection*{78. The budget multiplier has an interpretation}
-For Cobb-Douglas log utility lambda=1/m. For the raw degree-one representation lambda=v\_raw/m. Both give the same bundle. Strictly increasing v can have a zero derivative at a point, so positivity in Roy cannot be omitted.
-
-\subsection*{79. Roy’s identity: recover demand from value}
+\subsection*{53. Roy’s identity: recover demand from value}
 The fixed-bundle proof needs continuous LNS utility, existence, differentiable v and v\_m>0. It does not assume differentiability of u or demand. The smooth consumer-envelope ratio motivates it, but the separate proof covers a broader setting.
 
-\subsection*{80. Roy without differentiating demand}
+\subsection*{54. Roy without differentiating demand}
 This proof uses continuous LNS preferences, existence, a differentiable indirect value and a positive wealth derivative. It avoids assuming demand is differentiable or a priori single-valued, and does not require concave direct utility.
 
-\subsection*{81. Check Roy in the Cobb--Douglas example}
+\subsection*{55. Check Roy in the Cobb--Douglas example}
+The log indirect value is the logarithm of the original positive product value. Roy applies to the original continuous index and the same derivative ratio is preserved by this increasing differentiable rescaling.
+
 Use the same log utility scale throughout this calculation. This is an actual check against a separately derived demand, not only a restatement of the identity.
 
-\subsection*{82. Roy example 2: substitutes and a corner}
-Differentiate the strictly active value branch. The price derivative for the unconsumed good is zero, correctly yielding zero demand.
+\subsection*{56. Roy example 2: substitutes and a corner}
+Use a strict spending-return region for the differentiable calculation. At a tie v is not differentiable in prices and Roy cannot select a unique point from the demanded segment.
 
-\subsection*{83. The other corner and the tie}
-At equal spending returns the two active price gradients differ, hence v is nondifferentiable in prices and the Roy ratio is not available.
-
-\subsection*{84. Roy example 3: the logarithmic model}
-Substitute all three demands into a+4 log(1+q). Values and first derivatives match at r=4 and m=4-r. This is no longer the square-root example.
-
-\subsection*{85. One ratio, three regimes}
-At the two transition boundaries, the value is C1 even though demand has a kink. The smooth-choice-branch envelope proof may fail there, but the direct Roy proof still works. Recover q from the price derivative and a by budget exhaustion with its unit price.
-
-\subsection*{86. Roy example 4: a kink in direct utility}
+\subsection*{57. Roy example 4: a kink in direct utility}
 The min index has a kink at the optimum; v=m/(p1+p2) is smooth at positive prices and wealth. The direct Roy proof applies. Distinguish smoothness of the direct index, the indirect value and the demand vector.
 
-\subsection*{87. Demand survives a change of utility scale}
-The positive derivative condition is stronger than merely strictly increasing f. For instance a shifted cubic is strictly increasing but flat at its centre. Ordinal invariance of the optimisation problem remains true even if a particular differential formula degenerates.
+\subsection*{58. One ratio, three regimes}
+At the two transition boundaries, the value is C1 even though demand has a kink. The smooth-choice-branch envelope proof may fail there, but the direct Roy proof still works. Recover q from the price derivative and a by budget exhaustion with its unit price.
 
-\subsection*{88. Checkpoint}
-Answers: continuous u and nonempty compact budget for existence, strict convex preferences for uniqueness given existence; several maximisers share the same maximum value; marginal utility per price is no greater than lambda; concavity is a sufficient condition together with all KKT groups; differentiability of v and v\_m>0 under the maintained consumer setup. Answers stay in the instructor notes.
+\subsection*{59. Keep the tools, and read next}
+The live route ends after the Roy applications. Only five reserve slides follow, introducing next lecture	extquoteright s expenditure problem; there is no long leftover proof appendix.
 
-\subsection*{89. Read next, and keep the core route clear}
-Assigned reading is the textbook. Use the already prepared Homework 1 on Lectures 1--2, deadline 14 November 2026; no old source-course HW5/HW6 notices.
-
-\subsection*{90. Next block: two ways to ask the consumer question}
+\subsection*{60. Next block: two ways to ask the consumer question}
 This starts the optional block-3 preview from the tail of the supplied Lecture 11. It is not required before finishing the second-block core.
 
-\subsection*{91. Expenditure minimisation}
+\subsection*{61. Expenditure minimisation}
 Capital H distinguishes a set of minimisers from a unique Hicksian vector h. A target above the attainable utility range makes the problem infeasible; do not state unconditional existence.
 
-\subsection*{92. Why an unbounded feasible set can still have a minimum}
+\subsection*{62. Why an unbounded feasible set can still have a minimum}
 The full upper contour set need not be bounded. Truncation by the cost of one feasible benchmark is enough. Continuity here refers to the selected utility representation.
 
-\subsection*{93. Hicksian demand: basic properties}
-Targets are attainable, u continuous, p positive. If a nonzero minimiser exceeds the target, a slight proportional shrink remains feasible by continuity and is cheaper. If the target is u(0), zero is feasible and uniquely cheapest. For targets below u(0), no-excess utility need not hold.
-
-\subsection*{94. The expenditure function has a different curvature}
+\subsection*{63. Expenditure: a few properties for next time}
 Holding the utility target fixed is essential. Concavity in prices does not require concave utility or convex preferences. Continuity on the attainable target domain is discussed under continuous utility and LNS in the instructor notes; avoid unqualified endpoint or infeasible-target claims.
 
-\subsection*{95. Fixed wealth versus fixed utility}
-The red budget holds wealth fixed. The dashed compensated budget holds raw utility at four. Verify the compensated cost: 2*(2sqrt2)+4sqrt2=8sqrt2. The three points use different markers, not colour alone.
-
-\subsection*{96. Two identities to develop next time}
+\subsection*{64. Two identities to develop next time}
 This is a preview, not a full Slutsky derivation. At target u(0), the expenditure is zero and v(p,0)=u(0); interpreting this endpoint extends the value function beyond the positive-wealth core. More generally the corresponding solution sets agree under the maintained assumptions.
-
-\subsection*{97. A monetary compensation question}
-CV is stated with the sign convention of extra wealth required after a price increase. The old budget is exhausted so e(p0,u0)=m. Monetary units do not automatically remove interpersonal or distributional normative choices; this qualifies an overly broad claim in the source.
-
-\subsection*{98. Why the constraint qualification holds here}
-This is LICQ for the original linear budget and bounds with p positive and m positive. It does not hold automatically in every nonlinear constrained optimisation problem. If m=0 and all bounds and budget bind, the argument fails.
-
-\subsection*{99. Proof: why concavity makes KKT sufficient}
-If lambda is zero the budget term is zero; otherwise slackness gives p*x*=m and p*y<=m. For bounds, mu*x*=0 and mu*y>=0. This is a direct global proof and does not need a separate saddle-point theorem.
-
-\subsection*{100. Proof: concave KKT gives the budget saddle}
-This proves that concave KKT yields a global saddle for ell(x,lambda) on x>=0, lambda>=0. Only the budget is relaxed in ell; mu encodes the first-order bound conditions. Do not assert global maximisation of the full L over negative quantities where the utility may be undefined.
-
-\subsection*{101. A KKT point that is not optimal}
-This shows why quasiconcavity alone is insufficient; the source's additional strict gradient condition is not assumed in this counterexample. Pseudoconcavity or other additional conditions can restore sufficient first-order tests, but they are not needed in this core lecture. The example also shows that KKT does not by itself impose budget exhaustion at every candidate.
-
-\subsection*{102. A binding budget with zero marginal value}
-Replace the raw utility by x and its multiplier is positive. The same ranking can have a flat differentiable representation at the optimum. This is why Roy states v\_m>0 rather than only strict increase of v.
-
-\subsection*{103. Cobb--Douglas with any positive exponent sum}
-The product representation need not be concave when the exponent sum exceeds one, but the log representation is concave on the positive orthant and shares the same optimum. The source formula has a price-index typo; the denominator uses the price of good i, not always p1.
-
-\subsection*{104. Proof: expenditure minimisation has a solution}
-The attainable-target assumption is indispensable. No convexity or LNS is required for this existence argument.
-
-\subsection*{105. Proof: homogeneity and price concavity of expenditure}
-Monotonicity in prices follows by evaluating the higher-price minimiser at the lower prices. No excess utility follows by a small proportional contraction of any nonzero minimiser with surplus utility; this also supplies strict target monotonicity above baseline and uniqueness under strictly convex preferences.
 
 \end{document}

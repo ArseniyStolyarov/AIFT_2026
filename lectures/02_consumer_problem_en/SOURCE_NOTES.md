@@ -1,96 +1,71 @@
-# Sources and qualifications
+# Inputs, scope and mathematical review
 
-## Supplied inputs
+## User-supplied inputs
 
-- `lecture 10.pdf`: “Lecture 10: The Consumer Problem”, 17 PDF pages,
-  printed pages 149–165.
-- `lecture 11.pdf`: “Lecture 11: Lagrangians (cont'd) and Expenditure Minimization”,
-  15 PDF pages, printed pages 166–180.
+- Lecture 10: The Consumer Problem, printed pp.149–165, 17 PDF pages.
+- Lecture 11: Lagrangians (cont'd) and Expenditure Minimization,
+  printed pp.166–180, 15 PDF pages.
 
-Author information is not identified in the supplied headers or metadata. No
-unverified author attribution is added. The teaching sequence and standard
-results are adapted; diagrams, numeric examples and notes are prepared for this
-course. Source files themselves are not redistributed in the archive.
+No verified author attribution is available in their supplied metadata. Original
+handouts are not embedded in this lecture's source archive. The live route is
+adapted for this course, with English slides and the supplied NES branding.
 
-## Syllabus placement
+## Two saddle theorems, then applications
 
-The core covers block 2: utility maximisation, Marshallian demand, indirect
-utility, constrained optimisation and Roy. Expenditure minimisation and the
-Hicksian side of duality, from the end of input Lecture 11, are retained in a
-separate reserve section for block 3. Slutsky and Shephard are not claimed as
-covered by this deck.
+The condensed route follows the two directions in source Proposition 1 rather
+than retaining another separate pair of KKT necessity/sufficiency theorems.
+The forward proof explicitly derives feasibility, all slackness products,
+equality of Lagrangian and utility values, and optimality. The converse proof
+constructs multipliers, checks signs and their independence of the selected
+consumed good, verifies stationarity/slackness, and proves both global saddle
+inequalities. The zero-consumption optimum is handled separately.
 
-Assigned student reading is Varian, Intermediate Microeconomics: A Modern
-Approach, ninth edition (2014), chapters 5 Choice and 6 Demand; optionally MWG,
-Microeconomic Theory (1995), section 3.D The Utility Maximization Problem and
-the Mathematical Appendix on constrained optimisation. The source handouts are
-adaptation inputs, not substituted for the textbook assignment.
+The full Lagrangian varies x on an open convex domain U where u is defined;
+feasibility is x>=0 and p*x<=m inside that domain. Do not silently evaluate log
+utility or a fractional power at negative quantities. The converse requires
+concavity and differentiability on U. The forward implication requires neither.
+For Cobb–Douglas use the original continuous product index to establish an
+interior optimum, then take logs on the positive orthant.
 
-## Corrections and conditions
+Source p.164 has a wrong derivative index in the normalised marginal-return
+comparison and a missing price denominator later in the stationarity argument.
+Source p.165 reverses the condition under which a bound multiplier was set to
+zero. The slides use the corrected formulas. Concavity plus zero gradient gives
+a global maximum by the supporting-plane inequality; it does not imply uniqueness.
 
-- Existence requires a nonempty compact budget and continuous utility. Uniqueness
-  is a separate result using strict convex preferences, not convex utility.
-- KKT necessity is stated with smoothness near the candidate and the constraint
-  qualification. Positive prices and wealth make the active linear gradients
-  independent, including at corners. Differentiability is not silently assumed
-  at a minimum kink or a zero logarithm/square-root boundary.
-- The log Cobb–Douglas representation is used after establishing positivity
-  using the original continuous product utility. No restriction that the sum of
-  positive exponents be at most one is needed for its demand solution.
-- Marginal conditions retain the correct price indices and complementary
-  slackness sets a bound multiplier to zero when its quantity is positive.
-  Several such indices/inequalities are mistyped in the handouts.
-- Quasiconcavity alone is not a global first-order sufficiency theorem. A shifted
-  cubic supplies a stationary KKT nonmaximum. Concavity supplies the sufficient
-  condition used here; global saddle inequalities are kept distinct.
-- The opening now covers budget propositions, existence and demand homogeneity.
-  Walras, convexity/uniqueness and indirect-value results follow the complete
-  KKT proofs. Their short proofs remain in the main sequence and reveal by click;
-  continuity of v uses a fixed compact expenditure-share simplex.
-- The saddle prelude precedes KKT and relaxes only the budget: ell(x,lambda)
-  keeps x in the nonnegative orthant. The global saddle-to-optimum implication
-  is proved directly. Max–inf encoding does not justify interchanging the
-  optimisation order. Under concavity the full KKT system verifies the same
-  budget-only saddle; no utility is evaluated at negative quantities.
-- Source Lecture 11 p.171's two KKT theorems now have complete main-sequence
-  proofs: necessity by constructing the multipliers (including zero consumption),
-  and concave sufficiency via the Lagrangian supporting-plane inequality,
-  feasibility and complementary slackness. The source p.164 price/index errors
-  and p.165 reversed zero-bound statement are corrected in this route.
-- A binding budget can have zero multiplier, even with strictly increasing
-  preferences. This is distinct from Roy's strictly positive v_m assumption.
-- Roy's main-sequence direct proof uses the supporting budget q*x*, so it neither
-  assumes differentiable demand nor assumes uniqueness to prove uniqueness.
-- Expenditure targets must be attainable. No excess utility is stated only for
-  targets at least u(0). The preview's duality identities use targets above the
-  baseline to stay inside the positive-wealth core; the zero-wealth extension
-  is discussed explicitly in the notes.
-- Expenditure continuity is restricted to the attainable target domain under
-  the stated continuity/LNS assumptions. An infeasible target does not have a
-  finite expenditure value merely because a formula was written down.
-- Money-metric welfare measures do not remove the need for normative assumptions
-  when aggregating effects across people.
+Walras' law uses LNS and an existing optimum. Convexity and strict convexity
+refer to preferences rather than the numerical curvature of an arbitrary index.
+The first 11 slides and their appearance have been preserved.
 
-## Newly prepared worked examples
+## Values, envelope and Roy
 
-- Cobb–Douglas: alpha=1/2, prices (2,1), wealth 12 -> quantities (3,6);
-  first price 3 -> quantities (2,6).
-- Substitutes: 2*x1+x2 at prices (3,1), wealth 12 -> (0,12), lambda=1,
-  mu=(1,0). At prices (2,1), the entire budget line is optimal.
-- Complements: min(x1,x2) -> equal quantities m/(p1+p2).
-- Quasilinearity: a+4*log(1+q), budget a+r*q<=m. Demand is
-  q=min(m/r,max(4/r-1,0)), a=m-r*q. At unit prices m=2 -> (0,2),
-  m=8 -> (5,3). No tutoring, all-income and interior regimes are checked,
-  including the price/income boundaries and Roy derivatives.
-- General constrained envelope theorem: C1 data and a C1 branch of optimal
-  decisions and KKT multipliers are explicit sufficient assumptions. Equality
-  constraints have free multipliers. The proof accounts for all multiplier
-  derivatives; nonnegativity of a smooth zero multiplier makes its derivative
-  zero at an interior parameter. This regularity version is not asserted at
-  every regime change. Roy's independent direct proof has weaker requirements.
-- Roy examples now include Cobb–Douglas, both strict-return substitute corners
-  and the tie failure, all three linear-plus-log regimes, and smooth indirect
-  utility for nonsmooth perfect complements.
-- Compensated Cobb–Douglas: raise first price from 1 to 2, initial wealth 8 and
-  raw utility 4 -> compensated quantities (2*sqrt(2),4*sqrt(2)), expenditure
-  8*sqrt(2), compensation approximately 3.31.
+Indirect utility is introduced only after all four direct optimisation models.
+Both raw and log Cobb–Douglas value scales are identified. Substitutes have a
+price kink at equal returns. The linear-plus-log example has three regimes;
+its value and first derivatives agree at the regime boundaries.
+
+The general constrained envelope theorem includes inequalities and equalities.
+It states a sufficient smooth-branch version: C1 data and C1 optimal primal/dual
+selections on an open parameter neighbourhood. The proof retains all choice
+and multiplier derivative terms. Stationarity, feasibility, complementary
+slackness and differentiability/nonnegativity of multiplier branches eliminate
+them. It is not asserted that every corner or regime switch satisfies these
+smooth-branch assumptions.
+
+Roy's independent fixed-bundle proof uses existence, budget exhaustion,
+differentiable indirect value and v_m>0, without differentiable direct utility
+or demand. This covers smooth indirect value for kinked complements. For the log
+Cobb–Douglas value, the same ratio follows from the original continuous product
+index and the increasing differentiable change of scale.
+
+## Numerical checks
+
+The bundled standard-library script checks demands against independent feasible
+budget grids, KKT residuals and complementary slackness, finite-difference Roy
+ratios, and price/income transition cases. Models include Cobb–Douglas,
+substitute corners, all three linear-plus-log regimes, and complements. Some
+expenditure calculations are retained as checks for the next lecture.
+
+The live deck ends after Roy. Five reserve slides introduce the expenditure
+problem, its existence, basic properties and duality identities under their
+stated conditions. Slutsky and Shephard are not claimed as covered here.
