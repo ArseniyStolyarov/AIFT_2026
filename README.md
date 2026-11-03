@@ -44,9 +44,9 @@ No network access or credentials are required to compile the documents.
 
 ## Lecture 2 — The Consumer Problem
 
-Live opening with click-by-click short proofs (slides 1–32), a saddle-point
-prelude and a board transition before KKT. Full necessity and concave-sufficiency
-theorems, with click-by-click proofs, are slides 41–53.
+Opening budget propositions and proofs reveal by click (slides 1–11), followed
+by saddle points and KKT with both complete proofs (26–38). Walras and the other
+demand tools follow from slide 39; examples, envelopes and Roy come afterwards.
 
 Utility maximisation, Marshallian demand, indirect utility, the Lagrangian,
 Kuhn–Tucker conditions, worked examples and Roy's identity. Includes a marked

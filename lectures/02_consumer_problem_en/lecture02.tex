@@ -17,7 +17,7 @@
 \vspace{9mm}
 {\color{NESblue}\Huge\bfseries Microeconomics\par}
 \vspace{3mm}
-{\color{NESgray}\large The consumer problem\par}
+{\color{NESgray}\large Lecture 2 · The consumer problem\par}
 \vspace{6mm}
 {\color{NESgray}\Large Arseniy Stolyarov\par}
 {\color{NESblue}\small PhD in Economics\\University of Wisconsin--Madison\par}
@@ -27,58 +27,73 @@
 \end{frame}}
 
 \begin{frame}[label=roadmap]{From preferences to an actual choice}
-\uncover<1->{First: budget sets, existence, demand and indirect utility, with the short proofs.}\par
-\uncover<2->{Then: encode the budget in a Lagrangian and understand a global saddle point.}\par
-\uncover<3->{At the board: derive Kuhn--Tucker conditions, solve examples, then develop envelopes and Roy’s identity.}\par
-\uncover<4->{Expenditure minimisation, Hicksian demand and Slutsky belong to Lecture 3.}\par
+\begin{itemize}
+\setlength{\itemsep}{.85em}
+\item<1-> Budget sets, existence and Marshallian demand.
+\item<2-> The Lagrangian, saddle points and Kuhn--Tucker conditions, with two proofs.
+\item<3-> Use the structure: budget exhaustion, demand properties, worked examples, envelopes and Roy’s identity.
+\end{itemize}
 \end{frame}
 
 \begin{frame}[label=warmup]{The picture we already know}
-
 \begin{columns}[c]
-\column{.53\textwidth}
-\begin{tikzpicture}\begin{axis}[nes,width=7.2cm,height=5.1cm,xmax=9,ymax=9,xtick={0,4,8},ytick={0,4,8}]
-\addplot[draw=none,fill=NESlight!25] coordinates {(0,0) (0,8) (8,0)} \closedcycle;
-\addplot[NESblue] coordinates {(0,8) (8,0)};
-\uncover<2->{\addplot[NESblue,domain=1.78:9,samples=80] {16/x};}
+\column{.55\textwidth}
+\begin{tikzpicture}\begin{axis}[nes,width=7.4cm,height=5.1cm,xmax=9,ymax=9,xtick={0,4,8},ytick={0,4,8}]
+\addplot[draw=none,fill=NESlight!25] coordinates {(0,0)(0,8)(8,0)} \closedcycle;
+\addplot[NESblue,thick] coordinates {(0,8)(8,0)};
+\uncover<2->{
+\addplot[NESblue,domain=.45:9,samples=90] {4/x};
+\addplot[NESred,domain=1.78:9,samples=90] {16/x};
+\addplot[NESgray,dashed,domain=4:9,samples=90] {36/x};
+\node[above right,font=\scriptsize] at (axis cs:1,4) {$u=2$};
+\node[above right,font=\scriptsize,text=NESred] at (axis cs:6,2.67) {$u=4$};
+\node[above right,font=\scriptsize] at (axis cs:6,6) {$u=6$};}
 \uncover<3->{\addplot[only marks,mark=*,NESred] coordinates {(4,4)};}
 \end{axis}\end{tikzpicture}
-\column{.43\textwidth}
-\uncover<1->{$u(x)=\sqrt{x_1x_2}$, $p=(1,1)$, $m=8$.}
-\uncover<2->{\par Which affordable bundle is best?}
-\uncover<3->{\par $(4,4)$. Today we want a systematic method, not just a convincing picture.}
+\column{.41\textwidth}
+\uncover<1->{$u(x)=\sqrt{x_1x_2}$.\par\smallskip $p=(1,1)$, $m=8$.}\par
+\vspace{.8em}
+\uncover<2->{Which affordable bundle reaches the highest indifference curve?}\par
+\vspace{.8em}
+\uncover<3->{\key{Best bundle:} $(4,4)$.\par\smallskip Utility is $4$.}\par
 \end{columns}
-
 \end{frame}
 
 \begin{frame}[label=consumer-problem]{The consumer problem}
-\uncover<1->{Let $X=\R_+^L$, prices $p\in\R_{++}^L$ and wealth $m>0$.}\par
-\uncover<2->{\[B(p,m)=\{x\ge0:p\cdot x\le m\}.\]}\par
-\uncover<3->{\[\max_{x\in B(p,m)}u(x).\]}\par
-\uncover<4->{Preferences enter through $u$; prices and wealth enter through the feasible set.}\par
+\[
+\begin{aligned}
+\uncover<1->{\max_x}\quad&\uncover<1->{u(x)}\\[1em]
+\uncover<2->{\text{subject to}}\quad&\uncover<2->{p\cdot x\le m,}\\[.7em]
+&\uncover<3->{x_i\ge0\quad\text{for every }i.}
+\end{aligned}
+\]
+\uncover<4->{Here $p\gg0$ and $m>0$. The feasible set is\[B(p,m)=\{x\ge0:p\cdot x\le m\}.\]}\par
 \end{frame}
 
 \begin{frame}[label=modelling-assumptions]{What did we assume when we wrote that?}
-\uncover<1->{\key{Price-taking:} prices are given rather than negotiated.}\par
-\uncover<2->{\key{Linear prices:} every unit of a good has the same unit price.}\par
-\uncover<3->{\key{Divisibility:} quantities can vary continuously.}\par
-\uncover<4->{\key{A specified decision horizon:} if saving is possible, future consumption or saving must enter the model.}\par
-\uncover<5->{What changes for a subscription, a quantity discount or an indivisible purchase?}\par
+\begin{itemize}
+\setlength{\itemsep}{.85em}
+\item<1-> \key{Price-taking:} prices are given rather than negotiated.
+\item<2-> \key{Linear prices:} every unit has the same unit price.
+\item<3-> \key{Divisibility:} quantities can vary continuously.
+\item<4-> \key{Decision horizon:} include saving or future consumption when relevant.
+\end{itemize}
+\uncover<5->{\question{What changes for a subscription, a quantity discount or an indivisible purchase?}}
 \end{frame}
 
-\begin{frame}[label=budget-geometry]{Two useful facts about the budget}
-\uncover<1->{\key{Currency invariance:} for every $t>0$, $B(tp,tm)=B(p,m)$.}\par
-\uncover<2->{\key{Nonemptiness:} the zero bundle is affordable.}\par
-\uncover<3->{\key{Compactness:} the budget is closed, and $0\le x_i\le m/p_i$ for every $i$.}\par
-\uncover<4->{Strictly positive prices give a finite upper bound on every quantity.}\par
+\begin{frame}[label=budget-geometry]{Currency invariance of the budget}
+\uncover<1->{\key{Claim.} For every $t>0$,\[B(tp,tm)=B(p,m).\]}\par
+\uncover<2->{\key{Proof.} For any $x\ge0$,}\par
+\uncover<3->{\[tp\cdot x\le tm\quad\Longleftrightarrow\quad p\cdot x\le m.\]}\par
+\uncover<4->{The same bundles are affordable. Only the currency units have changed.}\par
 \end{frame}
 
-\begin{frame}[label=proof-budget]{Proof: the budget is nonempty and compact}
-\uncover<1->{$0\in B(p,m)$, so the budget is nonempty.}\par
-\uncover<2->{Each condition $x_i\ge0$ and $p\cdot x\le m$ defines a closed set; their intersection is closed.}\par
-\uncover<3->{For any affordable $x$, positivity gives $p_ix_i\le p\cdot x\le m$.}\par
-\uncover<4->{Thus $B(p,m)\subseteq\prod_i[0,m/p_i]$: the budget is bounded.}\par
-\uncover<5->{In finite-dimensional Euclidean space, closed and bounded means compact.}\par
+\begin{frame}[label=proof-budget]{The budget is nonempty and compact}
+\uncover<1->{\key{Claim.} If $p\gg0$ and $m>0$, then $B(p,m)$ is nonempty and compact.}\par
+\uncover<2->{\key{Proof: nonempty.} The zero bundle is affordable.}\par
+\uncover<3->{\key{Closed.} The inequalities $x_i\ge0$ and $p\cdot x\le m$ define closed sets.}\par
+\uncover<4->{\key{Bounded.} Every affordable bundle satisfies $0\le x_i\le m/p_i$ for every $i$.}\par
+\uncover<5->{A closed and bounded subset of finite-dimensional Euclidean space is compact.}\par
 \end{frame}
 
 \begin{frame}[label=existence]{Does an optimum exist?}
@@ -109,108 +124,6 @@
 \uncover<3->{Therefore $B(tp,tm)=B(p,m)$. The objective $u$ is the same.}\par
 \uncover<4->{The full argmax sets coincide. Neither uniqueness nor differentiability is needed.}\par
 \uncover<5->{Example: $(p,m)=((2,1),12)$ and $((200,100),1200)$.}\par
-\end{frame}
-
-\begin{frame}[label=walras]{Budget exhaustion: Walras’ law}
-\uncover<1->{If preferences are locally nonsatiated, every $x^*\in D(p,m)$ satisfies $p\cdot x^*=m$.}\par
-\uncover<2->{Assume an optimum exists. What would happen if it left strictly positive budget slack?}\par
-\uncover<3->{The key: with slack, every sufficiently small change in the consumption domain remains affordable.}\par
-\end{frame}
-
-\begin{frame}[label=proof-walras]{Proof: LNS and budget exhaustion}
-\uncover<1->{Suppose an optimum $x^*$ has slack $\delta=m-p\cdot x^*>0$.}\par
-\uncover<2->{If $\|y-x^*\|<\delta/\|p\|$, then
- \[p\cdot y\le p\cdot x^*+\|p\|\|y-x^*\|<m.\]}\par
-\uncover<3->{LNS supplies a strictly better such $y$ in the consumption domain, contradicting optimality.}\par
-\vfill\navto{walras}{Back to budget exhaustion}
-\end{frame}
-
-\begin{frame}[label=demand-convex]{Proof: convex preferences give a convex demand set}
-\uncover<1->{Assume preferences are convex and take $x,y\in D(p,m)$.}\par
-\uncover<2->{For $t\in[0,1]$, $z_t=tx+(1-t)y$ is affordable because $B(p,m)$ is convex.}\par
-\uncover<3->{For every affordable $w$, optimality gives $x\succeq w$ and $y\succeq w$.}\par
-\uncover<4->{Convex preferences imply $z_t\succeq w$ for every such $w$. Thus $z_t\in D(p,m)$.}\par
-\uncover<5->{Hence $D(p,m)$ is convex. It can still be a whole line segment.}\par
-\end{frame}
-
-\begin{frame}[label=unique-demand]{Strict convexity: at most one optimum}
-\uncover<1->{If preferences are strictly convex, there is at most one optimal bundle on a convex budget set.}\par
-\uncover<2->{Together with existence, this gives a demand function $x(p,m)$.}\par
-\uncover<3->{Does strict convexity alone establish existence?}\par
-\uncover<4->{No. Continuity and compactness gave existence; strict convexity gives at most one optimum.}\par
-\end{frame}
-
-\begin{frame}[label=proof-unique]{Proof: uniqueness from strict convexity}
-\uncover<1->{Suppose distinct $x,y\in D(p,m)$. Their midpoint $z$ is feasible because the budget is convex.}\par
-\uncover<2->{Optimality gives $x\sim y$. Strict convexity of preferences implies $z\succ x$.}\par
-\uncover<3->{This contradicts $x$ being optimal. There is at most one optimum; existence gives a unique one.}\par
-\vfill\navto{unique-demand}{Back to uniqueness}
-\end{frame}
-
-\begin{frame}[label=indirect-utility]{Indirect utility: the optimal value}
-\uncover<1->{\[v(p,m)=\max_{x\ge0,\,p\cdot x\le m}u(x).\]}\par
-\uncover<2->{Demand tells us \key{which bundle}; indirect utility tells us \key{the attained value}.}\par
-\uncover<3->{Even if $D(p,m)$ contains several bundles, every one gives the same value $v(p,m)$.}\par
-\uncover<4->{It is a function of the environment, not of a chosen bundle.}\par
-\end{frame}
-
-\begin{frame}[label=v-properties]{Indirect utility: the properties to prove}
-\uncover<1->{Maintain continuous $u$ on $\R_+^L$, $p\gg0$ and $m>0$, so optimal values exist.}\par
-\uncover<2->{$v(tp,tm)=v(p,m)$; increasing prices componentwise cannot increase $v$.}\par
-\uncover<3->{Increasing wealth weakly increases $v$; under LNS the increase is strict.}\par
-\uncover<4->{$v$ is continuous on the positive-price, positive-wealth domain. No differentiability claim yet.}\par
-\end{frame}
-
-\begin{frame}[label=proof-v-order]{Proof: currency units and higher prices}
-\uncover<1->{$B(tp,tm)=B(p,m)$ and the same $u$ is maximised, so $v(tp,tm)=v(p,m)$.}\par
-\uncover<2->{If $q\ge p$ componentwise and $x\ge0$, then $p\cdot x\le q\cdot x$.}\par
-\uncover<3->{Thus $q\cdot x\le m$ implies $p\cdot x\le m$: $B(q,m)\subseteq B(p,m)$.}\par
-\uncover<4->{Maximising the same utility over a smaller set cannot give a larger value: $v(q,m)\le v(p,m)$.}\par
-\end{frame}
-
-\begin{frame}[label=proof-v-wealth]{Proof: more wealth and local nonsatiation}
-\uncover<1->{Let $m^{\prime}>m$ and choose $x\in D(p,m)$.}\par
-\uncover<2->{Choose $\varepsilon=(m^{\prime}-m)/(2\|p\|)>0$.}\par
-\uncover<3->{By LNS, some $y\ge0$ satisfies $\|y-x\|<\varepsilon$ and $u(y)>u(x)=v(p,m)$.}\par
-\uncover<4->{$p\cdot y\le p\cdot x+\|p\|\|y-x\|<m+(m^{\prime}-m)/2<m^{\prime}$.}\par
-\uncover<5->{So $y$ is affordable at the new wealth and $v(p,m^{\prime})\ge u(y)>v(p,m)$.}\par
-\end{frame}
-
-\begin{frame}[label=proof-v-continuity-set]{Continuity: put every budget on the same simplex}
-\uncover<1->{Define the fixed compact set $\Delta=\{z\ge0:\sum_i z_i\le1\}$.}\par
-\uncover<2->{For each budget, write $z_i=p_ix_i/m$, or equivalently $x_i=(m/p_i)z_i$.}\par
-\uncover<3->{This is a bijection between $B(p,m)$ and $\Delta$, since $p\cdot x/m=\sum_i z_i$.}\par
-\uncover<4->{With $g(p,m,z)=u((m/p_1)z_1,\ldots,(m/p_L)z_L)$, we have $v(p,m)=\max_{z\in\Delta}g(p,m,z)$.}\par
-\end{frame}
-
-\begin{frame}[label=proof-v-continuity]{Proof: the optimal value is continuous}
-\uncover<1->{Take $(p^n,m^n)\to(p,m)$ with $p\gg0$, $m>0$.}\par
-\uncover<2->{Choose a compact parameter neighbourhood $K$ containing the tail of this sequence, with all prices and wealth bounded away from zero.}\par
-\uncover<3->{$g$ is continuous on the compact set $K\times\Delta$, hence uniformly continuous. Therefore $\sup_{z\in\Delta}|g(p^n,m^n,z)-g(p,m,z)|\to0$.}\par
-\uncover<4->{\[|v(p^n,m^n)-v(p,m)|\le\sup_{z\in\Delta}|g(p^n,m^n,z)-g(p,m,z)|\to0.\]}\par
-\uncover<5->{No differentiability or uniqueness of the optimiser was needed.}\par
-\end{frame}
-
-\begin{frame}[label=v-quasiconvex]{A less obvious property: quasiconvexity}
-\uncover<1->{For $0\le t\le1$, set $(p^t,m^t)=t(p,m)+(1-t)(q,n)$.}\par
-\uncover<2->{\[v(p^t,m^t)\le\max\{v(p,m),v(q,n)\}.\]}\par
-\uncover<3->{If a bundle is unaffordable at both endpoints, it is unaffordable at their mixture too.}\par
-\uncover<4->{So the mixed budget cannot deliver utility above both endpoint values.\quad\navto{proof-v-quasiconvex}{Proof}}\par
-\end{frame}
-
-\begin{frame}[label=proof-v-quasiconvex]{Proof: indirect utility is quasiconvex}
-\uncover<1->{Write $(p^t,m^t)=t(p,m)+(1-t)(q,n)$ with $0<t<1$.}\par
-\uncover<2->{If $x$ violates both budgets, then $p\cdot x>m$ and $q\cdot x>n$, hence $p^t\cdot x>m^t$.}\par
-\uncover<3->{Thus every bundle affordable at the mixture is affordable at at least one endpoint.}\par
-\uncover<4->{Its utility cannot exceed $\max\{v(p,m),v(q,n)\}$. Maximise over the mixed budget.}\par
-\vfill\navto{v-quasiconvex}{Back to the property}
-\end{frame}
-
-\begin{frame}[label=solve-roadmap]{Before differentiating, inspect the economics}
-\uncover<1->{\key{Substitutes:} compare utility gained per unit of spending; a corner may be optimal.}\par
-\uncover<2->{\key{Complements:} look for useful proportions; the optimum may be a kink.}\par
-\uncover<3->{\key{Smooth interior problem:} marginal conditions can identify a candidate.}\par
-\uncover<4->{Always check feasibility, boundary cases and a reason why the candidate is globally optimal.}\par
 \end{frame}
 
 \begin{frame}[label=budget-lagrangian]{Let a multiplier enforce the budget}
@@ -257,12 +170,6 @@
 \uncover<4->{We now make the bounds $x_i\ge0$ explicit using multipliers $\mu_i$.\quad\navto{proof-saddle}{KKT back to a saddle}}\par
 \end{frame}
 
-\begin{frame}[label=board-kkt]{To the board: derive Kuhn--Tucker}
-\uncover<1->{Start from the budget and the nonnegativity bounds.}\par
-\uncover<2->{Derive stationarity, primal and dual feasibility, and complementary slackness.}\par
-\uncover<3->{Then separate necessity from global sufficiency.}\par
-\end{frame}
-
 \begin{frame}[label=marginal-trade]{Why compare marginal utility per unit of money?}
 \uncover<1->{Shift a small amount of spending $\varepsilon$ from good $j$ to good $i$.}\par
 \uncover<2->{\[\Delta x_i=\varepsilon/p_i,\qquad\Delta x_j=-\varepsilon/p_j.\]}\par
@@ -276,14 +183,6 @@
 \uncover<3->{The multipliers satisfy $\lambda\ge0$, $\mu_i\ge0$.}\par
 \uncover<4->{For the smooth argument, assume $u$ is differentiable on an open neighbourhood of the candidate.}\par
 \end{frame}
-
-
-
-
-
-
-
-
 
 \begin{frame}[label=stationarity]{Stationarity in quantities}
 \uncover<1->{At a smooth candidate,
@@ -365,7 +264,7 @@
 \uncover<4->{The unconsumed good would give more marginal utility per unit of spending.}\par
 \end{frame}
 
-\begin{frame}[label=mu-sign-trade]{Proof: a negative multiplier permits a better purchase}
+\begin{frame}[label=mu-sign-trade]{Proof: a profitable spending transfer}
 \uncover<1->{Shift spending $\varepsilon$ from consumed good $j$ to unconsumed good $i$:}\par
 \uncover<2->{\[x_i(\varepsilon)=\frac{\varepsilon}{p_i},\qquad x_j(\varepsilon)=x_j^*-\frac{\varepsilon}{p_j}.\]}\par
 \uncover<3->{Keep other quantities fixed. For $0<\varepsilon<p_jx_j^*$, quantities remain nonnegative and total spending is unchanged.}\par
@@ -421,13 +320,110 @@
 \uncover<4->{The same slackness and feasibility minimise $\mathcal L(x^*,\lambda,\mu)$ over nonnegative multipliers: the saddle interpretation is recovered.}\par
 \end{frame}
 
+\begin{frame}[label=walras]{Budget exhaustion: Walras’ law}
+\uncover<1->{If preferences are locally nonsatiated, every $x^*\in D(p,m)$ satisfies $p\cdot x^*=m$.}\par
+\uncover<2->{Assume an optimum exists. What would happen if it left strictly positive budget slack?}\par
+\uncover<3->{The key: with slack, every sufficiently small change in the consumption domain remains affordable.}\par
+\end{frame}
 
+\begin{frame}[label=proof-walras]{Proof: LNS and budget exhaustion}
+\uncover<1->{Suppose an optimum $x^*$ has slack $\delta=m-p\cdot x^*>0$.}\par
+\uncover<2->{If $\|y-x^*\|<\delta/\|p\|$, then
+ \[p\cdot y\le p\cdot x^*+\|p\|\|y-x^*\|<m.\]}\par
+\uncover<3->{LNS supplies a strictly better such $y$ in the consumption domain, contradicting optimality.}\par
+\vfill\navto{walras}{Back to budget exhaustion}
+\end{frame}
 
+\begin{frame}[label=demand-convex]{Proof: convex preferences give a convex demand set}
+\uncover<1->{Assume preferences are convex and take $x,y\in D(p,m)$.}\par
+\uncover<2->{For $t\in[0,1]$, $z_t=tx+(1-t)y$ is affordable because $B(p,m)$ is convex.}\par
+\uncover<3->{For every affordable $w$, optimality gives $x\succeq w$ and $y\succeq w$.}\par
+\uncover<4->{Convex preferences imply $z_t\succeq w$ for every such $w$. Thus $z_t\in D(p,m)$.}\par
+\uncover<5->{Hence $D(p,m)$ is convex. It can still be a whole line segment.}\par
+\end{frame}
 
+\begin{frame}[label=unique-demand]{Strict convexity: at most one optimum}
+\uncover<1->{If preferences are strictly convex, there is at most one optimal bundle on a convex budget set.}\par
+\uncover<2->{Together with existence, this gives a demand function $x(p,m)$.}\par
+\uncover<3->{Does strict convexity alone establish existence?}\par
+\uncover<4->{No. Continuity and compactness gave existence; strict convexity gives at most one optimum.}\par
+\end{frame}
 
+\begin{frame}[label=proof-unique]{Proof: uniqueness from strict convexity}
+\uncover<1->{Suppose distinct $x,y\in D(p,m)$. Their midpoint $z$ is feasible because the budget is convex.}\par
+\uncover<2->{Optimality gives $x\sim y$. Strict convexity of preferences implies $z\succ x$.}\par
+\uncover<3->{This contradicts $x$ being optimal. There is at most one optimum; existence gives a unique one.}\par
+\vfill\navto{unique-demand}{Back to uniqueness}
+\end{frame}
 
+\begin{frame}[label=indirect-utility]{Indirect utility: the optimal value}
+\uncover<1->{\[v(p,m)=\max_{x\ge0,\,p\cdot x\le m}u(x).\]}\par
+\uncover<2->{Demand tells us \key{which bundle}; indirect utility tells us \key{the attained value}.}\par
+\uncover<3->{Even if $D(p,m)$ contains several bundles, every one gives the same value $v(p,m)$.}\par
+\uncover<4->{It is a function of the environment, not of a chosen bundle.}\par
+\end{frame}
 
+\begin{frame}[label=v-properties]{Indirect utility: the properties to prove}
+\begin{itemize}
+\setlength{\itemsep}{.85em}
+\item<1-> Maintain continuous $u$, $p\gg0$ and $m>0$, so optimal values exist.
+\item<2-> $v(tp,tm)=v(p,m)$; higher prices cannot increase $v$.
+\item<3-> More wealth weakly increases $v$; under LNS the increase is strict.
+\item<4-> $v$ is continuous on the positive-price, positive-wealth domain.
+\end{itemize}
+\end{frame}
 
+\begin{frame}[label=proof-v-order]{Proof: currency units and higher prices}
+\uncover<1->{$B(tp,tm)=B(p,m)$ and the same $u$ is maximised, so $v(tp,tm)=v(p,m)$.}\par
+\uncover<2->{If $q\ge p$ componentwise and $x\ge0$, then $p\cdot x\le q\cdot x$.}\par
+\uncover<3->{Thus $q\cdot x\le m$ implies $p\cdot x\le m$: $B(q,m)\subseteq B(p,m)$.}\par
+\uncover<4->{Maximising the same utility over a smaller set cannot give a larger value: $v(q,m)\le v(p,m)$.}\par
+\end{frame}
+
+\begin{frame}[label=proof-v-wealth]{Proof: more wealth and local nonsatiation}
+\uncover<1->{Let $m^{\prime}>m$ and choose $x\in D(p,m)$.}\par
+\uncover<2->{Choose $\varepsilon=(m^{\prime}-m)/(2\|p\|)>0$.}\par
+\uncover<3->{By LNS, some $y\ge0$ satisfies $\|y-x\|<\varepsilon$ and $u(y)>u(x)=v(p,m)$.}\par
+\uncover<4->{$p\cdot y\le p\cdot x+\|p\|\|y-x\|<m+(m^{\prime}-m)/2<m^{\prime}$.}\par
+\uncover<5->{So $y$ is affordable at the new wealth and $v(p,m^{\prime})\ge u(y)>v(p,m)$.}\par
+\end{frame}
+
+\begin{frame}[label=proof-v-continuity-set]{Continuity: put every budget on the same simplex}
+\uncover<1->{Define the fixed compact set $\Delta=\{z\ge0:\sum_i z_i\le1\}$.}\par
+\uncover<2->{For each budget, write $z_i=p_ix_i/m$, or equivalently $x_i=(m/p_i)z_i$.}\par
+\uncover<3->{This is a bijection between $B(p,m)$ and $\Delta$, since $p\cdot x/m=\sum_i z_i$.}\par
+\uncover<4->{With $g(p,m,z)=u((m/p_1)z_1,\ldots,(m/p_L)z_L)$, we have $v(p,m)=\max_{z\in\Delta}g(p,m,z)$.}\par
+\end{frame}
+
+\begin{frame}[label=proof-v-continuity]{Proof: the optimal value is continuous}
+\uncover<1->{Take $(p^n,m^n)\to(p,m)$ with $p\gg0$, $m>0$.}\par
+\uncover<2->{Choose a compact parameter neighbourhood $K$ containing the tail of this sequence, with all prices and wealth bounded away from zero.}\par
+\uncover<3->{$g$ is continuous on the compact set $K\times\Delta$, hence uniformly continuous. Therefore $\sup_{z\in\Delta}|g(p^n,m^n,z)-g(p,m,z)|\to0$.}\par
+\uncover<4->{\[|v(p^n,m^n)-v(p,m)|\le\sup_{z\in\Delta}|g(p^n,m^n,z)-g(p,m,z)|\to0.\]}\par
+\uncover<5->{No differentiability or uniqueness of the optimiser was needed.}\par
+\end{frame}
+
+\begin{frame}[label=v-quasiconvex]{A less obvious property: quasiconvexity}
+\uncover<1->{For $0\le t\le1$, set $(p^t,m^t)=t(p,m)+(1-t)(q,n)$.}\par
+\uncover<2->{\[v(p^t,m^t)\le\max\{v(p,m),v(q,n)\}.\]}\par
+\uncover<3->{If a bundle is unaffordable at both endpoints, it is unaffordable at their mixture too.}\par
+\uncover<4->{So the mixed budget cannot deliver utility above both endpoint values.\quad\navto{proof-v-quasiconvex}{Proof}}\par
+\end{frame}
+
+\begin{frame}[label=proof-v-quasiconvex]{Proof: indirect utility is quasiconvex}
+\uncover<1->{Write $(p^t,m^t)=t(p,m)+(1-t)(q,n)$ with $0<t<1$.}\par
+\uncover<2->{If $x$ violates both budgets, then $p\cdot x>m$ and $q\cdot x>n$, hence $p^t\cdot x>m^t$.}\par
+\uncover<3->{Thus every bundle affordable at the mixture is affordable at at least one endpoint.}\par
+\uncover<4->{Its utility cannot exceed $\max\{v(p,m),v(q,n)\}$. Maximise over the mixed budget.}\par
+\vfill\navto{v-quasiconvex}{Back to the property}
+\end{frame}
+
+\begin{frame}[label=solve-roadmap]{Before differentiating, inspect the economics}
+\uncover<1->{\key{Substitutes:} compare utility gained per unit of spending; a corner may be optimal.}\par
+\uncover<2->{\key{Complements:} look for useful proportions; the optimum may be a kink.}\par
+\uncover<3->{\key{Smooth interior problem:} marginal conditions can identify a candidate.}\par
+\uncover<4->{Always check feasibility, boundary cases and a reason why the candidate is globally optimal.}\par
+\end{frame}
 
 \begin{frame}[label=checkpoint]{Checkpoint}
 \uncover<1->{What established existence? What could establish uniqueness?}\par
@@ -690,12 +686,6 @@
 \uncover<3->{In the diagram, $\mathrm{CV}=8\sqrt2-8\approx3.31$.}\par
 \uncover<4->{A money-metric change is useful, but summing it across people still involves welfare judgements.}\par
 \end{frame}
-
-
-
-
-
-
 
 \begin{frame}[label=proof-cq]{Why the constraint qualification holds here}
 \uncover<1->{Active nonnegativity constraints have gradients $e_i$ for the coordinates at zero.}\par

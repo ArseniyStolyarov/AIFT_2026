@@ -13,14 +13,22 @@ Prepared from the supplied **Lecture 10** and **Lecture 11** handouts.
 - `lecture02-complete.zip`: all PDFs and a self-contained LaTeX source archive.
 - `slide-index.md`: logical slide numbers, types and presentation page ranges.
 
-There are **76 core slides**, **8 reserve slides introducing duality**, and
-**9 optional mathematical proof/counterexample slides**: 93 logical slides total.
-The first **32 slides** contain the live opening and its proofs, ending with
-“To the board: derive Kuhn–Tucker.” The KKT summary is slide 36.
-The two complete KKT theorems and their proofs occupy **slides 41–53**:
-necessity (including corners and the zero bundle), then concave sufficiency.
-The proof includes multiplier construction, sign checks, all complementary
-slackness conditions and the supporting-plane argument with a tangent diagram.
+There are **75 core slides**, **8 reserve slides introducing duality**, and
+**9 optional mathematical proof/counterexample slides**: 92 logical slides total.
+
+The revised sequence is:
+
+1. Slides **1–11**: budget sets, existence and Marshallian demand homogeneity.
+2. Slides **12–25**: Lagrangian and saddle prelude, followed by KKT conditions.
+3. Slides **26–38**: the two complete KKT theorems and their proofs.
+4. From slide **39**: Walras' law, demand/indirect-value properties, then worked
+   examples, envelopes and Roy (slide **71**).
+
+There is no “at the board” slide or student-facing staging instruction.
+The first two budget propositions each reveal their own proof after the claim.
+The title explicitly says Lecture 2; the warm-up graph shows utility levels
+2, 4 and 6. Body line/paragraph spacing is increased throughout, with spaced
+bullet lists for parallel points.
 The core follows syllabus block 2. The tail of source Lecture 11 on expenditure
 minimisation is marked as a preview of block 3, rather than required live coverage.
 
@@ -43,12 +51,11 @@ are needed. Output PDFs are copied here; auxiliary files and logs stay in `build
 
 English text, NES colours and English logo, plain headings without shaded banners.
 Questions have no generic Discuss label or timed exercise instructions. Semantic
-steps appear successively. All short pre-KKT proofs are in the main sequence:
-budget compactness, existence, demand homogeneity, budget exhaustion, convexity
-and uniqueness, indirect-value monotonicity/homogeneity/continuity and
-quasiconvexity. Continuity uses a fixed expenditure-share simplex and uniform
-continuity. Proof links have visible return links. The presentation
-uses ordinary PDF pages for overlays, with no JavaScript requirement.
+steps appear successively. Claims and their short proofs are revealed in order.
+Budget results come first; Walras' law, convexity/uniqueness and indirect-value
+proofs follow the KKT block. The value-continuity proof uses a fixed compact
+expenditure-share simplex. Proof links have visible return links. The
+presentation uses ordinary PDF pages for overlays, without JavaScript.
 
 The saddle introduction comes **before KKT**. It uses the budget-only
 Lagrangian ell(x,lambda) on x>=0, lambda>=0. The slides prove that a global

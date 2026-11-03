@@ -43,8 +43,10 @@ adaptation inputs, not substituted for the textbook assignment.
 - Quasiconcavity alone is not a global first-order sufficiency theorem. A shifted
   cubic supplies a stationary KKT nonmaximum. Concavity supplies the sufficient
   condition used here; global saddle inequalities are kept distinct.
-- The live pre-KKT route now includes the short proofs in the main sequence,
-  including continuity of v via a fixed compact expenditure-share simplex.
+- The opening now covers budget propositions, existence and demand homogeneity.
+  Walras, convexity/uniqueness and indirect-value results follow the complete
+  KKT proofs. Their short proofs remain in the main sequence and reveal by click;
+  continuity of v uses a fixed compact expenditure-share simplex.
 - The saddle prelude precedes KKT and relaxes only the budget: ell(x,lambda)
   keeps x in the nonnegative orthant. The global saddle-to-optimum implication
   is proved directly. Max–inf encoding does not justify interchanging the
