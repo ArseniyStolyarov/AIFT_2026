@@ -80,3 +80,12 @@ These are the earlier section drafts. The complete current homework is linked ab
 - [Problems with stories](homework/01_true_false_en/problems.pdf?raw=true)
 - [Solutions](homework/01_true_false_en/problem-solutions.pdf?raw=true)
 - [Full folder: ten true/false questions and two problems, PDF and LaTeX](homework/01_true_false_en/homework-sections-complete.zip?raw=true)
+
+## Seminar 2 — Consumer choice, KKT and Roy
+
+Starts with Roy’s identity, followed by three multi-part problems: shifted product
+utility, quasilinear regimes, and a minimum of two linear substitute indices.
+
+- [Student problem sheet](practice/02_consumer_problem_en/seminar02.pdf?raw=true)
+- [Instructor solutions and 90-minute route](practice/02_consumer_problem_en/instructor-solutions.pdf?raw=true)
+- [Complete folder: PDFs and LaTeX](practice/02_consumer_problem_en/seminar02-complete.zip?raw=true)

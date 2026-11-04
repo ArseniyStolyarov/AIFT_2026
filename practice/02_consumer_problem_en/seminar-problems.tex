@@ -1,0 +1,59 @@
+\heading{Seminar 2}{Consumer choice · Kuhn--Tucker and Roy}
+\subsection*{Start here: reading demand from the value function}
+For $p\gg0$, $m>0$, define
+\[
+ v(p,m)=\max_{x\ge0,\ p\cdot x\le m}u(x).
+\]
+If an optimum exists, preferences are locally nonsatiated, $v$ is differentiable and $v_m>0$, Roy's identity gives every optimal quantity:
+\[
+ x_i^*(p,m)=-\frac{v_{p_i}(p,m)}{v_m(p,m)}.
+\]
+First differentiate with prices and income symbolic; substitute numerical values afterwards. Work within the relevant regime and check differentiability at its boundaries. With a unit-price numeraire $a$, recover its quantity from budget exhaustion after recovering the other demand.
+\section*{1. A head start changes the corner}
+Let $X=\R_+^2$ and $u(x)=(1+x_1)(1+x_2)$.
+\begin{enumerate}[label=(\alph*)]
+\item Find a concave utility representation of the same preferences. Explain existence, uniqueness and budget exhaustion at positive prices and income. Is the original product index itself concave?
+\item Set $p=(1,2)$ and let $m>0$. Write the full KKT system for your concave representation. Derive demand and all multipliers for every $m>0$, including the transition between a corner and an interior solution. Check the bundles at $m=1/2$, $m=1$ and $m=5$.
+\item For general prices, in the interior region $m>|p_1-p_2|$, the indirect utility of the log representation is
+\[
+ v_{\log}(p,m)=2\log(m+p_1+p_2)-\log(4p_1p_2).
+\]
+Recover both demands using Roy and check the interior formula from part (b). The original product index has $v_{\mathrm{raw}}=\exp(v_{\log})$: would using it change the Roy demands?
+\end{enumerate}
+\clearpage
+\section*{2. Spend it or keep it}
+A consumer chooses money left over $a\ge0$ and a service quantity $q\ge0$:
+\[
+ u(a,q)=a+4\sqrt{1+q},\qquad a+rq\le m,\quad r,m>0.
+\]
+The price of $a$ is 1.
+\begin{enumerate}[label=(\alph*)]
+\item Reduce the problem to one variable and state its feasible interval. Derive demand for every $r,m>0$. Identify the regions with no service, all wealth spent on the service, and both goods consumed. Include equality cases.
+\item Verify the full KKT conditions and find $(\lambda,\mu_a,\mu_q)$ for $(r,m)=(1,1)$, $(1,6)$ and $(3,6)$. State which concavity argument makes these conditions sufficient.
+\item Obtain the indirect utility in each regime by substitution. In the region where both goods are consumed, recover $q$ using $-v_r/v_m$, then recover $a$. Do the same ratio calculation in the all-wealth-on-service region if time permits.
+\item At $r=1$, how do the quantities respond to income below and above the transition? At the transition itself, does a zero quantity necessarily have a positive bound multiplier?
+\end{enumerate}
+\paragraph{A useful check.} The nonnegativity condition on the linear good is a genuine constraint. An unconstrained stationary quantity may be unaffordable, and quasilinearity does not remove low-income corner effects.
+\clearpage
+\section*{3. Keep both critics happy}
+Let
+\[
+ u(x)=\min\{2x_1+x_2,\ x_1+2x_2\},\qquad x\in\R_+^2,
+\]
+with positive prices and income.
+\begin{enumerate}[label=(\alph*)]
+\item Explain why a direct smooth stationarity calculation is inappropriate on $x_1=x_2$. Introduce an unrestricted variable $t\in\R$ and rewrite the utility-maximisation problem as
+\[
+ \max_{x_1,x_2,t}t\quad\text{subject to}\quad
+ \begin{cases}
+ m-p_1x_1-p_2x_2\ge0,\\
+ 2x_1+x_2-t\ge0,\\
+ x_1+2x_2-t\ge0,\\
+ x_1,x_2\ge0.
+ \end{cases}
+\]
+Show equivalence to the original problem. Write its Lagrangian and KKT conditions, using $\lambda$ for the budget, $\eta_1,\eta_2$ for the two score constraints and $\mu_1,\mu_2$ for quantity bounds. Is a separate multiplier needed for $t\ge0$?
+\item For $p=(1,1)$, find the optimal quantities, attained utility and all multipliers. Verify that the solution is globally optimal and unique.
+\item For general prices, determine the range of $p_1/p_2$ in which the balanced bundle $x_1=x_2$ is optimal. Derive the relevant multipliers. Find the corner solution on each side of this range. Hint: use $\eta_1+\eta_2=1$, which comes from stationarity in $t$.
+\item In the strict interior of the balanced-price region, compute $v(p,m)$ and use Roy to recover both demands. What happens to differentiability and uniqueness at the two price boundaries? As an extension, describe the full demand sets at those boundaries.
+\end{enumerate}

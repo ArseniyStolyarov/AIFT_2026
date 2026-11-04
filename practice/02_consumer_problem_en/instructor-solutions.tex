@@ -1,0 +1,162 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{nesarticle}
+\begin{document}
+\heading{Seminar 2 · Instructor solutions}{Three problems · Consumer choice, KKT and Roy}
+\paragraph{Suggested 90-minute route.} Roy recap 10 minutes; problem 1 about 20; problem 2 about 25; problem 3 about 30; final questions 5. The extra Roy calculation in 2(c) and full boundary correspondences in 3(d) can be reserve. The student sheet has three problems, not a slide presentation. It prepares the methods used in Homework 1 without reproducing its parameterisations.
+\paragraph{What else to reinforce.} Existence is separate from uniqueness; KKT necessity is separate from sufficiency. Check all four groups and all regime boundaries. Multipliers depend on the utility scale; Roy ratios do not under a differentiable increasing transformation with positive derivative. A minimum of two affine utilities is handled by an auxiliary-variable problem, not by inventing a derivative at its kink.
+\section*{Opening: Roy}
+At a regular consumer optimum the envelope formulas give $v_m=\lambda$ and $v_{p_i}=-\lambda x_i^*$. Taking the negative ratio removes the utility units. The direct fixed-bundle proof from the lecture also applies when the direct index is nonsmooth, as in problem 3. Ask why a value computed only at fixed numerical prices cannot provide the missing general price derivatives. After normalising the numeraire price to 1, Roy with respect to r recovers q, and budget exhaustion recovers a.
+\section*{1. A head start changes the corner}
+\paragraph{(a) Representation and existence.}
+Use $g=\log u=\log(1+x_1)+\log(1+x_2)$. The original index is positive, so log is strictly increasing on its range. The Hessian of g is diagonal with entries $-1/(1+x_i)^2<0$: strict concavity gives uniqueness on a convex budget. Continuity and positive prices give existence on a nonempty compact budget, and positive partial derivatives imply budget exhaustion. The original product index is not concave: its Hessian has off-diagonal entries 1 and zero diagonal, hence a positive and a negative eigenvalue. Do not use the product's curvature as the sufficiency argument.
+\paragraph{(b) Fixed prices and all incomes.}
+For the log representation,
+\[
+ \mathcal L=g+\lambda(m-x_1-2x_2)+\mu_1x_1+\mu_2x_2.
+\]
+Stationarity:
+\[
+ \frac1{1+x_1}-\lambda+\mu_1=0,\qquad
+ \frac1{1+x_2}-2\lambda+\mu_2=0.
+\]
+Include $x_i\ge0$, $m-x_1-2x_2\ge0$, $\lambda,\mu_i\ge0$, and all three complementary-slackness products.
+
+At an interior optimum, $1+x_1=2(1+x_2)$ and $x_1+2x_2=m$. Thus
+\[
+ x_1=\frac{m+1}{2},\quad x_2=\frac{m-1}{4},\quad\lambda=\frac2{m+3},
+\]
+valid for $m>1$. At a corner $x_2=0$, we have $x_1=m$, $\lambda=1/(1+m)$, $\mu_1=0$ and $\mu_2=(1-m)/(1+m)$. These are valid for $0<m\le1$.
+\[
+ \begin{array}{c|ccccc}
+ m&x_1&x_2&\lambda&\mu_1&\mu_2\\\hline
+ 1/2&1/2&0&2/3&0&1/3\\
+ 1&1&0&1/2&0&0\\
+ 5&3&1&1/4&0&0
+ \end{array}
+\]
+The original g is strictly concave, so these KKT candidates are sufficient and unique. At m=1 the zero quantity has zero bound multiplier.
+\paragraph{(c) Roy.}
+Write $S=m+p_1+p_2$. Then
+\[
+ (v_{\log})_m=2/S,\qquad (v_{\log})_{p_i}=2/S-1/p_i.
+\]
+Roy yields
+\[
+ x_i^*=\frac{S}{2p_i}-1,
+\]
+positive for both goods iff $m>|p_1-p_2|$. At prices (1,2) this reproduces the interior solution above. One derivation of the supplied value uses $z_i=1+x_i$: when both lower bounds $z_i\ge1$ are slack, split effective wealth S equally across the two log terms.
+
+For the raw index $v_{\mathrm{raw}}=e^{v_{\log}}$, both relevant derivatives acquire the same positive factor $e^{v_{\log}}$, so the Roy ratio is unchanged. The raw budget multiplier is instead $u(x^*)$ times the log multiplier; it is not numerically invariant.
+\clearpage
+\section*{2. Spend it or keep it}
+\paragraph{(a) Reduction and regimes.}
+Continuity on the compact positive-price budget gives existence. Utility is increasing in a, so $a=m-rq$. The reduced problem is
+\[
+ \max_{0\le q\le m/r}\{m-rq+4\sqrt{1+q}\}.
+\]
+Its derivative is $-r+2/\sqrt{1+q}$ and its second derivative is $-(1+q)^{-3/2}<0$. The stationary quantity is $4/r^2-1$, giving
+\[
+ q^*=\min\left\{\frac mr,\max\left\{\frac4{r^2}-1,0\right\}\right\},\qquad a^*=m-rq^*.
+\]
+The unique optimum is
+\[
+ (a^*,q^*)=
+ \begin{cases}
+ (m,0),&r\ge2,\\
+ (0,m/r),&0<r<2,\quad m\le4/r-r,\\
+ (m-4/r+r,\ 4/r^2-1),&0<r<2,\quad m>4/r-r.
+ \end{cases}
+\]
+At r=2, the zero quantity is still uniquely optimal: the reduced derivative is zero only at q=0 and negative afterwards. At m=4/r-r the two positive-q formulas agree, with a=0; there is no multiplicity.
+\paragraph{(b) KKT verification.}
+Use $\mathcal L=u+\lambda(m-a-rq)+\mu_a a+\mu_q q$. Stationarity is
+\[
+ 1-\lambda+\mu_a=0,\qquad
+ \frac2{\sqrt{1+q}}-\lambda r+\mu_q=0.
+\]
+Together with primal/dual feasibility, require $\lambda(m-a-rq)=\mu_a a=\mu_q q=0$. The direct index is concave (affine in a, strictly concave in q); constraints are affine, so these conditions are sufficient. Uniqueness follows from the strictly concave reduced objective and exhaustion, not strict concavity in the full pair.
+\[
+ \begin{array}{cc|ccccc}
+ r&m&a&q&\lambda&\mu_a&\mu_q\\\hline
+ 1&1&0&1&\sqrt2&\sqrt2-1&0\\
+ 1&6&3&3&1&0&0\\
+ 3&6&6&0&1&0&1
+ \end{array}
+\]
+In general, lambda is 1 in the no-service and both-goods regimes. In the all-service regime it is $2/[r\sqrt{1+m/r}]\ge1$, with $\mu_a=\lambda-1$, $\mu_q=0$. In the no-service regime $\mu_q=r-2$.
+\paragraph{(c) Value and Roy.}
+\[
+ v(r,m)=\begin{cases}
+ m+4,&r\ge2,\\
+ 4\sqrt{1+m/r},&0<r<2,\quad m\le4/r-r,\\
+ m+r+4/r,&0<r<2,\quad m>4/r-r.
+ \end{cases}
+\]
+In the both-goods region $v_m=1$ and $v_r=1-4/r^2$, so $-v_r/v_m=4/r^2-1=q^*$. In the all-service region,
+\[
+ v_m=\frac2{r\sqrt{1+m/r}},\qquad
+ v_r=-\frac{2m}{r^2\sqrt{1+m/r}},\qquad
+ -\frac{v_r}{v_m}=\frac mr.
+\]
+In the no-service region the ratio is zero. Recover a by exhaustion with unit numeraire price. Values and first derivatives agree at the regime boundaries, so Roy remains available there even though the quantity rules have kinks.
+\paragraph{(d) Income effects and a zero multiplier.}
+At r=1, q=min(m,3), a=max(m-3,0). Below 3 additional income buys q; above 3 it buys only a. At m=3 the bundle is (0,3), lambda=1 and $\mu_a=0$. A binding lower bound does not imply a strictly positive multiplier.
+\clearpage
+\section*{3. Keep both critics happy}
+\paragraph{(a) Reformulation.}
+Each feasible augmented triple has $t\le\min\{2x_1+x_2,x_1+2x_2\}=u(x)$. For each original bundle one can set t=u(x); hence maximising t is equivalent. The objective is linear and every constraint is affine, so concave-program KKT sufficiency applies without differentiating the min index. The variable t is unrestricted; a constraint t>=0 is unnecessary. At positive wealth the optimum has t>0 anyway. Adding this redundant bound would preserve the optimum, but its multiplier would be zero there.
+
+The Lagrangian is
+\[
+ \begin{split}
+ \mathcal L={}&t+\lambda(m-p_1x_1-p_2x_2)\\
+ &+\eta_1(2x_1+x_2-t)+\eta_2(x_1+2x_2-t)+\mu_1x_1+\mu_2x_2.
+ \end{split}
+\]
+Stationarity:
+\[
+ 1-\eta_1-\eta_2=0,\quad
+ 2\eta_1+\eta_2-\lambda p_1+\mu_1=0,\quad
+ \eta_1+2\eta_2-\lambda p_2+\mu_2=0.
+\]
+Include nonnegative lambda, eta and mu, every primal inequality, and complementary slackness:
+\[
+ \lambda(m-p\cdot x)=0,\quad
+ \eta_1(2x_1+x_2-t)=0,\quad
+ \eta_2(x_1+2x_2-t)=0,\quad\mu_ix_i=0.
+\]
+\paragraph{(b) Equal prices.}
+At p=(1,1), $x_1=x_2=m/2$, $t=3m/2$. Multipliers are $\lambda=3/2$, $\eta_1=\eta_2=1/2$ and $\mu_1=\mu_2=0$. They satisfy KKT, hence give a global optimum. For uniqueness, $u(x)\le[3(x_1+x_2)]/2\le3m/2$; equality in the first inequality requires the two scores equal, i.e. x1=x2, and the budget fixes both at m/2.
+\paragraph{(c) General prices.}
+Write $S=p_1+p_2$. At a balanced candidate,
+\[
+ x_1=x_2=m/S,\quad t=3m/S,\quad\mu_1=\mu_2=0.
+\]
+Stationarity gives
+\[
+ \lambda=3/S,\qquad
+ \eta_1=\frac{2p_1-p_2}{S},\qquad
+ \eta_2=\frac{2p_2-p_1}{S}.
+\]
+Both eta multipliers are nonnegative iff $1/2\le p_1/p_2\le2$. When the inequalities are strict, both score constraints bind, giving a unique balanced optimum.
+
+If $p_1/p_2<1/2$, choose $(x_1,x_2)=(m/p_1,0)$ and t=m/p1. Set $\eta_1=0$, $\eta_2=1$, $\lambda=1/p_1$, $\mu_1=0$ and $\mu_2=p_2/p_1-2>0$. If $p_1/p_2>2$, choose $(0,m/p_2)$, t=m/p2, with $\eta_1=1$, $\eta_2=0$, $\lambda=1/p_2$, $\mu_1=p_1/p_2-2>0$, $\mu_2=0$. These satisfy the full KKT system. Strict signs and positive prices establish the corresponding unique corners.
+
+An alternative argument reduces the exhausted budget to one dimension; the minimum of the two affine score functions is piecewise linear, and its optimum is at an endpoint or at their intersection, with a flat segment only at the two boundary ratios.
+\paragraph{(d) Roy and boundary sets.}
+In the strict balanced region, $v=3m/S$, $v_m=3/S$ and $v_{p_i}=-3m/S^2$. Roy recovers x1=x2=m/S. More generally,
+\[
+ v(p,m)=m\max\left\{\frac1{p_1},\frac1{p_2},\frac3{p_1+p_2}\right\}.
+\]
+At $p_1=p_2/2$, the first and third branches tie and have different price gradients. At $p_1=2p_2$, the second and third do. Hence v is not differentiable in prices there; Roy cannot choose a unique point from the full optimal set.
+
+For the extension, the demand correspondences at the boundaries are
+\[
+ \begin{array}{ll}
+ p_1=p_2/2:&D=\{x\ge0:p\cdot x=m,\ x_1\ge x_2\},\\
+ p_1=2p_2:&D=\{x\ge0:p\cdot x=m,\ x_1\le x_2\}.
+ \end{array}
+\]
+Each is the line segment between the appropriate corner and the balanced bundle. Every point is optimal. At the first boundary the multipliers $\eta_1=0$, $\eta_2=1$, $\lambda=1/p_1$, mu=0 support the whole segment; at the second swap the roles. This is a useful final illustration: convex preferences can have unique demands for many prices without being strictly convex, and boundary prices can expose an entire segment of optimisers.
+
+\end{document}

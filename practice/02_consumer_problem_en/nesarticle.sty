@@ -1,0 +1,16 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{nesarticle}[2026/10/28 NES course exercises]
+\RequirePackage[margin=22mm,headheight=26pt]{geometry}
+\RequirePackage{fontspec}\setmainfont{DejaVu Sans}
+\RequirePackage{amsmath,amssymb,mathtools,graphicx,xcolor,enumitem,fancyhdr,hyperref}
+\definecolor{NESblue}{RGB}{5,67,114}\definecolor{NESred}{RGB}{163,22,70}
+\hypersetup{colorlinks=true,linkcolor=NESblue,urlcolor=NESblue,pdfauthor={Arseniy Stolyarov}}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small\color{NESblue}AIFT · Microeconomics}\fancyhead[R]{\includegraphics[height=8mm]{assets/nes-english.pdf}}
+\fancyfoot[L]{\scriptsize Arseniy Stolyarov}\fancyfoot[R]{\thepage}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}\setlength{\emergencystretch}{3em}
+\setlist[enumerate]{itemsep=4pt,topsep=4pt}
+\newcommand{\R}{\mathbb R}\newcommand{\pref}{\succeq}\newcommand{\spref}{\succ}\newcommand{\ind}{\sim}
+\newcommand{\heading}[2]{{\color{NESblue}\LARGE\bfseries #1\par}\medskip{\large #2\par}\bigskip}
+\newcommand{\task}[2]{\subsection*{#1\hfill\normalfont\small #2}}
+\newcommand{\answer}[1]{\par\textcolor{NESred}{\textbf{#1}}\par}
+\newcommand{\conventions}{\paragraph{Conventions.} Rational means complete and transitive. Continuity means a closed weak-preference graph: if $x^n\to x$, $y^n\to y$ and $x^n\pref y^n$ for all $n$, then $x\pref y$. Convex preferences have convex upper contour sets. Strict convexity uses distinct bundles and mixtures with weights in $(0,1)$. Monotonicity means $x\gg y\Rightarrow x\spref y$; strong monotonicity means $x\ge y$, $x\ne y\Rightarrow x\spref y$. Local nonsatiation (LNS) means every relative neighbourhood of every bundle contains a strictly preferred bundle. All topological statements use the stated domain's relative Euclidean topology.}
