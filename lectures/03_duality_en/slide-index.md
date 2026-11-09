@@ -1,6 +1,6 @@
 # Lecture 3 — slide index
 
-57 main slides and 6 reserve slides.
+58 main slides and 6 reserve slides.
 
 | Slide | Topic | Stable label |
 |---:|---|---|
@@ -49,21 +49,22 @@
 | 43 | Perfect complements: all income, no substitution | `complements-slutsky` |
 | 44 | Quasilinearity: income effects depend on the regime | `quasilinear` |
 | 45 | Can a higher price make you buy more? | `giffen-question` |
-| 46 | A subsistence kink generates Giffen demand | `giffen-example` |
-| 47 | The income effect wins | `giffen-numbers` |
-| 48 | Checkpoint | `checkpoint-slutsky` |
-| 49 | Substitutes and complements: specify the experiment | `net-gross` |
-| 50 | A surprising restriction with only two goods | `two-goods` |
-| 51 | Construct compensated effects from ordinary demand | `observable-matrix` |
-| 52 | Cobb–Douglas passes the matrix test | `cd-matrix` |
-| 53 | Could these choices come from our consumer model? | `test-demand` |
-| 54 | A symmetric matrix can still fail | `test-demand-answer` |
-| 55 | Checkpoint | `checkpoint` |
-| 56 | One structure, several ways to use it | `take-home` |
-| 57 | Read next | `reading` |
-| 58 | Reserve: compensation and equivalent variation | `reserve-welfare` |
-| 59 | Reserve: how much compensation? | `reserve-welfare-cd` |
-| 60 | Reserve: two meanings of compensation | `reserve-compensation` |
-| 61 | Reserve: can we work backwards from demand? | `reserve-integrability` |
-| 62 | Reserve: genuine net complements need another good | `reserve-three-goods` |
-| 63 | Reserve: continuity of expenditure | `reserve-continuity` |
+| 46 | The classic potato story | `giffen-story` |
+| 47 | A subsistence kink generates Giffen demand | `giffen-example` |
+| 48 | The income effect wins | `giffen-numbers` |
+| 49 | Checkpoint | `checkpoint-slutsky` |
+| 50 | Substitutes and complements: specify the experiment | `net-gross` |
+| 51 | A surprising restriction with only two goods | `two-goods` |
+| 52 | Construct compensated effects from ordinary demand | `observable-matrix` |
+| 53 | Cobb–Douglas passes the matrix test | `cd-matrix` |
+| 54 | Could these choices come from our consumer model? | `test-demand` |
+| 55 | A symmetric matrix can still fail | `test-demand-answer` |
+| 56 | Checkpoint | `checkpoint` |
+| 57 | One structure, several ways to use it | `take-home` |
+| 58 | Read next | `reading` |
+| 59 | Reserve: compensation and equivalent variation | `reserve-welfare` |
+| 60 | Reserve: how much compensation? | `reserve-welfare-cd` |
+| 61 | Reserve: two meanings of compensation | `reserve-compensation` |
+| 62 | Reserve: can we work backwards from demand? | `reserve-integrability` |
+| 63 | Reserve: genuine net complements need another good | `reserve-three-goods` |
+| 64 | Reserve: continuity of expenditure | `reserve-continuity` |

@@ -60,10 +60,11 @@ Roy at 53. Five reserve slides introduce expenditure minimisation.
 
 ## Lecture 3 — Duality and the Slutsky Equation
 
-**57 main slides plus 6 reserve slides**, in English with click-by-click reveals.
+**58 main slides plus 6 reserve slides**, in English with click-by-click reveals.
 Expenditure minimisation, Hicksian demand, duality, Shephard, the compensated
-law of demand, Slutsky and its matrix restrictions, and a numerical Giffen
-example. Two additional question sets follow duality and the Giffen example;
+law of demand, Slutsky and its matrix restrictions, the classic potato story
+and a numerical Giffen example. Two additional question sets follow duality
+and the Giffen example;
 the concluding checkpoint remains. Russian instructor notes contain answers
 and proof qualifications. The reserve includes CV/EV and integrability.
 

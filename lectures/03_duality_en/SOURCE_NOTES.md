@@ -46,9 +46,12 @@ automatically imported into this course.
   Finite Hicks compensation on the graph is distinguished from finite
   compensation that keeps the original basket affordable in the reserve.
 - The Giffen example is a new, explicit concave piecewise-linear utility with
-  an analytically verified interior kink solution. It makes no historical claim
-  about potatoes, celebrities or financial assets. Shifts in quality beliefs,
-  prestige and tastes are not used as evidence for a pure Giffen price effect.
+  an analytically verified interior kink solution. It makes no empirical claim
+  about historical potato consumption, celebrities or financial assets. The
+  classic potato-and-meat story is a separate hypothetical illustration of
+  subsistence and income effects, not a verified claim about the Irish famine.
+  Shifts in quality beliefs, prestige and tastes are not used as evidence for a
+  pure Giffen price effect.
 - Net and gross cross-price effects are distinguished. In a two-good smooth
   system, net cross-effects are nonnegative, not necessarily strictly positive.
   Perfect complements give zero; a three-good reserve example gives a strictly

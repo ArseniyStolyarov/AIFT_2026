@@ -11,7 +11,7 @@ Artificial Intelligence and Financial Technologies, New Economic School, 2026/27
 - [Entire folder: PDFs and editable LaTeX](lecture03-complete.zip?raw=true)
 - [Slide index](slide-index.md)
 
-There are **57 main slides and 6 reserve slides**: 63 handout pages and 240
+There are **58 main slides and 6 reserve slides**: 64 handout pages and 244
 presentation pages with reveals, plus Russian instructor notes.
 The English presentation
 continues Lecture 2 after Roy's identity. It does not repeat the saddle/KKT
@@ -26,17 +26,17 @@ The handout combines the reveal states into one page per logical slide.
 2. Slides 21–35: both duality identities, equality of demand correspondences,
    Shephard's lemma with a direct proof, the compensated law of demand,
    symmetry, negative semidefiniteness and the zero price direction.
-3. Slides 36–50: a numerical substitution/income diagram, the chain-rule
-   derivation of Slutsky, own and cross effects, quasilinear regimes, an explicit
-   Giffen example, and net versus gross substitution.
-4. Slides 51–57: reconstruct and test the Slutsky matrix from ordinary demand,
+3. Slides 36–51: a numerical substitution/income diagram, the chain-rule
+   derivation of Slutsky, own and cross effects, quasilinear regimes, the
+   classic potato story, an explicit Giffen example, and net versus gross substitution.
+4. Slides 52–58: reconstruct and test the Slutsky matrix from ordinary demand,
    reject an illustrative demand system, checkpoint and reading.
 
 Two additional question sets appear after duality (slide 26) and after the
-Giffen example (slide 48). They cover price scaling, utility transformations,
+Giffen example (slide 49). They cover price scaling, utility transformations,
 multiple optima, expenditure concavity, numerical Slutsky effects and
 quasilinear corners. Each question appears on a separate click; answers are
-only in the instructor notes. The concluding checkpoint is slide 55.
+only in the instructor notes. The concluding checkpoint is slide 56.
 
 The reserve covers CV/EV, finite Hicks versus Slutsky compensation,
 integrability, genuine net complements with three goods, and continuity of
