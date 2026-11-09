@@ -1,6 +1,6 @@
 # Source notes and editorial decisions
 
-Prepared on 9 November 2026 for the AIFT microeconomics course.
+Updated on 10 November 2026 for the AIFT microeconomics course.
 
 ## User-supplied inputs
 
@@ -56,9 +56,11 @@ automatically imported into this course.
 - The source's global rationalisability claim is not copied as an unrestricted
   iff theorem. The main slides derive necessary restrictions. The reserve
   describes integrability and its additional domain/regularity requirements.
-- The finite-data WARP section, budget diagram and three-observation GARP
-  cycle are added to match our announced course plan. Ties are handled so that
-  two different indifferent optimal bundles are not falsely declared a violation.
+- Two four-question checkpoints follow duality and the Giffen example. They
+  cover the meaning of fixed utility, representation changes, equality of
+  demand sets, concavity, Slutsky signs and quasilinear income regimes.
+  Questions are revealed individually; the Russian instructor notes contain
+  their answers. A concluding checkpoint remains after the matrix test.
 - The historical parking anecdote and long empirical bibliography are omitted.
   CV/EV are supplied as optional extensions with an explicit positive-loss
   sign convention; monetary compensation is not equated with interpersonal
@@ -69,7 +71,7 @@ automatically imported into this course.
 ## Reading
 
 - Hal R. Varian, *Intermediate Microeconomics: A Modern Approach*, 9th edition:
-  Chapter 7, “Revealed Preference”; Chapter 8, “Slutsky Equation”; optional
+  Chapter 8, “Slutsky Equation”; optional
   Chapter 14, “Consumer's Surplus”.
 - Mas-Colell, Whinston and Green (1995), *Microeconomic Theory*, Chapter 3,
   “Classical Demand Theory”, for expenditure, duality and integrability.

@@ -1,4 +1,4 @@
-# Microeconomics 3 — Duality, Slutsky and Revealed Preference
+# Microeconomics 3 — Duality and the Slutsky Equation
 
 Arseniy Stolyarov, PhD in Economics, University of Wisconsin–Madison.
 Artificial Intelligence and Financial Technologies, New Economic School, 2026/27.
@@ -11,8 +11,8 @@ Artificial Intelligence and Financial Technologies, New Economic School, 2026/27
 - [Entire folder: PDFs and editable LaTeX](lecture03-complete.zip?raw=true)
 - [Slide index](slide-index.md)
 
-There are **60 main slides and 7 reserve slides**: 67 handout pages, 253
-presentation pages with reveals, and 13 pages of Russian instructor notes.
+There are **57 main slides and 6 reserve slides**: 63 handout pages and 240
+presentation pages with reveals, plus Russian instructor notes.
 The English presentation
 continues Lecture 2 after Roy's identity. It does not repeat the saddle/KKT
 proofs. Definitions, short proofs, examples and graph elements appear in stages.
@@ -23,19 +23,24 @@ The handout combines the reveal states into one page per logical slide.
 1. Slides 1–20: expenditure minimisation, existence, no excess utility,
    homogeneity, convexity/uniqueness of Hicksian demand, monotonicity and
    concavity of expenditure; Cobb–Douglas, complements and substitutes.
-2. Slides 21–34: both duality identities, equality of demand correspondences,
+2. Slides 21–35: both duality identities, equality of demand correspondences,
    Shephard's lemma with a direct proof, the compensated law of demand,
    symmetry, negative semidefiniteness and the zero price direction.
-3. Slides 35–48: a numerical substitution/income diagram, the chain-rule
+3. Slides 36–50: a numerical substitution/income diagram, the chain-rule
    derivation of Slutsky, own and cross effects, quasilinear regimes, an explicit
    Giffen example, and net versus gross substitution.
-4. Slides 49–60: reconstruct and test the Slutsky matrix from ordinary demand,
-   reject an illustrative demand system, test two observed budgets using
-   revealed preference, checkpoint and reading.
+4. Slides 51–57: reconstruct and test the Slutsky matrix from ordinary demand,
+   reject an illustrative demand system, checkpoint and reading.
+
+Two additional question sets appear after duality (slide 26) and after the
+Giffen example (slide 48). They cover price scaling, utility transformations,
+multiple optima, expenditure concavity, numerical Slutsky effects and
+quasilinear corners. Each question appears on a separate click; answers are
+only in the instructor notes. The concluding checkpoint is slide 55.
 
 The reserve covers CV/EV, finite Hicks versus Slutsky compensation,
-integrability, a three-observation GARP cycle, genuine net complements with
-three goods, and continuity of expenditure. The teacher notes suggest pacing
+integrability, genuine net complements with three goods, and continuity of
+expenditure. The teacher notes suggest pacing
 and contain answers to every open question.
 
 ## Mathematical conventions
@@ -49,9 +54,7 @@ boundaries are not differentiated automatically.
 
 The matrix convention is `S_ij = d h_i / d p_j`, so the observable correction
 is `S = D_p x + (D_m x) x^T`. Own compensated effects are weakly nonpositive,
-and common price scaling gives `S p = 0`. WARP is stated in the budget
-formulation allowing indifferent optimal choices: one strict affordability
-comparison is needed for a pairwise contradiction. Longer cycles require GARP.
+and common price scaling gives `S p = 0`.
 Integrability is presented as an extension with additional domain/regularity
 conditions, not an unconditional global converse.
 
@@ -68,9 +71,9 @@ DejaVu Sans (fallback when Museo Sans and Segoe UI are unavailable). For
 Overleaf, upload the whole source folder, keep `assets/`, choose XeLaTeX and
 select `lecture03.tex`, `handout.tex` or `instructor-notes.tex` as the main file.
 
-`python3 verify-examples.py` uses the standard library and checks **110**
-parameter/data cases with independent feasible grids, finite differences,
-Giffen KKT multipliers, duality, Slutsky, revealed preference and welfare.
+`python3 verify-examples.py` uses the standard library and checks **108**
+parameter cases with independent feasible grids, finite differences,
+Giffen KKT multipliers, duality, Slutsky and welfare.
 
 The complete ZIP contains the three PDFs and all editable sources, style,
 logo, build script, verification script and documentation under `lecture03/`.

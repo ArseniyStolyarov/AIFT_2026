@@ -142,7 +142,7 @@ for _ in range(24):
     assert -p3/c**2 < 0
     cases += 1
 
-# The demand system rejected in slides 51-52.
+# The illustrative demand system rejected by the Slutsky matrix test.
 def rejected(p1,p2,m):
     return [m*p1/(p1*p1+p2*p2), m*p2/(p1*p1+p2*p2)]
 raw = [[derivative(lambda p: rejected(p,1,2)[i],1),
@@ -154,20 +154,8 @@ for i in range(2):
 assert S[0][0] > 0
 cases += 1
 
-# Finite data: strict two-budget reversal, then a three-cycle without a pair reversal.
-p = [(2,1),(1,2)]
-x = [(2,1),(1,2)]
-dot = lambda a,b: sum(t*s for t,s in zip(a,b))
-assert dot(p[0],x[1])==4<5 and dot(p[1],x[0])==4<5
-prices = [(2,1,3),(3,2,1),(1,3,2)]
-bundles = [(1,0,0),(0,1,0),(0,0,1)]
-for i in range(3):
-    assert dot(prices[i],bundles[i])==2
-    assert dot(prices[i],bundles[(i+1)%3])==1
-    assert dot(prices[i],bundles[(i-1)%3])==3
-cases += 2
-
 # Diagram coordinates and monetary welfare measures.
+dot = lambda a,b: sum(t*s for t,s in zip(a,b))
 A, B, C = (4,4), (2*math.sqrt(2),4*math.sqrt(2)), (2,4)
 close(math.sqrt(A[0]*A[1]),4)
 close(math.sqrt(B[0]*B[1]),4)
@@ -177,5 +165,5 @@ close(8*math.sqrt(2)-8,3.313708498984761)
 close(8-4*math.sqrt(2),2.3431457505076194)
 cases += 1
 
-print(f'Passed {cases} parameter/data cases: feasible grids, duality, Shephard, '
-      'Slutsky, Giffen KKT, matrix restrictions, revealed preference and welfare.')
+print(f'Passed {cases} parameter cases: feasible grids, duality, Shephard, '
+      'Slutsky, Giffen KKT, matrix restrictions and welfare.')
