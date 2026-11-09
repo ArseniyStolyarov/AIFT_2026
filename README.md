@@ -58,6 +58,21 @@ Roy at 53. Five reserve slides introduce expenditure minimisation.
 
 [Source directory and build instructions](lectures/02_consumer_problem_en/).
 
+## Lecture 3 — Duality, Slutsky and Revealed Preference
+
+**60 main slides plus 7 reserve slides**, in English with click-by-click reveals.
+Expenditure minimisation, Hicksian demand, duality, Shephard, the compensated
+law of demand, Slutsky and its matrix restrictions, a numerical Giffen example
+and revealed-preference tests. Russian instructor notes contain answers and
+proof qualifications. The reserve includes CV/EV and GARP.
+
+- [Presentation with reveals](lectures/03_duality_en/lecture03.pdf?raw=true)
+- [Handout without animation](lectures/03_duality_en/handout.pdf?raw=true)
+- [Russian instructor notes](lectures/03_duality_en/instructor-notes.pdf?raw=true)
+- [All PDFs and editable LaTeX](lectures/03_duality_en/lecture03-complete.zip?raw=true)
+
+[Source directory, slide index and build instructions](lectures/03_duality_en/).
+
 ## Seminar and Homework 1 — Preferences and utility
 
 - [Seminar worksheet](practice/01_preferences_en/seminar-worksheet.pdf?raw=true)
