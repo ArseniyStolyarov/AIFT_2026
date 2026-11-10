@@ -30,14 +30,20 @@ automatically imported into this course.
 - Expenditure concavity does not require convex preferences. Strict convexity
   of preferences ensures unique Hicksian choice under the baseline assumptions,
   but does not imply strict concavity of expenditure along price rays.
+  Monotonicity, concavity and ordinal/continuity properties have been moved
+  to the appendix in the first-half revision.
 - Shephard's lemma is spelled correctly. A direct two-cost-comparison argument
   supplements the envelope intuition. Unique Hicksian demand and local
   compactness justify differentiability; differentiable expenditure identifies
-  every minimiser. At a tie the correspondence is kept explicitly.
+  every minimiser. At a tie the correspondence is kept explicitly. These
+  detailed arguments are now in the appendix for the seminar; the main first
+  block retains the statement, applications and cross-derivative symmetry.
 - The compensated law of demand is proved, not skipped. Its conclusion is
   weak: zero effects occur. The Hessian convention uses quantity rows and price
   columns throughout. `S p = 0` is proved from price homogeneity, avoiding a
-  tangency argument that could suggest an unnecessary interior optimum.
+  tangency argument that could suggest an unnecessary interior optimum. The
+  full matrix claims and proof are in the appendix. The later demand-testing
+  block retains its previous content for the lecturer's next review.
 - The two inverse value identities and equality of choice sets are proved.
   The target is strictly above `u(0)` in the main duality statement so the
   corresponding income lies in the positive-income domain already used.
@@ -59,11 +65,21 @@ automatically imported into this course.
 - The source's global rationalisability claim is not copied as an unrestricted
   iff theorem. The main slides derive necessary restrictions. The reserve
   describes integrability and its additional domain/regularity requirements.
-- Two four-question checkpoints follow duality and the Giffen example. They
-  cover the meaning of fixed utility, representation changes, equality of
-  demand sets, concavity, Slutsky signs and quasilinear income regimes.
+- A three-question checkpoint follows duality; a four-question checkpoint
+  follows the Giffen example. They cover fixed utility, numerical utility
+  relabelling, equality of demand sets, Slutsky signs and income regimes.
   Questions are revealed individually; the Russian instructor notes contain
   their answers. A concluding checkpoint remains after the matrix test.
+- The first-half revision adds separate recap and agenda slides, removes the
+  dedicated Roy recap, and introduces the two price-change effects briefly.
+  The expenditure graph first shows an indifference curve, then the upper
+  contour region, then three cost lines in the requested order. It displays
+  no utility formula or numeric ticks. The later decomposition graph removes
+  all numerical parameters and reveals each line separately.
+- Cobb–Douglas, complements and substitutes begin with problems; answers are
+  revealed after the problem statement for use alongside board work. The
+  duality verification slide contains only a task. Its answers are in the
+  instructor notes. Original duality theorem/proof slides remain unchanged.
 - The historical parking anecdote and long empirical bibliography are omitted.
   CV/EV are supplied as optional extensions with an explicit positive-loss
   sign convention; monetary compensation is not equated with interpersonal

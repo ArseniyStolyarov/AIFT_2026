@@ -5,6 +5,16 @@
 \documentclass[aspectratio=169,10pt]{beamer}
 \fi
 \usepackage{nesbeamer}
+\usepgfplotslibrary{fillbetween}
+
+% PGFPlots draws paths after collecting the axis. Attach visibility to paths,
+% rather than wrapping deferred plots in Beamer's text-only uncover groups.
+\tikzset{
+  nes hidden/.style={opacity=0,text opacity=0,draw opacity=0,fill opacity=0},
+  nes visible on/.style={nes alt={#1{}{nes hidden}}},
+  nes alt/.code args={<#1>#2#3}{\alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}}}
+}
+
 \setbeamercovered{invisible}
 \hypersetup{pdftitle={Microeconomics 3: Duality and the Slutsky Equation},pdfauthor={Arseniy Stolyarov}}
 \begin{document}
@@ -27,32 +37,29 @@
 {\color{NESblue}\small New Economic School · 2026/27\par}
 \end{frame}
 
-\begin{frame}[label=roadmap]{What does a price change actually do?}
-
+\begin{frame}[label=known]{What we know so far}
 \begin{itemize}\setlength{\itemsep}{.85em}
-\item<1-> Fix a standard of living: expenditure and Hicksian demand.
-\item<2-> Connect the two consumer problems: duality and Shephard’s lemma.
-\item<3-> Separate substitution from purchasing power: the Slutsky equation.
-\item<4-> Test the model: restrictions on demand derivatives.
+\item<1-> Preferences and utility: how to represent what a consumer wants.
+\item<2-> Budgets and utility maximisation: what the consumer can choose.
+\item<3-> Marshallian demand, corners and Kuhn--Tucker conditions.
+\item<4-> Indirect utility and the envelope theorem.
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label=recap]{Where we stopped}
-
-\uncover<1->{\[v(p,m)=\max_{x\ge0,\ p\cdot x\le m}u(x),\qquad
-X(p,m)=\operatorname*{arg\,max}_{x\ge0,\ p\cdot x\le m}u(x).\]}\par
-\uncover<2->{For a unique choice, write $x(p,m)$. Under LNS, $p\cdot x=m$.}\par
-\uncover<3->{At regular points, Roy recovers quantities from the value function:
-\[x_i(p,m)=-\frac{v_{p_i}(p,m)}{v_m(p,m)}.\]}\par
-\uncover<4->{Today: fix utility instead of money.}\par
+\begin{frame}[label=roadmap]{What we will learn today}
+\begin{itemize}\setlength{\itemsep}{.85em}
+\item<1-> Expenditure minimisation and Hicksian demand.
+\item<2-> Duality: two ways to describe the same optimal choice.
+\item<3-> Shephard’s lemma and compensated price responses.
+\item<4-> Substitution and income effects: the Slutsky equation.
+\end{itemize}
 \end{frame}
 
-\begin{frame}[label=why-expenditure]{Put a price on a standard of living}
-
-\uncover<1->{A price increase changes relative prices \emph{and} purchasing power.}\par
-\uncover<2->{How much money would keep the consumer on the same indifference curve?}\par
-\uncover<3->{\key{Two uses:} isolate substitution; measure compensation in money.}\par
-\uncover<4->{The target is ordinal: a bundle’s rank matters, not the numerical utility scale.}\par
+\begin{frame}[label=why-expenditure]{What happens when prices change?}
+\uncover<1->{We want to understand how a price change affects our choices.}\par
+\uncover<2->{\key{Relative prices change:} some goods become more expensive compared with others.}\par
+\uncover<3->{\key{Purchasing power changes:} the same income buys a different standard of living.}\par
+\uncover<4->{We need a way to separate these two effects.}\par
 \end{frame}
 
 \begin{frame}[label=emp]{The expenditure minimisation problem}
@@ -64,22 +71,26 @@ H(p,\bar u)=\operatorname*{arg\,min}_{x\ge0,\ u(x)\ge\bar u}p\cdot x.\]}\par
 \uncover<4->{$e$: expenditure function. $H$: Hicksian demand correspondence; $h$ if unique.}\par
 \end{frame}
 
-\begin{frame}[label=emp-picture]{Move the budget line towards the origin}
+\begin{frame}[label=emp-picture]{Reach a target indifference curve at minimum cost}
 
-\begin{columns}[c]\column{.56\textwidth}
-\begin{tikzpicture}\begin{axis}[nes,width=7.6cm,height=5.2cm,xmax=8,ymax=8,xtick={0,3,6},ytick={0,3,6}]
-\addplot[NESblue,domain=1.13:8,samples=100]{9/x};
-\node[above right,font=\scriptsize] at (axis cs:5,1.8) {$u=3$};
-\uncover<2->{\addplot[NESgray,dashed] coordinates {(0,8)(8,0)};}
-\uncover<3->{\addplot[NESred] coordinates {(0,6)(6,0)};
-\addplot[only marks,NESred,mark=*] coordinates {(3,3)};}
-\uncover<4->{\addplot[NESgray,densely dotted] coordinates {(0,4)(4,0)};}
+\begin{columns}[c]\column{.57\textwidth}
+\begin{tikzpicture}\begin{axis}[nes,width=7.8cm,height=5.25cm,xmax=8,ymax=8,xtick=\empty,ytick=\empty]
+\addplot[name path=target,NESblue,domain=1.125:8,samples=120]{9/x};
+\addplot[name path=ceiling,draw=none,domain=1.125:8]{8};
+\node[above right,font=\scriptsize,text=NESblue] at (axis cs:5,1.8) {$\bar u$};
+\addplot[fill=NESsky!22,draw=none,nes visible on=<2->] fill between[of=target and ceiling];
+\addplot[NESgray,dashed,nes visible on=<3->] coordinates {(0,8)(8,0)};
+\addplot[NESgray,densely dotted,nes visible on=<4->] coordinates {(0,4)(4,0)};
+\addplot[NESred,very thick,nes visible on=<5->] coordinates {(0,6)(6,0)};
+\addplot[only marks,NESred,mark=*,nes visible on=<5->] coordinates {(3,3)};
+\node[above right,font=\scriptsize,text=NESred,nes visible on=<5->] at (axis cs:3,3) {$h^*$};
 \end{axis}\end{tikzpicture}
-\column{.40\textwidth}
-\uncover<1->{$u(x)=\sqrt{x_1x_2}$, $p=(1,1)$, $\bar u=3$.}\par
-\uncover<2->{Cost 8 attains the target.}\par
-\uncover<3->{\key{Minimum cost: 6.}\par $h=(3,3)$.}\par
-\uncover<4->{Cost 4 cannot attain it.}\par
+\column{.39\textwidth}
+\uncover<1->{Start with a target indifference curve.}\par
+\uncover<2->{The shaded region gives at least this utility.}\par
+\uncover<3->{A higher spending line reaches the target.}\par
+\uncover<4->{A lower spending line cannot reach it.}\par
+\uncover<5->{\key{Minimum spending:} the cheapest line that reaches the target.}\par
 \end{columns}
 \end{frame}
 
@@ -135,84 +146,35 @@ H(p,\bar u)=\operatorname*{arg\,min}_{x\ge0,\ u(x)\ge\bar u}p\cdot x.\]}\par
 \uncover<4->{Two distinct minimisers have utility exactly $\bar u$. Their mixture would give more than $\bar u$, violating no excess utility.}\par
 \end{frame}
 
-\begin{frame}[label=e-monotonic]{What can only increase expenditure?}
-
-\uncover<1->{If $q\ge p$, then $e(q,\bar u)\ge e(p,\bar u)$.}\par
-\uncover<2->{\key{Proof.} Every target-feasible bundle costs weakly more at $q$.}\par
-\uncover<3->{If $u(0)\le\bar u<\bar u'$ are attainable, then $e(p,\bar u)<e(p,\bar u')$.}\par
-\uncover<4->{Otherwise a minimiser for $\bar u'$ would also minimise cost for $\bar u$, contradicting no excess utility.}\par
-\end{frame}
-
-\begin{frame}[label=e-concavity]{Expenditure is concave in prices}
-
-\uncover<1->{\key{Proposition.} For a fixed attainable target and $0\le t\le1$,
-\[e(tp+(1-t)q,\bar u)\ge t\,e(p,\bar u)+(1-t)e(q,\bar u).\]}\par
-\uncover<2->{No convexity of preferences is needed.}\par
-\question{Why does minimising linear functions produce this direction of the inequality?}
-\uncover<3->{The same bundle must be purchased at the mixed prices. Reoptimising separately can only be cheaper.}\par
-\end{frame}
-
-\begin{frame}[label=e-concavity-proof]{Concavity: one bundle, two price vectors}
-
-\uncover<1->{Pick $z\in H(tp+(1-t)q,\bar u)$.}\par
-\uncover<2->{Since $z$ attains the target,
-\[p\cdot z\ge e(p,\bar u),\qquad q\cdot z\ge e(q,\bar u).\]}\par
-\uncover<3->{Therefore
-\[\begin{aligned}
-e(tp+(1-t)q,\bar u)&=(tp+(1-t)q)\cdot z\\[.5em]
-&\ge t\,e(p,\bar u)+(1-t)e(q,\bar u).
-\end{aligned}\]}\par
-\end{frame}
-
-\begin{frame}[label=ordinal-continuity]{Utility labels can change; the cost cannot}
-
-\uncover<1->{Let $\widetilde u=F\circ u$ for a strictly increasing $F$.}\par
-\uncover<2->{\[\{x:\widetilde u(x)\ge F(\bar u)\}=\{x:u(x)\ge\bar u\}.\]}\par
-\uncover<3->{So $\widetilde e(p,F(\bar u))=e(p,\bar u)$ and $\widetilde H(p,F(\bar u))=H(p,\bar u)$.}\par
-\uncover<4->{With continuous LNS utility, $e$ is continuous in positive prices and interior attainable targets.}\par
-\end{frame}
-
 \begin{frame}[label=cd-question]{Buy a Cobb–Douglas standard of living}
-
 \uncover<1->{\[u(x)=\sqrt{x_1x_2},\qquad p\gg0,\quad\bar u>0.\]}\par
-\uncover<2->{Find the cheapest bundle with $x_1x_2\ge\bar u^2$.}\par
-\question{Which two equations determine the minimiser?}
-\uncover<3->{\[x_1x_2=\bar u^2,\qquad p_1x_1=p_2x_2.\]}\par
-\uncover<4->{At $p=(4,1)$ and $\bar u=3$, what are the quantities and minimum cost?}\par
+\uncover<2->{Find Hicksian demand and the minimum expenditure needed to reach $\bar u$.}\par
+\uncover<3->{Then evaluate your answer at $p=(4,1)$ and $\bar u=3$.}\par
 \end{frame}
 
 \begin{frame}[label=cd-solution]{Cobb–Douglas: the dual solution}
-
-\uncover<1->{\[h_1(p,\bar u)=\bar u\sqrt{\frac{p_2}{p_1}},\qquad
-h_2(p,\bar u)=\bar u\sqrt{\frac{p_1}{p_2}}.\]}\par
-\uncover<2->{\[e(p,\bar u)=2\bar u\sqrt{p_1p_2}.\]}\par
-\uncover<3->{At $p=(4,1)$ and $\bar u=3$: $h=(3/2,6)$, $e=12$.}\par
-\uncover<4->{Compare $x_i(p,m)=m/(2p_i)$: Hicksian demand fixes $\bar u$, not $m$.}\par
+\uncover<1->{Minimise cost while attaining the target $u(x)\ge\bar u>0$.}\par
+\uncover<2->{\[h_1h_2=\bar u^2,\qquad p_1h_1=p_2h_2.\]}\par
+\uncover<3->{\[h_1=\bar u\sqrt{p_2/p_1},\qquad h_2=\bar u\sqrt{p_1/p_2}.\]
+Thus $e(p,\bar u)=2\bar u\sqrt{p_1p_2}$.}\par
+\uncover<4->{At $p=(4,1)$ and $\bar u=3$: $h=(3/2,6)$ and $e=12$.}\par
 \end{frame}
 
-\begin{frame}[label=complements]{The kink is easy: perfect complements}
-
-\uncover<1->{\[u(x)=\min\{x_1,x_2\},\qquad\bar u\ge0.\]}\par
+\begin{frame}[label=complements]{Perfect complements: find the cheapest bundle}
+\uncover<1->{\[u(x)=\min\{x_1,x_2\},\qquad p\gg0,\quad\bar u\ge0.\]
+Find Hicksian demand and expenditure.}\par
 \uncover<2->{The target is equivalent to $x_1\ge\bar u$ and $x_2\ge\bar u$.}\par
 \uncover<3->{\[h(p,\bar u)=(\bar u,\bar u),\qquad e(p,\bar u)=(p_1+p_2)\bar u.\]}\par
-\question{Can the direct utility have a kink while expenditure is smooth in prices?}
-\uncover<4->{Yes. Here expenditure is linear in prices and compensated quantities do not change.}\par
+\uncover<4->{The direct utility has a kink, but expenditure is smooth in prices.}\par
 \end{frame}
 
-\begin{frame}[label=substitutes]{The cheapest route can switch}
-
-\begin{columns}[c]\column{.53\textwidth}
-\uncover<1->{$u(x)=x_1+x_2$, $\bar u>0$.}\par
-\uncover<2->{\[e(p,\bar u)=\bar u\min\{p_1,p_2\}.\]}\par
-\uncover<3->{$p_1<p_2$: $h=(\bar u,0)$.\par $p_1>p_2$: $h=(0,\bar u)$.}\par
-\uncover<4->{$p_1=p_2$: every $x\ge0$ with $x_1+x_2=\bar u$ minimises cost.}\par
-\column{.43\textwidth}
-\begin{tikzpicture}\begin{axis}[width=6.2cm,height=4.8cm,axis lines=left,xmin=0,xmax=2,ymin=0,ymax=1.4,xlabel={$p_1$},ylabel={$e/\bar u$},xtick={1},ytick={1},tick label style={font=\scriptsize},label style={font=\small}]
-\uncover<2->{\addplot[NESred,very thick] coordinates {(0,0)(1,1)(2,1)};}
-\uncover<4->{\addplot[only marks,NESblue,mark=*] coordinates {(1,1)};}
-\node[font=\scriptsize] at (axis cs:1.5,.3) {$p_2=1$};
-\end{axis}\end{tikzpicture}
-\end{columns}
+\begin{frame}[label=substitutes]{Perfect substitutes: which route is cheapest?}
+\uncover<1->{For $u(x)=x_1+x_2$, $p\gg0$ and $\bar u>0$, solve
+\[\min_{x\ge0}\ p_1x_1+p_2x_2\qquad\text{subject to }x_1+x_2\ge\bar u.\]}\par
+\uncover<2->{Find expenditure and all minimisers, including the case of equal prices.}\par
+\uncover<3->{\[e(p,\bar u)=\bar u\min\{p_1,p_2\}.\]}\par
+\uncover<4->{$p_1<p_2$: $h=(\bar u,0)$.\qquad $p_1>p_2$: $h=(0,\bar u)$.}\par
+\uncover<5->{$p_1=p_2$: $H=\{x\ge0:x_1+x_2=\bar u\}$.}\par
 \end{frame}
 
 \begin{frame}[label=duality]{Two problems, the same boundary}
@@ -247,24 +209,21 @@ h_2(p,\bar u)=\bar u\sqrt{\frac{p_1}{p_2}}.\]}\par
 \uncover<4->{Substitute $m=e(p,\bar u)$ for the other equality.}\par
 \end{frame}
 
-\begin{frame}[label=duality-example]{Check the identities by hand}
-
-\uncover<1->{For $u=\sqrt{x_1x_2}$:
-\[v(p,m)=\frac{m}{2\sqrt{p_1p_2}},\qquad e(p,\bar u)=2\bar u\sqrt{p_1p_2}.\]}\par
-\uncover<2->{\[e(p,v(p,m))=2\frac{m}{2\sqrt{p_1p_2}}\sqrt{p_1p_2}=m.\]}\par
-\uncover<3->{\[h_1(p,v(p,m))=\frac{m}{2\sqrt{p_1p_2}}\sqrt{\frac{p_2}{p_1}}=\frac{m}{2p_1}=x_1(p,m).\]}\par
-\uncover<4->{Same choices at matching parameters; different responses when prices change.}\par
+\begin{frame}[label=duality-example]{Check duality for Cobb–Douglas}
+\uncover<1->{Let $u(x)=\sqrt{x_1x_2}$, with $p\gg0$, $m>0$ and $\bar u>0$.}\par
+\uncover<2->{Find $v(p,m)$, $e(p,\bar u)$ and the two demand functions.}\par
+\uncover<3->{Verify directly that
+\[e(p,v(p,m))=m,\qquad v(p,e(p,\bar u))=\bar u.\]}\par
+\uncover<4->{Verify that $h(p,v(p,m))=x(p,m)$.}\par
 \end{frame}
 
 \begin{frame}[label=checkpoint-duality]{Checkpoint}
 \begin{itemize}\setlength{\itemsep}{.85em}
 \item<1-> Every price doubles; the utility target stays fixed. What happens to Hicksian quantities and expenditure?
-\item<2-> If $\widetilde u=e^u$, which target describes the same standard of living as $\bar u$?
+\item<2-> We relabel utility as $\widetilde u=2u+10$. Which new target represents the old level $u=7$?
 \item<3-> If utility maximisation has two optimal bundles, can the corresponding expenditure problem have a unique solution?
-\item<4-> Can expenditure be concave in prices even when preferences are not convex?
 \end{itemize}
 \end{frame}
-
 
 \begin{frame}[label=shephard]{Shephard’s lemma}
 
@@ -272,24 +231,6 @@ h_2(p,\bar u)=\bar u\sqrt{\frac{p_1}{p_2}}.\]}\par
 \[\frac{\partial e(p,\bar u)}{\partial p_i}=h_i(p,\bar u).\]}\par
 \uncover<2->{Equivalently, wherever $e$ is differentiable, every minimiser equals $\nabla_p e$.}\par
 \uncover<3->{\key{Interpretation:} a small price increase costs the compensated consumer approximately $h_i\,dp_i$.}\par
-\end{frame}
-
-\begin{frame}[label=shephard-proof]{Why the quantity appears in the derivative}
-
-\uncover<1->{Let $h=h(p,\bar u)$ and choose $h_t\in H(p+t e_i,\bar u)$, where $e_i$ is the $i$th unit vector.}\par
-\uncover<2->{For $t>0$, using each bundle in the other problem gives
-\[t(h_t)_i\ \le\ e(p+t e_i,\bar u)-e(p,\bar u)\ \le\ t h_i.\]}\par
-\uncover<3->{Uniqueness and local compactness give $h_t\to h$ as $t\to0$.}\par
-\uncover<4->{Divide by $t$ and take limits; negative $t$ gives the same derivative $h_i$.}\par
-\end{frame}
-
-\begin{frame}[label=shephard-nonunique]{What if demand is not unique?}
-
-\uncover<1->{For any $h\in H(p,\bar u)$ and any $q\gg0$,
-\[e(q,\bar u)\le q\cdot h=e(p,\bar u)+(q-p)\cdot h.\]}\par
-\uncover<2->{If $e$ is differentiable, this supporting-plane inequality forces $h=\nabla_p e(p,\bar u)$.}\par
-\uncover<3->{For $u=x_1+x_2$, equal prices give many minimisers and a kink in $e$.}\par
-\uncover<4->{Use the demand correspondence at a kink; a single derivative cannot select the whole set.}\par
 \end{frame}
 
 \begin{frame}[label=shephard-examples]{Recover quantities from cost}
@@ -302,74 +243,56 @@ e_{p_2}=\bar u\sqrt{p_1/p_2}=h_2.\]}\par
 \end{frame}
 
 \begin{frame}[label=compensated-law]{The compensated law of demand}
-
-\uncover<1->{Fix $\bar u$. Let $h\in H(p,\bar u)$ and $k\in H(q,\bar u)$. Then
-\[(q-p)\cdot(k-h)\le0.\]}\par
-\uncover<2->{If only price $i$ rises, its compensated quantity cannot rise.}\par
-\uncover<3->{No differentiability, uniqueness or convex preferences are required.}\par
-\question{Why is it essential to hold the target fixed?}
+\uncover<1->{Fix $\bar u$. Compare two price vectors $p^{1},p^{2}\gg0$ and choose
+\[h^{1}\in H(p^{1},\bar u),\qquad h^{2}\in H(p^{2},\bar u).\]}\par
+\uncover<2->{\[(p^{2}-p^{1})\cdot(h^{2}-h^{1})\le0.\]}\par
+\uncover<3->{If only the price of good $i$ rises, then $h_i^{2}\le h_i^{1}$.}\par
+\uncover<4->{The utility target is the same in both choices; no differentiability is needed.}\par
 \end{frame}
 
 \begin{frame}[label=compensated-law-proof]{Two cost comparisons prove the law}
-
-\uncover<1->{$h$ is cheapest at $p$: $p\cdot h\le p\cdot k$.}\par
-\uncover<2->{$k$ is cheapest at $q$: $q\cdot k\le q\cdot h$.}\par
+\uncover<1->{$h^{1}$ is cheapest at $p^{1}$: $p^{1}\cdot h^{1}\le p^{1}\cdot h^{2}$.}\par
+\uncover<2->{$h^{2}$ is cheapest at $p^{2}$: $p^{2}\cdot h^{2}\le p^{2}\cdot h^{1}$.}\par
 \uncover<3->{Add and rearrange:
-\[p\cdot h+q\cdot k\le p\cdot k+q\cdot h
-\quad\Rightarrow\quad(q-p)\cdot(k-h)\le0.\]}\par
-\uncover<4->{For a differentiable unique demand: $\partial h_i/\partial p_i\le0$.}\par
+\[p^{1}\cdot h^{1}+p^{2}\cdot h^{2}\le p^{1}\cdot h^{2}+p^{2}\cdot h^{1}
+\quad\Rightarrow\quad(p^{2}-p^{1})\cdot(h^{2}-h^{1})\le0.\]}\par
+\uncover<4->{For differentiable unique demand, $\partial h_i/\partial p_i\le0$.}\par
 \end{frame}
 
-\begin{frame}[label=hessian]{The matrix behind compensated substitution}
-
-\uncover<1->{Assume $e(\cdot,\bar u)$ is $C^2$ locally. Define
-\[S_{ij}=\frac{\partial h_i}{\partial p_j},\qquad S=D_p h=D^2_{pp}e.\]}\par
-\uncover<2->{\key{Symmetry:} $S_{ij}=S_{ji}$.}\par
-\uncover<3->{\key{Negative semidefiniteness:} $z^\top Sz\le0$ for every $z\in\R^n$.}\par
-\uncover<4->{In particular, $S_{ii}\le0$. Zero effects are allowed.}\par
+\begin{frame}[label=symmetry]{Symmetry of compensated price effects}
+\uncover<1->{Suppose $e(\cdot,\bar u)$ is $C^2$ locally. Then
+\[\frac{\partial h_i}{\partial p_j}(p,\bar u)=\frac{\partial h_j}{\partial p_i}(p,\bar u).\]}\par
+\uncover<2->{By Shephard’s lemma, $h_i=e_{p_i}$ and $h_j=e_{p_j}$.}\par
+\uncover<3->{Mixed partials commute:
+\[\frac{\partial h_i}{\partial p_j}=e_{p_ip_j}=e_{p_jp_i}=\frac{\partial h_j}{\partial p_i}.\]
+Equivalently, $S_{ij}:=\partial h_i/\partial p_j$ defines a symmetric matrix.}\par
 \end{frame}
 
-\begin{frame}[label=hessian-proof]{Why symmetry and the quadratic inequality?}
-
-\uncover<1->{By Shephard, $h_i=e_{p_i}$. Mixed partials of a $C^2$ function commute:
-\[\frac{\partial h_i}{\partial p_j}=e_{p_ip_j}=e_{p_jp_i}=\frac{\partial h_j}{\partial p_i}.\]}\par
-\uncover<2->{For any direction $z$, define $g(t)=e(p+tz,\bar u)$ near $t=0$.}\par
-\uncover<3->{Concavity of $e$ implies concavity of $g$, hence
-\[g''(0)=z^\top D^2_{pp}e(p,\bar u)z\le0.\]}\par
-\end{frame}
-
-\begin{frame}[label=h-zero-direction]{A common price increase changes no compensated quantities}
-
-\uncover<1->{Recall $h(tp,\bar u)=h(p,\bar u)$. Differentiate in $t$ at $t=1$:}\par
-\uncover<2->{\[\sum_j\frac{\partial h_i}{\partial p_j}p_j=0\quad\text{for every }i,
-\qquad Sp=0.\]}\par
-\uncover<3->{Since $S$ is symmetric, also $p^\top S=0$.}\par
-\uncover<4->{Relative prices drive compensated substitution; a change of currency does not.}\par
-\end{frame}
-
-\begin{frame}[label=price-picture]{A price increase: three choices on one picture}
+\begin{frame}[label=price-picture]{Substitution and income effects}
 
 \begin{columns}[c]\column{.58\textwidth}
-\begin{tikzpicture}\begin{axis}[nes,width=8cm,height=5.35cm,xmax=8.5,ymax=11.7,xtick={0,2,4,8},ytick={0,4,8},clip=true]
+\begin{tikzpicture}\begin{axis}[nes,width=8cm,height=5.35cm,xmax=8.5,ymax=11.7,xtick=\empty,ytick=\empty,clip=true]
 \addplot[NESblue] coordinates {(0,8)(8,0)};
-\addplot[NESblue,domain=1.4:8.5,samples=100]{16/x};
-\addplot[only marks,NESblue,mark=*] coordinates {(4,4)};
-\node[above right,font=\scriptsize,text=NESblue] at (axis cs:4,4) {$A$};
-\uncover<2->{\addplot[NESred] coordinates {(0,8)(4,0)};
-\addplot[NESred,domain=.75:8.5,samples=100]{8/x};
-\addplot[only marks,NESred,mark=*] coordinates {(2,4)};
-\node[below left,font=\scriptsize,text=NESred] at (axis cs:2,4) {$C$};}
-\uncover<3->{\addplot[NESgray,dashed] coordinates {(0,11.313708)(5.656854,0)};
-\addplot[only marks,NESgray,mark=*] coordinates {(2.828427,5.656854)};
-\node[above right,font=\scriptsize] at (axis cs:2.828427,5.656854) {$B$};}
-\uncover<4->{\draw[-{Stealth},NESgray,thick] (axis cs:3.85,4.25)--(axis cs:3.02,5.48);
-\draw[-{Stealth},NESred,thick] (axis cs:2.68,5.48)--(axis cs:2.1,4.28);}
+\addplot[NESblue,domain=1.4:8.5,samples=100,nes visible on=<2->]{16/x};
+\addplot[only marks,NESblue,mark=*,nes visible on=<2->] coordinates {(4,4)};
+\node[above right,font=\scriptsize,text=NESblue,nes visible on=<2->] at (axis cs:4,4) {$A$};
+\addplot[NESred,nes visible on=<3->] coordinates {(0,8)(4,0)};
+\addplot[NESred,domain=.75:8.5,samples=100,nes visible on=<4->]{8/x};
+\addplot[only marks,NESred,mark=*,nes visible on=<4->] coordinates {(2,4)};
+\node[below left,font=\scriptsize,text=NESred,nes visible on=<4->] at (axis cs:2,4) {$C$};
+\addplot[NESgray,dashed,nes visible on=<5->] coordinates {(0,11.313708)(5.656854,0)};
+\addplot[only marks,NESgray,mark=*,nes visible on=<5->] coordinates {(2.828427,5.656854)};
+\node[above right,font=\scriptsize,nes visible on=<5->] at (axis cs:2.828427,5.656854) {$B$};
+\draw[-{Stealth},NESgray,thick,nes visible on=<6->] (axis cs:3.85,4.25)--(axis cs:3.02,5.48);
+\draw[-{Stealth},NESred,thick,nes visible on=<7->] (axis cs:2.68,5.48)--(axis cs:2.1,4.28);
 \end{axis}\end{tikzpicture}
 \column{.37\textwidth}
-\uncover<1->{$u=\sqrt{x_1x_2}$, $m=8$.\par $p^0=(1,1)$: $A=(4,4)$.}\par
-\uncover<2->{$p^1=(2,1)$: $C=(2,4)$.}\par
-\uncover<3->{Keep $u^0=4$:\par $B=(2\sqrt2,4\sqrt2)$.}\par
-\uncover<4->{$A\to B$: substitution.\par $B\to C$: income effect.}\par
+\uncover<2->{$A$: original choice at prices $p^0$ and income $m$.}\par
+\uncover<3->{Raise $p_1$, keeping income fixed.}\par
+\uncover<4->{$C$: new choice, lower utility.}\par
+\uncover<5->{$B$: new prices, old utility.}\par
+\uncover<6->{$A\to B$: substitution effect.}\par
+\uncover<7->{$B\to C$: income effect.}\par
 \end{columns}
 \end{frame}
 
@@ -464,7 +387,6 @@ e_{p_2}=\bar u\sqrt{p_1/p_2}=h_2.\]}\par
 \uncover<4->{Yes. A smooth utility function is not needed for a smooth local demand.}\par
 \end{frame}
 
-
 \begin{frame}[label=giffen-story]{The classic potato story}
 \begin{itemize}\setlength{\itemsep}{.85em}
 \item<1-> A poor household lives mostly on potatoes, with a little meat.
@@ -504,7 +426,6 @@ x_2=\frac{2m-10p_1}{2p_2-p_1}.\]}\par
 \item<4-> With quasilinear utility, can a low-income consumer’s demand for the nonlinear good respond to income?
 \end{itemize}
 \end{frame}
-
 
 \begin{frame}[label=net-gross]{Substitutes and complements: specify the experiment}
 
@@ -569,16 +490,6 @@ S=\begin{pmatrix}1/2&-1/2\\-1/2&1/2\end{pmatrix}.\]}\par
 \uncover<4->{The demand violates compensated demand restrictions. It cannot be generated by the maintained consumer model.}\par
 \end{frame}
 
-
-
-
-
-
-
-
-
-
-
 \begin{frame}[label=checkpoint]{Checkpoint}
 
 \begin{itemize}\setlength{\itemsep}{.85em}
@@ -607,6 +518,88 @@ S=\begin{pmatrix}1/2&-1/2\\-1/2&1/2\end{pmatrix}.\]}\par
 \end{frame}
 
 \appendix
+
+\begin{frame}[label=e-monotonic]{What can only increase expenditure?}
+
+\uncover<1->{If $q\ge p$, then $e(q,\bar u)\ge e(p,\bar u)$.}\par
+\uncover<2->{\key{Proof.} Every target-feasible bundle costs weakly more at $q$.}\par
+\uncover<3->{If $u(0)\le\bar u<\bar u'$ are attainable, then $e(p,\bar u)<e(p,\bar u')$.}\par
+\uncover<4->{Otherwise a minimiser for $\bar u'$ would also minimise cost for $\bar u$, contradicting no excess utility.}\par
+\end{frame}
+
+\begin{frame}[label=e-concavity]{Expenditure is concave in prices}
+
+\uncover<1->{\key{Proposition.} For a fixed attainable target and $0\le t\le1$,
+\[e(tp+(1-t)q,\bar u)\ge t\,e(p,\bar u)+(1-t)e(q,\bar u).\]}\par
+\uncover<2->{No convexity of preferences is needed.}\par
+\question{Why does minimising linear functions produce this direction of the inequality?}
+\uncover<3->{The same bundle must be purchased at the mixed prices. Reoptimising separately can only be cheaper.}\par
+\end{frame}
+
+\begin{frame}[label=e-concavity-proof]{Concavity: one bundle, two price vectors}
+
+\uncover<1->{Pick $z\in H(tp+(1-t)q,\bar u)$.}\par
+\uncover<2->{Since $z$ attains the target,
+\[p\cdot z\ge e(p,\bar u),\qquad q\cdot z\ge e(q,\bar u).\]}\par
+\uncover<3->{Therefore
+\[\begin{aligned}
+e(tp+(1-t)q,\bar u)&=(tp+(1-t)q)\cdot z\\[.5em]
+&\ge t\,e(p,\bar u)+(1-t)e(q,\bar u).
+\end{aligned}\]}\par
+\end{frame}
+
+\begin{frame}[label=ordinal-continuity]{Utility labels can change; the cost cannot}
+
+\uncover<1->{Let $\widetilde u=F\circ u$ for a strictly increasing $F$.}\par
+\uncover<2->{\[\{x:\widetilde u(x)\ge F(\bar u)\}=\{x:u(x)\ge\bar u\}.\]}\par
+\uncover<3->{So $\widetilde e(p,F(\bar u))=e(p,\bar u)$ and $\widetilde H(p,F(\bar u))=H(p,\bar u)$.}\par
+\uncover<4->{With continuous LNS utility, $e$ is continuous in positive prices and interior attainable targets.}\par
+\end{frame}
+
+\begin{frame}[label=shephard-proof]{Why the quantity appears in the derivative}
+
+\uncover<1->{Let $h=h(p,\bar u)$ and choose $h_t\in H(p+t e_i,\bar u)$, where $e_i$ is the $i$th unit vector.}\par
+\uncover<2->{For $t>0$, using each bundle in the other problem gives
+\[t(h_t)_i\ \le\ e(p+t e_i,\bar u)-e(p,\bar u)\ \le\ t h_i.\]}\par
+\uncover<3->{Uniqueness and local compactness give $h_t\to h$ as $t\to0$.}\par
+\uncover<4->{Divide by $t$ and take limits; negative $t$ gives the same derivative $h_i$.}\par
+\end{frame}
+
+\begin{frame}[label=shephard-nonunique]{What if demand is not unique?}
+
+\uncover<1->{For any $h\in H(p,\bar u)$ and any $q\gg0$,
+\[e(q,\bar u)\le q\cdot h=e(p,\bar u)+(q-p)\cdot h.\]}\par
+\uncover<2->{If $e$ is differentiable, this supporting-plane inequality forces $h=\nabla_p e(p,\bar u)$.}\par
+\uncover<3->{For $u=x_1+x_2$, equal prices give many minimisers and a kink in $e$.}\par
+\uncover<4->{Use the demand correspondence at a kink; a single derivative cannot select the whole set.}\par
+\end{frame}
+
+\begin{frame}[label=hessian]{The matrix behind compensated substitution}
+
+\uncover<1->{Assume $e(\cdot,\bar u)$ is $C^2$ locally. Define
+\[S_{ij}=\frac{\partial h_i}{\partial p_j},\qquad S=D_p h=D^2_{pp}e.\]}\par
+\uncover<2->{\key{Symmetry:} $S_{ij}=S_{ji}$.}\par
+\uncover<3->{\key{Negative semidefiniteness:} $z^\top Sz\le0$ for every $z\in\R^n$.}\par
+\uncover<4->{In particular, $S_{ii}\le0$. Zero effects are allowed.}\par
+\end{frame}
+
+\begin{frame}[label=hessian-proof]{Why symmetry and the quadratic inequality?}
+
+\uncover<1->{By Shephard, $h_i=e_{p_i}$. Mixed partials of a $C^2$ function commute:
+\[\frac{\partial h_i}{\partial p_j}=e_{p_ip_j}=e_{p_jp_i}=\frac{\partial h_j}{\partial p_i}.\]}\par
+\uncover<2->{For any direction $z$, define $g(t)=e(p+tz,\bar u)$ near $t=0$.}\par
+\uncover<3->{Concavity of $e$ implies concavity of $g$, hence
+\[g''(0)=z^\top D^2_{pp}e(p,\bar u)z\le0.\]}\par
+\end{frame}
+
+\begin{frame}[label=h-zero-direction]{A common price increase changes no compensated quantities}
+
+\uncover<1->{Recall $h(tp,\bar u)=h(p,\bar u)$. Differentiate in $t$ at $t=1$:}\par
+\uncover<2->{\[\sum_j\frac{\partial h_i}{\partial p_j}p_j=0\quad\text{for every }i,
+\qquad Sp=0.\]}\par
+\uncover<3->{Since $S$ is symmetric, also $p^\top S=0$.}\par
+\uncover<4->{Relative prices drive compensated substitution; a change of currency does not.}\par
+\end{frame}
 
 \begin{frame}[label=reserve-welfare]{Reserve: compensation and equivalent variation}
 
@@ -643,8 +636,6 @@ S=\begin{pmatrix}1/2&-1/2\\-1/2&1/2\end{pmatrix}.\]}\par
 \[\nabla_p e(p,\bar u)=x(p,e(p,\bar u)).\]}\par
 \uncover<4->{This is the integrability problem. Converse theorems require additional domain and regularity conditions.}\par
 \end{frame}
-
-
 
 \begin{frame}[label=reserve-three-goods]{Reserve: genuine net complements need another good}
 

@@ -11,8 +11,8 @@ Artificial Intelligence and Financial Technologies, New Economic School, 2026/27
 - [Entire folder: PDFs and editable LaTeX](lecture03-complete.zip?raw=true)
 - [Slide index](slide-index.md)
 
-There are **58 main slides and 6 reserve slides**: 64 handout pages and 244
-presentation pages with reveals, plus Russian instructor notes.
+There are **50 main slides and 15 appendix slides**: 65 handout pages,
+251 presentation pages with reveals, plus Russian instructor notes.
 The English presentation
 continues Lecture 2 after Roy's identity. It does not repeat the saddle/KKT
 proofs. Definitions, short proofs, examples and graph elements appear in stages.
@@ -20,28 +20,37 @@ The handout combines the reveal states into one page per logical slide.
 
 ## Route for two 90-minute classes
 
-1. Slides 1–20: expenditure minimisation, existence, no excess utility,
-   homogeneity, convexity/uniqueness of Hicksian demand, monotonicity and
-   concavity of expenditure; Cobb–Douglas, complements and substitutes.
-2. Slides 21–35: both duality identities, equality of demand correspondences,
-   Shephard's lemma with a direct proof, the compensated law of demand,
-   symmetry, negative semidefiniteness and the zero price direction.
-3. Slides 36–51: a numerical substitution/income diagram, the chain-rule
-   derivation of Slutsky, own and cross effects, quasilinear regimes, the
-   classic potato story, an explicit Giffen example, and net versus gross substitution.
-4. Slides 52–58: reconstruct and test the Slutsky matrix from ordinary demand,
+1. Slides 1–12: what we know, today's topics, why separate price effects;
+   expenditure minimisation, a geometric construction, existence, no excess
+   utility, homogeneity and convexity/uniqueness of Hicksian demand.
+2. Slides 13–22: problems for working out together, followed by revealed
+   solutions; duality and its proofs, a verification task and a checkpoint.
+3. Slides 23–28: Shephard's statement and applications, the compensated law
+   of demand with two explicitly numbered price/quantity scenarios, symmetry
+   of cross-price derivatives, and a graphical substitution/income decomposition.
+4. Slides 29–43: the chain-rule derivation of Slutsky, own and cross effects,
+   quasilinear regimes, the potato story, Giffen and net/gross substitution.
+5. Slides 44–50: reconstruct and test the Slutsky matrix from ordinary demand,
    reject an illustrative demand system, checkpoint and reading.
 
-Two additional question sets appear after duality (slide 26) and after the
-Giffen example (slide 49). They cover price scaling, utility transformations,
-multiple optima, expenditure concavity, numerical Slutsky effects and
+Question sets appear after duality (slide 22) and after the Giffen example
+(slide 41). They cover price scaling, a numerical utility relabelling,
+multiple optima, numerical Slutsky effects and
 quasilinear corners. Each question appears on a separate click; answers are
-only in the instructor notes. The concluding checkpoint is slide 56.
+only in the instructor notes. The concluding checkpoint is slide 48.
 
-The reserve covers CV/EV, finite Hicks versus Slutsky compensation,
-integrability, genuine net complements with three goods, and continuity of
-expenditure. The teacher notes suggest pacing
-and contain answers to every open question.
+Appendix slides 51–59 contain the former slides 13–16, 28–29 and 33–35:
+expenditure properties, detailed Shephard arguments, the full price Hessian,
+negative semidefiniteness and the zero price direction. These were moved
+without changing their content and are available for the seminar. Slides
+60–65 retain CV/EV, finite Hicks versus Slutsky compensation, integrability,
+three-good net complements and continuity. The teacher notes contain answers.
+
+The first-half revision follows the lecturer's comments through former slide
+36. Former slides 21–24 and the block from former slide 37 onward retain
+their original content. The [slide index](slide-index.md) maps old to new
+numbers for the next review. The two introductory graphs now have no numerical
+utility formula or tick values, and each line appears in a separate reveal.
 
 ## Mathematical conventions
 
