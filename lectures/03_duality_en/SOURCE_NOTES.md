@@ -105,6 +105,10 @@ automatically imported into this course.
 - Homework 1's actual scope and 14 November 2026 deadline are preserved. No
   new third-lecture task is added to that published assignment.
 
+- The final summary is a four-object square. Demand equality is stated at
+  matched income/utility parameters; Slutsky is explicitly the derivative
+  relation obtained from that equality. The connections reveal in six stages.
+
 ## Reading
 
 - Hal R. Varian, *Intermediate Microeconomics: A Modern Approach*, 9th edition:

@@ -12,7 +12,7 @@ Artificial Intelligence and Financial Technologies, New Economic School, 2026/27
 - [Slide index](slide-index.md)
 
 There are **48 main slides and 21 appendix slides**: 69 handout pages,
-267 presentation pages with reveals, plus Russian instructor notes.
+269 presentation pages with reveals, plus Russian instructor notes.
 The English presentation
 continues Lecture 2 after Roy's identity. It does not repeat the saddle/KKT
 proofs. Definitions, short proofs, examples and graph elements appear in stages.
@@ -32,13 +32,16 @@ The handout combines the reveal states into one page per logical slide.
 4. Slides 31–45: Slutsky's historical context, the chain-rule derivation,
    own and cross effects, normal/inferior questions, the potato story,
    Giffen and net/gross substitution.
-5. Slides 46–48: concluding checkpoint, synthesis and reading.
+5. Slides 46–48: concluding checkpoint, a large consumer-theory square and reading.
 
 Question sets appear after duality (slide 23), after own-price classification
 (slide 36), and after the Giffen example (slide 44). They cover utility
 relabelling, multiple optima, Slutsky signs, and whether goods can both be
 normal or inferior. Each question appears on a separate click; answers are
-only in the instructor notes. The concluding checkpoint is slide 46.
+only in the instructor notes. The concluding checkpoint is slide 46. Slide 47 is a large four-object square:
+value duality above, Roy and Shephard on the sides, matched demand below,
+and Slutsky as its derivative relation. Its six reveal states expose the
+objects and connections in order.
 
 The appendix begins with quasilinear regimes (slide 49), only if time permits.
 Slides 50–58 contain deferred expenditure properties, detailed Shephard

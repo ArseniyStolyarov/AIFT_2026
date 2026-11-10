@@ -506,13 +506,43 @@ positive means net substitutes; negative means net complements.}\par
 \end{itemize}
 \end{frame}
 
-\begin{frame}[label=take-home]{One structure, several ways to use it}
+\begin{frame}[label=take-home]{The consumer-theory square}
+\centering
+\begin{tikzpicture}[>=Stealth]
+\path[use as bounding box] (-6.65,-3.0) rectangle (6.65,2.6);
+\node[align=center,text width=4.4cm,font=\small] (V) at (-3.7,1.15)
+ {\key{Indirect utility}\\[.45em]$\displaystyle v(p,m)$};
+\node[align=center,text width=4.4cm,font=\small] (E) at (3.7,1.15)
+ {\key{Expenditure}\\[.45em]$\displaystyle e(p,\bar u)$};
+\node[align=center,text width=4.4cm,font=\small] (X) at (-3.7,-1.05)
+ {\key{Marshallian demand}\\[.45em]$\displaystyle x(p,m)$};
+\node[align=center,text width=4.4cm,font=\small] (H) at (3.7,-1.05)
+ {\key{Hicksian demand}\\[.45em]$\displaystyle h(p,\bar u)$};
 
-\uncover<1->{\[u\ \longrightarrow\ v,\ x
-\qquad\longleftrightarrow\qquad e,\ h.\]}\par
-\uncover<2->{\key{Roy:} differentiate indirect utility to recover ordinary demand.}\par
-\uncover<3->{\key{Shephard:} differentiate expenditure to recover compensated demand.}\par
-\uncover<4->{\key{Slutsky:} connect the two responses and obtain restrictions we can test.}\par
+\draw[<->,NESblue,thick,nes visible on=<2->] (V.east)--(E.west);
+\node[text=NESred,font=\small\bfseries,nes visible on=<2->] at (0,2.3) {Duality: fix $p$};
+\node[align=center,font=\footnotesize,nes visible on=<2->] at (0,1.75)
+ {$\begin{gathered}e(p,v(p,m))=m\\v(p,e(p,\bar u))=\bar u\end{gathered}$};
+
+\draw[->,NESblue,thick,nes visible on=<3->] (V.south)--(X.north);
+\node[anchor=west,align=center,text width=2.6cm,nes visible on=<3->] at (-3.4,.05)
+ {\textcolor{NESred}{\textbf{Roy}}\\[.55em]$\displaystyle x_i=-\frac{v_{p_i}}{v_m}$};
+
+\draw[->,NESblue,thick,nes visible on=<4->] (E.south)--(H.north);
+\node[anchor=east,align=center,text width=2.6cm,nes visible on=<4->] at (3.4,.05)
+ {\textcolor{NESred}{\textbf{Shephard}}\\[.55em]$\displaystyle h_i=e_{p_i}$};
+
+\draw[<->,NESblue,thick,nes visible on=<5->] (X.east)--(H.west);
+\node[font=\small,nes visible on=<5->] at (0,-1.68)
+ {$h(p,\bar u)=x(p,e(p,\bar u))$};
+
+\node[font=\small\bfseries,text=NESred,nes visible on=<6->] at (0,-2.16)
+ {Slutsky: differentiate the demand link};
+\node[font=\small,nes visible on=<6->] at (0,-2.68)
+ {$\displaystyle\frac{\partial x_i}{\partial p_j}
+ =\frac{\partial h_i}{\partial p_j}-x_j\frac{\partial x_i}{\partial m}
+ \qquad\bigl(\bar u=v(p,m)\bigr)$};
+\end{tikzpicture}
 \end{frame}
 
 \begin{frame}[label=reading]{Read next}

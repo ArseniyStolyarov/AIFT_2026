@@ -51,7 +51,7 @@
 | 44 | 41 | Checkpoint | `checkpoint-slutsky` |
 | 45 | 42 | Substitutes and complements: specify the experiment | `net-gross` |
 | 46 | 48 | Checkpoint | `checkpoint` |
-| 47 | 49 | One structure, several ways to use it | `take-home` |
+| 47 | 49 | The consumer-theory square | `take-home` |
 | 48 | 50 | Read next | `reading` |
 | 49 | 36 | Quasilinearity: income effects depend on the regime | `quasilinear` |
 | 50 | 51 | What can only increase expenditure? | `e-monotonic` |
