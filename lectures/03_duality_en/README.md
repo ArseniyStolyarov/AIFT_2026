@@ -11,8 +11,8 @@ Artificial Intelligence and Financial Technologies, New Economic School, 2026/27
 - [Entire folder: PDFs and editable LaTeX](lecture03-complete.zip?raw=true)
 - [Slide index](slide-index.md)
 
-There are **50 main slides and 15 appendix slides**: 65 handout pages,
-251 presentation pages with reveals, plus Russian instructor notes.
+There are **48 main slides and 21 appendix slides**: 69 handout pages,
+267 presentation pages with reveals, plus Russian instructor notes.
 The English presentation
 continues Lecture 2 after Roy's identity. It does not repeat the saddle/KKT
 proofs. Definitions, short proofs, examples and graph elements appear in stages.
@@ -20,37 +20,49 @@ The handout combines the reveal states into one page per logical slide.
 
 ## Route for two 90-minute classes
 
-1. Slides 1–12: what we know, today's topics, why separate price effects;
+1. Slides 1–13: what we know, today's topics, why separate price effects;
    expenditure minimisation, a geometric construction, existence, no excess
    utility, homogeneity and convexity/uniqueness of Hicksian demand.
-2. Slides 13–22: problems for working out together, followed by revealed
+2. Slides 14–23: problems for working out together, followed by revealed
    solutions; duality and its proofs, a verification task and a checkpoint.
-3. Slides 23–28: Shephard's statement and applications, the compensated law
+3. Slides 24–30: Shephard's statement and applications, the compensated law
    of demand with two explicitly numbered price/quantity scenarios, symmetry
-   of cross-price derivatives, and a graphical substitution/income decomposition.
-4. Slides 29–43: the chain-rule derivation of Slutsky, own and cross effects,
-   quasilinear regimes, the potato story, Giffen and net/gross substitution.
-5. Slides 44–50: reconstruct and test the Slutsky matrix from ordinary demand,
-   reject an illustrative demand system, checkpoint and reading.
+   of cross-price derivatives, the zero price-weighted derivative identity,
+   and a graphical substitution/income decomposition.
+4. Slides 31–45: Slutsky's historical context, the chain-rule derivation,
+   own and cross effects, normal/inferior questions, the potato story,
+   Giffen and net/gross substitution.
+5. Slides 46–48: concluding checkpoint, synthesis and reading.
 
-Question sets appear after duality (slide 22) and after the Giffen example
-(slide 41). They cover price scaling, a numerical utility relabelling,
-multiple optima, numerical Slutsky effects and
-quasilinear corners. Each question appears on a separate click; answers are
-only in the instructor notes. The concluding checkpoint is slide 48.
+Question sets appear after duality (slide 23), after own-price classification
+(slide 36), and after the Giffen example (slide 44). They cover utility
+relabelling, multiple optima, Slutsky signs, and whether goods can both be
+normal or inferior. Each question appears on a separate click; answers are
+only in the instructor notes. The concluding checkpoint is slide 46.
 
-Appendix slides 51–59 contain the former slides 13–16, 28–29 and 33–35:
-expenditure properties, detailed Shephard arguments, the full price Hessian,
-negative semidefiniteness and the zero price direction. These were moved
-without changing their content and are available for the seminar. Slides
-60–65 retain CV/EV, finite Hicks versus Slutsky compensation, integrability,
-three-good net complements and continuity. The teacher notes contain answers.
+The appendix begins with quasilinear regimes (slide 49), only if time permits.
+Slides 50–58 contain deferred expenditure properties, detailed Shephard
+arguments and the full price Hessian. Slides 59–63 contain the two-good
+matrix implication, construction/testing of the Slutsky matrix and its
+examples. No matrix block remains in the core lecture. Slides 64–69 retain
+CV/EV, finite compensation, integrability, three-good net complements and
+continuity. The deferred frames retain their original content.
 
-The first-half revision follows the lecturer's comments through former slide
-36. Former slides 21–24 and the block from former slide 37 onward retain
-their original content. The [slide index](slide-index.md) maps old to new
-numbers for the next review. The two introductory graphs now have no numerical
-utility formula or tick values, and each line appears in a separate reveal.
+The [slide index](slide-index.md) maps the previous version to current numbers.
+Slide 9 draws the compact truncation before its formal proof: upper contour
+set, reference bundle, budget cap, compact intersection. The introductory
+graphs have no numerical utility formula or tick values; paths themselves,
+not only their captions, appear in stages.
+
+## Historical portraits
+
+The Giffen and Slutsky slides contain short historical notes. The lecturer
+provided an engraved Giffen portrait and a Slutsky photograph inline in chat,
+but their original image files are not yet available in the cloud workspace.
+The generated substitutes have been removed. Place the originals at
+`assets/giffen-portrait.png` and `assets/slutsky-portrait.jpg`; the build then
+includes them automatically. The current PDF contains the historical text
+without a substitute portrait. See `assets/README.md` for provenance status.
 
 ## Mathematical conventions
 
@@ -80,9 +92,10 @@ DejaVu Sans (fallback when Museo Sans and Segoe UI are unavailable). For
 Overleaf, upload the whole source folder, keep `assets/`, choose XeLaTeX and
 select `lecture03.tex`, `handout.tex` or `instructor-notes.tex` as the main file.
 
-`python3 verify-examples.py` uses the standard library and checks **108**
+`python3 verify-examples.py` uses the standard library and checks **110**
 parameter cases with independent feasible grids, finite differences,
-Giffen KKT multipliers, duality, Slutsky and welfare.
+Giffen KKT multipliers, duality, Slutsky, welfare, compact truncation and a
+three-good example with two inferior goods.
 
 The complete ZIP contains the three PDFs and all editable sources, style,
 logo, build script, verification script and documentation under `lecture03/`.

@@ -42,8 +42,9 @@ automatically imported into this course.
   weak: zero effects occur. The Hessian convention uses quantity rows and price
   columns throughout. `S p = 0` is proved from price homogeneity, avoiding a
   tangency argument that could suggest an unnecessary interior optimum. The
-  full matrix claims and proof are in the appendix. The later demand-testing
-  block retains its previous content for the lecturer's next review.
+  full matrix claims, proof and demand-testing examples are in the appendix.
+  The core has the scalar identity `sum_j p_j * d h_j / d p_i = 0`, derived
+  from `e = p*h` and Shephard. Symmetry gives the row-weighted form as well.
 - The two inverse value identities and equality of choice sets are proved.
   The target is strictly above `u(0)` in the main duality statement so the
   corresponding income lies in the positive-income domain already used.
@@ -65,9 +66,12 @@ automatically imported into this course.
 - The source's global rationalisability claim is not copied as an unrestricted
   iff theorem. The main slides derive necessary restrictions. The reserve
   describes integrability and its additional domain/regularity requirements.
-- A three-question checkpoint follows duality; a four-question checkpoint
-  follows the Giffen example. They cover fixed utility, numerical utility
-  relabelling, equality of demand sets, Slutsky signs and income regimes.
+- A three-question checkpoint follows duality; four-question checkpoints
+  follow own-price classification and the Giffen example. Normal/inferior
+  questions explicitly distinguish two goods from three. Budget exhaustion
+  implies `sum_i p_i * d x_i / d m = 1`; the notes give examples and answers.
+  Quasilinear regimes are the first optional appendix slide, and the core
+  Giffen checkpoint no longer depends on that optional material.
   Questions are revealed individually; the Russian instructor notes contain
   their answers. A concluding checkpoint remains after the matrix test.
 - The first-half revision adds separate recap and agenda slides, removes the
@@ -80,6 +84,21 @@ automatically imported into this course.
   revealed after the problem statement for use alongside board work. The
   duality verification slide contains only a task. Its answers are in the
   instructor notes. Original duality theorem/proof slides remain unchanged.
+- A separate compact-truncation graphic is placed between the existence
+  proposition and proof. It progressively cuts the upper contour set with
+  the cost of an already feasible bundle, marking the compact intersection.
+- Giffen's dates are 1837–1910. Marshall's discussion credited Giffen with
+  a bread-demand example; the potato story is a classroom illustration.
+  Slutsky's dates are 1880–1948. His 1915 paper, “Sulla teoria del bilancio del
+  consumatore”, appeared in *Giornale degli Economisti*. These are historical
+  context, not new evidence for the model's empirical validity.
+- Historical photographs could not be downloaded through the available
+  network. The lecturer subsequently supplied two portrait images inline in
+  chat, but the cloud has only the Mac-local path strings, not the original
+  image files. Generated substitutes have been removed; no generated portrait
+  is included in this edition. The sources are prepared to include the
+  originals once available. No external photographer, licence or archival
+  provenance has been invented.
 - The historical parking anecdote and long empirical bibliography are omitted.
   CV/EV are supplied as optional extensions with an explicit positive-loss
   sign convention; monetary compensation is not equated with interpersonal

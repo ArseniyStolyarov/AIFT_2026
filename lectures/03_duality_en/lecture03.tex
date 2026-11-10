@@ -15,6 +15,12 @@
   nes alt/.code args={<#1>#2#3}{\alt<#1>{\pgfkeysalso{#2}}{\pgfkeysalso{#3}}}
 }
 
+
+% Original user-supplied portraits can be added without changing slide layout.
+\newcommand{\courseportrait}[2]{%
+  \IfFileExists{#1}{\includegraphics[height=#2]{#1}\par\smallskip}{}%
+}
+
 \setbeamercovered{invisible}
 \hypersetup{pdftitle={Microeconomics 3: Duality and the Slutsky Equation},pdfauthor={Arseniy Stolyarov}}
 \begin{document}
@@ -110,6 +116,30 @@ H(p,\bar u)=\operatorname*{arg\,min}_{x\ge0,\ u(x)\ge\bar u}p\cdot x.\]}\par
 \uncover<2->{The feasible upper contour set may be unbounded.}\par
 \question{How can we still use a compactness argument?}
 \uncover<3->{Find \emph{one} feasible bundle and discard every bundle that costs more.}\par
+\end{frame}
+
+\begin{frame}[label=compact-picture]{Cut away the expensive bundles}
+\begin{columns}[c]\column{.57\textwidth}
+\begin{tikzpicture}\begin{axis}[nes,width=7.8cm,height=5.2cm,xmax=6,ymax=6,xtick=\empty,ytick=\empty]
+\addplot[name path=targetcut,NESblue,domain=.666667:6,samples=120]{4/x};
+\addplot[name path=topcut,draw=none,domain=.666667:6]{6};
+\addplot[fill=NESsky!20,draw=none] fill between[of=targetcut and topcut];
+\addplot[name path=budgetcut,NESgray,dashed,domain=0:5,nes visible on=<3->]{5-x};
+\addplot[fill=NESred!24,draw=none,nes visible on=<4->] fill between[of=targetcut and budgetcut,soft clip={domain=1:4}];
+\addplot[only marks,NESblue,mark=*,nes visible on=<2->] coordinates {(3,2)};
+\node[above right,font=\scriptsize,text=NESblue,nes visible on=<2->] at (axis cs:3,2) {$\widehat x$};
+\node[font=\small,text=NESred,nes visible on=<4->] at (axis cs:1.8,2.65) {$K$};
+\end{axis}\end{tikzpicture}
+\column{.39\textwidth}
+\uncover<1->{The target upper contour set is closed but can be unbounded.}\par
+\uncover<2->{Choose one feasible bundle $\widehat x$.}\par
+\uncover<3->{Keep only bundles with $p\cdot x\le p\cdot\widehat x$.}\par
+\uncover<4->{\[\begin{aligned}
+K=\{x\ge0:\ &u(x)\ge\bar u,\\
+&p\cdot x\le p\cdot\widehat x\}.
+\end{aligned}\]
+Closed and bounded: \key{compact}.}\par
+\end{columns}
 \end{frame}
 
 \begin{frame}[label=existence-proof]{Existence: cut away expensive bundles}
@@ -264,8 +294,16 @@ e_{p_2}=\bar u\sqrt{p_1/p_2}=h_2.\]}\par
 \[\frac{\partial h_i}{\partial p_j}(p,\bar u)=\frac{\partial h_j}{\partial p_i}(p,\bar u).\]}\par
 \uncover<2->{By Shephard’s lemma, $h_i=e_{p_i}$ and $h_j=e_{p_j}$.}\par
 \uncover<3->{Mixed partials commute:
-\[\frac{\partial h_i}{\partial p_j}=e_{p_ip_j}=e_{p_jp_i}=\frac{\partial h_j}{\partial p_i}.\]
-Equivalently, $S_{ij}:=\partial h_i/\partial p_j$ defines a symmetric matrix.}\par
+\[\frac{\partial h_i}{\partial p_j}=e_{p_ip_j}=e_{p_jp_i}=\frac{\partial h_j}{\partial p_i}.\]}\par
+\end{frame}
+
+\begin{frame}[label=weighted-price-response]{Substitution has zero first-order cost}
+\uncover<1->{Fix $\bar u$ and assume differentiable Hicksian demand. For each price $p_i$,
+\[\sum_j p_j\frac{\partial h_j}{\partial p_i}=0.\]}\par
+\uncover<2->{Differentiate $e(p,\bar u)=\sum_jp_jh_j(p,\bar u)$:
+\[e_{p_i}=h_i+\sum_jp_j\frac{\partial h_j}{\partial p_i}.\]}\par
+\uncover<3->{Shephard gives $e_{p_i}=h_i$, so the remaining term is zero.}\par
+\uncover<4->{By symmetry, also $\sum_jp_j\,\partial h_i/\partial p_j=0$.}\par
 \end{frame}
 
 \begin{frame}[label=price-picture]{Substitution and income effects}
@@ -304,6 +342,20 @@ Equivalently, $S_{ij}:=\partial h_i/\partial p_j$ defines a symmetric matrix.}\p
 \question{Which two terms appear when we differentiate the right-hand side?}
 \end{frame}
 
+\begin{frame}[label=slutsky-history]{Eugen Slutsky and the consumer’s budget}
+\begin{columns}[c]\column{.29\textwidth}
+\centering
+\courseportrait{assets/slutsky-portrait.jpg}{3.05cm}
+{\small\key{Eugen Slutsky}\par 1880--1948\par}
+\column{.66\textwidth}
+\uncover<1->{Economist, mathematician and statistician.}\par
+\uncover<2->{In 1915, he studied how consumer choices respond to prices and income.}\par
+\uncover<3->{\emph{Sulla teoria del bilancio del consumatore}\par
+\smallskip ``On the theory of the consumer’s budget.''}\par
+\uncover<4->{The price-effect decomposition we derive next bears his name.}\par
+\end{columns}
+\end{frame}
+
 \begin{frame}[label=slutsky-derivation]{Slutsky: the chain rule does the work}
 
 \uncover<1->{Assume unique demands with the derivatives below. Start from
@@ -337,6 +389,16 @@ Equivalently, $S_{ij}:=\partial h_i/\partial p_j$ defines a symmetric matrix.}\p
 \uncover<4->{\key{Giffen good:} $\partial x_i/\partial p_i>0$; the positive income effect dominates.}\par
 \end{frame}
 
+\begin{frame}[label=income-checkpoint]{Checkpoint: normal and inferior goods}
+\uncover<1->{Assume positive prices, budget exhaustion and differentiable income responses.}\par
+\begin{itemize}\setlength{\itemsep}{.8em}
+\item<1-> With two goods, both can be inferior at the same prices and income.
+\item<2-> With two goods, both can be normal.
+\item<3-> With two goods, one can be normal and the other inferior.
+\item<4-> With three goods, two of them can be inferior.
+\end{itemize}
+\end{frame}
+
 \begin{frame}[label=cd-own]{Cobb–Douglas: split an own-price effect}
 
 \uncover<1->{\[x_1=\frac{m}{2p_1},\qquad h_1=\bar u\sqrt{p_2/p_1}.\]}\par
@@ -368,16 +430,6 @@ Equivalently, $S_{ij}:=\partial h_i/\partial p_j$ defines a symmetric matrix.}\p
 \uncover<4->{Ordinary demands fall together even though compensated quantities stay fixed.}\par
 \end{frame}
 
-\begin{frame}[label=quasilinear]{Quasilinearity: income effects depend on the regime}
-
-\uncover<1->{$u(a,q)=a+4\log(1+q)$, $a+rq\le m$, $a,q\ge0$.}\par
-\uncover<2->{\key{Both goods:} if $r<4$ and $m>4-r$,
-\[q^*=4/r-1,\qquad q_m=0,\qquad q_r=h_{q,r}=-4/r^2.\]}\par
-\uncover<3->{\key{All income on $q$:} if $r<4$ and $m<4-r$,
-\[q^*=m/r,\qquad q_m=1/r,\qquad q_r=-m/r^2,\qquad h_{q,r}=0.\]}\par
-\uncover<4->{“No income effect” applies within the interior numeraire regime.}\par
-\end{frame}
-
 \begin{frame}[label=giffen-question]{Can a higher price make you buy more?}
 
 \uncover<1->{At fixed tastes and income, a Giffen response means $\partial x_i/\partial p_i>0$.}\par
@@ -387,13 +439,21 @@ Equivalently, $S_{ij}:=\partial h_i/\partial p_j$ defines a symmetric matrix.}\p
 \uncover<4->{Yes. A smooth utility function is not needed for a smooth local demand.}\par
 \end{frame}
 
-\begin{frame}[label=giffen-story]{The classic potato story}
-\begin{itemize}\setlength{\itemsep}{.85em}
+\begin{frame}[label=giffen-story]{Robert Giffen and the potato story}
+\begin{columns}[c]\column{.29\textwidth}
+\centering
+\courseportrait{assets/giffen-portrait.png}{2.75cm}
+{\small\key{Robert Giffen}\par 1837--1910\par}
+{\scriptsize Economist and statistician.}\par\smallskip
+{\scriptsize Marshall’s example concerned bread.}\par
+\column{.66\textwidth}
+\begin{itemize}\setlength{\itemsep}{.75em}
 \item<1-> A poor household lives mostly on potatoes, with a little meat.
 \item<2-> Potatoes become more expensive. The same food budget now buys less.
-\item<3-> The household cuts meat and replaces those calories with potatoes, still the cheapest source of calories.
-\item<4-> Potato purchases can rise: the loss of purchasing power outweighs substitution away from potatoes.
+\item<3-> It cuts meat and replaces those calories with potatoes, still the cheapest source of calories.
+\item<4-> Potato purchases can rise: the income effect outweighs substitution away from potatoes.
 \end{itemize}
+\end{columns}
 \end{frame}
 
 \begin{frame}[label=giffen-example]{A subsistence kink generates Giffen demand}
@@ -423,7 +483,7 @@ x_2=\frac{2m-10p_1}{2p_2-p_1}.\]}\par
 \item<1-> At one point, $x_1=2$, $x_{1,m}=-1$ and $h_{1,p_1}=-3$. Is good 1 Giffen?
 \item<2-> If $x_{1,p_2}=0$, must $h_{1,p_2}=0$?
 \item<3-> Can raising only $p_1$ increase $h_1$ at a fixed utility target?
-\item<4-> With quasilinear utility, can a low-income consumer’s demand for the nonlinear good respond to income?
+\item<4-> Does a Giffen response prove that preferences are nonconvex?
 \end{itemize}
 \end{frame}
 
@@ -434,60 +494,6 @@ positive means net substitutes; negative means net complements.}\par
 \uncover<2->{\key{Gross} substitution uses $\partial x_i/\partial p_j$ at fixed income.}\par
 \uncover<3->{Net effects are symmetric under the smooth assumptions. Gross effects need not be.}\par
 \uncover<4->{Leontief goods have zero net cross-effects and negative gross cross-effects.}\par
-\end{frame}
-
-\begin{frame}[label=two-goods]{A surprising restriction with only two goods}
-
-\uncover<1->{For two goods, the first row of $Sp=0$ says
-\[S_{11}p_1+S_{12}p_2=0.\]}\par
-\uncover<2->{Since $S_{11}\le0$ and prices are positive,
-\[S_{12}=-S_{11}\frac{p_1}{p_2}\ge0.\]}\par
-\uncover<3->{Two goods cannot be strict net complements in this setting. Zero is possible.}\par
-\uncover<4->{With three or more goods, negative net cross-effects are possible.}\par
-\end{frame}
-
-\begin{frame}[label=observable-matrix]{Construct compensated effects from ordinary demand}
-
-\uncover<1->{Slutsky can be rearranged:
-\[S_{ij}=\frac{\partial x_i}{\partial p_j}+\frac{\partial x_i}{\partial m}x_j.\]}\par
-\uncover<2->{In matrix form,
-\[S=D_p x+(D_m x)x^\top.\]}\par
-\uncover<3->{The left side is compensated. Every object on the right concerns ordinary choices.}\par
-\uncover<4->{Test: $S=S^\top$, $z^\top Sz\le0$, $Sp=0$, plus homogeneity and Walras.}\par
-\end{frame}
-
-\begin{frame}[label=cd-matrix]{Cobb–Douglas passes the matrix test}
-
-\uncover<1->{For $x_i=m/(2p_i)$,
-\[S=\frac m4
-\begin{pmatrix}
--1/p_1^2&1/(p_1p_2)\\[.4em]
-1/(p_1p_2)&-1/p_2^2
-\end{pmatrix}.\]}\par
-\uncover<2->{It is symmetric and $Sp=0$.}\par
-\uncover<3->{For every $z$,
-\[z^\top Sz=-\frac m4\left(\frac{z_1}{p_1}-\frac{z_2}{p_2}\right)^2\le0.\]}\par
-\uncover<4->{At $p=(1,1)$, $m=8$: $S=\begin{pmatrix}-2&2\\2&-2\end{pmatrix}$.}\par
-\end{frame}
-
-\begin{frame}[label=test-demand]{Could these choices come from our consumer model?}
-
-\uncover<1->{Suppose estimated demand is
-\[x_1(p,m)=\frac{mp_1}{p_1^2+p_2^2},\qquad
-x_2(p,m)=\frac{mp_2}{p_1^2+p_2^2}.\]}\par
-\uncover<2->{It is positive, smooth, homogeneous of degree 0, and $p\cdot x=m$.}\par
-\question{At $p=(1,1)$ and $m=2$, calculate the Slutsky matrix. Does the model survive?}
-\uncover<3->{Start with $x=(1,1)$ and $D_mx=(1/2,1/2)^\top$.}\par
-\end{frame}
-
-\begin{frame}[label=test-demand-answer]{A symmetric matrix can still fail}
-
-\uncover<1->{At $p=(1,1)$, $m=2$,
-\[D_p x=\begin{pmatrix}0&-1\\-1&0\end{pmatrix},\qquad
-S=\begin{pmatrix}1/2&-1/2\\-1/2&1/2\end{pmatrix}.\]}\par
-\uncover<2->{$S$ is symmetric and $Sp=0$. But $S_{11}=1/2>0$.}\par
-\uncover<3->{With $z=(1,-1)^\top$, $z^\top Sz=2>0$.}\par
-\uncover<4->{The demand violates compensated demand restrictions. It cannot be generated by the maintained consumer model.}\par
 \end{frame}
 
 \begin{frame}[label=checkpoint]{Checkpoint}
@@ -518,6 +524,16 @@ S=\begin{pmatrix}1/2&-1/2\\-1/2&1/2\end{pmatrix}.\]}\par
 \end{frame}
 
 \appendix
+
+\begin{frame}[label=quasilinear]{Quasilinearity: income effects depend on the regime}
+
+\uncover<1->{$u(a,q)=a+4\log(1+q)$, $a+rq\le m$, $a,q\ge0$.}\par
+\uncover<2->{\key{Both goods:} if $r<4$ and $m>4-r$,
+\[q^*=4/r-1,\qquad q_m=0,\qquad q_r=h_{q,r}=-4/r^2.\]}\par
+\uncover<3->{\key{All income on $q$:} if $r<4$ and $m<4-r$,
+\[q^*=m/r,\qquad q_m=1/r,\qquad q_r=-m/r^2,\qquad h_{q,r}=0.\]}\par
+\uncover<4->{“No income effect” applies within the interior numeraire regime.}\par
+\end{frame}
 
 \begin{frame}[label=e-monotonic]{What can only increase expenditure?}
 
@@ -599,6 +615,60 @@ e(tp+(1-t)q,\bar u)&=(tp+(1-t)q)\cdot z\\[.5em]
 \qquad Sp=0.\]}\par
 \uncover<3->{Since $S$ is symmetric, also $p^\top S=0$.}\par
 \uncover<4->{Relative prices drive compensated substitution; a change of currency does not.}\par
+\end{frame}
+
+\begin{frame}[label=two-goods]{A surprising restriction with only two goods}
+
+\uncover<1->{For two goods, the first row of $Sp=0$ says
+\[S_{11}p_1+S_{12}p_2=0.\]}\par
+\uncover<2->{Since $S_{11}\le0$ and prices are positive,
+\[S_{12}=-S_{11}\frac{p_1}{p_2}\ge0.\]}\par
+\uncover<3->{Two goods cannot be strict net complements in this setting. Zero is possible.}\par
+\uncover<4->{With three or more goods, negative net cross-effects are possible.}\par
+\end{frame}
+
+\begin{frame}[label=observable-matrix]{Construct compensated effects from ordinary demand}
+
+\uncover<1->{Slutsky can be rearranged:
+\[S_{ij}=\frac{\partial x_i}{\partial p_j}+\frac{\partial x_i}{\partial m}x_j.\]}\par
+\uncover<2->{In matrix form,
+\[S=D_p x+(D_m x)x^\top.\]}\par
+\uncover<3->{The left side is compensated. Every object on the right concerns ordinary choices.}\par
+\uncover<4->{Test: $S=S^\top$, $z^\top Sz\le0$, $Sp=0$, plus homogeneity and Walras.}\par
+\end{frame}
+
+\begin{frame}[label=cd-matrix]{Cobb–Douglas passes the matrix test}
+
+\uncover<1->{For $x_i=m/(2p_i)$,
+\[S=\frac m4
+\begin{pmatrix}
+-1/p_1^2&1/(p_1p_2)\\[.4em]
+1/(p_1p_2)&-1/p_2^2
+\end{pmatrix}.\]}\par
+\uncover<2->{It is symmetric and $Sp=0$.}\par
+\uncover<3->{For every $z$,
+\[z^\top Sz=-\frac m4\left(\frac{z_1}{p_1}-\frac{z_2}{p_2}\right)^2\le0.\]}\par
+\uncover<4->{At $p=(1,1)$, $m=8$: $S=\begin{pmatrix}-2&2\\2&-2\end{pmatrix}$.}\par
+\end{frame}
+
+\begin{frame}[label=test-demand]{Could these choices come from our consumer model?}
+
+\uncover<1->{Suppose estimated demand is
+\[x_1(p,m)=\frac{mp_1}{p_1^2+p_2^2},\qquad
+x_2(p,m)=\frac{mp_2}{p_1^2+p_2^2}.\]}\par
+\uncover<2->{It is positive, smooth, homogeneous of degree 0, and $p\cdot x=m$.}\par
+\question{At $p=(1,1)$ and $m=2$, calculate the Slutsky matrix. Does the model survive?}
+\uncover<3->{Start with $x=(1,1)$ and $D_mx=(1/2,1/2)^\top$.}\par
+\end{frame}
+
+\begin{frame}[label=test-demand-answer]{A symmetric matrix can still fail}
+
+\uncover<1->{At $p=(1,1)$, $m=2$,
+\[D_p x=\begin{pmatrix}0&-1\\-1&0\end{pmatrix},\qquad
+S=\begin{pmatrix}1/2&-1/2\\-1/2&1/2\end{pmatrix}.\]}\par
+\uncover<2->{$S$ is symmetric and $Sp=0$. But $S_{11}=1/2>0$.}\par
+\uncover<3->{With $z=(1,-1)^\top$, $z^\top Sz=2>0$.}\par
+\uncover<4->{The demand violates compensated demand restrictions. It cannot be generated by the maintained consumer model.}\par
 \end{frame}
 
 \begin{frame}[label=reserve-welfare]{Reserve: compensation and equivalent variation}

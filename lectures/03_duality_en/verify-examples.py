@@ -165,5 +165,41 @@ close(8*math.sqrt(2)-8,3.313708498984761)
 close(8-4*math.sqrt(2),2.3431457505076194)
 cases += 1
 
+# The compact truncation in the existence picture: target x1*x2 >= 4,
+# reference bundle (3,2), prices (1,1), hence cost cap 5.
+assert 3*2 >= 4 and 3+2 == 5
+feasible = [(i/20,j/20) for i in range(121) for j in range(121)
+            if (i/20)*(j/20) >= 4 and (i+j)/20 <= 5]
+assert feasible
+assert all(1-1e-9 <= a <= 4+1e-9 and 1-1e-9 <= b <= 4+1e-9
+           for a,b in feasible)
+close(min(a+b for a,b in feasible),4)
+cases += 1
+
+# Two inferior goods are possible with a third good. Independently search
+# the entire two-dimensional exhausted budget, not only equal x1 and x2.
+def three_utility(a,b,c):
+    q = min(a,b)
+    return min(q+c,3*q+2*c-10)
+
+def three_choice(m):
+    D = 2-1.2
+    q = (10-m)/D
+    return q,q,(2*m-12)/D
+
+opt = three_choice(8)
+close(three_utility(*opt),7.5)
+for i in range(121):
+    a = (8/.6)*i/120
+    for j in range(121):
+        b = (8-.6*a)/.6*j/120
+        c = max(8-.6*a-.6*b,0)
+        assert three_utility(a,b,c) <= three_utility(*opt)+1e-8
+dm = [derivative(lambda m: three_choice(m)[i],8) for i in range(3)]
+for a,b in zip(dm,[-1.25,-1.25,2.5]): close(a,b)
+close(.6*dm[0]+.6*dm[1]+dm[2],1)
+cases += 1
+
 print(f'Passed {cases} parameter cases: feasible grids, duality, Shephard, '
-      'Slutsky, Giffen KKT, matrix restrictions and welfare.')
+      'Slutsky, Giffen KKT, matrix restrictions, welfare, compact truncation '
+      'and three-good income effects.')

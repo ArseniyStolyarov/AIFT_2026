@@ -60,14 +60,16 @@ Roy at 53. Five reserve slides introduce expenditure minimisation.
 
 ## Lecture 3 — Duality and the Slutsky Equation
 
-**50 main slides plus 15 appendix slides**, in English with click-by-click reveals.
+**48 main slides plus 21 appendix slides**, in English with click-by-click reveals.
 Expenditure minimisation, Hicksian demand, duality, Shephard, the compensated
 law of demand, Slutsky and its matrix restrictions, the classic potato story
 and a numerical Giffen example. Problems precede their revealed solutions;
-the introductory graphs develop one line at a time. The first block keeps
-cross-derivative symmetry, with detailed expenditure/Shephard/matrix results
-in the appendix for the seminar. Russian notes contain answers, and the slide
-index maps previous numbers to current numbers for ongoing review.
+the introductory graphs develop one line at a time, including compact
+truncation. The core keeps cross-derivative symmetry and a scalar weighted
+derivative identity; all matrix material is in the appendix. Questions cover
+normal and inferior goods. Quasilinearity is first after the main lecture.
+Russian notes contain answers; historical cards cover Giffen and Slutsky.
+The supplied original portrait files are pending cloud upload.
 
 - [Presentation with reveals](lectures/03_duality_en/lecture03.pdf?raw=true)
 - [Handout without animation](lectures/03_duality_en/handout.pdf?raw=true)
