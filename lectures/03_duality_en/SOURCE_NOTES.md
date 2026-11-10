@@ -92,13 +92,12 @@ automatically imported into this course.
   Slutsky's dates are 1880–1948. His 1915 paper, “Sulla teoria del bilancio del
   consumatore”, appeared in *Giornale degli Economisti*. These are historical
   context, not new evidence for the model's empirical validity.
-- Historical photographs could not be downloaded through the available
-  network. The lecturer subsequently supplied two portrait images inline in
-  chat, but the cloud has only the Mac-local path strings, not the original
-  image files. Generated substitutes have been removed; no generated portrait
-  is included in this edition. The sources are prepared to include the
-  originals once available. No external photographer, licence or archival
-  provenance has been invented.
+- The lecturer supplied the engraved Giffen portrait and Slutsky photograph
+  in `New Folder With Items.zip`. Both originals are included unchanged in
+  `assets/`; only their local filenames were normalised. Their hashes are
+  recorded in `assets/README.md`. The history slides use these originals;
+  no generated portrait is included. No external photographer, licence or
+  archival provenance has been invented.
 - The historical parking anecdote and long empirical bibliography are omitted.
   CV/EV are supplied as optional extensions with an explicit positive-loss
   sign convention; monetary compensation is not equated with interpersonal

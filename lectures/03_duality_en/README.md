@@ -56,13 +56,11 @@ not only their captions, appear in stages.
 
 ## Historical portraits
 
-The Giffen and Slutsky slides contain short historical notes. The lecturer
-provided an engraved Giffen portrait and a Slutsky photograph inline in chat,
-but their original image files are not yet available in the cloud workspace.
-The generated substitutes have been removed. Place the originals at
-`assets/giffen-portrait.png` and `assets/slutsky-portrait.jpg`; the build then
-includes them automatically. The current PDF contains the historical text
-without a substitute portrait. See `assets/README.md` for provenance status.
+The Giffen and Slutsky slides include the original engraved portrait and
+photograph supplied by the lecturer in `New Folder With Items.zip`. They are
+stored unchanged at `assets/giffen-portrait.png` and
+`assets/slutsky-portrait.jpg`, and are included in the complete source folder.
+See `assets/README.md` for original filenames and SHA-256 checksums.
 
 ## Mathematical conventions
 

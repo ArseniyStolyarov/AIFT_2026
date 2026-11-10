@@ -69,7 +69,7 @@ truncation. The core keeps cross-derivative symmetry and a scalar weighted
 derivative identity; all matrix material is in the appendix. Questions cover
 normal and inferior goods. Quasilinearity is first after the main lecture.
 Russian notes contain answers; historical cards cover Giffen and Slutsky.
-The supplied original portrait files are pending cloud upload.
+The history slides include the original portraits supplied by the lecturer.
 
 - [Presentation with reveals](lectures/03_duality_en/lecture03.pdf?raw=true)
 - [Handout without animation](lectures/03_duality_en/handout.pdf?raw=true)

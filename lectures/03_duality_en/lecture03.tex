@@ -16,9 +16,9 @@
 }
 
 
-% Original user-supplied portraits can be added without changing slide layout.
+% Instructor-supplied original portraits, included without image alteration.
 \newcommand{\courseportrait}[2]{%
-  \IfFileExists{#1}{\includegraphics[height=#2]{#1}\par\smallskip}{}%
+  \includegraphics[height=#2]{#1}\par\smallskip%
 }
 
 \setbeamercovered{invisible}
