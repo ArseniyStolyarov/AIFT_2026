@@ -187,5 +187,36 @@ same_sets(H2(4,1,2),[(1,0),(0,4)])
 close(u2(.5,2),1.5)
 for m in [.1,1,4,10]:close(v2(4,1,m),1+m/4)
 cases+=1
+
+# Warm-up: a rising Marshallian demand is compatible with utility maximisation
+# and a zero compensated derivative. Independently search the whole budget.
+def giffen_utility(a,b): return min(a+b,2*a+1.5*b-6)
+def giffen_x(p,m): return ((12-m)/(2-p),(2*m-12*p)/(2-p))
+
+for _ in range(30):
+    price=rng.uniform(1.02,1.31)
+    income=rng.uniform(6*price+.05,11.9)
+    xx=giffen_x(price,income)
+    target=giffen_utility(*xx)
+    assert all(t>0 for t in xx)
+    close(price*xx[0]+xx[1],income)
+    for k in range(1001):
+        a=income*k/(1000*price)
+        b=max(income-price*a,0)
+        assert giffen_utility(a,b)<=target+1e-8
+    dxdp=partial(lambda p,m:giffen_x(p,m)[0],[price,income],0)
+    dxdm=partial(lambda p,m:giffen_x(p,m)[0],[price,income],1)
+    assert dxdp>0 and dxdm<0
+    close(dxdp+xx[0]*dxdm,0)
+    same_sets([xx],[(12-target,2*target-12)])
+    # Both target constraints imply a piecewise-linear lower frontier.
+    # Search that whole frontier beyond either binding intercept as well.
+    for k in range(1501):
+        a=(target+6)*k/1500
+        b=max(target-a,(target+6-2*a)/1.5,0)
+        assert price*a+b>=income-1e-8
+    cases+=1
+
 print(f'Passed {cases} parameter/data cases: feasible grids, Roy, Shephard, '
-      'duality, Slutsky matrix curvature, two switches, tangency and baseline targets.')
+      'duality, Slutsky matrix curvature, two switches, tangency, baseline targets '
+      'and rising Marshallian demand with zero compensated derivative.')

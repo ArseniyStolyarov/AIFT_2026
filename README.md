@@ -114,8 +114,10 @@ utility, quasilinear regimes, and a minimum of two linear substitute indices.
 
 ## Seminar 3 — Demand and duality
 
-Six short true/false statements and two complete consumer problems:
-`sqrt(x1) + 2 sqrt(x2)` and `max{x1 + 1, sqrt(x2)}`. Derive both demands and
+Five true/false checks on Giffen, normal and inferior goods, ordinary versus
+compensated demand, and cross-price effects. Two complete consumer problems
+follow: a professor's two papers, `sqrt(x1) + 2 sqrt(x2)`, and coffee and
+cake at Glitch, `max{x1 + 1, sqrt(x2)}`. Derive both demands and
 value functions, apply Roy and Shephard, and check duality. The first problem
 calculates the Slutsky matrix and proves its general properties; the second
 has two income switches and nonunique corner choices at the boundaries.

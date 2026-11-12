@@ -54,6 +54,29 @@ substitutes or the simultaneous thresholds from a min utility.
   This is the optional extension; the full solution does not incorrectly
   assert an income kink at every tie.
 
-The six warm-up verdicts are T, F, T, F, T, F. Their statements revisit lecture
-concepts as short checks, rather than duplicating a previously worked numerical
-optimisation exercise.
+## Revised warm-up and stories
+
+The five warm-up verdicts are **F, T, F, F, F**. All classifications are
+strict, local and evaluated at the same prices and income. Exactly two goods
+are assumed. Budget differentiation rules out two inferior goods; Slutsky
+then rules out two Giffen goods. Cobb–Douglas supplies two normal goods.
+A Leontief example shows that a negative cross-price derivative does not
+imply inferiority.
+
+The supplied Marshallian demand is `(12-m)/(2-p1)` at `p2=1`, in the open
+region `1<p1<4/3`, `6p1<m<12`. Its own-price derivative is positive, its
+income derivative is negative, and their Slutsky correction is zero.
+The key rationalises it using `min{x1+x2, 2x1+1.5x2-6}`: on the budget,
+one affine score decreases and the other increases, so their crossing is
+the unique global optimum. This reuses the lecture's Giffen mechanism as
+a short conceptual check with different coefficients, not as a repeated
+full worked problem. Thirty new parameter cases independently verify
+budget optimality, target-frontier costs and the compensated derivative.
+
+The two full problems retain their utility functions, parameters and all
+subquestions. The first now concerns a professor's two papers. Square-root
+quality scores have diminishing returns and are not labelled acceptance
+probabilities, since they are unbounded. The resource cost per research hour
+is `p_i` and the only budget is the grant `m`. The second now concerns coffee
+and cake at Glitch, the NES café. Goods are explicitly divisible serving
+equivalents, and the baseline belongs only to the coffee branch.

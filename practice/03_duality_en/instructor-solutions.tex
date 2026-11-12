@@ -5,42 +5,67 @@
 \begin{document}
 \heading{Seminar 3 · Instructor solutions}{Demand, value functions and duality}
 
-\paragraph{A 90-minute route.} Warm-up about 10 minutes; problem 1, including the matrix and general
-result, about 45; problem 2(a)--(f) about 30; final questions 5.
-Problem 2(g), the tangential tie, is an extension. If time is tight, let students state the repeated identities
-after one full derivative calculation in each problem.
-
-\paragraph{Teaching focus.} Work round the same four-object square twice.
-In problem 1 the optimiser is smooth and interior. In problem 2 utility is
-continuous and preferences are LNS, but convexity fails. A baseline in the first
-route produces two income switches at the chosen prices. At a boundary the
-optimal set contains two points, not a segment.
-Both problems use functions different from the worked Lecture 3 examples and
-Seminar 2. The sheet is for the teaching assistant, not a presentation.
+\paragraph{A 90-minute route.} Warm-up 15 minutes; problem 1, including
+the matrix and general result, 40; problem 2(a)--(f), 30; final questions 5.
+The tangential tie in 2(g) is an extension. If time is tight, state repeated
+identities after one full derivative calculation per problem.
 
 \section*{Warm-up}
-The answers are \textbf{T, F, T, F, T, F}.
+The answers are \textbf{F, T, F, F, F}. Exactly two goods and a common
+local point are essential to claims 1 and 3.
 \begin{enumerate}[label=\arabic*.]
-\item Raising the target shrinks the feasible set. Minimising the same
-objective over a smaller set cannot lower the minimum.
-\item Every target-feasible bundle costs weakly more after a componentwise
-price increase. Reoptimisation can mitigate the increase, but cannot reverse
-this inequality. At a differentiable point $e_{p_i}=h_i\ge0$.
-\item Multiplying the objective by a positive constant preserves its
-minimisers; the target-feasible set does not change.
-\item Convex preferences would be sufficient, but are not assumed here.
-Problem 2 supplies a counterexample at $p=(4,1)$, $\bar u=2$: $(1,0)$ and
-$(0,4)$ minimise expenditure, while their midpoint $(1/2,2)$ has utility
-$3/2<2$ and does not attain the target.
-\item Under the maintained conditions,
-$H(p,v(p,m))=X(p,m)$ as sets. The corresponding target is the attained
-maximum; it is not an arbitrary number equal to income.
-\item Slutsky includes the income correction:
-$x_{i,p_i}=h_{i,p_i}-x_i x_{i,m}$. Problem 1 gives $-6=-4-2$.
+\item \textbf{False.} By Slutsky,
+$x_{i,p_i}=h_{i,p_i}-x_i x_{i,m}$, with $h_{i,p_i}\le0$.
+Since $x_i>0$, a Giffen good must be inferior. Both goods cannot be
+inferior by the budget argument in claim 3, so they cannot both be Giffen.
+\item \textbf{True.} For $u=\sqrt{x_1x_2}$, demand is
+$x_i=m/(2p_i)$, so $x_{i,m}=1/(2p_i)>0$ for both goods.
+Problem 1 gives another example.
+\item \textbf{False.} Local nonsatiation gives budget exhaustion.
+Differentiate $p_1x_1+p_2x_2=m$ with respect to income:
+\[
+ p_1x_{1,m}+p_2x_{2,m}=1.
+\]
+Both derivatives cannot be negative. If one good is inferior, the other
+must be normal. This argument concerns all goods in a two-good budget;
+it does not rule out two inferior goods in a larger consumption set.
+\item \textbf{False.} At fixed income,
+\[
+ x_{1,p_1}=\frac{12-m}{(2-p_1)^2}>0,
+ \qquad x_{1,m}=-\frac1{2-p_1}<0.
+\]
+The compensated derivative at the matching target is
+\[
+ h_{1,p_1}=x_{1,p_1}+x_1x_{1,m}=0.
+\]
+The law of compensated demand is satisfied; the ordinary demand rises
+because of the income effect. This is a genuine utility-maximising demand:
+take
+\[
+ u=\min\{x_1+x_2,\ 2x_1+\tfrac32x_2-6\}.
+\]
+On the exhausted budget with $p_2=1$, the two scores have slopes
+$1-p_1<0$ and $2-3p_1/2>0$ as functions of $x_1$.
+Their unique crossing maximises their minimum, and gives the stated demand
+and $x_2=(2m-12p_1)/(2-p_1)>0$.
+At the crossing $x_1+x_2/2=6$. At its target $\bar u$,
+$h=(12-\bar u,2\bar u-12)$ throughout the price region, so the own
+compensated derivative really is zero.
+\item \textbf{False.} This is a cross-price response, whereas inferiority
+is an income response. For $u=\min\{x_1,x_2\}$,
+\[
+ x_2=\frac m{p_1+p_2},\qquad
+ x_{2,p_1}=-\frac m{(p_1+p_2)^2}<0,\qquad
+ x_{2,m}=\frac1{p_1+p_2}>0.
+\]
+Good 2 is normal even though less of it is bought after $p_1$ rises.
 \end{enumerate}
 
 \clearpage
-\section*{1. A little of everything}
+\section*{1. Two papers, one research budget}
+Here $x_i$ are hours on a paper and $p_i$ are resource costs per hour.
+The scores have diminishing marginal returns; they are quality indices,
+not probabilities. No additional total-hours constraint is imposed.
 For compact notation define
 \[
  A(p)=\frac1{p_1}+\frac4{p_2},\qquad D=p_2+4p_1.
@@ -217,7 +242,11 @@ calculation: it is a property of every regular consumer problem under these
 conditions, not a special feature of the square-root utility.
 
 \clearpage
-\section*{2. Two escape routes and a head start}
+\section*{2. Glitch: coffee, cake, and a head start}
+Good 1 is coffee and good 2 is cake. Serving-equivalents are divisible, as
+the mathematical domain requires. The head start belongs to the coffee
+branch only, including at zero purchases; it is not an additive constant
+applied to both branches.
 Let
 \[
  L(p,m)=1+\frac m{p_1},\qquad R(p,m)=\sqrt{\frac m{p_2}}.
@@ -252,7 +281,8 @@ Preferences are not convex.
 \end{tikzpicture}
 \end{center}
 The red budget is $4x_1+x_2\le4$; it meets the blue target set only at
-the two corners. This also supplies the warm-up's counterexample.
+the two corners. The example shows why nonunique optima need not include
+their midpoint when preferences are nonconvex.
 
 For $\bar u\le1$, zero already attains the target; expenditure is zero and
 the unique cost-minimiser is zero. The main calculations use targets above

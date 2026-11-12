@@ -10,15 +10,25 @@ or PDF author metadata.
 
 ## Contents
 
-Six short true/false statements precede two multi-part problems:
+Five short true/false statements precede two multi-part problems. The warm-up
+fixes a two-good setting and asks whether both goods can be Giffen, normal
+or inferior; distinguishes a rising Marshallian demand from compensated
+demand; and tests whether a negative cross-price response implies inferiority.
+The verdicts are **F, T, F, F, F**. The key rationalises the supplied rising
+demand by a continuous, strongly monotone, concave utility function.
 
-1. **A little of everything:** `sqrt(x1) + 2 sqrt(x2)`. Strict concavity,
+1. **Two papers, one research budget:** a professor allocates work to two
+   papers with diminishing returns to quality, `sqrt(x1) + 2 sqrt(x2)`.
+   Quality scores are indices, not probabilities; each hour has a resource
+   cost and the research grant is the single budget. Strict concavity,
    positivity, direct Marshallian/Hicksian optimisation, both value functions,
    Roy, Shephard, duality and a numerical own-price Slutsky decomposition.
    The full Slutsky matrix is compulsory: construct it from Marshallian demand,
    check symmetry, multiply by the price vector, check negative semidefiniteness,
    then prove the general result using expenditure.
-2. **Two escape routes and a head start:** `max{x1 + 1, sqrt(x2)}`.
+2. **Glitch: coffee, cake, and a head start:** at the NES café, a student
+   chooses divisible serving-equivalents of coffee and cake, with
+   `max{x1 + 1, sqrt(x2)}`.
    Continuous LNS preferences with a nonconvex upper contour set; the chosen
    corner switches twice with income at prices `(9/2,1)`.
    Derive complete demand correspondences, recover quantities from values in
@@ -42,8 +52,9 @@ folder including `assets/`, select XeLaTeX, and choose `seminar03.tex` or
 
 Run `python3 verify-examples.py` for independent feasible-grid, finite-difference
 and boundary-set checks. It uses only Python's standard library and checks
-**208 parameter/data cases**, including both crossings, the tangency and
-targets below the baseline.
+**238 parameter/data cases**, including both crossings, the tangency,
+targets below the baseline and independent budget/target-frontier searches
+for the warm-up's rising ordinary demand.
 
 The complete ZIP contains the student PDF, key PDF, all editable sources,
 style, logo, build script, verification script and this documentation under
