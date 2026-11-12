@@ -1,0 +1,49 @@
+\section*{Training 2. Two shocks, one average · 35 points}
+Two wealth lotteries have equally likely outcomes:
+\[
+ A:\ (36,100),\qquad B:\ (4,132).
+\]
+Use Bernoulli indices $b(w)=\sqrt w$ and $g(w)=\log w$ on $w>0$.
+The certainty equivalent solves $b(CE)=\mathbb E[b(W)]$; the risk premium
+is $\mathbb E[W]-CE$.
+\begin{enumerate}[label=(\alph*)]
+\item \textbf{6 points.} Calculate both means. Compare their cumulative
+distribution functions and determine whether either lottery first-order
+stochastically dominates the other.
+\item \textbf{8 points.} Under b, calculate expected utility, the certainty
+equivalent and the risk premium for each lottery.
+\item \textbf{7 points.} Find A's certainty equivalent under g. Compare A
+with sure wealth 62 under each index. Explain why an increasing change in
+the Bernoulli index can change lottery rankings.
+\item \textbf{6 points.} Calculate absolute and relative risk aversion for
+b and g. Which index represents greater absolute risk aversion at each wealth?
+\item \textbf{8 points.} Use Jensen's inequality to prove that a consumer
+with an increasing concave Bernoulli index has a nonnegative risk premium.
+When does strict concavity imply a strictly positive premium?
+\end{enumerate}
+\paragraph{Further practice, ungraded.} Couple the lotteries as follows:
+\[
+ \Pr(B=4\mid A=36)=3/4,\qquad \Pr(B=4\mid A=100)=1/4.
+\]
+Check B's unconditional distribution and show $\mathbb E[B\mid A]=A$.
+Apply conditional Jensen to show that every increasing concave Bernoulli
+index weakly prefers A. This establishes second-order stochastic dominance.
+
+\clearpage
+\section*{Training 3. The umbrella with a loading · 35 points}
+A household has wealth 100 and faces a loss of 84 with probability $1/4$.
+Its Bernoulli utility is $b(w)=\log w$. Coverage $I\in[0,84]$ pays I only
+if the loss occurs. The premium is $cI$, paid in either state.
+\begin{enumerate}[label=(\alph*)]
+\item \textbf{6 points.} Write both final wealth levels and expected utility.
+Explain existence and uniqueness of optimal coverage for $c=1/4$ and $c=1/2$.
+\item \textbf{7 points.} At the actuarially fair price $c=1/4$, find optimal
+coverage. Give a Jensen argument, not only a stationary-point calculation.
+\item \textbf{10 points.} At $c=1/2$, find optimal coverage and both final
+wealth levels. Check that your candidate lies within the allowed interval
+and is globally optimal.
+\item \textbf{12 points.} Keep the loss 84, probability $1/4$ and $c=1/2$,
+but replace initial wealth by $W>84$. Derive optimal coverage as a function
+of W, including the no-insurance region. Relate the result to absolute risk
+aversion for log utility.
+\end{enumerate}

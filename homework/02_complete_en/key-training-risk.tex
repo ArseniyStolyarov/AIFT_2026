@@ -1,0 +1,105 @@
+\section*{Training 2 · 35 points}
+\paragraph{(a), 6 points.}
+Both means equal 68. For $4\le w<36$, $F_A(w)=0<F_B(w)=1/2$, while
+for $100\le w<132$, $F_A(w)=1>F_B(w)=1/2$. The CDFs cross, so neither
+lottery FOSD-dominates the other. Award 2 for the means, 4 for the two
+inequality regions and conclusion.
+
+\paragraph{(b), 8 points.}
+Under the square-root index,
+\[
+ \mathbb E b(A)=8,\quad CE_A=64,\quad RP_A=4,
+\]
+\[
+ \mathbb E b(B)=1+\sqrt{33},\quad
+ CE_B=34+2\sqrt{33},\quad RP_B=34-2\sqrt{33}.
+\]
+Numerically B's CE is about 45.4891 and its risk premium about 22.5109.
+Award 4 points per lottery, with credit for correct intermediate calculations.
+
+\paragraph{(c), 7 points.}
+Under log utility, $\mathbb E g(A)=\log60$, so $CE_A=60$.
+The square-root consumer prefers A to sure 62 because $64>62$; the log
+consumer prefers sure 62 because $60<62$. Although log and square root
+rank certain wealth levels the same way, one is not a positive affine
+transformation of the other. Nonlinear transformation before taking an
+expectation changes risk attitudes. Award 2 for the log CE, 3 for the
+opposite rankings, 2 for the representation argument.
+
+\paragraph{(d), 6 points.}
+\[
+ \mathcal A_b(w)=\frac1{2w},\quad\mathcal R_b(w)=\frac12,
+ \qquad
+ \mathcal A_g(w)=\frac1w,\quad\mathcal R_g(w)=1.
+\]
+Log has higher absolute risk aversion at every positive wealth. Award
+1 point per coefficient and 2 for the comparison and interpretation.
+
+\paragraph{(e), 8 points.}
+For a finite positive-wealth lottery and increasing concave b,
+$\mathbb E b(W)\le b(\mathbb E W)$ by Jensen. As
+$b(CE)=\mathbb E b(W)$ and b is increasing, $CE\le\mathbb E W$.
+With strict concavity on an interval containing the support and at least
+two distinct outcomes of positive probability, Jensen is strict, hence the
+risk premium is positive. Award 4 for Jensen, 2 for applying monotonicity,
+2 for the strictness conditions.
+
+\paragraph{Ungraded extension.}
+The marginal probability of $B=4$ is
+$(1/2)(3/4)+(1/2)(1/4)=1/2$. The conditional means are
+$(3/4)4+(1/4)132=36$ and $(1/4)4+(3/4)132=100$.
+Thus B is a mean-preserving spread of A under this coupling. For any
+increasing concave $\phi$,
+\[
+ \mathbb E[\phi(B)\mid A]\le\phi(\mathbb E[B\mid A])=\phi(A),
+\]
+so $\mathbb E\phi(B)\le\mathbb E\phi(A)$. This is SOSD without FOSD.
+It has no points and no submission requirement.
+
+\clearpage
+\section*{Training 3 · 35 points}
+\paragraph{(a), 6 points.}
+Final wealth is $w_N=100-cI$ with probability $3/4$ and
+$w_L=16+(1-c)I$ with probability $1/4$. Hence
+\[
+ U_c(I)=\frac34\log(100-cI)+\frac14\log(16+(1-c)I),\quad0\le I\le84.
+\]
+For either specified price both wealth levels remain positive throughout
+the interval. The objective is continuous on a compact interval and strictly
+concave, so a unique optimum exists. Award 3 for wealths and probabilities,
+1 for the objective and interval, 2 for existence and uniqueness.
+
+\paragraph{(b), 7 points.}
+At $c=1/4$, expected final wealth is 79 for every coverage. Full coverage
+$I=84$ equalises wealth at 79. Strict concavity and Jensen give
+$\mathbb E\log W\le\log79$, with equality only for certain wealth.
+Thus full insurance is uniquely optimal. Award 2 for the constant mean,
+2 for the bundle, 3 for Jensen and uniqueness.
+
+\paragraph{(c), 10 points.}
+At $c=1/2$,
+\[
+ U'(I)=-\frac{3/8}{100-I/2}+\frac{1/8}{16+I/2}.
+\]
+The FOC is $100-I/2=3(16+I/2)$, giving $I^*=26$ and
+$(w_N,w_L)=(87,29)$. It is strictly inside $[0,84]$; strict concavity makes
+it the unique global maximiser. Equivalently, $U'(0)>0$ and $U'(84)<0$.
+Award 3 for the derivative/FOC, 3 for I, 2 for wealths, 2 for global verification.
+
+\paragraph{(d), 12 points.}
+Replace 100 by W and 16 by $W-84$. The interior FOC becomes
+\[
+ W-I/2=3(W-84+I/2)\quad\Rightarrow\quad I=126-W.
+\]
+For $W>84$ this candidate is always below 84; it is positive exactly when
+$W<126$. Therefore
+\[
+ I^*(W)=\begin{cases}126-W,&84<W<126,\\0,&W\ge126.\end{cases}
+\]
+At $W=126$, the zero-coverage bound has zero first derivative but is still
+the unique optimum by strict concavity. Log utility has decreasing absolute
+risk aversion $1/w$; here a richer household buys less protection against
+the same fixed loss at the same loaded price. Fair insurance in (b) remains
+full, so decreasing coverage is not a universal statement about every
+premium rule. Award 4 for the general FOC/candidate, 4 for the regimes and
+boundary, 4 for ARA and the economic explanation.

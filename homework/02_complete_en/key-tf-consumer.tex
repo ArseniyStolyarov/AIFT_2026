@@ -1,0 +1,38 @@
+\subsection*{1. True}
+The target-feasible set K is fixed as prices change. For $0\le t\le1$,
+\[
+ \min_{x\in K}(tp+(1-t)q)\cdot x
+ \ge t\min_{x\in K}p\cdot x+(1-t)\min_{x\in K}q\cdot x.
+\]
+No convexity of K is used.
+
+\subsection*{2. False}
+Take $u(x)=\max\{2x_1,x_2\}$. It is continuous and LNS. Its value is
+\[v(p,m)=m\max\{2/p_1,1/p_2\}.\]
+At $p=(2,1)$, the income-only value is m
+and $v_m=1>0$, but $X=\{(m/2,0),(0,m)\}$. Price differentiability fails.
+
+\subsection*{3. False}
+For $u(x)=(1+x_1)x_2$ and $m>p_1$, the unique interior demand is
+\[
+ x_1=\frac{m-p_1}{2p_1},\qquad x_2=\frac{m+p_1}{2p_2}.
+\]
+These formulas follow by taking logs after excluding $x_2=0$ and solving the
+strictly concave log problem. They are smooth in this open regime, but
+$x_{1,p_2}=0$ while $x_{2,p_1}=1/(2p_2)>0$.
+
+\subsection*{4. False}
+Homogeneity gives $Sp=0$ and $p\ne0$, hence $p^\top Sp=0$. Strict negative
+definiteness is impossible. A fully specified example is Seminar 3's
+$u=\sqrt{x_1}+2\sqrt{x_2}$ at $p=(1,4)$, $m=8$, where
+$S=\begin{pmatrix}-4&1\\1&-1/4\end{pmatrix}$.
+
+\subsection*{5. True}
+For any minimiser h and any positive price vector q,
+\[
+ e(q,\bar u)\le q\cdot h=e(p,\bar u)+(q-p)\cdot h.
+\]
+If e is differentiable at p, perturb q in either sign of every direction:
+the inequality forces $h=\nabla_pe(p,\bar u)$. Every minimiser equals the
+same vector. Existence follows from continuity, positive prices and target
+attainability.

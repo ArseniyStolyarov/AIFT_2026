@@ -123,3 +123,14 @@ has two income switches and nonunique corner choices at the boundaries.
 - [Student problem sheet](practice/03_duality_en/seminar03.pdf?raw=true)
 - [Instructor solutions](practice/03_duality_en/instructor-solutions.pdf?raw=true)
 - [Complete folder: PDFs and LaTeX](practice/03_duality_en/seminar03-complete.zip?raw=true)
+
+## Homework 2 — Welfare and risk (preparation draft)
+
+Training first, timed mock second, for Lectures 3 and the proposed Lecture 4
+on welfare and risk. CV/EV/CS, consumer duality, expected utility, risk aversion
+and insurance. Three assessed training problems total 100 points; the
+120-minute mock has 100 separate diagnostic points. Deadline is to be announced.
+
+- [Full student assignment](homework/02_complete_en/homework02.pdf?raw=true)
+- [Instructor solutions](homework/02_complete_en/instructor-solutions.pdf?raw=true)
+- [All PDFs and LaTeX](homework/02_complete_en/homework02-complete.zip?raw=true)

@@ -1,0 +1,38 @@
+\subsection*{6. True}
+Expected transformed utility is $3\mathbb E b(W)+7$, so all comparisons
+are preserved. The same certain wealth solves the transformed CE equation.
+Also $-\widetilde b''/\widetilde b'=-3b''/(3b')=-b''/b'$.
+
+\subsection*{7. False}
+Take $b(w)=\sqrt w$. Compare equally likely wealths 1 and 9 with sure
+wealth $9/2$. Expected b is 2 for the lottery and $3/\sqrt2>2$ for the
+sure wealth. After squaring b, expected utility is expected wealth: 5 for
+the lottery, $9/2$ for the sure amount. The preference reverses.
+
+\subsection*{8. True}
+For a common finite support $w_1<\cdots<w_n$,
+\[
+ \mathbb E b(W)=b(w_1)+\sum_{k=1}^{n-1}
+ [b(w_{k+1})-b(w_k)]\Pr(W>w_k).
+\]
+FOSD means all the relevant tail probabilities of A are at least those of B.
+The increments of increasing b are nonnegative, so the expected-utility
+inequality follows. An equivalent monotone-coupling or definition-based
+argument is acceptable; concavity is not used.
+
+\subsection*{9. False}
+Log utility has DARA, $\mathcal A=1/w$. Let initial wealth be 9 and a loss
+of 8 occur with probability $1/2$. At a fair unit premium $1/2$, any
+coverage has mean wealth 5, while full coverage makes wealth exactly 5.
+Strict concavity of log and Jensen make full coverage uniquely optimal.
+
+\subsection*{10. False}
+Use the increasing concave index
+\[
+ b(w)=\begin{cases}w,&0<w\le3,\\3+\log(w-2),&w>3.\end{cases}
+\]
+It is continuous with matching derivative 1 at 3; its derivative thereafter
+decreases. Equally likely wealths 1 and 3 have mean and CE both equal to 2,
+so their risk premium is zero. Yet the index is strictly concave above 3:
+it strictly prefers sure 5 to equally likely 4 and 6. Local affine behaviour
+on one lottery's support does not imply global risk neutrality.
