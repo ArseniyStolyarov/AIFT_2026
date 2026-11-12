@@ -1,0 +1,417 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{nesarticle}
+\usepackage{tikz}
+\hypersetup{pdftitle={Seminar 3: Instructor solutions}}
+\begin{document}
+\heading{Seminar 3 · Instructor solutions}{Demand, value functions and duality}
+
+\paragraph{A 90-minute route.} Warm-up about 10 minutes; problem 1, including the matrix and general
+result, about 45; problem 2(a)--(f) about 30; final questions 5.
+Problem 2(g), the tangential tie, is an extension. If time is tight, let students state the repeated identities
+after one full derivative calculation in each problem.
+
+\paragraph{Teaching focus.} Work round the same four-object square twice.
+In problem 1 the optimiser is smooth and interior. In problem 2 utility is
+continuous and preferences are LNS, but convexity fails. A baseline in the first
+route produces two income switches at the chosen prices. At a boundary the
+optimal set contains two points, not a segment.
+Both problems use functions different from the worked Lecture 3 examples and
+Seminar 2. The sheet is for the teaching assistant, not a presentation.
+
+\section*{Warm-up}
+The answers are \textbf{T, F, T, F, T, F}.
+\begin{enumerate}[label=\arabic*.]
+\item Raising the target shrinks the feasible set. Minimising the same
+objective over a smaller set cannot lower the minimum.
+\item Every target-feasible bundle costs weakly more after a componentwise
+price increase. Reoptimisation can mitigate the increase, but cannot reverse
+this inequality. At a differentiable point $e_{p_i}=h_i\ge0$.
+\item Multiplying the objective by a positive constant preserves its
+minimisers; the target-feasible set does not change.
+\item Convex preferences would be sufficient, but are not assumed here.
+Problem 2 supplies a counterexample at $p=(4,1)$, $\bar u=2$: $(1,0)$ and
+$(0,4)$ minimise expenditure, while their midpoint $(1/2,2)$ has utility
+$3/2<2$ and does not attain the target.
+\item Under the maintained conditions,
+$H(p,v(p,m))=X(p,m)$ as sets. The corresponding target is the attained
+maximum; it is not an arbitrary number equal to income.
+\item Slutsky includes the income correction:
+$x_{i,p_i}=h_{i,p_i}-x_i x_{i,m}$. Problem 1 gives $-6=-4-2$.
+\end{enumerate}
+
+\clearpage
+\section*{1. A little of everything}
+For compact notation define
+\[
+ A(p)=\frac1{p_1}+\frac4{p_2},\qquad D=p_2+4p_1.
+\]
+\subsection*{(a) Existence, uniqueness and positive quantities}
+The positive-price budget is nonempty and compact. Utility is continuous, so
+a maximum exists. The weighted sum of square roots is strictly concave on
+$\R_+^2$, hence the maximiser on a convex budget is unique. Utility is
+strictly increasing in each coordinate, so the whole budget is spent.
+
+Neither axis can contain the optimum. For example, from
+$(0,m/p_2)$ buy $\varepsilon>0$ of good 1 and reduce good 2 by
+$p_1\varepsilon/p_2$. The gain is $\sqrt{\varepsilon}$ and the loss in the
+second term is $O(\varepsilon)$, since its starting quantity is positive.
+For small enough $\varepsilon$ the gain dominates. The argument at the other
+axis uses $2\sqrt{\varepsilon}$. Do not evaluate ordinary first derivatives
+of the square root at zero as if they were finite.
+
+\subsection*{(b) Marshallian demand and indirect utility}
+At the interior optimum,
+\[
+ \frac1{2\sqrt{x_1}}=\lambda p_1,\qquad
+ \frac1{\sqrt{x_2}}=\lambda p_2.
+\]
+Thus $x_1=1/(4\lambda^2p_1^2)$ and
+$x_2=1/(\lambda^2p_2^2)$. Exhaustion gives
+$A/(4\lambda^2)=m$, so $\lambda=\sqrt A/(2\sqrt m)>0$ and
+\[
+ \boxed{x_1=\frac{m}{p_1^2A}=\frac{mp_2}{p_1D}},\qquad
+ \boxed{x_2=\frac{4m}{p_2^2A}=\frac{4mp_1}{p_2D}}.
+\]
+Substitution gives
+\[
+ \boxed{v(p,m)=\sqrt{mA(p)}}.
+\]
+All quantities are strictly positive for the maintained parameters.
+
+\subsection*{(c) Hicksian demand and expenditure}
+Let $z_i=\sqrt{x_i}$. The expenditure problem becomes
+\[
+ \min_{z_1,z_2\ge0}\ p_1z_1^2+p_2z_2^2
+ \quad\text{subject to}\quad z_1+2z_2\ge\bar u.
+\]
+The objective is strictly convex and coercive and the feasible set is closed
+and nonempty. The target binds. With multiplier $\mu$ on
+$\bar u-z_1-2z_2\le0$, interior stationarity gives
+\[
+ 2p_1z_1=\mu,\qquad 2p_2z_2=2\mu.
+\]
+The resulting positive solution is
+$\mu=2\bar u/A$, $z_1=\bar u/(p_1A)$ and $z_2=2\bar u/(p_2A)$.
+It satisfies the convex programme's sufficient KKT conditions, hence is the
+unique minimiser. Squaring,
+\[
+ \boxed{h_1=\frac{\bar u^2}{p_1^2A^2}
+ =\frac{\bar u^2p_2^2}{D^2}},\qquad
+ \boxed{h_2=\frac{4\bar u^2}{p_2^2A^2}
+ =\frac{4\bar u^2p_1^2}{D^2}}.
+\]
+Therefore
+\[
+ \boxed{e(p,\bar u)=\frac{\bar u^2}{A(p)}
+ =\frac{\bar u^2p_1p_2}{D}}.
+\]
+The target is positive, so both quantities and the target multiplier are
+positive. The multiplier also equals $e_{\bar u}=2\bar u/A$.
+
+\paragraph{An alternative global proof.} Cauchy--Schwarz gives
+\[
+ (\sqrt{x_1}+2\sqrt{x_2})^2
+ \le (p_1x_1+p_2x_2)\left(\frac1{p_1}+\frac4{p_2}\right).
+\]
+It bounds utility above by $\sqrt{mA}$ on the budget and bounds the cost of
+the target below by $\bar u^2/A$. The displayed choices attain equality.
+This proves both values directly without relying on an unverified stationary point.
+
+\subsection*{(d) Roy, Shephard and the value identities}
+Write $c_1=1,c_2=4$, so $A_{p_i}=-c_i/p_i^2$. Then
+\[
+ v_m=\frac{A}{2v}>0,\qquad
+ v_{p_i}=-\frac{mc_i}{2vp_i^2},\qquad
+ -\frac{v_{p_i}}{v_m}=\frac{mc_i}{p_i^2A}=x_i.
+\]
+Similarly,
+\[
+ e_{p_i}=-\frac{\bar u^2 A_{p_i}}{A^2}
+ =\frac{\bar u^2c_i}{p_i^2A^2}=h_i.
+\]
+The duality identities are immediate:
+\[
+ e(p,v(p,m))=\frac{mA}{A}=m,\qquad
+ v(p,e(p,\bar u))=\sqrt{(\bar u^2/A)A}=\bar u.
+\]
+The positive-target convention removes an absolute-value ambiguity in the
+second equality. Substituting $\bar u^2=mA$ into each Hicksian formula gives
+$h(p,v(p,m))=x(p,m)$.
+
+\subsection*{(e) Numbers and Slutsky}
+At $p=(1,4)$, $m=8$, we have $A=2$, $D=8$,
+\[
+ x=(4,1),\qquad \bar u=v=4,\qquad e(p,4)=8.
+\]
+Differentiate Marshallian demand at fixed $m$, and Hicksian demand at fixed
+$\bar u$ \emph{before} substituting the matching target:
+\[
+ x_{1,p_1}=-\frac{mp_2(p_2+8p_1)}{p_1^2D^2}=-6,
+ \qquad x_{1,m}=\frac{p_2}{p_1D}=\frac12,
+\]
+\[
+ h_{1,p_1}=-\frac{8\bar u^2p_2^2}{D^3}=-4.
+\]
+Thus
+\[
+ \underbrace{-6}_{\text{total}}=
+ \underbrace{-4}_{\text{substitution}}
+ -\underbrace{4\cdot\tfrac12}_{\text{income correction}}.
+\]
+Substituting $\bar u=v(p,m)$ into h \emph{before differentiating} would
+differentiate ordinary demand and would not compute the compensated derivative.
+
+\subsection*{(f) The Slutsky matrix in this example}
+Compute the income correction as an outer product, not componentwise
+along the diagonal:
+\[
+ S=D_px+(D_mx)x^\top
+ =\frac{8m}{p_1p_2D^2}
+ \begin{pmatrix}-p_2^2&p_1p_2\\p_1p_2&-p_1^2\end{pmatrix}.
+\]
+Independently, differentiating the Hicksian demands at fixed target gives
+\[
+ D_ph=\frac{8\bar u^2}{D^3}
+ \begin{pmatrix}-p_2^2&p_1p_2\\p_1p_2&-p_1^2\end{pmatrix}.
+\]
+At $\bar u=v(p,m)$, $\bar u^2=mA=mD/(p_1p_2)$, so the matrices agree.
+The displayed matrix is symmetric. Direct multiplication gives $Sp=0$, and
+\[
+ z^\top Sz=-\frac{8m}{p_1p_2D^2}(p_2z_1-p_1z_2)^2\le0.
+\]
+At $p=(1,4)$ and $m=8$,
+\[
+ S=\begin{pmatrix}-4&1\\1&-1/4\end{pmatrix}.
+\]
+This is negative semidefinite, with a zero price direction. Strict negative
+definiteness on the whole space would be the wrong prediction.
+
+\subsection*{(g) From the calculation to the general result}
+Under the stated regularity and duality conditions, at a matching target,
+\[
+ S=D_ph=D^2_{pp}e.
+\]
+Shephard gives $h_i=e_{p_i}$; Slutsky identifies the derivative matrix with
+the corrected Marshallian derivatives. The Cauchy--Clairaut equality of mixed
+partials of a $C^2$ function gives symmetry.
+
+To establish the curvature, fix the target-feasible set
+$K=\{x\ge0:u(x)\ge\bar u\}$. For positive price vectors p and q and
+$0\le t\le1$,
+\[
+\begin{aligned}
+ e(tp+(1-t)q,\bar u)
+ &=\min_{x\in K}\{t\,p\cdot x+(1-t)q\cdot x\}\\
+ &\ge t\min_{x\in K}p\cdot x+(1-t)\min_{x\in K}q\cdot x.
+\end{aligned}
+\]
+Thus expenditure is concave in prices; convex preferences are not required
+for this argument. For any direction z, the restriction
+$g(t)=e(p+tz,\bar u)$ is concave near zero, hence
+$g''(0)=z^\top D^2_{pp}e\,z\le0$. This proves negative semidefiniteness.
+
+Finally, $h(tp,\bar u)=h(p,\bar u)$: a positive common price multiplier
+does not change the cost rankings. Differentiating in t at 1 yields
+$D_ph\,p=0$, so $Sp=0$. Summarise the theorem only after the concrete
+calculation: it is a property of every regular consumer problem under these
+conditions, not a special feature of the square-root utility.
+
+\clearpage
+\section*{2. Two escape routes and a head start}
+Let
+\[
+ L(p,m)=1+\frac m{p_1},\qquad R(p,m)=\sqrt{\frac m{p_2}}.
+\]
+\subsection*{(a) Preferences, the baseline and target geometry}
+Utility is continuous. Increasing an active coordinate strictly improves
+utility arbitrarily nearby, so preferences are LNS, including at the origin.
+It represents complete and transitive preferences. Here $u(0)=1$.
+
+For $\bar u>1$,
+\[
+ u(x)\ge\bar u\quad\Longleftrightarrow\quad
+ x_1\ge\bar u-1\ \ \textbf{or}\ \ x_2\ge\bar u^2.
+\]
+The set is a union. At target 2, $(1,0)$ and $(0,4)$ reach the target, but
+their midpoint $(1/2,2)$ gives $\max\{3/2,\sqrt2\}=3/2<2$.
+Preferences are not convex.
+
+\begin{center}
+\begin{tikzpicture}[x=2.5cm,y=.65cm]
+\fill[NESblue!10] (1,0) rectangle (2,5.5);
+\fill[NESblue!10] (0,4) rectangle (1,5.5);
+\fill[NESred!10] (0,0)--(1,0)--(0,4)--cycle;
+\draw[->] (0,0)--(2.15,0) node[right] {$x_1$};
+\draw[->] (0,0)--(0,5.8) node[above] {$x_2$};
+\draw[NESblue,thick] (1,0)--(1,4)--(0,4);
+\draw[NESred,thick] (1,0)--(0,4);
+\fill[NESred] (1,0) circle (1.6pt) node[below right] {$(1,0)$};
+\fill[NESred] (0,4) circle (1.6pt) node[above left] {$(0,4)$};
+\fill[NESred] (.5,2) circle (1.5pt) node[below left] {midpoint};
+\node[font=\small] at (1.45,4.8) {$u\ge2$};
+\end{tikzpicture}
+\end{center}
+The red budget is $4x_1+x_2\le4$; it meets the blue target set only at
+the two corners. This also supplies the warm-up's counterexample.
+
+For $\bar u\le1$, zero already attains the target; expenditure is zero and
+the unique cost-minimiser is zero. The main calculations use targets above
+the baseline. In particular, for $\bar u<1$, the identity $v(p,e)=\bar u$
+cannot hold: zero income gives utility 1, not the lower target.
+
+\subsection*{(b) Marshallian demand: compare the two routes}
+On the budget,
+\[
+ x_1+1\le1+m/p_1=L,\qquad \sqrt{x_2}\le\sqrt{m/p_2}=R.
+\]
+The first bound is attained at $(m/p_1,0)$; the second component attains R
+at $(0,m/p_2)$. If $R<1$, that corner's actual utility is 1, and it loses
+to $L>1$ anyway. Therefore
+\[
+ \boxed{v(p,m)=\max\{L(p,m),R(p,m)\}}.
+\]
+If both quantities are positive, both component bounds are strict, so the
+bundle is strictly worse than the largest corner value. There are no other
+maximisers. For all positive prices and income,
+\[
+ \boxed{X(p,m)=
+ \begin{cases}
+ \{(m/p_1,0)\},&L>R,\\
+ \{(m/p_1,0),(0,m/p_2)\},&L=R,\\
+ \{(0,m/p_2)\},&L<R.
+ \end{cases}}
+\]
+
+At $p=(9/2,1)$, let $t=\sqrt m$. Then
+\[
+ L-R=1+\frac{2t^2}{9}-t
+     =\frac29(t-3/2)(t-3).
+\]
+Thus
+\[
+\begin{array}{c|c|c}
+\text{Income}&\text{optimal route}&v\\\hline
+0<m<9/4&\text{good 1}&1+2m/9\\
+9/4<m<9&\text{good 2}&\sqrt m\\
+m>9&\text{good 1}&1+2m/9
+\end{array}
+\]
+At $m=9/4$, the two corners $(1/2,0)$ and $(0,9/4)$ tie at utility $3/2$.
+At $m=9$, $(2,0)$ and $(0,9)$ tie at utility 3. The baseline gives route 1
+an initial advantage, the square-root route wins at intermediate incomes,
+and the linear route eventually wins again.
+
+\subsection*{(c) Hicksian demand: compare the two costs}
+For $\bar u>1$, the cheapest point in the first target branch is
+$(\bar u-1,0)$ at cost $C_1=p_1(\bar u-1)$; in the second it is
+$(0,\bar u^2)$ at cost $C_2=p_2\bar u^2$. Hence
+\[
+ \boxed{e(p,\bar u)=\min\{C_1,C_2\}},\qquad
+ \boxed{H(p,\bar u)=
+ \begin{cases}
+ \{(\bar u-1,0)\},&C_1<C_2,\\
+ \{(\bar u-1,0),(0,\bar u^2)\},&C_1=C_2,\\
+ \{(0,\bar u^2)\},&C_1>C_2.
+ \end{cases}}
+\]
+Each branch has only its corner as the cheapest point at positive prices,
+so the tie adds exactly two bundles, not their convex combinations.
+
+At $p=(9/2,1)$,
+\[
+ C_1-C_2=\frac92(\bar u-1)-\bar u^2
+        =-(\bar u-3/2)(\bar u-3).
+\]
+For $1<\bar u<3/2$ and for $\bar u>3$, choose good 1. For
+$3/2<\bar u<3$, choose good 2. At each equality choose either corner.
+The expenditure values at the two switching targets are $9/4$ and 9.
+For all targets $\bar u\le1$, $e=0$ and $H=\{(0,0)\}$.
+
+\subsection*{(d) Roy and Shephard within strict regimes}
+In a strict first-route regime, $v=1+m/p_1$ and
+\[
+ v_m=1/p_1,\qquad v_{p_1}=-m/p_1^2,\qquad v_{p_2}=0,
+\]
+so Roy gives $(m/p_1,0)$. In a strict second-route regime, $v=\sqrt{m/p_2}$,
+\[
+ v_m=\frac1{2\sqrt{mp_2}},\quad
+ v_{p_1}=0,\quad v_{p_2}=-\frac{\sqrt m}{2p_2^{3/2}},
+\]
+and Roy gives $(0,m/p_2)$.
+
+If $C_1<C_2$, $e=p_1(\bar u-1)$ and
+$\nabla_pe=(\bar u-1,0)$. If $C_2<C_1$, $e=p_2\bar u^2$ and
+$\nabla_pe=(0,\bar u^2)$. Shephard recovers the corresponding Hicksian
+corner. At a tie the price gradients of the two value branches differ,
+so the full gradient needed by Roy or Shephard is unavailable.
+
+\subsection*{(e) Duality and matching the switches}
+Set $U=v(p,m)$. Every affordable bundle has
+$x_1\le m/p_1\le U-1$ and $x_2\le m/p_2\le U^2$.
+More directly, $U\ge L$ implies $p_1(U-1)\ge m$, and $U\ge R$ implies
+$p_2U^2\ge m$. At least one equality holds, hence
+\[
+ e(p,v(p,m))=\min\{p_1(U-1),p_2U^2\}=m.
+\]
+The equality branches are exactly the winning Marshallian routes, so the
+demand sets match, including at ties.
+
+Conversely, set $M=e(p,\bar u)$. Since
+$M\le p_1(\bar u-1)$ and $M\le p_2\bar u^2$,
+\[
+ 1+M/p_1\le\bar u,\qquad \sqrt{M/p_2}\le\bar u.
+\]
+At least one equality holds, so $v(p,M)=\bar u$. The corners attaining
+that equality are exactly $H(p,\bar u)$.
+
+At the specified prices the boundaries pair as
+\[
+ m=9/4\ \longleftrightarrow\ \bar u=3/2,\qquad
+ m=9\ \longleftrightarrow\ \bar u=3.
+\]
+No convexity of preferences is required for these duality statements.
+
+\subsection*{(f) The two exact boundary examples}
+At $p=(9/2,1)$, $m=9/4$ and $\bar u=3/2$,
+\[
+ X(p,9/4)=H(p,3/2)=\{(1/2,0),(0,9/4)\}.
+\]
+The midpoint $(1/4,9/8)$ gives
+$\max\{5/4,3/(2\sqrt2)\}=5/4<3/2$ and fails the target.
+At the other boundary,
+\[
+ X(p,9)=H(p,3)=\{(2,0),(0,9)\}.
+\]
+The midpoint $(1,9/2)$ gives $\max\{2,3/\sqrt2\}=3/\sqrt2<3$.
+Nonuniqueness persists in the corresponding expenditure problem, and the
+midpoint is not optimal in either problem.
+
+\subsection*{(g) Extension: a tangential tie}
+At fixed prices $(4,1)$,
+\[
+ 1+\frac m4-\sqrt m=\frac14(\sqrt m-2)^2\ge0.
+\]
+Thus $v((4,1),m)=1+m/4$ for every $m>0$, and $v_m=1/4$ even at $m=4$.
+At that income, however, $(1,0)$ and $(0,4)$ are both optimal.
+
+There is no contradiction with Roy: differentiability in income alone is
+insufficient. At the tie the price gradients are $(-1/4,0)$ on the first
+branch and $(0,-1)$ on the second. The full indirect utility is not
+differentiable in prices there. Expenditure at fixed prices is likewise
+smooth in the target at 2, but its two price gradients are $(1,0)$ and $(0,4)$.
+Do not claim that every nonunique optimum forces a kink in the income-only
+value graph: this tie is a counterexample.
+
+\paragraph{General switch geometry, for the teaching assistant.}
+Writing $r=p_1/p_2$, the tie equation in utility is
+$\bar u^2-r\bar u+r=0$. If $r<4$ the first route always wins. At $r=4$
+there is one tangential tie at $\bar u=2$, corresponding to $m=4p_2$.
+If $r>4$, there are two thresholds
+\[
+ \bar u_{\pm}=\frac{r\pm\sqrt{r^2-4r}}2>1,\qquad
+ m_{\pm}=p_2\bar u_{\pm}^2=p_1(\bar u_{\pm}-1).
+\]
+The second route wins strictly between the thresholds and the first outside.
+The comparison formulas in (b)--(c) cover all prices without requiring
+students to carry this discriminant calculation throughout the main exercise.
+\end{document}

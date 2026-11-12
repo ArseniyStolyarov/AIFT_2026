@@ -1,0 +1,86 @@
+\heading{Seminar 3}{Two routes through the consumer-theory square}
+
+\paragraph{Conventions.} Quantities are nonnegative and $p_1,p_2,m>0$.
+Targets satisfy $\bar u>0$ in problem 1 and $\bar u>1$ in problem 2 unless
+stated otherwise. Write $X,H$ for demand correspondences and $x,h$ when
+demand is unique. Use derivative identities where their derivatives exist.
+
+\section*{Warm-up: true or false}
+Assume continuous, locally nonsatiated preferences and attainable targets.
+Explain each verdict briefly.
+\begin{enumerate}[label=\arabic*.]
+\item At fixed prices, a higher utility target cannot reduce minimum expenditure.
+\item Raising a price must reduce the expenditure needed to attain a fixed
+target, because the consumer can substitute away from that good.
+\item Multiplying every price by the same positive number leaves the Hicksian
+demand correspondence unchanged.
+\item If two bundles minimise expenditure for the same target, their midpoint
+must also minimise expenditure.
+\item At matching income and utility, Marshallian and Hicksian demand
+correspondences coincide, even if the optimum is not unique.
+\item Wherever both demands are differentiable, their own-price derivatives
+must coincide at matching parameters.
+\end{enumerate}
+
+\clearpage
+\section*{1. A little of everything}
+A consumer enjoys two divisible activities:
+\[
+ u(x_1,x_2)=\sqrt{x_1}+2\sqrt{x_2}.
+\]
+\begin{enumerate}[label=(\alph*)]
+\item Establish existence, uniqueness and budget exhaustion. Why must both
+optimal quantities be strictly positive?
+\item Solve utility maximisation directly: find $x_1(p,m)$, $x_2(p,m)$ and
+$v(p,m)$ for general prices and income.
+\item Solve expenditure minimisation directly: find $h_1(p,\bar u)$,
+$h_2(p,\bar u)$ and $e(p,\bar u)$. Try $z_i=\sqrt{x_i}$.
+\item Recover $x$ using Roy and $h$ using Shephard. Verify
+\[
+ e(p,v(p,m))=m,\qquad v(p,e(p,\bar u))=\bar u,
+ \qquad h(p,v(p,m))=x(p,m).
+\]
+\item At $p=(1,4)$ and $m=8$, find $x$ and $v$. Calculate
+$x_{1,p_1}$, $x_{1,m}$ and $h_{1,p_1}$ at the matching \emph{fixed} target.
+Check the own-price Slutsky equation numerically.
+\item Compute the full Slutsky matrix from Marshallian demand:
+\[
+ S_{ij}=\frac{\partial x_i}{\partial p_j}
+       +x_j\frac{\partial x_i}{\partial m}.
+\]
+Check it against $D_ph$ at the matching target. Verify symmetry,
+$Sp=0$ and negative semidefiniteness. Give its value at the point in (e).
+\item Generalise. For an $n$-good consumer with continuous LNS utility,
+positive prices and an attainable target above $u(0)$, suppose demands are
+single-valued and differentiable and $e$ is $C^2$ in prices. At matching
+parameters, prove that $S$ is symmetric, $Sp=0$ and $z^\top Sz\le0$.
+Use Shephard and homogeneity; derive price concavity of $e$ from its
+minimisation definition.
+\end{enumerate}
+
+\clearpage
+\section*{2. Two escape routes and a head start}
+The second consumer has utility
+\[
+ u(x_1,x_2)=\max\{x_1+1,\sqrt{x_2}\}.
+\]
+\begin{enumerate}[label=(\alph*)]
+\item Check continuity, local nonsatiation and convexity of preferences.
+Draw $\{x\ge0:u(x)\ge2\}$. What is $u(0)$, and why do we work with targets
+$\bar u>1$ for the main duality calculations?
+\item Find $v(p,m)$ and the entire $X(p,m)$ by comparing the two corner
+routes. At $p=(9/2,1)$, find every income range in which each route is optimal,
+including both switching boundaries.
+\item Find $e(p,\bar u)$ and the entire $H(p,\bar u)$ for $\bar u>1$.
+At $p=(9/2,1)$, find every target range and both switching targets.
+What happens for targets $\bar u\le1$?
+\item Apply Roy and Shephard in each strict regime. Explain what prevents
+a single gradient from selecting a bundle at a switching boundary.
+\item Verify both inverse-value identities and demand-set equality at matching
+parameters. At the specified prices, match the two income boundaries to
+the two target boundaries.
+\item At $p=(9/2,1)$ and $m=9/4$, list all solutions to both corresponding
+problems. Is the midpoint also optimal? Check the other boundary, $m=9$.
+\item \emph{Extension.} Set $p=(4,1)$ and $m=4$. Does the derivative $v_m$
+exist at this tie? Does that alone let you use Roy's identity?
+\end{enumerate}

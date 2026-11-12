@@ -111,3 +111,15 @@ utility, quasilinear regimes, and a minimum of two linear substitute indices.
 - [Student problem sheet](practice/02_consumer_problem_en/seminar02.pdf?raw=true)
 - [Instructor solutions and 90-minute route](practice/02_consumer_problem_en/instructor-solutions.pdf?raw=true)
 - [Complete folder: PDFs and LaTeX](practice/02_consumer_problem_en/seminar02-complete.zip?raw=true)
+
+## Seminar 3 — Demand and duality
+
+Six short true/false statements and two complete consumer problems:
+`sqrt(x1) + 2 sqrt(x2)` and `max{x1 + 1, sqrt(x2)}`. Derive both demands and
+value functions, apply Roy and Shephard, and check duality. The first problem
+calculates the Slutsky matrix and proves its general properties; the second
+has two income switches and nonunique corner choices at the boundaries.
+
+- [Student problem sheet](practice/03_duality_en/seminar03.pdf?raw=true)
+- [Instructor solutions](practice/03_duality_en/instructor-solutions.pdf?raw=true)
+- [Complete folder: PDFs and LaTeX](practice/03_duality_en/seminar03-complete.zip?raw=true)
